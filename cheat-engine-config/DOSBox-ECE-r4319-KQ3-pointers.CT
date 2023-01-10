@@ -1,0 +1,2948 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="42">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>1</ID>
+      <Description>"base pointer"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>2</ID>
+      <Description>"keystroke pointer"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0x41c</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>3</ID>
+      <Description>"keystroke queue"</Description>
+      <ShowAsHex>1</ShowAsHex>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>2 Bytes</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0x41E</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>4</ID>
+      <Description>"menu state 1"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0x450</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>5</ID>
+      <Description>"menu state 2"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0x451</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>6</ID>
+      <Description>"game loop timer"</Description>
+      <ShowAsHex>1</ShowAsHex>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>2 Bytes</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0x46C</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>7</ID>
+      <Description>"v000 - current room"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC789</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>8</ID>
+      <Description>"v001 - previous room"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC78A</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>9</ID>
+      <Description>"v002"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC78B</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>10</ID>
+      <Description>"v003 - game score"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC78C</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>11</ID>
+      <Description>"v004"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC78D</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>12</ID>
+      <Description>"v005"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC78E</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>13</ID>
+      <Description>"v006"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC78F</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>14</ID>
+      <Description>"v007"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC790</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>15</ID>
+      <Description>"v008"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC791</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>16</ID>
+      <Description>"v009"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC792</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>17</ID>
+      <Description>"v010"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC793</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>18</ID>
+      <Description>"v011"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC794</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>19</ID>
+      <Description>"v012"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC795</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>20</ID>
+      <Description>"v013"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC796</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>21</ID>
+      <Description>"v014"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC797</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>22</ID>
+      <Description>"v015"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC798</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>23</ID>
+      <Description>"v016"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC799</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>24</ID>
+      <Description>"v017"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC79A</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>25</ID>
+      <Description>"v018"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC79B</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>26</ID>
+      <Description>"v019"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC79C</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>27</ID>
+      <Description>"v020"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC79D</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>28</ID>
+      <Description>"v021"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC79E</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>29</ID>
+      <Description>"v022"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC79F</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>30</ID>
+      <Description>"v023"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7A0</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>31</ID>
+      <Description>"v024"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7A1</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>32</ID>
+      <Description>"v025"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7A2</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>33</ID>
+      <Description>"v026"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7A3</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>34</ID>
+      <Description>"v027"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7A4</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>35</ID>
+      <Description>"v028"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7A5</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>36</ID>
+      <Description>"v029"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7A6</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>37</ID>
+      <Description>"v030"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7A7</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>38</ID>
+      <Description>"v031"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7A8</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>39</ID>
+      <Description>"v032"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7A9</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>40</ID>
+      <Description>"v033"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7AA</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>41</ID>
+      <Description>"v034"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7AB</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>42</ID>
+      <Description>"v035"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7AC</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>43</ID>
+      <Description>"v036"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7AD</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>44</ID>
+      <Description>"v037"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7AE</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>45</ID>
+      <Description>"v038"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7AF</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>46</ID>
+      <Description>"v039"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7B0</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>47</ID>
+      <Description>"v040 - player x"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7B1</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>48</ID>
+      <Description>"v041 - player y"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7B2</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>49</ID>
+      <Description>"v042"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7B3</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>50</ID>
+      <Description>"v043"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7B4</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>51</ID>
+      <Description>"v044"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7B5</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>52</ID>
+      <Description>"v045"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7B6</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>53</ID>
+      <Description>"v046"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7B7</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>54</ID>
+      <Description>"v047"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7B8</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>55</ID>
+      <Description>"v048"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7B9</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>56</ID>
+      <Description>"v049"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7BA</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>57</ID>
+      <Description>"v050"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7BB</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>58</ID>
+      <Description>"v051"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7BC</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>59</ID>
+      <Description>"v052"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7BD</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>60</ID>
+      <Description>"v053"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7BE</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>61</ID>
+      <Description>"v054"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7BF</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>62</ID>
+      <Description>"v055"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7C0</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>63</ID>
+      <Description>"v056"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7C1</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>64</ID>
+      <Description>"v057"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7C2</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>65</ID>
+      <Description>"v058"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7C3</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>66</ID>
+      <Description>"v059"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7C4</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>67</ID>
+      <Description>"v060"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7C5</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>68</ID>
+      <Description>"v061"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7C6</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>69</ID>
+      <Description>"v062"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7C7</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>70</ID>
+      <Description>"v063"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7C8</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>71</ID>
+      <Description>"v064"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7C9</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>72</ID>
+      <Description>"v065"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7CA</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>73</ID>
+      <Description>"v066"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7CB</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>74</ID>
+      <Description>"v067"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7CC</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>75</ID>
+      <Description>"v068"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7CD</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>76</ID>
+      <Description>"v069"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7CE</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>77</ID>
+      <Description>"v070"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7CF</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>78</ID>
+      <Description>"v071"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7D0</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>79</ID>
+      <Description>"v072"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7D1</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>80</ID>
+      <Description>"v073"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7D2</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>81</ID>
+      <Description>"v074"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7D3</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>82</ID>
+      <Description>"v075"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7D4</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>83</ID>
+      <Description>"v076"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7D5</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>84</ID>
+      <Description>"v077"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7D6</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>85</ID>
+      <Description>"v078"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7D7</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>86</ID>
+      <Description>"v079"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7D8</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>87</ID>
+      <Description>"v080"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7D9</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>88</ID>
+      <Description>"v081"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7DA</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>89</ID>
+      <Description>"v082 - wizard countdown"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7DB</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>90</ID>
+      <Description>"v083 - wizard countdown"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7DC</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>91</ID>
+      <Description>"v084"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7DD</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>92</ID>
+      <Description>"v085"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7DE</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>93</ID>
+      <Description>"v086"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7DF</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>94</ID>
+      <Description>"v087"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7E0</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>95</ID>
+      <Description>"v088"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7E1</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>96</ID>
+      <Description>"v089"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7E2</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>97</ID>
+      <Description>"v090"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7E3</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>98</ID>
+      <Description>"v091"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7E4</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>99</ID>
+      <Description>"v092"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7E5</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>100</ID>
+      <Description>"v093"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7E6</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>101</ID>
+      <Description>"v094"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7E7</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>102</ID>
+      <Description>"v095"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7E8</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>103</ID>
+      <Description>"v096"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7E9</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>104</ID>
+      <Description>"v097"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7EA</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>105</ID>
+      <Description>"v098"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7EB</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>106</ID>
+      <Description>"v099"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7EC</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>107</ID>
+      <Description>"v100"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7ED</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>108</ID>
+      <Description>"v101"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7EE</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>109</ID>
+      <Description>"v102"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7EF</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>110</ID>
+      <Description>"v103"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7F0</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>111</ID>
+      <Description>"v104"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7F1</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>112</ID>
+      <Description>"v105"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7F2</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>113</ID>
+      <Description>"v106"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7F3</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>114</ID>
+      <Description>"v107"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7F4</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>115</ID>
+      <Description>"v108"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7F5</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>116</ID>
+      <Description>"v109"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7F6</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>117</ID>
+      <Description>"v110"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7F7</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>118</ID>
+      <Description>"v111"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7F8</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>119</ID>
+      <Description>"v112"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7F9</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>120</ID>
+      <Description>"v113"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7FA</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>121</ID>
+      <Description>"v114"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7FB</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>122</ID>
+      <Description>"v115 - game time seconds"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7FC</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>123</ID>
+      <Description>"v116 - game time minutes"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7FD</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>124</ID>
+      <Description>"v117"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7FE</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>125</ID>
+      <Description>"v118"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC7FF</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>126</ID>
+      <Description>"v119"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC800</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>127</ID>
+      <Description>"v120"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC801</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>128</ID>
+      <Description>"v121"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC802</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>129</ID>
+      <Description>"v122"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC803</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>130</ID>
+      <Description>"v123"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC804</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>131</ID>
+      <Description>"v124"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC805</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>132</ID>
+      <Description>"v125"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC806</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>133</ID>
+      <Description>"v126"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC807</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>134</ID>
+      <Description>"v127"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC808</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>135</ID>
+      <Description>"v128"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC809</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>136</ID>
+      <Description>"v129"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC80A</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>137</ID>
+      <Description>"v130"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC80B</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>138</ID>
+      <Description>"v131"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC80C</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>139</ID>
+      <Description>"v132"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC80D</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>140</ID>
+      <Description>"v133"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC80E</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>141</ID>
+      <Description>"v134"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC80F</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>142</ID>
+      <Description>"v135"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC810</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>143</ID>
+      <Description>"v136"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC811</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>144</ID>
+      <Description>"v137"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC812</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>145</ID>
+      <Description>"v138"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC813</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>146</ID>
+      <Description>"v139"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC814</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>147</ID>
+      <Description>"v140"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC815</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>148</ID>
+      <Description>"v141"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC816</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>149</ID>
+      <Description>"v142"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC817</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>150</ID>
+      <Description>"v143"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC818</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>151</ID>
+      <Description>"v144"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC819</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>152</ID>
+      <Description>"v145"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC81A</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>153</ID>
+      <Description>"v146"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC81B</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>154</ID>
+      <Description>"v147"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC81C</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>155</ID>
+      <Description>"v148"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC81D</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>156</ID>
+      <Description>"v149"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC81E</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>157</ID>
+      <Description>"v150"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC81F</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>158</ID>
+      <Description>"v151"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC820</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>159</ID>
+      <Description>"v152"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC821</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>160</ID>
+      <Description>"v153"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC822</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>161</ID>
+      <Description>"v154"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC823</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>162</ID>
+      <Description>"v155"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC824</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>163</ID>
+      <Description>"v156"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC825</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>164</ID>
+      <Description>"v157"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC826</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>165</ID>
+      <Description>"v158"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC827</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>166</ID>
+      <Description>"v159"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC828</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>167</ID>
+      <Description>"v160"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC829</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>168</ID>
+      <Description>"v161"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC82A</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>169</ID>
+      <Description>"v162"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC82B</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>170</ID>
+      <Description>"v163"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC82C</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>171</ID>
+      <Description>"v164"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC82D</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>172</ID>
+      <Description>"v165"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC82E</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>173</ID>
+      <Description>"v166"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC82F</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>174</ID>
+      <Description>"v167"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC830</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>175</ID>
+      <Description>"v168"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC831</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>176</ID>
+      <Description>"v169"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC832</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>177</ID>
+      <Description>"v170"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC833</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>178</ID>
+      <Description>"v171"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC834</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>179</ID>
+      <Description>"v172"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC835</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>180</ID>
+      <Description>"v173"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC836</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>181</ID>
+      <Description>"v174"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC837</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>182</ID>
+      <Description>"v175"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC838</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>183</ID>
+      <Description>"v176"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC839</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>184</ID>
+      <Description>"v177"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC83A</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>185</ID>
+      <Description>"v178"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC83B</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>186</ID>
+      <Description>"v179"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC83C</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>187</ID>
+      <Description>"v180"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC83D</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>188</ID>
+      <Description>"v181"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC83E</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>189</ID>
+      <Description>"v182"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC83F</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>190</ID>
+      <Description>"v183"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC840</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>191</ID>
+      <Description>"v184"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC841</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>192</ID>
+      <Description>"v185"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC842</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>193</ID>
+      <Description>"v186"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC843</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>194</ID>
+      <Description>"v187"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC844</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>195</ID>
+      <Description>"v188"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC845</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>196</ID>
+      <Description>"v189"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC846</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>197</ID>
+      <Description>"v190"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC847</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>198</ID>
+      <Description>"v191"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC848</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>199</ID>
+      <Description>"v192"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC849</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>200</ID>
+      <Description>"v193"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC84A</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>201</ID>
+      <Description>"v194"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC84B</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>202</ID>
+      <Description>"v195"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC84C</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>203</ID>
+      <Description>"v196"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC84D</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>204</ID>
+      <Description>"v197"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC84E</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>205</ID>
+      <Description>"v198"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC84F</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>206</ID>
+      <Description>"v199"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC850</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>207</ID>
+      <Description>"v200"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC851</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>208</ID>
+      <Description>"v201"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC852</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>209</ID>
+      <Description>"v202"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC853</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>210</ID>
+      <Description>"v203"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC854</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>211</ID>
+      <Description>"v204"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC855</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>212</ID>
+      <Description>"v205"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC856</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>213</ID>
+      <Description>"v206"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC857</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>214</ID>
+      <Description>"v207"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC858</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>215</ID>
+      <Description>"v208"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC859</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>216</ID>
+      <Description>"v209"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC85A</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>217</ID>
+      <Description>"v210"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC85B</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>218</ID>
+      <Description>"v211"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC85C</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>219</ID>
+      <Description>"v212"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC85D</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>220</ID>
+      <Description>"v213"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC85E</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>221</ID>
+      <Description>"v214"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC85F</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>222</ID>
+      <Description>"v215"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC860</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>223</ID>
+      <Description>"v216"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC861</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>224</ID>
+      <Description>"v217"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC862</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>225</ID>
+      <Description>"v218"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC863</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>226</ID>
+      <Description>"v219"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC864</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>227</ID>
+      <Description>"v220"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC865</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>228</ID>
+      <Description>"v221"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC866</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>229</ID>
+      <Description>"v222"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC867</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>230</ID>
+      <Description>"v223"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC868</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>231</ID>
+      <Description>"v224"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC869</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>232</ID>
+      <Description>"v225"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC86A</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>233</ID>
+      <Description>"v226"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC86B</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>234</ID>
+      <Description>"v227"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC86C</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>235</ID>
+      <Description>"v228"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC86D</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>236</ID>
+      <Description>"v229"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC86E</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>237</ID>
+      <Description>"v230"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC86F</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>238</ID>
+      <Description>"v231"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC870</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>239</ID>
+      <Description>"v232"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC871</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>240</ID>
+      <Description>"v233"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC872</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>241</ID>
+      <Description>"v234"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC873</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>242</ID>
+      <Description>"v235"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC874</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>243</ID>
+      <Description>"v236"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC875</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>244</ID>
+      <Description>"v237"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC876</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>245</ID>
+      <Description>"v238"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC877</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>246</ID>
+      <Description>"v239"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC878</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>247</ID>
+      <Description>"v240"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC879</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>248</ID>
+      <Description>"v241"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC87A</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>249</ID>
+      <Description>"v242"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC87B</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>250</ID>
+      <Description>"v243"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC87C</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>251</ID>
+      <Description>"v244"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC87D</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>252</ID>
+      <Description>"v245"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC87E</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>253</ID>
+      <Description>"v246"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC87F</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>254</ID>
+      <Description>"v247"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC880</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>255</ID>
+      <Description>"v248"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC881</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>256</ID>
+      <Description>"v249"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC882</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>257</ID>
+      <Description>"v250"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC883</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>258</ID>
+      <Description>"v251"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC884</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>259</ID>
+      <Description>"v252"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC885</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>260</ID>
+      <Description>"v253"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC886</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>261</ID>
+      <Description>"v254"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC887</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>262</ID>
+      <Description>"v255"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC888</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>263</ID>
+      <Description>"flags[000-007]"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC889</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>264</ID>
+      <Description>"flags[008-015]"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC88A</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>265</ID>
+      <Description>"flags[016-023]"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC88B</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>266</ID>
+      <Description>"flags[024-031]"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC88C</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>267</ID>
+      <Description>"flags[032-039]"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC88D</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>268</ID>
+      <Description>"flags[040-047]"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC88E</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>269</ID>
+      <Description>"flags[048-055]"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC88F</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>270</ID>
+      <Description>"flags[056-063]"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC890</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>271</ID>
+      <Description>"flags[064-071]"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC891</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>272</ID>
+      <Description>"flags[072-079]"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC892</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>273</ID>
+      <Description>"flags[080-087]"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC893</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>274</ID>
+      <Description>"flags[088-095]"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC894</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>275</ID>
+      <Description>"flags[096-103]"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC895</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>276</ID>
+      <Description>"flags[104-111]"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC896</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>277</ID>
+      <Description>"flags[112-119]"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC897</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>278</ID>
+      <Description>"flags[120-127]"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC898</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>279</ID>
+      <Description>"flags[128-135]"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC899</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>280</ID>
+      <Description>"flags[136-143]"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC89A</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>281</ID>
+      <Description>"flags[144-151]"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC89B</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>282</ID>
+      <Description>"flags[152-159]"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC89C</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>283</ID>
+      <Description>"flags[160-167]"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC89D</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>284</ID>
+      <Description>"flags[168-175]"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC89E</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>285</ID>
+      <Description>"flags[176-183]"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC89F</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>286</ID>
+      <Description>"flags[184-191]"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC8A0</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>287</ID>
+      <Description>"flags[192-199]"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC8A1</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>288</ID>
+      <Description>"flags[200-207]"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC8A2</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>289</ID>
+      <Description>"flags[208-215]"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC8A3</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>290</ID>
+      <Description>"flags[216-223]"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC8A4</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>291</ID>
+      <Description>"flags[224-231]"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC8A5</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>292</ID>
+      <Description>"flags[232-239]"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC8A6</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>293</ID>
+      <Description>"flags[240-247]"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC8A7</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>294</ID>
+      <Description>"flags[248-255]"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xC8A8</Offset>
+      </Offsets>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols/>
+</CheatTable>
