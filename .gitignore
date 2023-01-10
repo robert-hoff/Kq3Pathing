@@ -1,0 +1,15 @@
+# Visual Studio files
+/.vs/
+
+# user files
+*.user
+
+# Builds
+/bin/
+/obj/
+/kq3-hacking/bin/
+/kq3-hacking/obj/
+
+# Windows shortcuts
+*.lnk
+
