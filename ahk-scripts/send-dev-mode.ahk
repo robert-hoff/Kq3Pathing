@@ -6,6 +6,8 @@
 #ifwinactive ahk_class SDL_app
 $<^>!d::
   sleep 100
+  send {backspace}
+  sleep 100
   send rats tits
   return
 
