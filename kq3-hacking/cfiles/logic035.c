@@ -1,7 +1,0 @@
-if (isset(newRoom))
-  {  load.view(View0);  load.view.v(currentEgoView);  set.view.v(ego, currentEgoView);  load.pic(currentRoom);  draw.pic(currentRoom);  discard.pic(currentRoom);  v31 = 0;  v57 = 66;  v58 = 158;  set(f48);  position(ego, 68, 145);  set(f35);  if (isset(f47))
-    {    draw(ego);    }  show.pic();  return();  }if (!isset(f221))
-  {  set(f221);  print("You have flown through the hole at the base of the tree and are now "        "inside the hollow trunk. You see a rope leading up into a small hole "        "above you.  This area is cramped and confining, even for a fly.");  }if (v71 == 5)
-  {  print("You hope you'll be able to fit inside the tree in your normal form.");  shake.screen(4);  print("Obviously, your hopes were ill-founded. Too late, you realize you are "        "inside a tree, and... the results are too gruesome to discuss.");  v71 = 0;  erase(ego);  set(f44);  return();  }if (egoDir == DOWN)
-  {  new.room(Logic22);  }else
-  {  egoDir = STOPPED;  }return();[ Messages#message 1 "You have flown through the hole at the base of the tree and are now inside the hollow trunk. You see a rope leading up into a small hole above you.  This area is cramped and confining, even for a fly."#message 2 "You hope you'll be able to fit inside the tree in your normal form."#message 3 ""#message 4 ""#message 5 "Obviously, your hopes were ill-founded. Too late, you realize you are inside a tree, and... the results are too gruesome to discuss."#message 6 ""

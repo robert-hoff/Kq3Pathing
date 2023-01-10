@@ -37,42 +37,42 @@ if (isset(f224))
 {  if (isset(f33))
   {    if (v44 == 25)
     {      print("Your magical transformation has frozen the pirate in his tracks.");      stop.cycling(o1);      normal.motion(o1);      stop.motion(o1);      reset(f226);    }    else
-    {    reset(f223);    }  }  if (!isset(f223) && !isset(f46))
+    {      reset(f223);    }  }  if (!isset(f223) && !isset(f46))
   {    set(f223);    start.cycling(o1);    follow.ego(o1, 8, f226);  }}
 if (isset(f226))
 {  reset(f226);  stop.cycling(o1);  reset(f223);  if (!isset(f46))
-  {    print("The pirate growls, \"What ar' ya doin' snoopin' around me digs, "          "laddie. I gotcha' now, boy!");    set(f199);    new.room(Logic85);  }}
+  {    print("The pirate growls, \"What ar' ya doin' snoopin' around me digs, "      "laddie. I gotcha' now, boy!");    set(f199);    new.room(Logic85);  }}
 if (isset(f222))
 {  reset(f222);  set.view(ego, View24);  reposition.to(ego, 52, 143);  program.control();  set(f44);}
-if ((isset(f186) ||    obj.in.room("Shovel", currentRoom)))
-  {  call(Logic108);  }if (said("examine", "bandit"))
-  {  if (isset(f220))
-    {    if (isset(f181))
-      {      if (v220 == 2)
-        {        print("A pirate is fast asleep in his bunk.");        }      else
-        {        print("You can't see it from here.");        }      }    else
-      {      print("You'd better leave before the pirate catches you.");      }    }  else
-    {    print("You don't see anyone else in the area.");    }  }if ((said("examine") ||    said("examine", "area")))
-  {  if (v220 == 2)
-    {    print("This is where your average pirate sleeps. Actually, these bunks "          "don't look much more comfortable than your own miserable cot used to "          "be and the space is just as cramped.");    }  else
-    {    if (!obj.in.room("Shovel", currentRoom))
-      {      print("You have found yourself below the lower deck. They keep the ship's "            "lifeboat stored here. There are open doorways at either end of the "            "compartment.");      }    else
-      {      print("%m2 There is a shovel lying by the lifeboat.");      }    }  }if ((said("examine", "below") ||    said("look in", "boat") ||    said("examine", "boat")))
-  {  if (v220 == 2)
-    {    print("You can't see it from here.");    }  else
-    {    if (!obj.in.room("Shovel", currentRoom))
-      {      print("You scrutinize the boat inside and out, but find it to be empty "            "and uninteresting.");      }    else
-      {      print("%m3 There is a shovel lying by the lifeboat.");      }    }  }if ((said("look in", "door") ||    said("examine", "out", "door") ||    said("examine", "door")))
-  {  if (v220 == 2)
-    {    print("You stare out the open doorway and see the wooden lifeboat.");    }  else
-    {    print("You peer through the doorway and see rows of bunks. It must be the "          "crew's quarters.");    }  }if ((said("look in", "bed") ||    said("examine", "on", "bed") ||    said("examine", "bed")))
-  {  if (v220 == 2)
-    {    print("Rows of hard bunks line the walls of the crew's quarters. They don't "          "look very inviting to lie upon. You can't imagine the pirates would "          "get a good night's sleep down here in the cramped bow of the ship.");    }  else
-    {    print("You can't see it from here.");    }  }if ((said("lay", "on", "bed") ||    said("capture", "on", "bed") ||    said("sleep", "on", "bed") ||    said("lay", "bed")))
-  {  if (v220 == 2)
-    {    print("The beds look incredibly hard and uncomfortable. No, thank you.");    }  else
-    {    print("You can't see it from here.");    }  }if (edgeEgoHit == LEFT_EDGE)
-  {  new.room(Logic83);  }return();[ Messages#message 1 "This is where your average pirate sleeps. Actually, these bunks don't look much more comfortable than your own miserable cot used to be and the space is just as cramped."#message 2 "You have found yourself below the lower deck. They keep the ship's lifeboat stored here. There are open doorways at either end of the compartment."#message 3 "You scrutinize the boat inside and out, but find it to be empty and uninteresting."#message 4 "Rows of hard bunks line the walls of the crew's quarters. They don't look very inviting to lie upon. You can't imagine the pirates would get a good night's sleep down here in the cramped bow of the ship."#message 5 "The beds look incredibly hard and uncomfortable. No, thank you."#message 6 "You already have the shovel."#message 7 "The pirate growls, \"What ar' ya doin' snoopin' around me digs, laddie. I gotcha' now, boy!"#message 8 "You can't see it from here."#message 9 "You'd better leave before the pirate catches you."#message 10 "You don't see anyone else in the area."#message 11 "A pirate is fast asleep in his bunk."#message 12 "You stare out the open doorway and see the wooden lifeboat."#message 13 "You peer through the doorway and see rows of bunks. It must be the crew's quarters."#message 14 "Oh no! One of the crew has spotted you! You'd better run."#message 15 "%m2 There is a shovel lying by the lifeboat."#message 16 "%m3 There is a shovel lying by the lifeboat."#message 17 "Poofing in."#message 18 "Your magical transformation has frozen the pirate in his tracks."
+if ((isset(f186) ||  obj.in.room("Shovel", currentRoom)))
+{  call(Logic108);}if (said("examine", "bandit"))
+{  if (isset(f220))
+  {    if (isset(f181))
+    {      if (v220 == 2)
+      {        print("A pirate is fast asleep in his bunk.");      }      else
+      {        print("You can't see it from here.");      }    }    else
+    {      print("You'd better leave before the pirate catches you.");    }  }  else
+  {    print("You don't see anyone else in the area.");  }}if ((said("examine") ||  said("examine", "area")))
+{  if (v220 == 2)
+  {    print("This is where your average pirate sleeps. Actually, these bunks "      "don't look much more comfortable than your own miserable cot used to "      "be and the space is just as cramped.");  }  else
+  {    if (!obj.in.room("Shovel", currentRoom))
+    {      print("You have found yourself below the lower deck. They keep the ship's "        "lifeboat stored here. There are open doorways at either end of the "        "compartment.");    }    else
+    {      print("%m2 There is a shovel lying by the lifeboat.");    }  }}if ((said("examine", "below") ||  said("look in", "boat") ||  said("examine", "boat")))
+{  if (v220 == 2)
+  {    print("You can't see it from here.");  }  else
+  {    if (!obj.in.room("Shovel", currentRoom))
+    {      print("You scrutinize the boat inside and out, but find it to be empty "        "and uninteresting.");    }    else
+    {      print("%m3 There is a shovel lying by the lifeboat.");    }  }}if ((said("look in", "door") ||  said("examine", "out", "door") ||  said("examine", "door")))
+{  if (v220 == 2)
+  {    print("You stare out the open doorway and see the wooden lifeboat.");  }  else
+  {    print("You peer through the doorway and see rows of bunks. It must be the "      "crew's quarters.");  }}if ((said("look in", "bed") ||  said("examine", "on", "bed") ||  said("examine", "bed")))
+{  if (v220 == 2)
+  {    print("Rows of hard bunks line the walls of the crew's quarters. They don't "      "look very inviting to lie upon. You can't imagine the pirates would "      "get a good night's sleep down here in the cramped bow of the ship.");  }  else
+  {    print("You can't see it from here.");  }}if ((said("lay", "on", "bed") ||  said("capture", "on", "bed") ||  said("sleep", "on", "bed") ||  said("lay", "bed")))
+{  if (v220 == 2)
+  {    print("The beds look incredibly hard and uncomfortable. No, thank you.");  }  else
+  {    print("You can't see it from here.");  }}if (edgeEgoHit == LEFT_EDGE)
+{  new.room(Logic83);}return();[Messages#message 1 "This is where your average pirate sleeps. Actually, these bunks don't look much more comfortable than your own miserable cot used to be and the space is just as cramped."#message 2 "You have found yourself below the lower deck. They keep the ship's lifeboat stored here. There are open doorways at either end of the compartment."#message 3 "You scrutinize the boat inside and out, but find it to be empty and uninteresting."#message 4 "Rows of hard bunks line the walls of the crew's quarters. They don't look very inviting to lie upon. You can't imagine the pirates would get a good night's sleep down here in the cramped bow of the ship."#message 5 "The beds look incredibly hard and uncomfortable. No, thank you."#message 6 "You already have the shovel."#message 7 "The pirate growls, \"What ar' ya doin' snoopin' around me digs, laddie. I gotcha' now, boy!"#message 8 "You can't see it from here."#message 9 "You'd better leave before the pirate catches you."#message 10 "You don't see anyone else in the area."#message 11 "A pirate is fast asleep in his bunk."#message 12 "You stare out the open doorway and see the wooden lifeboat."#message 13 "You peer through the doorway and see rows of bunks. It must be the crew's quarters."#message 14 "Oh no! One of the crew has spotted you! You'd better run."#message 15 "%m2 There is a shovel lying by the lifeboat."#message 16 "%m3 There is a shovel lying by the lifeboat."#message 17 "Poofing in."#message 18 "Your magical transformation has frozen the pirate in his tracks."
 
 
 

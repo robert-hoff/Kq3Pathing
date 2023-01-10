@@ -1,188 +1,188 @@
 if (isset(newRoom))
 {
-    v240 = 143;
-    return ();
+  v240 = 143;
+  return ();
 }
 
 if ((!isset(haveInput) || isset(haveMatch)))
 {
-    goto(Label1);
+  goto(Label1);
 }
 
 set(f120);
 ++v103;
 if ((said("add", "bay", "liquid", "basin") ||
-    said("add", "cup", "bay", "liquid", "basin") ||
-    said("add", "one", "cup", "bay", "liquid", "basin") ||
-    said("drain", "bay", "liquid", "basin") ||
-    said("drain", "cup", "bay", "liquid", "basin") ||
-    said("drain", "one", "cup", "bay", "liquid", "basin") ||
-    said("add", "liquid", "basin") ||
-    said("add", "cup", "liquid", "basin") ||
-    said("add", "one", "cup", "liquid", "basin") ||
-    said("drain", "liquid", "basin") ||
-    said("drain", "cup", "liquid", "basin") ||
-    said("drain", "one", "cup", "liquid", "basin")))
+  said("add", "cup", "bay", "liquid", "basin") ||
+  said("add", "one", "cup", "bay", "liquid", "basin") ||
+  said("drain", "bay", "liquid", "basin") ||
+  said("drain", "cup", "bay", "liquid", "basin") ||
+  said("drain", "one", "cup", "bay", "liquid", "basin") ||
+  said("add", "liquid", "basin") ||
+  said("add", "cup", "liquid", "basin") ||
+  said("add", "one", "cup", "liquid", "basin") ||
+  said("drain", "liquid", "basin") ||
+  said("drain", "cup", "liquid", "basin") ||
+  said("drain", "one", "cup", "liquid", "basin")))
 {
-    if ((!has("Bowl") ||
-        !has("Ocean Water*")))
+  if ((!has("Bowl") ||
+    !has("Ocean Water*")))
+  {
+    print("How can you use that which you do not have?");
+  }
+  else
+  {
+    drop("Ocean Water*");
+    get("Empty Cup");
+    print("Carefully, you pour the cup of ocean water into the mixing bowl.");
+    if (v103 == 1)
     {
-        print("How can you use that which you do not have?");
+      reset(f120);
     }
-    else
-    {
-        drop("Ocean Water*");
-        get("Empty Cup");
-        print("Carefully, you pour the cup of ocean water into the mixing bowl.");
-        if (v103 == 1)
-        {
-            reset(f120);
-        }
-    }
+  }
 }
 
 if ((said("boil", "basin", "brazier") ||
-    said("boil", "bay", "liquid", "brazier") ||
-    said("boil", "basin", "bay", "liquid", "brazier") ||
-    said("boil", "basin", "bay", "liquid", "above", "brazier") ||
-    said("boil", "liquid", "brazier") ||
-    said("boil", "basin", "on", "brazier") ||
-    said("boil", "bay", "liquid", "on", "brazier") ||
-    said("boil", "basin", "bay", "liquid", "on", "brazier") ||
-    said("boil", "liquid", "on", "brazier") ||
-    said("boil", "basin", "liquid", "on", "brazier") ||
-    said("boil", "basin", "liquid", "brazier") ||
-    said("boil", "basin", "liquid", "above", "brazier")))
+  said("boil", "bay", "liquid", "brazier") ||
+  said("boil", "basin", "bay", "liquid", "brazier") ||
+  said("boil", "basin", "bay", "liquid", "above", "brazier") ||
+  said("boil", "liquid", "brazier") ||
+  said("boil", "basin", "on", "brazier") ||
+  said("boil", "bay", "liquid", "on", "brazier") ||
+  said("boil", "basin", "bay", "liquid", "on", "brazier") ||
+  said("boil", "liquid", "on", "brazier") ||
+  said("boil", "basin", "liquid", "on", "brazier") ||
+  said("boil", "basin", "liquid", "brazier") ||
+  said("boil", "basin", "liquid", "above", "brazier")))
 {
-    if (v107 <= 0 && v108 <= 0)
+  if (v107 <= 0 && v108 <= 0)
+  {
+    print("You place the clay bowl of ocean water on top of the little charcoal "
+      "brazier. To your consternation, you discover that the brazier is "
+      "unlit, and stone cold.");
+  }
+  else
+  {
+    print("Being cautious not to burn yourself, you gently place the bowl of "
+      "ocean water on the hot charcoal brazier. You watch as the salt water "
+      "slowly warms, then begins to steam. You remove it just before it "
+      "boils.");
+    if (v103 == 2)
     {
-        print("You place the clay bowl of ocean water on top of the little charcoal "
-                "brazier. To your consternation, you discover that the brazier is "
-                "unlit, and stone cold.");
+      reset(f120);
     }
-    else
-    {
-        print("Being cautious not to burn yourself, you gently place the bowl of "
-                "ocean water on the hot charcoal brazier. You watch as the salt water "
-                "slowly warms, then begins to steam. You remove it just before it "
-                "boils.");
-        if (v103 == 2)
-        {
-            reset(f120);
-        }
-    }
+  }
 }
 
 
 if ((said("add", "ladle", "mud", "basin", "liquid") ||
-    said("add", "mud", "basin", "liquid") ||
-    said("add", "mud", "basin") ||
-    said("knead", "ladle", "mud", "basin") ||
-    said("knead", "ladle", "mud", "basin", "liquid") ||
-    said("knead", "mud", "basin", "liquid") ||
-    said("add", "ladle", "mud", "basin", "bay", "liquid") ||
-    said("add", "mud", "basin", "bay", "liquid") ||
-    said("knead", "ladle", "mud", "basin", "bay", "liquid") ||
-    said("knead", "mud", "basin", "bay", "liquid") ||
-    said("knead", "ladle", "mud", "basin") ||
-    said("add", "ladle", "mud", "basin") ||
-    said("knead", "mud", "basin")))
+  said("add", "mud", "basin", "liquid") ||
+  said("add", "mud", "basin") ||
+  said("knead", "ladle", "mud", "basin") ||
+  said("knead", "ladle", "mud", "basin", "liquid") ||
+  said("knead", "mud", "basin", "liquid") ||
+  said("add", "ladle", "mud", "basin", "bay", "liquid") ||
+  said("add", "mud", "basin", "bay", "liquid") ||
+  said("knead", "ladle", "mud", "basin", "bay", "liquid") ||
+  said("knead", "mud", "basin", "bay", "liquid") ||
+  said("knead", "ladle", "mud", "basin") ||
+  said("add", "ladle", "mud", "basin") ||
+  said("knead", "mud", "basin")))
 {
-    if (!has("Mud*"))
+  if (!has("Mud*"))
+  {
+    print("How can you use that which you do not have?");
+  }
+  else
+  {
+    print("Adding a spoonful of mud to the hot ocean water, you slowly stir the "
+      "mixture. The mud turns the water a cloudy brown.");
+    drop("Mud*");
+    get("Spoon");
+    if (v103 == 3)
     {
-        print("How can you use that which you do not have?");
+      reset(f120);
     }
-    else
-    {
-        print("Adding a spoonful of mud to the hot ocean water, you slowly stir the "
-                "mixture. The mud turns the water a cloudy brown.");
-        drop("Mud*");
-        get("Spoon");
-        if (v103 == 3)
-        {
-            reset(f120);
-        }
-    }
+  }
 }
 if ((said("add", "bit", "mushroom", "flour") ||
-    said("add", "bit", "mushroom", "flour", "basin") ||
-    said("add", "bit", "mushroom", "flour", "liquid")))
+  said("add", "bit", "mushroom", "flour", "basin") ||
+  said("add", "bit", "mushroom", "flour", "liquid")))
 {
-    if (!has("Toadstool Powder*"))
+  if (!has("Toadstool Powder*"))
+  {
+    print("How can you use that which you do not have?");
+  }
+  else
+  {
+    print("You put just a pinch of toadstool powder in the bowl of hot, brown liquid.");
+    drop("Toadstool Powder*");
+    if (v103 == 4)
     {
-        print("How can you use that which you do not have?");
+      reset(f120);
     }
-    else
-    {
-        print("You put just a pinch of toadstool powder in the bowl of hot, brown liquid.");
-        drop("Toadstool Powder*");
-        if (v103 == 4)
-        {
-            reset(f120);
-        }
-    }
+  }
 }
 if ((said("blow", "liquid") ||
-    said("blow", "brew") ||
-    said("blow", "bay", "liquid") ||
-    said("blow", "basin")))
+  said("blow", "brew") ||
+  said("blow", "bay", "liquid") ||
+  said("blow", "basin")))
 {
-    if (v103 == 5)
-    {
-        print("Leaning over the hot brew, you forcefully blow your longest breath "
-                "of air into the bowl, whirling the brew around and around.");
-        reset(f120);
-        ++v103;
-    }
-    else
-    {
-        reset(haveMatch);
-    }
+  if (v103 == 5)
+  {
+    print("Leaning over the hot brew, you forcefully blow your longest breath "
+      "of air into the bowl, whirling the brew around and around.");
+    reset(f120);
+    ++v103;
+  }
+  else
+  {
+    reset(haveMatch);
+  }
 }
 
 
 if ((said("aim", "rod") ||
-    said("aim", "magic", "rod")))
+  said("aim", "magic", "rod")))
 {
-    if (!has("Magic Wand*"))
+  if (!has("Magic Wand*"))
+  {
+    print("How can you use that which you do not have?");
+  }
+  else
+  {
+    print("You wave the magic wand over the bowl of hot, brown liquid.");
+    if (v103 == 7)
     {
-        print("How can you use that which you do not have?");
+      reset(f120);
     }
-    else
-    {
-        print("You wave the magic wand over the bowl of hot, brown liquid.");
-        if (v103 == 7)
-        {
-            reset(f120);
-        }
-    }
+  }
 }
 
 
 if ((said("drain", "brew", "from", "basin", "bottle") ||
-    said("drain", "brew", "bottle") ||
-    said("add", "brew", "from", "basin", "bottle") ||
-    said("add", "brew", "bottle")))
+  said("drain", "brew", "bottle") ||
+  said("add", "brew", "from", "basin", "bottle") ||
+  said("add", "brew", "bottle")))
 {
-    if (!has("Empty Jar*"))
+  if (!has("Empty Jar*"))
+  {
+    print("How can you use that which you do not have?");
+  }
+  else
+  {
+    if (v103 == 8)
     {
-        print("How can you use that which you do not have?");
+      print("Waiting until the liquid has cooled, you carefully pour the storm "
+        "brew into an empty glass jar.");
+      reset(f120);
+      get("Storm Brew*");
+      drop("Empty Jar*");
     }
     else
     {
-        if (v103 == 8)
-        {
-            print("Waiting until the liquid has cooled, you carefully pour the storm "
-                    "brew into an empty glass jar.");
-            reset(f120);
-            get("Storm Brew*");
-            drop("Empty Jar*");
-        }
-        else
-        {
-            reset(haveMatch);
-        }
+      reset(haveMatch);
     }
+  }
 }
 
 
@@ -190,92 +190,92 @@ if ((said("drain", "brew", "from", "basin", "bottle") ||
 Label1:
 if (!isset(f120) && v104 < 4 && v103 == 6)
 {
-    set(f120);
-    prevent.input();
-    set.text.attribute(BLACK, WHITE);
-    set.string(s1, " ");
-    if (v104 == 0)
+  set(f120);
+  prevent.input();
+  set.text.attribute(BLACK, WHITE);
+  set.string(s1, " ");
+  if (v104 == 0)
+  {
+    overlay.pic(v240);
+    show.pic();
+    set.string(s2, "elements from the earth and sea,");
+    if (monitorType == MONO)
     {
-        overlay.pic(v240);
-        show.pic();
-        set.string(s2, "elements from the earth and sea,");
-        if (monitorType == MONO)
-        {
-            open.dialogue();
-            get.string(s1, " ", 15, 1, 32);
-        }
-        else
-        {
-            get.string(s1, " ", 13, 1, 32);
-        }
-        if (compare.strings(s1, s2))
-        {
-            reset(f120);
-        }
+      open.dialogue();
+      get.string(s1, " ", 15, 1, 32);
     }
-    if (v104 == 1)
+    else
     {
-        set.string(s2, "combine to set the heavens free.");
-        if (monitorType == MONO)
-        {
-            get.string(s1, " ", 16, 1, 32);
-        }
-        else
-        {
-            get.string(s1, " ", 14, 1, 32);
-        }
-        if (compare.strings(s1, s2))
-        {
-            reset(f120);
-        }
+      get.string(s1, " ", 13, 1, 32);
     }
-    if (v104 == 2)
+    if (compare.strings(s1, s2))
     {
-        set.string(s2, "when i stir this magic brew,");
-        if (monitorType == MONO)
-        {
-            get.string(s1, " ", 17, 1, 28);
-        }
-        else
-        {
-            get.string(s1, " ", 15, 1, 28);
-        }
-        if (compare.strings(s1, s2))
-        {
-            reset(f120);
-        }
+      reset(f120);
     }
-    if (v104 == 3)
+  }
+  if (v104 == 1)
+  {
+    set.string(s2, "combine to set the heavens free.");
+    if (monitorType == MONO)
     {
-        set.string(s2, "great god thor, i call on you.");
-        if (monitorType == MONO)
-        {
-            get.string(s1, " ", 18, 1, 30);
-        }
-        else
-        {
-            get.string(s1, " ", 16, 1, 30);
-        }
-        if (compare.strings(s1, s2))
-        {
-            reset(f120);
-        }
+      get.string(s1, " ", 16, 1, 32);
     }
-    set.text.attribute(WHITE, BLACK);
-    ++v104;
-    set.string(s1, " ");
-    set.string(s2, " ");
-    if ((isset(f120) ||
-        v104 == 4))
+    else
     {
-        if (monitorType == MONO)
-        {
-            close.dialogue();
-        }
-        draw.pic(currentRoom);
-        show.pic();
-        accept.input();
+      get.string(s1, " ", 14, 1, 32);
     }
+    if (compare.strings(s1, s2))
+    {
+      reset(f120);
+    }
+  }
+  if (v104 == 2)
+  {
+    set.string(s2, "when i stir this magic brew,");
+    if (monitorType == MONO)
+    {
+      get.string(s1, " ", 17, 1, 28);
+    }
+    else
+    {
+      get.string(s1, " ", 15, 1, 28);
+    }
+    if (compare.strings(s1, s2))
+    {
+      reset(f120);
+    }
+  }
+  if (v104 == 3)
+  {
+    set.string(s2, "great god thor, i call on you.");
+    if (monitorType == MONO)
+    {
+      get.string(s1, " ", 18, 1, 30);
+    }
+    else
+    {
+      get.string(s1, " ", 16, 1, 30);
+    }
+    if (compare.strings(s1, s2))
+    {
+      reset(f120);
+    }
+  }
+  set.text.attribute(WHITE, BLACK);
+  ++v104;
+  set.string(s1, " ");
+  set.string(s2, " ");
+  if ((isset(f120) ||
+    v104 == 4))
+  {
+    if (monitorType == MONO)
+    {
+      close.dialogue();
+    }
+    draw.pic(currentRoom);
+    show.pic();
+    accept.input();
+  }
 }
 
 v36 = v103;
@@ -283,12 +283,12 @@ v36 = v103;
 
 if (v36 == 9 && !isset(f120))
 {
-    v103 = 255;
+  v103 = 255;
 }
 if (isset(f120))
 {
-    v105 = 39;
-    v106 = 1;
+  v105 = 39;
+  v106 = 1;
 }
 return ();
 
