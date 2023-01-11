@@ -324,7 +324,7 @@ namespace kq3_hacking.RoomPathing
                     break;
 
                 case 14:
-                    roomDefinition.useActionControl = ACTION_TILE_SPECIAL;
+                    roomDefinition.useActionControl = ACTION_TILE_ROOM_TRIGGER;
                     break;
 
                 case 15:
