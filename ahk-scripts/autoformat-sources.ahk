@@ -11,9 +11,37 @@ ShowToolTipz(toolTipText, delay = 2000) {
   ; settimer, removetooltipz, %delay%
 }
 
+; -- set line endings for files in Visual studio
+sc029 & 1::
+  loop 10 {
+    send {enter}
+    sleep 200
+    send !e
+    sleep 200
+    send v
+    sleep 200
+    send {up}
+    sleep 100
+    send {up}
+    sleep 100
+    send {right}
+    sleep 100
+    send {down}
+    sleep 100
+    send {enter}
+    sleep 400
+    send ^s
+    sleep 400
+    send ^w
+    sleep 400
+    send {down}
+  }
+  return
+
+
 
 ; -- autoformat only, select all and apply Ctrl K,D
-sc029 & 1::
+sc029 & 8::
   loop 50 {
     send {enter}
     sleep 200

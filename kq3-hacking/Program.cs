@@ -24,7 +24,8 @@ namespace kq3_hacking
         {
             // CreateCheatEngineConfigs.RunTrials();
             // FileOperations.RunTrials();
-            FileFormatting.RunTrials();
+            // FileFormatting.RunTrials();
+            FileFormattingWriteInMessages.Go();
         }
 
         public static void Pathing()

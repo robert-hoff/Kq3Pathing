@@ -12,6 +12,7 @@ end_of_line = lf
 [*.c]
 indent_style = space
 indent_size = 4
+end_of_line = lf
 
 
 [*.cs]
@@ -31,7 +32,7 @@ dotnet_diagnostic.CS8765.severity = none
 dotnet_diagnostic.CS8605.severity = none
 dotnet_diagnostic.CS0649.severity = none
 dotnet_diagnostic.IDE0017.severity = none
-
+dotnet_diagnostic.IDE0044.severity = none
 
 #
 # CSharp code style settings:

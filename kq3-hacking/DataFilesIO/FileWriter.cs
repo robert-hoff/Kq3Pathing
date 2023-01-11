@@ -86,8 +86,12 @@ namespace kq3_hacking.DataFilesIO
             fw.CloseStreamWriter();
         }
 
-
-
+        public static void SaveStringToFile(string src, string filenamepath)
+        {
+            FileWriter fw = new(filenamepath);
+            fw.Write(src);
+            fw.CloseStreamWriter();
+        }
     }
 }
 

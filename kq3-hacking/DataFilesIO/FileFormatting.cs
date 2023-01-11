@@ -9,10 +9,9 @@ namespace kq3_hacking.DataFilesIO
 
         public static void RunTrials()
         {
-            FormatAllFiles(SOURCE_DIR);
+            // FormatAllFiles(SOURCE_DIR);
             // AutoformatFile($"{SOURCE_DIR}rm002.c", "mod");
         }
-
 
         public static void FormatAllFiles(string dir)
         {
@@ -24,22 +23,21 @@ namespace kq3_hacking.DataFilesIO
         }
 
 
-
         private const int TRAIL_COMMENTS_ALIGN_INDEX = 60;
 
         public static void AutoformatFile(string filenamepath, string useSuffix = "")
         {
             List<string> lines = ReadDataFromFile.ReadFileAsStringList(filenamepath);
-            //lines = TokenReplacement(lines, "[", "// [");
-            //lines = TokenReplacement(lines, "// // [", "// [");
-            //lines = TokenReplacement(lines, "\t", "  ");
-            //lines = TokenReplacement(lines, "% include", "#include");
-            //lines = TokenReplacement(lines, "% view", "#view");
-            //lines = TokenReplacement(lines, "% define", "#define");
-            //lines = TokenReplacement(lines, "%message", "#message");
-            //lines = StringLeadsReplacement(lines, ":", "// :");
-            //lines = RemoveDoubleBlankLines(lines);
-            //lines = RemoveLeadingSpacesOnComments(lines);
+            lines = TokenReplacement(lines, "[", "// [");
+            lines = TokenReplacement(lines, "// // [", "// [");
+            lines = TokenReplacement(lines, "\t", "  ");
+            lines = TokenReplacement(lines, "% include", "#include");
+            lines = TokenReplacement(lines, "% view", "#view");
+            lines = TokenReplacement(lines, "% define", "#define");
+            lines = TokenReplacement(lines, "%message", "#message");
+            lines = StringLeadsReplacement(lines, ":", "// :");
+            lines = RemoveDoubleBlankLines(lines);
+            lines = RemoveLeadingSpacesOnComments(lines);
             lines = AlignTrailingComments(lines, TRAIL_COMMENTS_ALIGN_INDEX);
 
             string newName = GetNewName(filenamepath, useSuffix);
