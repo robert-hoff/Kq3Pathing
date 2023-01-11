@@ -401,7 +401,7 @@ if (PO'd.wiz.done)
         {
             chore.to.do = fix.meal;
             chore.minutes = chore.init.minutes;
-            print(23);                                      // [  "I'm starving. Feed me COOKIE!
+            #message 23  "\"I am ravenous. Fix me something immediately!\"";                                      // [  "I'm starving. Feed me COOKIE!
         }
     }
 

@@ -72,13 +72,15 @@ if ((said(look, path) ||
     said(look) ||
     said(look, down, path)))
 {
-    print(1);
+    #message 1  "The winding path spirals steeply down the mountainside. It leads from
+the wizard's house at the top, to the forests of Llewdor below.";
 }
 
 if ((said(look, sky) ||
     said(look, up, sky)))
 {
-    print(2);
+    #message 2  "The sky is darker near the top of the mountain as there are
+dark, swirling clouds surrounding its summit.";
 }
 
 if ((said(look, clouds) ||
@@ -87,13 +89,15 @@ if ((said(look, clouds) ||
     said(look, clouds, sky) ||
     said(look, up, clouds, sky)))
 {
-    print(3);
+    #message 3  "Dark clouds surround the mountain peak, adding a cold and sinister
+feeling.";
 }
 
 if ((said(look, mountain) ||
     said(look, around)))
 {
-    print(4);
+    #message 4  "The lone mountain, with its steep path, rises from the
+forests of Llewdor to a cloud - encircled peak.";
 }
 
 if ((said(look, trees) ||
@@ -102,13 +106,13 @@ if ((said(look, trees) ||
     said(climb, trees) ||
     said(look, plants)))
 {
-    print(5);
+    #message 5  "The foliage is very scant on this steep mountainside.";
 }
 
 if ((said(look, room) ||
     said(look, house)))
 {
-    print(6);
+    #message 6  "It is very difficult to see the wizard's house from this viewpoint.";
 }
 
 // [*****

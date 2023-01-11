@@ -381,7 +381,7 @@ call(lgc.princess);                                         // [she may be charr
 if (spell.cast == sc.map) {
     spell.cast = 0;
     drop(i.magic.map);
-    print(22);
+    #message 22  "As you unroll the delicate map, it crumbles in the intense heat!";
 }
 
 // [do a mini - cartoon to kill dragon
@@ -460,7 +460,8 @@ if (spell.cast == sc.start.storm) {
         --storm.timer;
         if (storm.timer == 1)
         {
-            print(9);
+            #message 9  "Bolts of lightning strike the huge dragon.
+He howls in pain and falls to the ground... dead.";
         }
     }
 
@@ -507,11 +508,11 @@ if (said(kill, dragon))
 {
     if (!dragonDead)
     {
-        print(12);
+        #message 12  "And just how do you propose to do that?";
     }
     else
     {
-        print(13);
+        #message 13  "That would be overkill.";
     }
 }
 
@@ -519,61 +520,67 @@ if ((said(throw, knife) ||
     said(throw, knife, dragon) ||
     said(kill, dragon, with, knife))) {
     if (!has(i.knife)) {
-        print(19);
+        #message 19  "You don't have a knife.";
     }
     else {
         if (dragonDead) {
-            print(21);
+            #message 21  "Do you really think that is necessary?";
         }
         else {
-            print(20);
+            #message 20  "Your little knife would barely nick that big dragon!";
         }
     }
 }
 
 if ((said(look) || said(look, cloud))) {
-    print(1);
+    #message 1  "The dragon has laid waste to this area. The earth is scorched and
+all the trees and plants are charred.";
 }
 
 if (said(look, dragon)) {
     if (!dragonDead) {
-        print(2);
+        #message 2  "The dragon's green scaly body is huge! Its three ugly heads blow flame
+and smoke, while its necks twistand writhe.Ugh!!The
+sight of it makes you shiver.";
     }
     else {
-        print(3);
+        #message 3  "The dragon lies dead upon the ground. He was no match for the
+fury of your magical storm!";
     }
 }
 
 if (said(talk, dragon)) {
     if (!dragonDead) {
-        print(10);
+        #message 10  "Shhh!!! The dragon will hear you!";
     }
     else {
-        print(11);
+        #message 11  "This dragon is dead.";
     }
 }
 
 if (said(look, tree)) {
-    print(14);
+    #message 14  "All of the trees and plants in this area have been burnt to stumps
+by the evil three - headed dragon!";
 }
 
 if (said(look, plant)) {
-    print(15);
+    #message 15  "%m14";
 }
 
 if ((said(climb, up, tree) ||
     said(climb, tree))) {
-    print(16);
+    #message 16  "There are no climbable trees around.";
 }
 
 if ((said(look, up, sky) ||
     said(look, sky))) {
-    print(17);
+    #message 17  "The sky is blue and cloudless above this strange cloud land.";
 }
 
 if ((said(look, on, ground) ||
     said(look, ground))) {
-    print(18);
+    #message 18  "The ground is moist from the constant presence of clouds, but yet
+the trees are burnt and blackened.";
 }
 
 if (current.status == normal.ego &&                         // [falling off the edge
@@ -582,11 +589,11 @@ if (current.status == normal.ego &&                         // [falling off the 
 {
     if (invisibleEgo)
     {
-        print(7);
+        #message 7  "It seems that you have confused being invisible...";
     }
     else
     {
-        print(23);
+        #message 23  "While you have regained visibility...";
     }
 
     sound(s.ego.falling, sound.done);
@@ -599,11 +606,11 @@ if (current.status == normal.ego &&                         // [falling off the 
     if (!hitTimer) {
         if (invisibleEgo)
         {
-            print(8);
+            #message 8  "...with being weightless.";
         }
         else
         {
-            print(24);
+            #message 24  "...you'll never regain conciousness.";
         }
 
         reset.scan.start();

@@ -123,7 +123,7 @@ if (init.log)
 
 if (!first.msg) {
     set(first.msg);
-    print(18);
+    #message 18  "You have entered the cave of the Oracle. You are almost afraid to speak.";
 }
 
 if (sound.done && !seen.oracle) {
@@ -295,24 +295,28 @@ if (have.input) {
             set(next);                                      // [ start the script
         }
         else {
-            print(8);
+            #message 8  "The Oracle is in a deep state of meditation. You are not heard.";
         }
     }
 
     if (said(get, oracle)) {
-        print(13);
+        #message 13  "You can't get an oracle!";
     }
 
     if ((said(look) || said(look, cave) || said(look$in, cave))) {
-        print(7);
+        #message 7  "You have entered the cave of the Oracle, whose image shimmers indistinctly
+above
+a crystal ball.";
     }
 
     if (said(look, oracle)) {
         if (!seen.oracle) {
-            print(9);
+            #message 9  "The Oracle`s image is vague and indistinct, and seems to shimmer slightly
+as he(she, it ? ) hovers over a large crystal ball.The Oracle gazes
+intently into it.";
         }
         else {
-            print(14);
+            #message 14  "The Oracle appears to be deep in meditation.";
         }
     }
 
@@ -320,23 +324,26 @@ if (have.input) {
         said(look, crystal) ||
         said(look$in, ball) ||
         said(look, ball))) {
-        print(10);
+        #message 10  "The clear, polished ball of crystal rests upon a stone dais.
+Within it, you see a
+kaleidoscope of bright colorsand flashing lights, occasionally blurred
+by dark, ominous shadows.";
     }
 
     if ((said(break, ball) ||
         said(break, crystal) ||
         said(get, ball) ||
         said(get, crystal))) {
-        print(11);
+        #message 11  "That is impossible. No mere mortal may touch the mystic ball.";
     }
 
     if ((said(look, outside) || said(look, outside, cave))) {
-        print(12);
+        #message 12  "You see the green countryside of Llewdor out the opening of the cave.";
     }
 
     if (obj.in.room(i.knife, current.room) && said(get, knife)) {
         get(i.knife);
-        print(13);
+        #message 13  "You can't get an oracle!";
     }
 }
 

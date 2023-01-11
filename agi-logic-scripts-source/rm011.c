@@ -91,7 +91,8 @@ if (obj.in.room(i.snakeskin, current.room))
     if ((said(look, snakeskin) ||
         said(look, ground)))
     {
-        print(2);
+        #message 2  "The parched sands of the desert seem to reach forever westward.
+You notice a dried snake skin lying on the hot ground.";
     }
 
     if ((said(get, snakeskin) ||
@@ -102,11 +103,12 @@ if (obj.in.room(i.snakeskin, current.room))
             erase(a.snakeskin);
             get(i.snakeskin);
             score += 1;
-            print(1);
+            #message 1  "You retrieve the dried snake skin from the hot desert sand.
+It is delicate and could easily crumble.";
         }
         else
         {
-            print(10);
+            #message 10  "You're not close enough.";
         }
     }
 }
@@ -114,18 +116,20 @@ if (obj.in.room(i.snakeskin, current.room))
 if ((said(look, desert) ||
     said(look)))
 {
-    print(11);
+    #message 11  "The parched sands of the desert seem to reach forever westward.";
 }
 
 if (said(look, plants))
 {
     if (near.shrub)
     {
-        print(4);
+        #message 4  "The flora in this hot, dry desert is scant. The only plants that grow are
+cactus, thorny shrubs, and an occasional stunted tree.";
     }
     else
     {
-        print(7);
+        #message 7  "All of the cactus around here are too prickly to be touched. You could wind
+up with a handful of thorns.";
     }
 }
 
@@ -134,11 +138,12 @@ if ((said(get, plants) ||
 {
     if (near.shrub)
     {
-        print(7);
+        #message 7  "All of the cactus around here are too prickly to be touched. You could wind
+up with a handful of thorns.";
     }
     else
     {
-        print(10);
+        #message 10  "You're not close enough.";
     }
 }
 

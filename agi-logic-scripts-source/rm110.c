@@ -30,13 +30,14 @@ if (!have.input) { goto exit; }
 if ((said(look) ||
     said(look, ground)))
 {
-    print(1);
+    #message 1  "There is a rushing stream flowing through the forest floor.";
 }
 
 if ((said(look, stream) ||
     said(look, water)))
 {
-    print(3);
+    #message 3  "Clear water flows over and
+around the rocks of the stream.Wet mud lines its banks.";
 }
 
 if ((said(get, mud) ||
@@ -47,23 +48,24 @@ if ((said(get, mud) ||
 {
     if (has(i.mud))
     {
-        print(9);
+        #message 9  "You are already carrying it.";
     }
     else
     {
         if (!near.mud)
         {
-            print(10);
+            #message 10  "There is no mud around here.";
         }
         else
         {
             if (!has(i.spoon))
             {
-                print(4);
+                #message 4  "The thought of carrying around a handful of mud doesn't appeal to you.";
             }
             else
             {
-                print(5);
+                #message 5  "With the wooden spoon you kneel and scoop a spoonful of wet mud from
+the stream's bank. You carry it with you.";
                 get(i.mud);
                 drop(i.spoon);
                 if (!found.mud)
@@ -80,7 +82,8 @@ if ((said(get, water, stream) ||
     said(get, water) ||
     said(get, water, cup)))
 {
-    print(7);
+    #message 7  "You have no need to carry around the stream water. If you are thirsty
+then just get a drink.";
 }
 
 if ((said(get, drink, water, stream) ||
@@ -92,11 +95,12 @@ if ((said(get, drink, water, stream) ||
 {
     if (near.water)
     {
-        print(8);
+        #message 8  "Cupping your hands, you bring the
+refreshing water to your lips and drink deeply.Aaahhhh!!";
     }
     else
     {
-        print(11);
+        #message 11  "You need to move closer.";
     }
 }
 

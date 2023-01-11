@@ -221,10 +221,12 @@ if (next && script == behind.bar) {                         // [ this is where w
 if (next && script == to.stove) {                           // [ go to stove
     if (!free.booze) {                                      // [ ego is NOT buying
         if (customers == pirates) {
-            print(1);
+            #message 1  "One of the rowdy seamen yells to the barmaid,
+\"Wench! Come o'er here with more rum!\"";
         }
         else {
-            print(50);
+            #message 50  "One of the surly-looking characters yells to the barmaid,
+\"Wench! Come o'er here with more ale!\"";
         }
     }
     reset(free.booze);
@@ -379,7 +381,10 @@ if (aSecondPassed) {
     if (fly.timer == 1 && current.status == fly &&
         posn(ego, 0, 0, 160, 160)
         && customers == bandits && !heard.bandits) {
-        print(11);
+        #message 11  "You overhear snatches of the two bandits' conversation,
+\"...squirmed jist like a pig. An' that rope ya rigged inside o' that
+big oak tree works great!Now nobody'll 'ere find ar' hideout. Why,
+I'll bet even that wizard...\"";
         set(heard.bandits);
         score += 3;
     }
@@ -430,10 +435,10 @@ if (have.input) {                                           // [ /* a real time 
 
     if ((said(sit, table) || said(sit, down, table))) {
         if (customers == none) {
-            print(44);
+            #message 44  "You don't have time to be sitting around in taverns.";
         }
         else {
-            print(45);
+            #message 45  "Your presence would not be appreciated.";
         }
     }
 
@@ -446,12 +451,12 @@ if (have.input) {                                           // [ /* a real time 
     }
 
     if ((said(look, kegs) || said(look$in, kegs))) {
-        print(46);
+        #message 46  "Kegs of ale line the wall.";
     }
 
     if (said(look, table)) {
         if (customers == none) {
-            print(49);
+            #message 49  "A table, devoid of customers, rests against the wall.";
         }
         else {
             addn(work, 7);                                  // [msgs  7, 8, 9
@@ -466,89 +471,95 @@ if (have.input) {                                           // [ /* a real time 
         print.f(work);
     }
 
-    if (said(look, barmaid)) { print(10); }
+    if (said(look, barmaid)) { #message 10  "The buxom barmaid has an air of hardened determination. You get the feeling
+that she doesn't take any guff from anybody."; }
 
     if ((said(look, out, window) || said(look, window) ||
         said(look, door) ||
         said(look, outside))) {
-        print(12);
+        #message 12  "You see the buildings of the village, and the ocean beyond.";
     }
 
     if (said(open, window)) {
-        print(53);
+        #message 53  "The window does not open.";
     }
 
     if ((said(get, men) || said(touch, stove) ||
         said(get, stove) ||
         said(kill, anyword))) {
-        print(13);
+        #message 13  "Surely, you jest!";
     }
 
-    if (said(look, stove)) { print(14); }
+    if (said(look, stove)) { #message 14  "It is a little pot-bellied woodstove."; }
 
-    if (said(look, bar)) { print(15); }
+    if (said(look, bar)) { #message 15  "The bar is a rough-hewn slab of oak."; }
 
     if ((said(look, swords) ||
         said(look, tapestry) ||
         said(look, wall))) {
-        print(16);
+        #message 16  "A tattered, faded tapestry hangs next to a pair of rusty swords.";
     }
 
     if ((said(get, swords) ||
         said(get, tapestry))) {
-        print(17);
+        #message 17  "The decorations are firmly attached to the wall, and will not come off.";
     }
 
     if (said(look, under, tapestry)) {
-        print(18);
+        #message 18  "You lift a corner of the tapestry, and see the dirty wall behind it.";
     }
 
     if (said(get, beer)) {
-        print(47);
+        #message 47  "You need to buy it first.";
     }
 
     if ((said(look, shelf) || said(look, bottle))) {
-        print(2);
+        #message 2  "Bottles of rum and wine sit atop shelves behind the bar.";
     }
 
     if (said(look, beer)) {
-        print(54);
+        #message 54  "Bottles of rum and wine sit atop shelves behind the bar.
+Kegs of ale line the wall.";
     }
 
     if ((said(get, girl) || said(kiss, girl))) {
-        print(48);
+        #message 48  "\"Watch it, fella!\"";
     }
 
     if (customers == none) {
         if ((said(talk) ||
             said(talk, barmaid))) {
-            print(19);
+            #message 19  "She tosses her head, and replies, \"What'll it be fer ya, sir?
+A good pull o'
+ale, or 'd ya rather a dram o' rum ? My, aren't ye the han'some one!\"";
         }
 
         if ((said(talk, men) ||
             said(look, men))) {
-            print(23);
+            #message 23  "There is nobody here except the pretty barmaid.";
         }                                                   // [m none
     }
 
                                                             // [ buying a round
     if ((said(order, drinks) || said(order, drinks, men))) {
         if (customers == none) {
-            print(7);
+            #message 7  "There is nobody here except you and the barmaid.";
         }
         else {
             if (!money.to.burn) {
-                print(20);                                  // [ no money
+                #message 20  "The barmaid retorts, \"Go on, ya deadbeat. Drinks cost money, ya know!\"";                                  // [ no money
             }
             else {
                 --gold.coin.count;
                 if (script == to.stove) {                   // [ ready to serve
-                    print(51);
+                    #message 51  "\"Right ya go, sir.\" says the pretty barmaid. \"This round's on you!\"
+\"It'll be one gold coin.\"";
                     script.timer = 2;                       // [ force the serve
                     set(free.booze);
                 }
                 else {
-                    print(52);
+                    #message 52  "\"Right ya go, sir.\" says the pretty barmaid. \"The next round's on you!\"
+\"That'll be one gold coin.\"";
                 }
             }
         }
@@ -557,12 +568,12 @@ if (have.input) {                                           // [ /* a real time 
     if ((said(buy, drink) || said(buy, beer) ||
         said(buy, liquor))) {
         if (script != to.stove) {
-            print(27);
+            #message 27  "\"I'll be right with ya sir,\" the barmaid says, winking.";
         }
         else {
             if (ego.location == near.bar) {
                 if (!money.to.burn) {
-                    print(20);
+                    #message 20  "The barmaid retorts, \"Go on, ya deadbeat. Drinks cost money, ya know!\"";
                 }
                 else {
                     --gold.coin.count;
@@ -573,27 +584,31 @@ if (have.input) {                                           // [ /* a real time 
                     drunk.timer = 10;
                     if (current.status != drunk) {
                         current.status = drunk;
-                        print(21);
+                        #message 21  "The barmaid hands you a glass, and the potent liquid burns as it slides down
+your parched throat.It hits bottom, and you suddenly feel a bit woozy.";
                                                             // [            shake.screen(1);
                     }
                     else {
-                        print(22);
+                        #message 22  "That one tasted even better than the last. Just one more sounds like a good
+idea.";
                     }
                 }
             }
             else {                                          // [ not near bar message
-                print(37);
+                #message 37  "You are too far away.";
             }
         }
     }
 
     if (customers == pirates) {
         if ((said(talk) || said(talk, barmaid))) {
-            print(34);
+            #message 34  "%m36 \"What can I do fer ya sir? Can I get ya somethin'? I
+can't spend much time with ya, 'cause I gotta handle these seafarin'
+scoundrels that come inta town t'day.\"";
         }
 
         if (said(talk)) {
-            print(24);
+            #message 24  "Talk to whom?";
         }
 
         if (said(talk, men)) {
@@ -615,7 +630,7 @@ if (have.input) {                                           // [ /* a real time 
             }
 
             if (captain.pissed) {
-                print(25);
+                #message 25  "The sailors just ignore you.";
             }
         }
 
@@ -624,7 +639,7 @@ if (have.input) {                                           // [ /* a real time 
             (said(give, gold, rol) ||
                 said(give, purse, rol))) {
             if (captain.pissed) {
-                print(25);
+                #message 25  "The sailors just ignore you.";
             }
             else {
                 reset(talking.to.pirates);
@@ -637,16 +652,21 @@ if (have.input) {                                           // [ /* a real time 
                     erase(a.pirate.2);
                     erase(a.captain);
                     set(paid.pirates);
-                    print(32);
+                    #message 32  "%m31 \"Aye lad, I sees ya do have a wee bit 'o gold. It's less'n me
+reg'lar  fare, but I'll gives ya passage anyways.
+We'll be waitin' fer ya at the wharf, but not fer long.\"
+The captain and his men down their rum in one long
+draught, then leave the tavern.";
                 }
                 else {
                     set(captain.pissed);
                     if (has(i.purse.empty)) {
                         drop(i.purse.empty);
-                        print(42);
+                        #message 42  "%m31 %m33";
                     }
                     else {
-                        print(33);
+                        #message 33  "\"Ya little cheat! Ya've got not a farthing! Ya was tryin' t' weasel
+aboard me ship!!Go on with ya, git outta me sight!\"";
                     }
                 }
             }
@@ -655,25 +675,29 @@ if (have.input) {                                           // [ /* a real time 
 
     if (customers == bandits) {
         if ((said(talk) || said(talk, barmaid))) {
-            print(35);
+            #message 35  "%m36 Without taking her eyes off the two men, she says, \"I'll be happy to
+take yer order, but be quick 'bout it 'cause those two are keepin' me
+hoppin'.\"";
         }
         if (said(talk)) {
-            print(24);
+            #message 24  "Talk to whom?";
         }
         if (said(talk, men)) {
             if (!talked.bandits) {
                 set(talked.bandits);
-                print(26);
+                #message 26  "One of the ugly rogues scowls at you as he says, \"Beat it, kid!\"";
             }
             else {
-                print(43);
+                #message 43  "The bandits are pointedly ignoring you. Don't press your luck.";
             }
         }
         if (said(look, men)) {
-            print(38);
+            #message 38  "The two scroungy thieves are dirty and unkempt,
+and their clothes are smelly.Cruelty darkens their faces.These
+look like good people to avoid.";
         }
         if ((said(kill, men) || said(rob, men))) {
-            print(13);
+            #message 13  "Surely, you jest!";
         }
 
     }

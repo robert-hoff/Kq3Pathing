@@ -188,44 +188,49 @@ if (posn(ego, 77, 140, 99, 148)) {
 
                         if (said(look, under, table))
                         {
-                            print(33);
+                            #message 33  "You drop to your hands and knees and look under the pine table. You see
+nothing but a clean floor.";
                         }
 
                     if ((said(look) ||
                         said(look, room) ||
                         said(look, cottage)))
                     {
-                        print(1);
+                        #message 1  "You are in the charming home of the Three Bears.  Mama Bear certainly
+does keep her house nice and cozy.";
                     }
 
                     if ((said(look, fire) ||
                         said(look, fireplace)))
                     {
-                        print(3);
+                        #message 3  "There is a cheery fire crackling in the fireplace, even though it's
+summer.";
                     }
 
                     if (said(open, window)) {
-                        print(31);
+                        #message 31  "The window does not open.";
                     }
 
                     if ((said(look, out, window) || said(look, window) ||
                         said(look, door) ||
                         said(look, outside)))
                     {
-                        print(4);
+                        #message 4  "You see the forest and Mama Bear's flower garden outside.";
                     }
 
                     if (said(look, stairs))
                     {
-                        print(5);
+                        #message 5  "A rustic wooden stairway leads to the second floor.";
                     }
 
                     if (said(look, chairs))
                     {
                         if (!closestChair) {
-                            print(34);
+                            #message 34  "The chairs are arranged in a cozy conversational grouping around the
+dining table.";
                             if (baby.chair.broke) {
-                                print(35);
+                                #message 35  "It appears however, that a previous conversation
+may have gotten out of hand.";
                             }
                         }
 
@@ -233,22 +238,22 @@ if (posn(ego, 77, 140, 99, 148)) {
                         {
                             if (baby.chair.broke)
                             {
-                                print(6);
+                                #message 6  "There is only a splintered pile of wood that was once a small chair.";
                             }
                             else
                             {
-                                print(26);
+                                #message 26  "The cute little wooden chair looks sturdily built.";
                             }
                         }
 
                         if (closestChair == mama's)
                         {
-                            print(7);
+                            #message 7  "The medium-sized chair looks very soft and comfortable.";
                         }
 
                         if (closestChair == papa's)
                         {
-                            print(8);
+                            #message 8  "The wooden chair is very large, and solidly built. It must be Papa Bear's.";
                         }
                     }
 
@@ -257,14 +262,14 @@ if (posn(ego, 77, 140, 99, 148)) {
                         said(sit))) {
                         if (!closestChair)
                         {
-                            print(9);
+                            #message 9  "You can't reach it from here.";
                         }
 
                         if (closestChair == baby's)
                         {
                             if (baby.chair.broke)
                             {
-                                print(25);
+                                #message 25  "%m6 You can't sit on that!";
                             }
                             else
                             {
@@ -291,17 +296,17 @@ if (posn(ego, 77, 140, 99, 148)) {
                     {
                         if (!bowlsOnTable)
                         {
-                            print(2);
+                            #message 2  "The large wooden table is clean and polished.";
                         }
 
                         if (bowlsOnTable == 2)
                         {
-                            print(29);
+                            #message 29  "%m2 %m27";
                         }
 
                         if (bowlsOnTable == 3)
                         {
-                            print(30);
+                            #message 30  "%m2 %m28";
                         }
                     }
 
@@ -311,17 +316,20 @@ if (posn(ego, 77, 140, 99, 148)) {
                     {
                         if (!bowlsOnTable)
                         {
-                            print(32);
+                            #message 32  "Where?";
                         }
 
                         if (bowlsOnTable == 2)
                         {
-                            print(27);
+                            #message 27  "There are two bowls of porridge on the table. One is
+too hot, and the other is too cold.";
                         }
 
                         if (bowlsOnTable == 3)
                         {
-                            print(28);
+                            #message 28  "There are three bowls of porridge on the table. You
+are surprised that bears eat porridge.You always thought
+they ate honey and berries.";
                         }
                     }
 
@@ -331,23 +339,23 @@ if (posn(ego, 77, 140, 99, 148)) {
                     {
                         if (!bowlsOnTable)
                         {
-                            print(32);
+                            #message 32  "Where?";
                         }
                         else
                         {
                             if (!closestPorridge)
                             {
-                                print(19);                        // [too far away
+                                #message 19  "You're not close enough.";                        // [too far away
                             }
 
                             if (closestPorridge == papa's)
                             {
-                                print(15);
+                                #message 15  "%m13much too hot.";
                             }
 
                             if (closestPorridge == mama's)
                             {
-                                print(16);
+                                #message 16  "%m13much too cold.";
                             }
 
                             if (closestPorridge == baby's)
@@ -357,7 +365,8 @@ if (posn(ego, 77, 140, 99, 148)) {
                                     erase(aBabyBowl);
                                     get(i.porridge);
                                     drop(i.porridge);
-                                    print(17);
+                                    #message 17  "%m13just right! You take another bite, then another, and another.
+Before you realize it, you have downed the entire bowl.";
                             }
                         }
                     }
@@ -365,17 +374,17 @@ if (posn(ego, 77, 140, 99, 148)) {
                     if ((said(get, bowl)
                         || said(get, bowl, porridge) || said(get, porridge))) {
                         if (!bowlsOnTable) {
-                            print(32);
+                            #message 32  "Where?";
                         }
                         else {
                             if (!closestPorridge) {
-                                print(19);
+                                #message 19  "You're not close enough.";
                             }
                             if (closestPorridge == papa's) {
-                                print(20);
+                                #message 20  "%m14much too hot.";
                         }
                         if (closestPorridge == mama's) {
-                            print(21);
+                            #message 21  "%m14much too cold.";
                     }
                     if (closestPorridge == baby's) {
                         bowlsOnTable = 2;
@@ -383,7 +392,7 @@ if (posn(ego, 77, 140, 99, 148)) {
                         erase(aBabyBowl);
                         get(i.porridge);
                         score += 2;
-                        print(22);
+                        #message 22  "%m14just right! So, you take it with you.";
                 }
         }
 }
@@ -453,7 +462,7 @@ if (nextScript)
     }
 
     if (script == 6) {
-        print(10);
+        #message 10  "This chair feels just right.";
         scriptSeconds = 5;
     }
 
@@ -462,7 +471,7 @@ if (nextScript)
     }
 
     if (script == 8) {
-        print(36);
+        #message 36  "Oh, oh!";
         scriptSeconds = 2;
     }
 
@@ -497,7 +506,8 @@ if (nextScript)
 
     if (script == 103)
     {
-        print(11);
+        #message 11  "You sink deeply into the overstuffed chair... too deeply! This chair is much
+too soft.";
         scriptSeconds = 4;
     }
 
@@ -534,7 +544,8 @@ if (nextScript)
     }
 
     if (script == 203) {
-        print(12);
+        #message 12  "You feel very small and uncomfortable in this big chair.
+This chair is much too hard.";
         scriptSeconds = 3;
     }
 

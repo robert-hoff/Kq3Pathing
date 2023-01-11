@@ -20,50 +20,50 @@
 // [for punishment.  You can get the key from the top of the closet without
 // [waking him.
 
-#define  dumper.x        82                                 // [  where you dump the chamber pot
+#define  dumper.x         82                                 // [  where you dump the chamber pot
 #define  dumper.y        122
-#define  alter.ego.y      106                               // [  where the mirror image echoes
+#define  alter.ego.y     106                               // [  where the mirror image echoes
 
-#define  closet.shut      0                                 // [  bedroom.status values
-#define  closet.open      1
+#define  closet.shut            0                                 // [  bedroom.status values
+#define  closet.open            1
 #define  looked.through.closet  2
-#define  got.map        3
+#define  got.map                3
 
-#define  near.potty      lf0
-#define  near.bed        lf1
-#define  near.window      lf2
-#define  near.closet      lf3
-#define  near.mirror      lf4
-#define  near.dresser      lf5
-#define  near.rug        lf6
-#define  on.rug        lf7
-#define  in.way.of.drawer    lf8
-#define  talked.to.wiz      lf9
-#define  closet.done      lf10
-#define  zzz's.done      lf11
-#define  drawer.1.done      lf12
-#define  drawer.2.done      lf13
+#define  near.potty           lf0
+#define  near.bed             lf1
+#define  near.window          lf2
+#define  near.closet          lf3
+#define  near.mirror          lf4
+#define  near.dresser         lf5
+#define  near.rug             lf6
+#define  on.rug               lf7
+#define  in.way.of.drawer     lf8
+#define  talked.to.wiz        lf9
+#define  closet.done         lf10
+#define  zzz's.done          lf11
+#define  drawer.1.done       lf12
+#define  drawer.2.done       lf13
 #define  house.wiz.init'd    lf14
 #define  next.dump.script    lf15
-#define  lcl.wiz.arrived    lf16
+#define  lcl.wiz.arrived     lf16
 
-#define  zzz's.timer      lv0
-#define  ego.exit.timer      lv1
-#define  got.pot.x        lv2
-#define  got.pot.y        lv3
-#define  dump.script      lv4
-#define  alter.ego.x      lv5
-#define  drawer.1.timer      lv6
-#define  drawer.2.timer      lv7
-#define  door.timer      lv8
-#define  lcl.wiz.script      lv9
-#define  bedroom.status      lv10
+#define  zzz's.timer          lv0
+#define  ego.exit.timer       lv1
+#define  got.pot.x            lv2
+#define  got.pot.y            lv3
+#define  dump.script          lv4
+#define  alter.ego.x          lv5
+#define  drawer.1.timer       lv6
+#define  drawer.2.timer       lv7
+#define  door.timer           lv8
+#define  lcl.wiz.script       lv9
+#define  bedroom.status       lv10
 
-% object  a.alter.ego      1
-% object  a.chamber.pot      2
+% object  a.alter.ego         1
+% object  a.chamber.pot       2
 % object  a.closet.doors      3
-% object  a.drawer.2      4
-% object  a.drawer.1      5
+% object  a.drawer.2          4
+% object  a.drawer.1          5
 
 if (init.log)
 {
@@ -302,12 +302,14 @@ if ((said(look, room) ||
     said(look) ||
     said(look, bedroom)))
 {
-    print(1);
+    #message 1  "You look at Manannan's elegant bed chamber. You see fine
+furnishings from a regal bed to a beautifully carved closet.
+You can't help but compare this handsome room to your own meager cubicle.";
 }
 
 if (said(look, vanity))
 {
-    print(41);
+    #message 41  "There is a small drawer in the front of the mahogany vanity.";
 }
 
 if ((said(look, mirror) ||
@@ -315,18 +317,20 @@ if ((said(look, mirror) ||
 {
     if (!near.mirror)
     {
-        print(27);
+        #message 27  "The beveled mirror appears wavy because of imperfections in the glass. %m41";
     }
     else
     {
         current.loop(ego, work);
         if (work == facing.front)
         {
-            print(23);
+            #message 23  "The back of your hair looks cute.";
         }
         else
         {
-            print(4);
+            #message 4  "Imperfections in the glass make your reflection wavy; nevertheless, your
+rags show up all too clearly.But, though in rags, your face is handsome
+and your body strong.";
         }
     }
 }
@@ -337,11 +341,12 @@ if (said(look, bed))
 {
     if (wiz.status == sleeping)
     {
-        print(19);
+        #message 19  "Manannan is asleep on his great bed. His snores are so loud they
+rumble off the walls.Be quiet; you wouldn't want to disturb him.";
     }
     else
     {
-        print(7);
+        #message 7  "Heavy velvet curtains drape the regal mahogany bed.";
     }
 }
 
@@ -349,11 +354,12 @@ if (said(look, under, bed))
 {
     if (near.bed)
     {
-        print(8);
+        #message 8  "Dropping to your hands and knees, you peer under the bed. There is
+absolutely nothing there.";
     }
     else
     {
-        print(32);
+        #message 32  "You are not close enough.";
     }
 }
 
@@ -365,36 +371,40 @@ if ((said(lie, bed) ||
     said(go, sleep) ||
     said(go, bed)))
 {
-    print(18);
+    #message 18  "As comfortable as the bed looks, you have no interest
+in lying on the hateful wizard's bed.";
 }
 
 // [  DO THE RUG.
 
 if (said(look, rug))
 {
-    print(13);
+    #message 13  "A beautiful rug adorns the floor. Its thick wool is woven into a
+colorful design.";
 }
 
 if (said(get, rug))
 {
-    print(42);
+    #message 42  "The carpet is too big and heavy to carry around.";
 }
 
 if (said(look, under, rug))
 {
     if (on.rug)
     {
-        print(30);
+        #message 30  "You tug at the rug for quite a while... before realizing you're standing
+on it!";
     }
     else
     {
         if (near.rug)
         {
-            print(14);
+            #message 14  "You lift up the rug in several places and look under it.
+Sad to say, all you see is the dust you swept under there yesterday.";
         }
         else
         {
-            print(32);
+            #message 32  "You are not close enough.";
         }
     }
 }
@@ -407,7 +417,7 @@ if ((said(look, top, dresser) ||
     said(look, on, dresser) ||
     said(look, dresser, top)))
 {
-    print(10);
+    #message 10  "There is nothing exciting on top of the dresser.";
 }
 
 if ((said(look, drawer) ||
@@ -415,11 +425,11 @@ if ((said(look, drawer) ||
 {
     if (near.mirror)
     {
-        print(41);
+        #message 41  "There is a small drawer in the front of the mahogany vanity.";
     }
     else
     {
-        print(9);
+        #message 9  "The elegant dresser is made of mahogany. Its drawers are graced by beautiful gold knobs.";
     }
 }
 
@@ -463,7 +473,7 @@ if ((said(look$in, dresser) ||
             {
                 if (in.way.of.drawer)
                 {
-                    print(38);
+                    #message 38  "You bang the drawer against your shins repeatedly. (Try backing up!)";
                 }
                 else
                 {
@@ -475,12 +485,12 @@ if ((said(look$in, dresser) ||
         {
             if (near.closet)
             {
-                print(36);
-                print(39);
+                #message 36  "Quietly opening the drawer below the closet, you discover...";
+                #message 39  "nothing that interests you.";
             }
             else
             {
-                print(32);
+                #message 32  "You are not close enough.";
             }
         }
     }
@@ -493,11 +503,11 @@ if (said(look, closet))
     if (!near.closet &&
         obj.in.room(i.key, current.room))
     {
-        print(40);
+        #message 40  "%m2 There may be something metallic on its top.";
     }
     else
     {
-        print(2);
+        #message 2  "The closet is fashioned of ornately carved mahogany.";
     }
 }
 
@@ -511,7 +521,7 @@ if (bedroom.status == closet.shut &&
 {
     if (!near.closet)
     {
-        print(32);
+        #message 32  "You are not close enough.";
     }
     else
     {
@@ -542,12 +552,14 @@ if (bedroom.status)
     {
         if (!near.closet)
         {
-            print(32);
+            #message 32  "You are not close enough.";
         }
         else
         {
             bedroom.status = got.map;
-            print(28);
+            #message 28  "You're startled to discover an ancient parchment scroll. Its ink has faded,
+but it seems to be a map.Taking this treasure,
+you leave everything else exactly as it was.";
             get(i.magic.map);
             score += 7;
         }
@@ -561,11 +573,12 @@ if (bedroom.status)
     {
         if (!near.closet)
         {
-            print(32);
+            #message 32  "You are not close enough.";
         }
         else
         {
-            print(3);
+            #message 3  "You see voluminous velvet robes,
+satin slippers, peaked hats, and soft linen gowns.";
             bedroom.status = looked.through.closet;
         }
     }
@@ -579,7 +592,7 @@ if (bedroom.status &&
 {
     if (!near.closet)
     {
-        print(32);
+        #message 32  "You are not close enough.";
     }
     else
     {
@@ -602,18 +615,20 @@ if ((said(search, top$of, closet) ||
 {
     if (!near.closet)
     {
-        print(12);
+        #message 12  "You are not close enough to reach the top of the closet.";
     }
     else
     {
         if (!obj.in.room(i.key, current.room))
         {
-            print(6);
+            #message 6  "You feel along the top of the closet. Your hand comes back dusty.";
         }
         else
         {
             get(i.key);
-            print(5);
+            #message 5  "You run a hand along the top of the closet. Suddenly, you touch something
+metallic.Grabbing it, you discover...
+a small brass key!What could it unlock ? ";
             if (!found.key)
             {
                 set(found.key);
@@ -630,11 +645,11 @@ if ((said(open, window) ||
 {
     if (!near.window)
     {
-        print(32);
+        #message 32  "You are not close enough.";
     }
     else
     {
-        print(17);
+        #message 17  "Manannan's bedroom window is always open. He likes fresh air.";
     }
 }
 
@@ -643,7 +658,7 @@ if ((said(look, bowl) ||
     said(look, floor) ||
     said(look, chamber$pot)))
 {
-    print(29);
+    #message 29  "Manannan's chamber pot is on the floor beside his bed.";
 }
 
 if ((said(use, bowl) ||
@@ -652,11 +667,11 @@ if ((said(use, bowl) ||
 {
     if (!near.potty)
     {
-        print(32);
+        #message 32  "You are not close enough.";
     }
     else
     {
-        print(33);
+        #message 33  "A feeling of great relief spreads over you.";
     }
 }
 
@@ -666,12 +681,12 @@ if ((said(look$in, bowl) ||
 {
     if (!near.potty)
     {
-        print(32);
+        #message 32  "You are not close enough.";
     }
     else
     {
-        print(35);
-        print(31);
+        #message 35  "You look inside Manannan's chamber pot...";
+        #message 31  "and wish you hadn't!!";
     }
 }
 
@@ -685,7 +700,7 @@ if (!handsOff &&
 {
     if (!near.potty)
     {
-        print(32);
+        #message 32  "You are not close enough.";
     }
     else
     {
@@ -700,7 +715,8 @@ if (wiz.status == sleeping)
 {
     if (said(look, wizard))
     {
-        print(19);
+        #message 19  "Manannan is asleep on his great bed. His snores are so loud they
+rumble off the walls.Be quiet; you wouldn't want to disturb him.";
     }
 
     if ((said(talk, wizard) ||
@@ -711,7 +727,9 @@ if (wiz.status == sleeping)
         if (!talked.to.wiz)
         {
             set(talked.to.wiz);
-            print(20);
+            #message 20  "You speak softly to the sleeping wizard. \"Hhrrummph!\" he
+grumbles sleepily, thumbing his nose as if at a fly.But, soon the
+snoring resumes again.";
         }
         else
         {
@@ -762,7 +780,8 @@ if (next.dump.script)
 
     if (dump.script == 3)
     {
-        print(24);
+        #message 24  "Wrinkling your nose in disgust, you throw the smelly contents of the
+chamber pot out the open window.What a way to make a living!";
         move.obj.v(ego, ego.x, got.pot.y, step, next.dump.script);
     }
 
@@ -803,11 +822,12 @@ if (drawer.1.timer == 22)
     {
         get(i.mirror);
         score += 1;
-        print(37);
+        #message 37  "In the vanity drawer are many uninteresting items, although the wizard's
+hand mirror may come in handy.You grab it, then close the drawer.";
     }
     else
     {
-        print(34);
+        #message 34  "You find baubles and trinkets which do not interest you.";
     }
 }
 
@@ -839,11 +859,12 @@ if (drawer.2.timer == 22)
     {
         get(i.rose.essence);
         score += 1;
-        print(11);
+        #message 11  "%m34 Suddenly, your eye falls on something that does... a vial labeled
+\"Rose Petal Essence,\" which you eagerly take.";
     }
     else
     {
-        print(34);
+        #message 34  "You find baubles and trinkets which do not interest you.";
     }
 }
 
@@ -935,7 +956,10 @@ if (lcl.wiz.arrived)
     if (lcl.wiz.script == 102)
     {
         set.cel(a.wiz, 1);
-        print(22);
+        #message 22  "You try to be quiet, but an unfortunate squeak wakes Manannan. He
+turns in his bed, then sits up, staring angrily at you.
+\"You know you're to stay out of my things,\" he growls. \"I've no
+choice but to punish you for this.\"";
         wiz.timer = 4;
     }
 
@@ -990,7 +1014,9 @@ if (lcl.wiz.arrived)
     if (lcl.wiz.script == 202)
     {
         set.cel(a.wiz, 1);
-        print(21);
+        #message 21  "This time your words awaken Manannan. A grumpy look comes to his
+face. \"Don't you have anything better to do, boy, than to come in MY
+bed chamber and wake me from my peaceful repose ? \"";
         wiz.timer = 4;
     }
 

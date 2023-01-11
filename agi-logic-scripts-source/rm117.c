@@ -85,31 +85,33 @@ if (snowman.on.screen && have.input)
 {
     if (said(look, snowman))
     {
-        print(8);
+        #message 8  "The hairy creature is huge and monstrous!! It advances toward you
+menacingly.Don't just stand there, RUN!!!";
     }
 
     if (said(talk, snowman))
     {
-        print(9);
+        #message 9  "You attempt to speak to the hairy monster, but are cut off by a
+ferocious ROOAAARRRRR!!";
     }
 
     if ((said(get, snowman) ||
         said(catch, snowman)))
     {
-        print(10);
+        #message 10  "Now THAT'S the most ridiculous thing I've EVER hoid!!";
     }
 
     if ((said(kill, snowman) ||
         said(hit, snowman)))
     {
-        print(11);
+        #message 11  "Get serious!!";
     }
 
     if ((said(kiss, snowman) ||
         said(rub, snowman) ||
         said(pet, snowman)))
     {
-        print(12);
+        #message 12  "Sure. Right. Uh huh.";
     }
 }
 
@@ -134,7 +136,7 @@ if (snowman.script == make.snowman.come)
     draw(a.snowman);
     if (!init.log && current.room != 60)
     {
-        print(1);
+        #message 1  "What is this thing? OH, NO! It's the abominable snowman!!";
     }
     ++snowman.script;                                       // [  now ss = snowman.init.done;
 }
@@ -181,13 +183,16 @@ if (snowman.on.screen)
             start.motion(a.snowman);
             start.cycling(a.snowman);
             current.status = being.dragged;
-            print(3);
+            #message 3  "The terrible, hairy creature grabs you with bone-crushing force!
+You resist, but it is no use.";
             ignore.block(a.snowman);
 
             if (current.room == 60)
             {
                 erase(a.snowman);
-                print(5);
+                #message 5  "The despicable creature grabs you roughly around the neck and...
+and... it's too horrible to describe! Suffice it to say, you are
+quite dead.";
                 set(certain.death);
             }
             else
@@ -199,13 +204,15 @@ if (snowman.on.screen)
         if (snowman.script == snowman.off.screen)
         {
             erase(a.snowman);
-            print(4);
+            #message 4  "He carries you away to his cave, where you meet an early (and unspeakable)
+demise.";
             set(certain.death);
         }
 
         if (snowman.script == exit.stage.left)
         {
-            print(2);
+            #message 2  "The abominable snowman seems quite confused by this! He stares
+in amazement, then heads back to his cave.";
 
             ignore.blocks(a.snowman);
             set.priority(a.snowman, 15);

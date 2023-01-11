@@ -105,7 +105,8 @@ if (current.status == on.big.box && hit.special) {
 // [ while we're here...
 // [ sleep spell detection
 if (spell.cast == sc.start.sleep) {
-    print(12);
+    #message 12  "As your sleep spell takes effect, a silence suddenly descends over
+the ship.";
     spell.cast = 0;                                         // [ cancel before room 0 says something
     set(crewAsleep);
     voyage.seconds = 0;
@@ -124,12 +125,12 @@ if (aSecondPassed && booboo) {
         set.loop(ego, facing.front);
     }
     if (booboo == 5) {
-        print(13);
-        print(14);
+        #message 13  "\"Wait a second...\"";
+        #message 14  "\"Who's steering the ship?\" you ask.";
     }
     if (booboo == 0) {
-        print(15);
-        print(19);
+        #message 15  "Unfortunately, there is no reply.";
+        #message 19  "With no one to steer the ship, you are doomed to drift at sea forever.";
         stop.cycling(ego);
         set(certain.death);
     }
@@ -141,35 +142,37 @@ if (aSecondPassed && booboo) {
 if (said(look, box)) {
     if (current.room == 85) {
         if (boxState == current.room) {
-            print(7);
+            #message 7  "%m6 There is also a smaller crate here.";
         }
         else {
-            print(6);
+            #message 6  "You notice many crates and boxes in the cargo hold. One, in particular,
+captures your attention, for it lies directly under the dangling rope
+ladder!";
         }
     }
     else {
         if (boxState == current.room) {
-            print(9);
+            #message 9  "%m8 There is also a smaller crate here.";
         }
         else {
-            print(8);
+            #message 8  "Large wooden crates are stacked along one wall of the hold.";
         }
     }
 }
 
 if ((said(open, up, crate) || said(open, box))) {
-    print(1);
+    #message 1  "The crates are sealed tightly. You can't open them no matter what you do.";
 }
 
 if ((said(pick, up, box) || said(get, box))) {
     if ((handsOff ||
         current.status != normal.ego))
     {
-        print(18);
+        #message 18  "You can't do that... at least not now!";
     }
     else {
         if (boxState != current.room) {
-            print(10);                                      // [ not on floor here
+            #message 10  "All of the large crates are too heavy to move.";                                      // [ not on floor here
         }
         else {
             distance(ego, aBox, work);                      // [ try to pick it up
@@ -181,7 +184,7 @@ if ((said(pick, up, box) || said(get, box))) {
                 set(handsOff);
             }
             else {
-                print(3);
+                #message 3  "You're not close enough.";
             }
         }
     }
@@ -193,7 +196,7 @@ if ((said(drop, box, down) ||
     said(drop, box, down, on, floor) ||
     said(drop, box))) {
     if (boxState != 0) {                                    // [ ego is not carrying it
-        print(5);
+        #message 5  "You're not carrying a box, are you?";
     }
     else {
         boxState = current.room;
@@ -217,15 +220,15 @@ if ((said(drop, box, down) ||
 }
 
 if (said(move, box)) {
-    print(10);
+    #message 10  "All of the large crates are too heavy to move.";
 }
 
 if ((said(look$in, box) || said(open, up, box) || said(open, box))) {
-    print(4);
+    #message 4  "All of the crates are nailed shut. You have no means of opening them.";
 }
 
 if ((said(get, on, box) || said(climb, on, box) || said(climb, box))) {
-    print(11);
+    #message 11  "Why don't you try jumping.";
 }
 
 // [ stuff to handle jumping on boxes
@@ -348,11 +351,11 @@ if ((said(jump) ||
     :JumpInPlace
 
         if (current.status == carrying.box) {
-            print(16);
+            #message 16  "You can't jump while you are carrying a crate around.";
             return();
         }
     if (current.status == climbing) {
-        print(17);
+        #message 17  "Now is not the time to be jumping.";
         return();
     }
     start.motion(ego);

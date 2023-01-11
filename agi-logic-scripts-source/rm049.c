@@ -108,50 +108,50 @@ if (init.log)
 }                                                           // [  end INIT.LOG
 
 if (said(look, shark)) {
-    print(4);
+    #message 4  "A prowling shark waits offshore.";
 }
 
 if (said(get, shark)) {
-    print(3);
+    #message 3  "You've got to be kidding.";
 }
 
 if (said(kill, shark)) {
-    print(9);
+    #message 9  "You have no way of killing a shark.";
 }
 if (said(talk, shark)) {
-    print(5);
+    #message 5  "He can't understand you.";
 }
 
 if (someoneHere && (said(get, man) || said(kill, man))) {
-    print(16);
+    #message 16  "You're no match for him!";
 }
 
 if (someoneHere && said(look, man)) {
-    print(14);
+    #message 14  "A nasty pirate is here!";
 }
 
 if (someoneHere && said(talk, man)) {
-    print(15);
+    #message 15  "\"Arrr! I'm gonna git ya laddie!\"";
 }
 
 if (said(climb, tree)) {
-    print(10);
+    #message 10  "You have better things to do than to try to climb this tree.";
 }
 
 if ((said(look) || said(look, beach))) {
-    print(6);
+    #message 6  "You are on a small beach to the south of a looming mountain range.";
 }
 
 if (said(look, mountain)) {
-    print(7);
+    #message 7  "To the north, a mountain range beckons.";
 }
 
 if (said(look, tree)) {
-    print(11);
+    #message 11  "A lone palm tree graces this beach.";
 }
 
 if (said(look, ground)) {
-    print(8);
+    #message 8  "Yep. It's sandy here.";
 }
 
 if (ego.poofing.done && someoneHere) {                      // [ handle a state change
@@ -167,14 +167,16 @@ if (ego.poofing.done && someoneHere) {                      // [ handle a state 
 
 if (someoneHere && !first.said) {
     set(first.said);
-    print(1);
+    #message 1  "Not again! One of the nasty pirates is here on the beach, and
+he would like to capture you.You'd better run!";
 }
 
 // [ pirate business
 if (pirateCaughtEgo) {
     reset(pirateCaughtEgo);
     if (!handsOff) {
-        print(12);
+        #message 12  "How could you! You let yourself get caught again! Well, it's curtains for
+you this time.";
         set(handsOff);
         program.control();
         set.view(aPirate, v.attacking);
@@ -214,7 +216,7 @@ if (egoDead) {
     reset(egoDead);
     erase(ego);
     set(certain.death);
-    print(2);
+    #message 2  "Gosh! You barely made a mouthful for that hungry shark!";
 }
 
 if ((current.status == wading || current.status == swimming)) {

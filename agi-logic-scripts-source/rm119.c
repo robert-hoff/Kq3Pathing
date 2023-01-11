@@ -34,11 +34,12 @@ if (init.log) {
 }
 
 if (current.room == 69 && !beenIn69) {
-    print(14);
+    #message 14  "\"There's home!\" your sister cries in delight. \"Mum and Dad will be
+SOOOOOO happy!!\"";
 }
 
 if (girlSaved && spell.cast) {                              // [ don't let magic work
-    print(7);
+    #message 7  "This is no time for magic. Take Princess Rosella home.";
     spell.cast = 0;
 }
 
@@ -53,14 +54,20 @@ if (said(untie, girl)) {
     if (!girlSaved) {
         distance(ego, aPrincess, work);
         if (work > 16) {
-            print(15);
+            #message 15  "You are not close enough to her.";
         }
         else {
             score += 3;
             set(girlSaved);
             if (dragonDead) {
-                print(16);
-                print(18);
+                #message 16  "You rapidly untie Princess Rosella from the wooden pole. She looks
+bewildered as to who her benefactor may be.
+\"I'm your long-lost brother, Prince Alexander,\" you proudly exclaim.
+The girl looks doubtful.";
+                #message 18  "\"I'll explain it all later,\" you continue, realizing that now is not the
+time for this.
+\"Just follow me. Let's go meet the folks!\" With mixed
+emotions, the girl agrees to follow you.";
                 stop.sound();
                 sound(m.princess, sound.done);
                 set.view(aPrincess, v.princess);
@@ -71,7 +78,7 @@ if (said(untie, girl)) {
         }
     }
     else {
-        print(17);
+        #message 17  "You've already untied her.";
     }
 }
 
@@ -92,11 +99,11 @@ if (girlSaved && withEgo) {
 
 if ((said(talk, with, girl) || said(talk, girl))) {
     if (!dragonDead) {
-        print(12);
+        #message 12  "She can't hear you. She's too busy screaming!";
     }
     else {
         if (!girlSaved) {
-            print(13);
+            #message 13  "\"Help me!! Untie me!!\" Princess Rosella screams.";
         }
         else {
             ++girlTalk;
@@ -110,41 +117,44 @@ if ((said(talk, with, girl) || said(talk, girl))) {
 
 if (said(get, girl)) {
     if (girlSaved) {
-        print(8);
+        #message 8  "She's already with you.";
     }
     else {
-        print(20);
+        #message 20  "The girl is securely tied to the stake.";
     }
 }
 
 if (said(kill, girl)) {
-    print(9);
+    #message 9  "What manner of monster are you?";
 }
 
 if (said(kiss, girl)) {
     if (girlSaved) {
-        print(10);
+        #message 10  "You plant a brotherly kiss upon Princess Rosella's soft cheek.";
     }
     else {
-        print(21);
+        #message 21  "Not now!";
     }
 }
 
 if (said(touch, girl)) {
     if (girlSaved) {
-        print(11);
+        #message 11  "WATCH IT, FELLA!!";
     }
     else {
-        print(21);
+        #message 21  "Not now!";
     }
 }
 
 if (said(look, girl)) {
     if (!girlSaved) {
-        print(20);
+        #message 20  "The girl is securely tied to the stake.";
     }
     else {
-        print(19);
+        #message 19  "Princess Rosella is gorgeous! Why, you'd be interested in her if she
+weren't your own sister! Her hair is long, silky, and golden. Her eyes
+are as blue as the bluest sky.Her skin is creamy white.And her BODY...
+well!!Embarrassed, you clear your throatand avert your eyes.";
     }
 }
 

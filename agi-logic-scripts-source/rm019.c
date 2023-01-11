@@ -110,19 +110,20 @@ if (have.input)
 {
     if (said(look, plants))
     {
-        print(1);
+        #message 1  "The soft grass soothes your aching feet.";
     }
 
     if ((said(look) ||
         said(look, trees)))
     {
-        print(2);
+        #message 2  "A beautiful stream ripples through these stately trees.";
     }
 
     if ((said(look, cave) ||
         said(look, hole)))
     {
-        print(3);
+        #message 3  "There seems to be a cave in a hill to the north, but you are too far
+away to see it clearly.";
     }
 }
 

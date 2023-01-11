@@ -198,7 +198,8 @@ if (posn(ego, 141, 63, 159, 88))
 if ((said(look) ||
     said(look, ground)))
 {
-    print(1);
+    #message 1  "The sandy beach is bordered by grass. A stream cuts through the grass and
+sand to complete its journey to the sea.";
 }
 
 if (near.brackish)
@@ -206,7 +207,8 @@ if (near.brackish)
     if ((said(look, water) ||
         said(look, creek)))
     {
-        print(3);
+        #message 3  "The water in this inter-tidal zone is very brackish. It's not suitable
+for much of anything.";
     }
 
     if ((said(drink, water) ||
@@ -225,14 +227,15 @@ if (near.brackish)
         said(get, drink) ||
         said(drink)))
     {
-        print(3);
+        #message 3  "The water in this inter-tidal zone is very brackish. It's not suitable
+for much of anything.";
     }
 }
 
 if ((said(look, water) ||
     said(look, creek)))
 {
-    print(2);
+    #message 2  "There is water everywhere around here.";
 }
 
 // [****

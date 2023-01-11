@@ -128,11 +128,11 @@ if (certain.death) {
 }
 
 if (said(look, bird)) {
-    print(1);
+    #message 1  "The gulls soar gracefully on the sea breezes.";
 }
 
 if (said(get, bird)) {
-    print(2);
+    #message 2  "The gulls are too wary of humans for them to be easily caught.";
 }
 
 

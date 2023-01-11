@@ -244,9 +244,16 @@ if ((said(look, book) ||
     said(read, book) ||
     said(look, in, book)))
 {
-    print(69);
-    print(70);
-    print(71);
+    #message 69  "Covered with gold trimmings, the old book's leather cover is
+cracked and worn, its pages yellowedand brittle.The title, however, is
+clear : % m32.\"";
+    #message 70  "You eagerly thumb through page after page of what you assume to be magic
+formulas.The ink of the old handwriting is faint, and barely readable.";
+    #message 71  "Most of the formulas are indecipherable, but a few are in a language you
+know.You treat the old book with great care as you can tell it
+contains recipes for some very oldand powerful magic spells.
+Your hands shake as you realize this book
+could be the key to your escape from the evil Manannan.";
 }
 
 if (ego.location != table)
@@ -262,7 +269,7 @@ if (ego.location != table)
         said(turn, page) ||
         said(open, book, page, anyword)))
     {
-        print(10);
+        #message 10  "You can't reach the book from here.";
     }
 }
 else
@@ -346,7 +353,8 @@ else
         said(open, page, rol) ||
         said(read, page, rol)))
     {
-        print(2);
+        #message 2  "Not being an experienced sorcerer, most spells in this book are too
+complicated for you to understand.";
     }
 }
 
@@ -357,9 +365,13 @@ if ((said(look, room) ||
     said(look) ||
     said(look, lab)))
 {
-    print(4);
-    print(34);
-    print(6);
+    #message 4  "You look in awe around this torch-lit underground room. It appears to
+be a laboratory... a \"wizard's\" laboratory.";
+    #message 34  "Against the earthen walls there are rows of shelves holding numerous jars
+which contain strange, unknown ingredients.";
+    #message 6  "The shelves also hold skeletons of small animals and birds, some human
+skulls and bones, and other odd instruments, whose use you do not know.
+% m8% m7";
 }
 
 if ((said(look, table) ||
@@ -368,78 +380,90 @@ if ((said(look, table) ||
 {
     if (posn(ego, 77, 95, 128, 120))
     {
-        print(20);
+        #message 20  "The wizard's desk is curiously empty. You have no further interest in it.";
     }
     else
     {
-        print(9);
+        #message 9  "%m8 Atop the oak table are a large leather-bound book, a mortar and
+pestle, a little brazier holding charcoal, and a flint, plus
+measuring cups, beakers, flasks, and stirrers.";
     }
 }
 
 if (said(look, under, table))
 {
-    print(11);
+    #message 11  "You lean down and peek under the table. You see nothing but an
+earthen floor.";
 }
 
 if ((said(look, stairs) ||
     said(look, up, stairs)))
 {
-    print(7);
+    #message 7  "The narrow stone steps lead up to the wizard's study.";
 }
 
 if (said(get, flint))
 {
-    print(13);
+    #message 13  "The flint%m52";
 }
 
 if (said(look, flint))
 {
-    print(25);
+    #message 25  "The flint is used for lighting the brazier.";
 }
 if (said(look, flask))
 {
-    print(65);
+    #message 65  "There are many measuring, stirring, and mixing implements on the
+laboratory table.";
 }
 
 if (said(get, flask))
 {
-    print(72);
+    #message 72  "You consider taking it, but decide there is no need to carry it%m38";
 }
 
 if (said(get, charcoal))
 {
-    print(24);
+    #message 24  "The charcoal%m52";
 }
 
 if (said(look, torch))
 {
-    print(14);
+    #message 14  "The burning torches throw flickering shadows across the walls,
+making the room even more ominous.";
 }
 
 if (said(look, shelf))
 {
-    print(16);
+    #message 16  "You curiously gaze at the strange jars of ingredients,
+the animal and human bones, and other odd implements which
+line the rows of shelves.
+You see jars of ingredients resting on labeled shelves... shelves
+bearing such ghastly names as \"Powdered Fish Bone,\" \"Nightshade Juice,\"
+\"Mandrake Root Powder,\" \"Saffron,\" \"Toad Spittle,\" and
+\"Toadstool Powder.\"";
 }
 
 if (said(close, book))
 {
-    print(46);
+    #message 46  "The wizard would notice if the book were closed.";
 }
 
 if (said(open, book))
 {
-    print(44);
+    #message 44  "It's already open.";
 }
 
 if (said(get, book))
 {
     if (wiz.status != dead)
     {
-        print(22);
+        #message 22  "Manannan would be very suspicious if he were to discover %m32\" missing.";
     }
     else
     {
-        print(65);
+        #message 65  "There are many measuring, stirring, and mixing implements on the
+laboratory table.";
     }
 }
 
@@ -450,7 +474,8 @@ if ((said(make, magic) ||
     said(do, magic, spell) ||
     said(mix, magic, spell)))
 {
-    print(68);
+    #message 68  "You must open %m32\" to the proper page to read the instructions for a magic
+spell.";
 }
 
 if ((said(look, flask) ||
@@ -460,19 +485,21 @@ if ((said(look, flask) ||
     said(take, lid, from, flask) ||
     said(take, lid, flask)))
 {
-    print(21);
+    #message 21  "You have no flask.";
 }
 
 if (said(look, equipment))
 {
-    print(23);
+    #message 23  "There is much equipment here: a mortar and pestle, a charcoal brazier
+and flint, measuring cups, beakers, flasks, stirrers,
+and many jarsand vials of strange ingredients.";
 }
 
 // [  YOUR BASIC "GET THE WORLD" SECTION:
 
 if (said(get, fish$oil))
 {
-    print(1);
+    #message 1  "Where?";
 }
 
 if ((said(get, torch) ||
@@ -480,7 +507,7 @@ if ((said(get, torch) ||
     said(get, torch, wall) ||
     said(get, torch, anyword, wall)))
 {
-    print(15);
+    #message 15  "The torches are firmly attached to the earthen wall. You cannot loosen them.";
 }
 
 if (waiting.to.name.jar)
@@ -530,7 +557,7 @@ if (waiting.to.name.jar)
 
 if (said(anyword, torch))
 {
-    print(26);
+    #message 26  "The torches will not help you.";
 }
 
 if ((said(get, jar, powder, from, shelf) ||
@@ -543,7 +570,7 @@ if ((said(get, jar, powder, from, shelf) ||
 {
     if (ego.location != shelves)
     {
-        print(17);
+        #message 17  "You can't reach it from here.";
     }
     else
     {
@@ -554,12 +581,14 @@ if ((said(get, jar, powder, from, shelf) ||
             obj.in.room(i.saffron, current.room) ||
             obj.in.room(i.toadstool.powder, current.room)))
         {
-            print(27);
+            #message 27  "There are many jars of ingredients on the laboratory shelves. Which
+do you want ? ";
             set(waiting.to.name.jar);
         }
         else
         {
-            print(28);
+            #message 28  "You already have all the jars of ingredients you are likely to need. You
+have no interest in any other.";
         }
     }
 }
@@ -571,7 +600,7 @@ if ((said(get, fishbone, rol) ||
 {
     if (ego.location != shelves)
     {
-        print(17);
+        #message 17  "You can't reach it from here.";
     }
     else
     {
@@ -594,7 +623,7 @@ if ((said(get, juice) ||
 {
     if (ego.location != shelves)
     {
-        print(17);
+        #message 17  "You can't reach it from here.";
     }
     else
     {
@@ -622,7 +651,7 @@ if ((said(get, mandrake, powder) ||
 {
     if (ego.location != shelves)
     {
-        print(17);
+        #message 17  "You can't reach it from here.";
     }
     else
     {
@@ -643,7 +672,7 @@ if ((said(get, saffron) ||
 {
     if (ego.location != shelves)
     {
-        print(17);
+        #message 17  "You can't reach it from here.";
     }
     else
     {
@@ -664,7 +693,7 @@ if ((said(get, toadstool, powder) ||
 {
     if (ego.location != shelves)
     {
-        print(17);
+        #message 17  "You can't reach it from here.";
     }
     else
     {
@@ -691,7 +720,7 @@ if ((said(get, jar, spit, from, shelf) ||
 {
     if (ego.location != shelves)
     {
-        print(17);
+        #message 17  "You can't reach it from here.";
     }
     else
     {
@@ -705,7 +734,7 @@ if ((said(get, pestle) ||
     said(get, pestle, from, table) ||
     said(get, pestle, off, table)))
 {
-    print(39);
+    #message 39  "%m36mortar and pestle%m38";
 }
 
 if ((said(look, pestle) ||
@@ -714,11 +743,13 @@ if ((said(look, pestle) ||
 {
     if (ego.location != table)
     {
-        print(47);
+        #message 47  "You are not close enough.";
     }
     else
     {
-        print(41);
+        #message 41  "The mortar is a bowl-shaped implement made of stone. The pestle is a
+rounded stone that fits into the mortar.The mortar and pestle are used
+for grinding things into a powder.They are resting on the oak table.";
     }
 }
 
@@ -726,11 +757,11 @@ if (said(use, pestle))
 {
     if (ego.location != table)
     {
-        print(17);
+        #message 17  "You can't reach it from here.";
     }
     else
     {
-        print(42);
+        #message 42  "What would you do with the mortar and pestle?";
     }
 }
 
@@ -739,11 +770,11 @@ if ((said(grind, anyword, pestle) ||
 {
     if (ego.location != table)
     {
-        print(17);
+        #message 17  "You can't reach it from here.";
     }
     else
     {
-        print(50);
+        #message 50  "You consider doing that, but then realize it wouldn't work.";
     }
 }
 
@@ -756,7 +787,7 @@ if ((said(get, brazier) ||
     said(get, charcoal, brazier, from, table) ||
     said(get, charcoal, brazier, off, table)))
 {
-    print(40);
+    #message 40  "%m36charcoal brazier%m38";
 }
 
 if ((said(use, burner) ||
@@ -764,11 +795,11 @@ if ((said(use, burner) ||
 {
     if (ego.location != table)
     {
-        print(17);
+        #message 17  "You can't reach it from here.";
     }
     else
     {
-        print(45);
+        #message 45  "What would you do with the brazier?";
     }
 }
 
@@ -778,17 +809,19 @@ if ((said(light, burner) ||
 {
     if (ego.location != table)
     {
-        print(17);
+        #message 17  "You can't reach it from here.";
     }
     else
     {
         if ((burner.seconds || burner.minutes))
         {
-            print(56);
+            #message 56  "It is already burning.";
         }
         else
         {
-            print(48);
+            #message 48  "You fill the brazier with charcoal from the small supply
+Manannan keeps here and strike the flint on it.Soon, the brazier burns
+hotly.";
             burner.minutes = burner.init.minutes;
         }
     }
@@ -809,11 +842,11 @@ if ((said(put, anyword, on, burner) ||
 {
     if (ego.location != table)
     {
-        print(17);
+        #message 17  "You can't reach it from here.";
     }
     else
     {
-        print(5);
+        #message 5  "%m50 Now is not the proper time.";
     }
 }
 
@@ -826,18 +859,19 @@ if ((said(look, burner) ||
 {
     if (ego.location != table)
     {
-        print(47);
+        #message 47  "You are not close enough.";
     }
     else
     {
-        print(43);
+        #message 43  "Resting on the table is a small metal brazier.
+It holds charcoal and is used for heating or cooking things.";
         if ((burner.seconds || burner.minutes))
         {
-            print(51);
+            #message 51  "%m54 You could heat things quickly with the brazier, right now.";
         }
         else
         {
-            print(53);
+            #message 53  "%m66stone cold.";
         }
     }
 }
@@ -847,11 +881,11 @@ if ((said(get, charcoal) ||
 {
     if (ego.location != table)
     {
-        print(17);
+        #message 17  "You can't reach it from here.";
     }
     else
     {
-        print(49);
+        #message 49  "The charcoal";
     }
 }
 
@@ -859,17 +893,17 @@ if (said(look, charcoal))
 {
     if (ego.location != table)
     {
-        print(47);
+        #message 47  "You are not close enough.";
     }
     else
     {
         if ((burner.seconds || burner.minutes))
         {
-            print(54);
+            #message 54  "%m66very hot!";
         }
         else
         {
-            print(53);
+            #message 53  "%m66stone cold.";
         }
     }
 }
@@ -882,7 +916,7 @@ if (aSecondPassed &&
     burner.seconds == 1 &&
     !burner.minutes)
 {
-    print(55);
+    #message 55  "The brazier has burned all the charcoal, and is now cool.";
 }
 
 if (getFishBone)
@@ -891,7 +925,7 @@ if (getFishBone)
     reset(getFishBone);
     if (obj.in.room(i.fish.bone, current.room))
     {
-        print(29);
+        #message 29  "%m3labeled \"Powdered Fish Bone\"%m12";
         get(i.fish.bone);
         score += 1;
     }
@@ -899,11 +933,11 @@ if (getFishBone)
     {
         if (has(i.fish.bone))
         {
-            print(67);
+            #message 67  "You already have it.";
         }
         else
         {
-            print(19);
+            #message 19  "You already took it.";
         }
     }
 }
@@ -914,7 +948,7 @@ if (getNightshade)
     reset(getNightshade);
     if (obj.in.room(i.nightshade.juice, current.room))
     {
-        print(31);
+        #message 31  "%m3of \"Nightshade Juice\"%m12";
         get(i.nightshade.juice);
         score += 1;
     }
@@ -922,11 +956,11 @@ if (getNightshade)
     {
         if (has(i.nightshade.juice))
         {
-            print(67);
+            #message 67  "You already have it.";
         }
         else
         {
-            print(19);
+            #message 19  "You already took it.";
         }
     }
 }
@@ -937,7 +971,7 @@ if (getMandrake)
     reset(getMandrake);
     if (obj.in.room(i.mandrake.root, current.room))
     {
-        print(33);
+        #message 33  "%m3labeled \"Mandrake Root Powder\"%m12";
         get(i.mandrake.root);
         score += 1;
     }
@@ -945,11 +979,11 @@ if (getMandrake)
     {
         if (has(i.mandrake.root))
         {
-            print(67);
+            #message 67  "You already have it.";
         }
         else
         {
-            print(19);
+            #message 19  "You already took it.";
         }
     }
 }
@@ -960,7 +994,7 @@ if (getSaffron)
     reset(getSaffron);
     if (obj.in.room(i.saffron, current.room))
     {
-        print(18);
+        #message 18  "%m3labeled \"Saffron\"%m12";
         get(i.saffron);
         score += 1;
     }
@@ -968,11 +1002,11 @@ if (getSaffron)
     {
         if (has(i.saffron))
         {
-            print(67);
+            #message 67  "You already have it.";
         }
         else
         {
-            print(19);
+            #message 19  "You already took it.";
         }
     }
 }
@@ -983,7 +1017,7 @@ if (getSpit)
     reset(getSpit);
     if (obj.in.room(i.toad.spit, current.room))
     {
-        print(37);
+        #message 37  "%m3labeled \"Toad Spittle\"%m12";
         get(i.toad.spit);
         score += 1;
     }
@@ -991,11 +1025,11 @@ if (getSpit)
     {
         if (has(i.toad.spit))
         {
-            print(67);
+            #message 67  "You already have it.";
         }
         else
         {
-            print(19);
+            #message 19  "You already took it.";
         }
     }
 }
@@ -1006,7 +1040,7 @@ if (getToadstool)
     reset(getToadstool);
     if (obj.in.room(i.toadstool.powder, current.room))
     {
-        print(35);
+        #message 35  "%m3of \"Toadstool Powder\"%m12";
         get(i.toadstool.powder);
         score += 1;
     }
@@ -1014,11 +1048,11 @@ if (getToadstool)
     {
         if (has(i.toadstool.powder))
         {
-            print(67);
+            #message 67  "You already have it.";
         }
         else
         {
-            print(19);
+            #message 19  "You already took it.";
         }
     }
 }
@@ -1143,7 +1177,8 @@ if (current.status != fly.landing)
 
 if (spell.in.progress)
 {
-    print(30);
+    #message 30  "With trembling hands you turn the pages of %m32,\" and
+prepare to follow its instructions precisely.";
     new.room(43);                                           // [  rm.spells);
 }
 

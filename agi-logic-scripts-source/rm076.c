@@ -163,7 +163,8 @@ if (shipShape == inPort && !voyage.minutes
 }
 
 if (shipShape > inPort) {
-    print(6);
+    #message 6  "With a sinking feeling, you notice that the large ship is no longer
+tied to the pier.It looks like you missed the boat!";
     stop.cycling(ego);
     set(certain.death);
 }
@@ -248,20 +249,20 @@ if (have.input) {
     if ((said(look, ship) ||
         said(look, pirate, ship)))
     {
-        if (shipShape == inPort) { print(1); }
-        else { print(2); }
+        if (shipShape == inPort) { #message 1  "A large ship is tied to the dock."; }
+        else { #message 2  "What ship?"; }
     }
 
     if ((said(board, ship) ||
         said(jump, ship)))
     {
-        if (shipShape == inPort) { print(3); }
-        else { print(2); }
+        if (shipShape == inPort) { #message 3  "There is no way to do that."; }
+        else { #message 2  "What ship?"; }
     }
-    if (said(look, town)) { print(4); }
+    if (said(look, town)) { #message 4  "A charming village sits atop a bluff overlooking the ocean."; }
 
     if (said(look, pier)) {
-        print(5);
+        #message 5  "A weathered dock leads into the ocean.";
     }
 
 }

@@ -97,12 +97,16 @@ if ((said(look, mountain) ||
     said(look, room) ||
     said(look, down)))
 {
-    print(1);
+    #message 1  "You have made the very top of the snowy mountain range. The
+snow path ends here at a cliff.Far in the distance, you can see
+a vast green valley. \"Could it be Daventry?\" you wonder. Your
+excitement mounts.";
 }
 
 if (said(look, path))
 {
-    print(2);
+    #message 2  "The snow path leads to the edge of a very steep precipice. You look
+about, but see that there is no place to go but straight down.";
 }
 
 if ((said(look, plants) ||
@@ -111,40 +115,42 @@ if ((said(look, plants) ||
     said(get, flowers) ||
     said(look, flowers)))
 {
-    print(3);
+    #message 3  "Plants and trees are scarce in the snowy reaches of these mountains.";
 }
 
 if (said(look, ground))
 {
-    print(4);
+    #message 4  "The ground is completely covered with cold, white snow.";
 }
 
 if (said(look, sky))
 {
-    print(5);
+    #message 5  "The deep-blue sky contrasts sharply with the brilliant white mountain
+peaks.You must admit, even while shivering, it is a beautiful sight.";
 }
 
 if ((said(climb, trees) ||
     said(climb, up, trees)))
 {
-    print(6);
+    #message 6  "There are no trees here.";
 }
 
 if (said(look, snow))
 {
-    print(7);
+    #message 7  "White snow blankets everything here in the upper reaches of the great
+mountains.It's beautiful, but it is VERY cold.";
 }
 
 if (said(play, snow))
 {
-    print(9);
+    #message 9  "Wheee!";
 }
 
 if (said(look, valley))
 {
-    print(15);
-    print(16);
-    print(17);
+    #message 15  "That must be Daventry!";
+    #message 16  "\"But why is Half Dome here?\" you wonder.";
+    #message 17  "\"But, of course,\" you think, \"it's a Sierra game!\"";
 }
 
 // [*****
@@ -271,7 +277,8 @@ if (edge.ego.hit == bottom &&
         {
             if (!beenIn57)
             {
-                print(13);
+                #message 13  "Bravely, you grasp the ice laden rocks, and attempt to scale the nearly
+vertical wall.Be careful, Gwydion!";
             }
             set.view(ego, v.ego);
             current.ego = normal.ego;

@@ -37,13 +37,17 @@ if (init.log)
 
 if (!said.it) {
     set(said.it);
-    print(1);
+    #message 1  "You have flown through the hole at the base of the tree
+and are now inside the hollow trunk.You see a rope leading up into
+a small hole above you.This area is cramped and confining,
+even for a fly.";
 }
 
 if (spell.cast == sc.stop.flying) {
-    print(2);
+    #message 2  "You hope you'll be able to fit inside the tree in your normal form.";
     shake.screen(4);
-    print(5);
+    #message 5  "Obviously, your hopes were ill-founded. Too late, you realize you
+are inside a tree, and... the results are too gruesome to discuss.";
     spell.cast = 0;
     erase(ego);
     set(certain.death);

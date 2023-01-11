@@ -221,22 +221,22 @@ if (have.input)
         (said(look, pier) ||
             said(look, ship)))
     {
-        print(1);
+        #message 1  "There is a ship docked at the pier.";
     }
 
     if (said(look, town))
     {
-        print(2);
+        #message 2  "A charming village sits atop a bluff overlooking the ocean.";
     }
 
     if (said(look, cliff))
     {
-        print(3);
+        #message 3  "The cliffs are very steep.";
     }
 
     if (said(look, pier))
     {
-        print(4);
+        #message 4  "A weathered dock leads into the ocean.";
     }
 }
 

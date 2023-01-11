@@ -251,23 +251,26 @@ if ((hit.special || on.water) && current.status != falling) {
 
 // [******** SAID STUFF ********]
 if ((said(look) || said(look, ship))) {
-    print(2);
+    #message 2  "This is the upper deck of the pirate ship. A ladder
+leads to the lower deck.";
 }
 if ((said(look, up, mast) || said(look, mast))) {
-    print(3);
+    #message 3  "The solid mast is swaying slightly. A rope ladder leads
+up into the rigging.";
 }
 
 if ((said(look, up, ladder) || said(look, ladder))) {
-    print(4);
+    #message 4  "The rope ladder looks flimsy. A careless step might be fatal!";
 }
 
 if ((said(look, hold) || said(look$in, hold)
     || said(look$in, hole) || said(look, hole))) {
-    print(5);
+    #message 5  "The hatchway leads below decks. The bright sun affords
+little illumination of what may lie below.";
 }
 
 if ((said(look$in, door) || said(look, door))) {
-    print(6);
+    #message 6  "The doorways at the stern give way to darkness.";
 }
 
 if ((said(swim, ocean) ||
@@ -284,38 +287,42 @@ if ((said(swim, ocean) ||
     said(jump, ship) ||
     said(jump, water) ||
     said(swim))) {
-    print(7);
+    #message 7  "The railing is too high for you to get over.";
 }
 
 if (said(look, sky)) {
     if (shipShape == underWay) {
-        print(12);
+        #message 12  "The sky is a deep, cloudless blue. You see
+sea birds high above you.";
     }
     else {
-        print(13);
+        #message 13  "Shore birds can be seen in the cloudless sky.";
     }
 }
 if ((said(look, land) ||
     said(look, water) ||
     said(look, ocean))) {
     if (shipShape == nearLand) {
-        print(8);
+        #message 8  "You scan the horizon. You see land to the east.";
     }
     if (shipShape == underWay) {
-        print(9);
+        #message 9  "The ocean seems to be endless. In every direction, you see nothing but
+deep, blue water.";
     }
     if (shipShape == atBeach) {
-        print(10);
+        #message 10  "The ship has anchored just offshore of a
+small beach.Further north, in the distance, looms a mountain range.";
     }
 }
 
 if (shipShape == atBeach &&
     (said(look, beach) || said(look, beach))) {
-    print(10);
+    #message 10  "The ship has anchored just offshore of a
+small beach.Further north, in the distance, looms a mountain range.";
 }
 
 if (said(look, men)) {
-    print(11);
+    #message 11  "At the moment, you see no pirates.";
 }
 
 call(lgc.seagulls);

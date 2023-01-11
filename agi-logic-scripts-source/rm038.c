@@ -121,10 +121,12 @@ if (init.log) {
     if (current.status != deferred.entry) {
         sound(m.badguy, sound.done);
         if (bandit.status == awake) {
-            print(1);
+            #message 1  "You have entered the bandits' hideout; one of them is
+coming after you now!";
         }
         else {
-            print(2);
+            #message 2  "You have entered the bandits' hideout; one of them is
+sleeping at a small table.";
         }
     }
 
@@ -161,7 +163,8 @@ if (script == inChair && next) {                            // [ just woken up
     move.obj(a.bandit, 69, 137, 1, next);
     release.priority(a.bandit);
     bandit.status = awake;
-    print(17);
+    #message 17  "The bandit opens his eyes and sees you in his hideout. He jumps up from
+the chair and chases you.";
 }
 
 if (script == chasing && next) {                            // [ ready to chase
@@ -199,7 +202,7 @@ if (script == pushing && next) {                            // [ he got him
     set.view(ego, v.ego.falling);
     current.status = falling;
     edge.ego.hit = bottom;
-    print(24);
+    #message 24  "The heartless thug drags you out the door and pushes you off the porch.";
     player.control();
     current.room = 37;                                      // [ make Al's logic happy
     new.room(22);
@@ -211,7 +214,8 @@ if (lid.open)
 {
     reset(lid.open);
     stop.update(a.lid);
-    print(14);
+    #message 14  "You slowly lift the lid, and hope the squeaky hinges do not wake the
+bandit.";
 }
 
 if (lid.closed)
@@ -228,21 +232,25 @@ if (have.input)
 {
     if ((said(look) ||
         said(look, house))) {
-        print(3);
+        #message 3  "The hideout is made of rough planks, sparsely furnished with a table, a
+chair, and a small, wooden bin in the corner.";
     }
 
     if (said(look, man))
     {
-        if (bandit.status == awake) { print(4); }
-        else { print(5); }
+        if (bandit.status == awake) { #message 4  "The ugly bandit is dressed in dirty clothes.
+He looks, and smells, as if he hasn't had a bath in months. He has a
+very threatening look in his eyes!"; }
+        else { #message 5  "The scoundrel is fast asleep at the table. He is
+dressed in dirty, ragged clothes, and emits a very unpleasant odor."; }
     }
 
     if ((said(look, table) ||
         said(look, top$of, table) ||
         said(look, table, top)))
     {
-        if (obj.in.room(i.purse.with.coins, current.room)) { print(6); }
-        else { print(7); }
+        if (obj.in.room(i.purse.with.coins, current.room)) { #message 6  "There is a leather coin purse lying on top of a wobbly table."; }
+        else { #message 7  "The wobbly, wooden table is made out of rough planks."; }
     }
 
     if ((said(get, purse, from, table) ||
@@ -260,14 +268,15 @@ if (have.input)
                     gold.coin.count = 8;
                     set(gotPurseOnce);
                 }
-                print(8);
+                #message 8  "You very carefully lift the coin purse off the table; practically out
+from under the sleeping bandit's nose!";
             }
             else {
-                print(22);
+                #message 22  "You need to be closer.";
             }
         }
         else {
-            print(9);
+            #message 9  "That is not possible!";
         }
     }
 
@@ -278,29 +287,31 @@ if (have.input)
         if (bin.open) {
             if (ego.location == near.bin) {
                 if (ego.been.robbed) {
-                    print(10);
+                    #message 10  "This must be where the bandits store their loot! You see all of your
+stolen possessions inside the bin.";
                 }
                 else {
-                    print(11);
+                    #message 11  "There is nothing in the bin.";
                 }
             }
             else {
-                print(22);
+                #message 22  "You need to be closer.";
             }
         }
         else {
-            print(12);
+            #message 12  "The shabby, wooden bin is built into a corner of the treehouse. It is
+covered by a hinged lid.";
         }
     }
 
     if ((said(open, chest) || said(open, lid, chest) ||
         said(open, box) || said(open, lid, box) || said(open, lid))) {
         if (bandit.status == awake) {
-            print(9);
+            #message 9  "That is not possible!";
         }
         else {
             if (bin.open) {
-                print(13);
+                #message 13  "The bin is already open.";
             }
             else {
                 if (ego.location == near.bin) {
@@ -309,7 +320,7 @@ if (have.input)
                     set(bin.open);
                 }
                 else {
-                    print(22);
+                    #message 22  "You need to be closer.";
                 }
             }
         }
@@ -318,11 +329,11 @@ if (have.input)
     if ((said(close, chest) || said(close, lid, chest) ||
         said(close, box) || said(close, lid, box) || said(close, lid))) {
         if (bandit.status == awake) {
-            print(9);
+            #message 9  "That is not possible!";
         }
         else {
             if (!bin.open) {
-                print(21);
+                #message 21  "The lid is closed.";
             }
             else {
                 if (ego.location == near.bin) {
@@ -331,7 +342,7 @@ if (have.input)
                     reset(bin.open);
                 }
                 else {
-                    print(22);
+                    #message 22  "You need to be closer.";
                 }
             }
         }
@@ -339,8 +350,8 @@ if (have.input)
 
     if (said(kill, man))
     {
-        if (bandit.status == awake) { print(15); }
-        else { print(16); }
+        if (bandit.status == awake) { #message 15  "He looks pretty big and mean. Perhaps you should run instead."; }
+        else { #message 16  "What kind of person would kill a sleeping man?!"; }
     }
 
     if (bandit.status == asleep &&
@@ -357,13 +368,14 @@ if (have.input)
         said(look, ground) ||
         said(look, under, table) ||
         said(look, under, chair))) {
-        print(23);
+        #message 23  "You see the stained and dirty floor, and through the cracks, between the
+planks, you see the ground far below.";
     }
 
     if ((said(look, out, door) || said(look, door) ||
         said(look, out, window) || said(look, window) ||
         said(look, out))) {
-        print(18);
+        #message 18  "You see the limbs and leaves of the tree swaying in the breeze.";
     }
 
     if (said(get, stuff, rol)) {
@@ -386,14 +398,14 @@ if (have.input)
                     goto misterlooper;
                 }
             if (got.one) {
-                print(19);
+                #message 19  "Ok.";
             }
             else {
-                print(20);
+                #message 20  "There is nothing in the bin.";
             }
         }
         else {
-            print(21);
+            #message 21  "The lid is closed.";
         }
     }
 

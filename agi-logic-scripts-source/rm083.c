@@ -252,7 +252,8 @@ else {
 if (egoLoc == captain && current.status == normal.ego && can.chase) {
     script = chasing;
     set(next);
-    print(16);
+    #message 16  "The Captain doesn't want you snooping in his quarters.
+You're in trouble now!";
     prevent.input();
 }
 
@@ -305,10 +306,12 @@ if (script == caught && next) {
     reset(next);
     set(tossed.in);
     if (timesCaught == 1) {
-        print(18);                                          // [ final message
+        #message 18  "\"Yer more trouble than yer worth!\" the Captain thunders.
+\"'Tis the plank fer ya now!\"";                                          // [ final message
     }
     else {
-        print(19);                                          // [ warning message
+        #message 19  "\"I'll not tolerate ya snoopin' around me quarters!\" the Captain
+thunders. \"If I ketch ya in here again ya'll walk the plank!\"";                                          // [ warning message
     }
     player.control();
     accept.input();
@@ -381,36 +384,42 @@ if (obj.in.box(ego, baseLeft, baseTop, baseRight, baseBottom)) {    // [ at base
 
 if ((said(look, room) || said(look))) {
     if (egoLoc == captain) {
-        print(2);
+        #message 2  "This must be the Captain's cabin. He seems to be
+a bit more tidy than his mates, as the room is cleanand orderly.
+Against one wall rests his bunk with a large chest at its foot.
+Across the room is his desk with a chart tacked to the wall.";
     }
     if (egoLoc == hold) {
-        print(3);
+        #message 3  "You look curiously around. Out a porthole you see the swell of the
+ocean.A device for turning the ship's rudder sets in the floor.
+A rope ladder extends up through an opening in the ceiling.";
     }
 }
 
 if ((said(look$in, hold) || said(look, hold))) {
     if (egoLoc == hold) {
-        print(4);
+        #message 4  "You peer into the dark opening. It's impossible to make out any details.";
     }
     else {
-        print(1);
+        #message 1  "You can't see that very well from here.";
     }
 }
 if (said(look, under, bed)) {
-    print(26);
+    #message 26  "You see nothing you haven't seen before.";
 }
 
 if (said(look, bed)) {
     if (egoLoc == captain) {
         if (crewAsleep && shipShape != atBeach) {
-            print(27);
+            #message 27  "The captain is snoring peacefully in his bunk.";
         }
         else {
-            print(6);
+            #message 6  "The Captain's bunk has been very neatly made. You look it over
+carefully, but find nothing of interest.";
         }
     }
     else {
-        print(1);
+        #message 1  "You can't see that very well from here.";
     }
 }
 
@@ -418,28 +427,28 @@ if ((said(look, man, on, bed) ||
     said(look, man, bed) ||
     said(look, man))) {
     if (egoLoc == captain) {
-        print(27);
+        #message 27  "The captain is snoring peacefully in his bunk.";
     }
     else {
-        print(5);
+        #message 5  "You can't see anything from here.";
     }
 }
 
 if (said(look, ladder)) {
     if (egoLoc == hold) {
-        print(7);
+        #message 7  "The rope ladder is still there.";
     }
     else {
-        print(1);
+        #message 1  "You can't see that very well from here.";
     }
 }
 
 if ((said(look, out, porthole) || said(look, porthole))) {
     if (egoLoc == hold) {
-        print(8);
+        #message 8  "You see the rise and fall of the ocean as you gaze out the porthole.";
     }
     else {
-        print(1);
+        #message 1  "You can't see that very well from here.";
     }
 }
 
@@ -453,21 +462,22 @@ if ((said(look, chest) ||
     said(get, stuff, rol) ||
     said(look$in, chest))) {
     if (egoLoc == hold) {
-        print(1);
+        #message 1  "You can't see that very well from here.";
     }
     else {
         if (!chestOpen) {
-            print(9);
+            #message 9  "The chest at the foot of the Captain's bunk is closed.";
         }
         else {
             distance(ego, aChest, work);
             if (work > 18) {
-                print(21);
+                #message 21  "The open chest bears closer examination.";
             }
             else {
                 if (dontHaveStuff) {                        // [ get it back
                     reset(dontHaveStuff);
-                    print(20);
+                    #message 20  "You've found all of your missing possessions! You
+take them with you.";
                                                             // [ give it back to him
                     if (!found.stuff.once) {
                         score += 3;
@@ -486,7 +496,7 @@ if ((said(look, chest) ||
                         }
                 }
                 else {
-                    print(17);
+                    #message 17  "You look in the chest and find nothing.";
                 }
             }
         }
@@ -495,30 +505,36 @@ if ((said(look, chest) ||
 
 if ((said(look$in, desk) || said(look$in, drawer) || said(look, desk))) {
     if (egoLoc == captain && posn(ego, 63, 112, 83, 120)) {
-        print(11);
+        #message 11  "You gaze with interest at the Captain's desk. The desk top is very
+neat, holding only writing implements.Curiously, you open a drawer or
+two.There is nothing of interest among the charts and logbooks.
+Quickly, you close them again.";
     }
     else {
-        print(1);
+        #message 1  "You can't see that very well from here.";
     }
 }
 if ((said(look, chart) || said(look, chart, on, wall))) {
     if (egoLoc == captain) {
-        print(12);
+        #message 12  "You stare at the chart tacked to the wall. It traces the route the
+ship is now sailing.It leaves Llewdor, crossing a wide
+ocean, and arriving at the foot of a mountain range.An \"X\" has
+been marked at the arrival point.";
     }
     else {
-        print(1);
+        #message 1  "You can't see that very well from here.";
     }
 }
 
 if ((said(open, up, chest) || said(open, lid)
     || said(open, lid, chest) || said(open, chest))) {
     if (chestOpen) {
-        print(22);
+        #message 22  "The chest is already open.";
     }
     else {                                                  // [ is he close enough
         distance(ego, aChest, work);
         if (work > 18) {
-            print(10);
+            #message 10  "How do you propose to do that from where you're standing?";
         }
         else {
             start.update(aChest);
@@ -530,12 +546,12 @@ if ((said(open, up, chest) || said(open, lid)
 
 if ((said(close, lid) || said(close, lid, chest) || said(close, chest))) {
     if (!chestOpen) {
-        print(23);
+        #message 23  "The chest is already closed.";
     }
     else {                                                  // [ is he close enough
         distance(ego, aChest, work);
         if (work > 18) {
-            print(10);
+            #message 10  "How do you propose to do that from where you're standing?";
         }
         else {
             start.update(aChest);
@@ -555,36 +571,39 @@ if ((said(close, lid) || said(close, lid, chest) || said(close, chest))) {
 if ((said(lie, on, bed) || said(get, on, bed)
     || said(sleep, on, bed) || said(lie, on, bed) || said(lie, bed))) {
     if (egoLoc == captain) {
-        print(13);
+        #message 13  "You really have better things to do than lie around. It would be wise
+to get out of there.";
     }
     else {
-        print(10);
+        #message 10  "How do you propose to do that from where you're standing?";
     }
 }
 
 if ((said(sit, on, chair) || said(sit, chair))) {
     if (egoLoc == captain) {
-        print(14);
+        #message 14  "You really have better things to do than sit around. It would be wise
+to get out of there.";
     }
     else {
-        print(10);
+        #message 10  "How do you propose to do that from where you're standing?";
     }
 }
 if ((said(look$in, door) || said(look, door))) {
     if (egoLoc == captain) {
-        print(15);
+        #message 15  "Through one doorway, you see the rope ladder snaking its way down into
+the cargo hold.Out the other, you see nothing but the endless ocean.";
     }
     else {
-        print(1);
+        #message 1  "You can't see that very well from here.";
     }
 }
 
 if ((said(look, window) || said(look, out, window))) {
     if (egoLoc == captain) {
-        print(25);
+        #message 25  "You look out the window and see the bright, blue ocean.";
     }
     else {
-        print(1);
+        #message 1  "You can't see that very well from here.";
     }
 }
 

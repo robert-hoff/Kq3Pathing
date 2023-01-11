@@ -312,56 +312,56 @@ if (have.input)
     if ((said(look, plants) ||
         said(look, ground)))
     {
-        print(1);
+        #message 1  "The soft grass soothes your aching feet.";
     }
 
     if ((said(look, trees) ||
         said(look, tree) ||
         said(look)))
     {
-        print(2);
+        #message 2  "The many beautiful trees bring a sense of peace to this forest.";
     }
 
     if (said(look, desert))
     {
-        print(3);
+        #message 3  "If you look way off to the west, you can see the desert.";
     }
 
     if (said(look, flowers))
     {
-        print(4);
+        #message 4  "This is the wrong time of the year for wildflowers.";
     }
 
     if (said(look, sky))
     {
-        print(6);
+        #message 6  "The clear, blue sky is brilliant with an occasional white cloud.";
     }
 
     if ((said(pick, flowers) || said(get, flowers)))
     {
-        print(7);
+        #message 7  "There are no flowers in this area.";
     }
 
     if ((said(climb, trees) ||
         said(climb, tree)))
     {
-        print(8);
+        #message 8  "You see no suitable trees for climbing.";
     }
 
     if (said(look, rocks))
     {
-        print(9);
+        #message 9  "If you've seen one rock, you've seen them all.";
     }
 
     if (said(look, bird))
     {
         if (birds.here)
         {
-            print(10);
+            #message 10  "You see two pretty birds looking at you.";
         }
         else
         {
-            print(13);
+            #message 13  "You don't see any right now.";
         }
     }
 
@@ -369,11 +369,11 @@ if (have.input)
     {
         if (squirrels.here)
         {
-            print(11);
+            #message 11  "You see two squirrels chattering to each other.";
         }
         else
         {
-            print(13);
+            #message 13  "You don't see any right now.";
         }
     }
 
@@ -381,11 +381,11 @@ if (have.input)
     {
         if (squirrels.here)
         {
-            print(12);
+            #message 12  "They're too difficult to catch.";
         }
         else
         {
-            print(13);
+            #message 13  "You don't see any right now.";
         }
     }
 
@@ -393,11 +393,11 @@ if (have.input)
     {
         if (birds.here)
         {
-            print(12);
+            #message 12  "They're too difficult to catch.";
         }
         else
         {
-            print(13);
+            #message 13  "You don't see any right now.";
         }
     }
 
@@ -405,33 +405,35 @@ if (have.input)
         has(i.dough.balls) &&
         said(listen, bird))
     {
-        print(14);
+        #message 14  "Maybe if you're quiet, you'll hear them.";
     }
 
     if (squirrels.here &&
         has(i.dough.balls) &&
         said(listen, animal))
     {
-        print(14);
+        #message 14  "Maybe if you're quiet, you'll hear them.";
     }
 
     if (!near.cactus)
     {
         if (said(anyword, cactus))
         {
-            print(16);
+            #message 16  "Where?";
         }
     }
     else
     {
         if (said(get, cactus))
         {
-            print(15);
+            #message 15  "All of the cactus around here are too prickly to be touched. You could wind
+up with a handful of thorns.";
         }
 
         if (said(anyword, cactus))
         {
-            print(17);
+            #message 17  "It is a handsome example of the species, but not one you'd care to handle.
+Look at those thorns!";
         }
     }
 }

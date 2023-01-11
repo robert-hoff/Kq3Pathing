@@ -129,59 +129,66 @@ if ((said(look, mountain) ||
     said(look, room) ||
     said(look, up)))
 {
-    print(1);
+    #message 1  "The mountains continue to march forever upward, as you trek higher
+and higher.It's getting cold, and there are traces of snow. Below you
+stretches a beautiful valley.";
 }
 
 if (said(look, valley))
 {
-    print(12);
+    #message 12  "Beautiful, isn't it? Too bad there is absolutely no way to get there.";
 }
 if ((said(look, path) ||
     said(look, up, path)))
 {
-    print(2);
+    #message 2  "Here, the path is narrower, it seems, than before. It travels
+precariously along the side of a steep mountainside.Looking down, you
+almost lose your balance.Watch out!";
 }
 
 if ((said(look, plants) ||
     said(look, trees)))
 {
-    print(3);
+    #message 3  "A forest surrounds you, with tall evergreen trees and low bushes.";
 }
 
 if (said(look, ground))
 {
-    print(4);
+    #message 4  "The ground goes... way up, or way down. Better be careful.";
 }
 
 if ((said(look, sky) ||
     said(look, up, sky)))
 {
-    print(5);
+    #message 5  "You look upward and see the mountain range looming toward
+the beautiful blue sky.";
 }
 
 if ((said(climb, trees) ||
     said(climb, up, trees)))
 {
-    print(6);
+    #message 6  "There are no climbable trees here.";
 }
 
 if ((said(pick, flowers) ||
     said(get, flowers) ||
     said(look, flowers)))
 {
-    print(7);
+    #message 7  "There are few flowers here.";
 }
 
 if ((said(look, stream) ||
     said(look, water) ||
     said(look$in, stream)))
 {
-    print(8);
+    #message 8  "Melting snow creates a myriad of tiny rainbows as it burbles through the
+rocks, forming tiny waterfalls on its way back to the sea.";
 }
 
 if (said(look, snow))
 {
-    print(9);
+    #message 9  "Patches of white snow begin to appear. The air is definitely
+getting colder, and you begin to shiver.";
 }
 
 if ((said(drink, water) ||
@@ -199,11 +206,11 @@ if ((said(drink, water) ||
 {
     if (posn(ego, 41, 50, 66, 70))
     {
-        print(10);
+        #message 10  "Ahhh. It tastes like Sierra water!";
     }
     else
     {
-        print(11);
+        #message 11  "Your arms are not that long.";
     }
 }
 

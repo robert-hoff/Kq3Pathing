@@ -223,30 +223,35 @@ if (have.input)
 {
     if ((said(look, room) || said(look)))
     {
-        print(1);
+        #message 1  "The beautiful trees of the forest to the east grow sparse as
+they reach the edge of the great desert to the west.You do notice one
+particularly large oak tree. \"What a fine oak,\" you think.";
     }
 
     if ((said(look, tree) ||
         said(look, up, tree)))
     {
-        print(2);
+        #message 2  "You look up into the towering oak tree. You can only see large,
+spreading branches and thick leaves.Looking down, you see a small hole
+between the tree's large roots.";
     }
 
     if (posn(ego, 53, 90, 72, 135) &&
         said(anyword, flowers))
     {
-        print(19);
+        #message 19  "The flowers are pretty, but otherwise uninteresting to you.";
     }
 
     if (said(climb, tree))
     {
         if (near.tree)
         {
-            print(3);
+            #message 3  "You try to climb the huge oak tree, but cannot find a good hand hold.
+You slip back, and all you gain for your efforts are splinters.";
         }
         else
         {
-            print(14);
+            #message 14  "There are no climbable trees nearby.";
         }
     }
 
@@ -257,7 +262,7 @@ if (have.input)
     {
         if (!near.hole)
         {
-            print(16);
+            #message 16  "You need to be closer.";
         }
         else
         {
@@ -291,7 +296,7 @@ if (have.input)
         reset(pull.rope);
         if (!near.hole)
         {
-            print(16);
+            #message 16  "You need to be closer.";
         }
         else
         {
@@ -315,11 +320,11 @@ if (have.input)
     {
         if (rope.ladder.down)
         {
-            print(8);
+            #message 8  "The rope ladder stretches up into the branches.";
         }
         else
         {
-            print(15);
+            #message 15  "What ladder?";
         }
     }
 
@@ -329,25 +334,26 @@ if (have.input)
     {
         if (rope.ladder.down)
         {
-            print(9);
+            #message 9  "The ladder is attached to the oak tree. You cannot remove it.";
         }
         else
         {
-            print(15);
+            #message 15  "What ladder?";
         }
     }
 
     if ((said(look, ground) ||
         said(look, under, tree)))
     {
-        print(10);
+        #message 10  "There's nothing of interest here, just some acorns scattered around this
+old oak tree.";
     }
 
     if ((said(look, acorns) ||
         said(look, acorns, ground) ||
         said(look, acorns, ground, under, tree)))
     {
-        print(11);
+        #message 11  "The acorns surround the old oak tree, and crunch under your step.";
     }
 
     if ((said(get, acorn) ||
@@ -356,20 +362,22 @@ if (have.input)
     {
         if (!near.tree)
         {
-            print(16);
+            #message 16  "You need to be closer.";
         }
         else
         {
             if (obj.in.room(i.acorns, current.room) &&
                 near.acorn)
             {
-                print(12);
+                #message 12  "You pick and poke among the fallen acorns, looking for dried ones.
+You eventually find three dried acorns, and take them with you.";
                 get(i.acorns);
                 score += 1;
             }
             else
             {
-                print(13);
+                #message 13  "You pick and poke among the fallen acorns looking for dried ones. You
+don't find any; these are all newly fallen.";
             }
         }
     }
@@ -683,7 +691,7 @@ if (current.status == fly && in.hole)
         set(got.it.in.the.hole);
         score += 5;
     }
-    print(17);
+    #message 17  "In your insect form, you fit easily through the hole in the tree.";
     new.room(35);
 }
 

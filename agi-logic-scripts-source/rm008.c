@@ -230,22 +230,27 @@ if ((said(look, room) ||
     said(look, house) ||
     said(look)))
 {
-    print(1);
+    #message 1  "This is where Manannan eats his meals. You, of course, are not supposed
+to eat here.YOU eat in the kitchen.There is a pine table
+and benches large enough to seat at least ten people; but the wizard has
+never HAD any guests for dinner.";
 }
 
 if (said(look, table))
 {
-    print(3);
+    #message 3  "The large dining table is made of pine planking.
+Matching benches run its length on both sides.The
+table is big enough to seat at least ten people.";
     if (obj.in.room(i.cup, current.room))
     {
-        print(21);
+        #message 21  "There is a little metal cup on the table.";
     }
 }
 
 if (obj.in.room(i.cup, current.room) &&
     said(look, cup))
 {
-    print(21);
+    #message 21  "There is a little metal cup on the table.";
 }
 
 if ((said(look, top, table) ||
@@ -254,24 +259,27 @@ if ((said(look, top, table) ||
 {
     if (obj.in.room(i.cup, current.room))
     {
-        print(21);
+        #message 21  "There is a little metal cup on the table.";
     }
     else
     {
-        print(4);
+        #message 4  "There is nothing on the dining table. You keep it very clean as
+Manannan will not eat on a dirty table.";
     }
 }
 
 if (said(look, under, table))
 {
-    print(5);
+    #message 5  "You bend over and peer under the table. You see nothing but
+a few crumbs left over from one of Manannan's meals.";
 }
 
 if ((said(look, moose) ||
     said(look, wall) ||
     said(look, moose, wall)))
 {
-    print(8);
+    #message 8  "You scrutinize the moosehead very carefully. But, you see
+it is nothing but an old head.You do feel sorry for the poor thing, though.";
 }
 
 if ((said(get, moose) ||
@@ -280,18 +288,19 @@ if ((said(get, moose) ||
     said(remove, moose) ||
     said(remove, moose, wall)))
 {
-    print(9);
+    #message 9  "The moosehead is securely fastened to the wall. You cannot remove it.";
 }
 
 if ((said(look, light) ||
     said(look, flame)))
 {
-    print(10);
+    #message 10  "Flickering candles from the wrought iron lamp light the room.";
 }
 
 if (said(look, door))
 {
-    print(11);
+    #message 11  "There are two doorways here. One leads to the kitchen,
+the other to the entry hall.";
 }
 
 if ((said(get, cup) ||
@@ -300,13 +309,13 @@ if ((said(get, cup) ||
 {
     if (!obj.in.room(i.cup, current.room))
     {
-        print(29);
+        #message 29  "You already took it.";
     }
     else
     {
         if (!posn(ego, 62, 126, 80, 150))
         {
-            print(23);
+            #message 23  "You're too far away.";
         }
         else
         {
@@ -314,7 +323,7 @@ if ((said(get, cup) ||
             score += 1;
             start.update(a.cup);
             erase(a.cup);
-            print(22);
+            #message 22  "You pick up the little tin cup and carry it with you.";
         }
     }
 }
@@ -325,17 +334,18 @@ if (wiz.pussy.on.screen)
 {
     if (said(look, cat))
     {
-        print(33);
+        #message 33  "Manannan will never annoy anyone again.";
     }
 
     if (said(talk, cat))
     {
-        print(34);
+        #message 34  "Manannan seems unusually quiet, don't you think!";
     }
 
     if (said(anyword, cat))
     {
-        print(35);
+        #message 35  "You'd better get on with your quest. Manannan is no longer a bother to
+anyone!";
     }
 }
 
@@ -350,7 +360,7 @@ if ((said(sit, table) ||
 {
     if (wiz.sitting)
     {
-        print(25);
+        #message 25  "Manannan wouldn't like that.";
     }
     else
     {
@@ -359,7 +369,7 @@ if ((said(sit, table) ||
             ego.x < 41 ||                                   // [  could be in entry hall door
             ego.x > 152))                                   // [  could get trapped by table
         {
-            print(26);
+            #message 26  "You're too far from the table.";
         }
         else
         {
@@ -391,11 +401,11 @@ if ((said(leave, table) ||
     {
         if (current.status == eating)
         {
-            print(27);
+            #message 27  "Finish chewing first.";
         }
         else
         {
-            print(28);
+            #message 28  "You are standing.";
         }
     }
 }
@@ -440,7 +450,7 @@ if (!wiz.sitting)
             said(bread, anyword, wizard) ||
             said(mutton, anyword, wizard)))
     {
-        print(24);
+        #message 24  "He doesn't seem to be hungry right now.";
     }
 }
 else
@@ -449,13 +459,15 @@ else
     {
         if (wiz.status == waiting.to.eat)
         {
-            print(12);
+            #message 12  "Manannan is impatiently waiting for his food! His
+stomach rumbles as he drums his gnarled fingers on the
+table.You'd better feed him quickly, or dire consequences may result.";
         }
         else
         {
             if (wiz.status == eating)
             {
-                print(2);
+                #message 2  "He seems to be quite hungry.";
             }
             else
             {
@@ -469,7 +481,7 @@ else
     {
         if (wiz.status == eating)
         {
-            print(32);
+            #message 32  "He's too busy to reply.";
         }
         else
         {
@@ -478,11 +490,15 @@ else
                 if (!talked.to.wiz)
                 {
                     set(talked.to.wiz);
-                    print(13);
+                    #message 13  "Manannan is out of sorts right now. \"Don't jabber
+at me, boy!Bring me my food, NOW!\" he bellows.";
                 }
                 else
                 {
-                    print(14);
+                    #message 14  "After speaking to the grouchy wizard again, he narrows
+his bushy - white eyebrows and looks at you with ill - temper. \"You're
+awfully thick - headed, aren't you?\" he snarls. \"It seems you need to be
+taught a lesson or two about OBEYING!\"";
                     set.view(a.wiz, v.wiz);
                     reposition.to(a.wiz, 91, 129);
                     make.wiz.come = osw.punish;
@@ -512,7 +528,7 @@ else
             !has(i.porridge) &&
             !has(i.porridge.poisoned))
         {
-            print(19);
+            #message 19  "You have no food to give the wizard.";
         }
         else
         {
@@ -565,7 +581,8 @@ else
 
             if (!wants.to.feed.wiz)
             {
-                print(15);
+                #message 15  "You are carrying more than one type of food. Which would you like
+to give the wizard ? ";
                 wants.to.feed.wiz = something;
                 goto no.input;
             }
@@ -709,14 +726,14 @@ if (wiz.on.screen && !PO'd.wiz.init'd)
         if (!posn(ego, 75, 126, 105, 153))
         {
             wants.to.feed.wiz = 0;
-            print(23);
+            #message 23  "You're too far away.";
         }
         else
         {
             if (wiz.status != waiting.to.eat)
             {
                 wants.to.feed.wiz = 0;
-                print(24);
+                #message 24  "He doesn't seem to be hungry right now.";
                 goto no.input;
             }
 
@@ -758,7 +775,8 @@ if (wiz.on.screen && !PO'd.wiz.init'd)
             wiz.eat.seconds = wiz.eat.time;
             wiz.status = eating;
             wiz.chewing.timer = 2;
-            print(16);
+            #message 16  "You place the food on the dining table before the
+hungry wizard.Ravenously, he devours every bit of it.";
             work = 3;
             cycle.time(a.wiz, work);
             if (chore.to.do == fix.meal)
@@ -801,11 +819,13 @@ if (wiz.on.screen && !PO'd.wiz.init'd)
                 reset(handsOff);
                 set(wiz.arrived);
                 wiz.location = 50;
-                print(30);
+                #message 30  "You fooled him! Manannan didn't realize the porridge was tainted,
+and ate the whole bowl!";
             }
             else
             {
-                print(18);
+                #message 18  "It's obvious the wizard enjoyed his meal as he lets out a satisfied
+belch.He rises and leaves without so much as a \"Thank you!\"";
                 erase(a.food);
                 wiz.status = leaving.room;
                 stop.cycling(a.wiz);
@@ -885,7 +905,8 @@ if (wiz.on.screen && !PO'd.wiz.init'd)
 
         if (wiz.location == 54)
         {
-            print(36);
+            #message 36  "Congratulations! Manannan will never again enslave you or the people
+of Llewdor!!At last, you are free!";
             wander(a.cat);
             observe.objs(a.cat);
             set(wiz.pussy.on.screen);
@@ -1031,7 +1052,8 @@ if (ego.arrived)
 
     if (ego.location == 5)
     {
-        print(6);
+        #message 6  "You take a well deserved moment's rest. But, you wonder if
+you have time to be sitting here ? ";
         ego.location = 0;
     }
 }
@@ -1040,7 +1062,7 @@ if (ego.wants.to.eat)
 {
     if (wiz.sitting)
     {
-        print(25);
+        #message 25  "Manannan wouldn't like that.";
         ego.wants.to.eat = 0;
     }
     else
@@ -1055,7 +1077,7 @@ if (ego.wants.to.eat)
                 ego.x < 41 ||                               // [  could be in entry hall door
                 ego.x > 152))                               // [  could get trapped by table
             {
-                print(26);
+                #message 26  "You're too far from the table.";
                 ego.wants.to.eat = 0;
             }
             else
@@ -1122,7 +1144,7 @@ if (aSecondPassed)
         if (make.ego.a.pussy)
         {
             reset(make.ego.a.pussy);
-            print(31);
+            #message 31  "You purr contentedly. You will enjoy your new life as a cat!";
             load.view(v.gag.dead.ego.2);
             set.view(ego, v.gag.dead.ego.2);
             set.loop(ego, 0);                               // [  cat with ego head
@@ -1144,7 +1166,7 @@ if (aSecondPassed)
             reset(ego.eat.loop.done);
             current.status = sitting;
             set(handsOff);
-            print(7);
+            #message 7  "Mmmmmm! You needed that.";
         }
     }
 }

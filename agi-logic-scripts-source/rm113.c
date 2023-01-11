@@ -60,6 +60,6 @@ if (waterView == swimmingEgo)
 if (current.status != swimming &&
     said(swim))
 {
-    print(1);
+    #message 1  "The water looks inviting, but be careful if you go out there.";
 }
 

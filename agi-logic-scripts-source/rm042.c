@@ -149,7 +149,7 @@ if (aSecondPassed && sleep.timer) {
 
 if (current.status == entranced) {
     if (have.input) {
-        print(19);
+        #message 19  "Shhhh! You'll wake yourself up.";
     }
 }
 
@@ -159,7 +159,7 @@ if (current.status == sleeping) {
         said(get, up, bed) ||
         said(get, up, from, bed) ||
         said(get, up))) {
-        print(23);
+        #message 23  "Good idea. You've got too much to do to be lying around in a strange bed.";
         sleep.timer = 2;
         ego.location = papas.bed;                           // [ fake it out
     }
@@ -176,7 +176,7 @@ if (current.status == normal.ego &&
         said(get$in, bed) ||
         said(get, on, bed))) {
     if (ego.location == nowhere) {
-        print(17);
+        #message 17  "You need to move closer.";
     }
     else {                                                  // [ who's bed
         set(handsOff);                                      // [ reset when he gets up
@@ -189,20 +189,20 @@ if (current.status == normal.ego &&
         program.control();
         if (ego.location == papas.bed) {
             reposition.to(ego, 100, 132);
-            print(2);
+            #message 2  "You flop onto the biggest (and hardest) bed!";
             set.cel(ego, 2);
             set.loop(ego, 0);
             sleep.timer = 10;
         }
         if (ego.location == mamas.bed) {
             reposition.to(ego, 32, 143);
-            print(1);
+            #message 1  "You jump onto the medium-sized bed and sink deep into its fluffy depths.";
             set.loop(ego, 1);
             sleep.timer = 10;
         }
         if (ego.location == babys.bed) {
             reposition.to(ego, 87, 107);
-            print(3);
+            #message 3  "You lie upon the smallest bed, and snuggle down into the pillow.";
             set.loop(ego, 0);
             sleep.timer = 10;
         }
@@ -212,15 +212,15 @@ if (current.status == normal.ego &&
 if (aSecondPassed && current.status == sleeping) {
     if (sleep.timer == 5) {                                 // [ first message
         if (ego.location == papas.bed) {
-            print(18);
+            #message 18  "This bed is MUCH too hard!";
         }
         if (ego.location == mamas.bed) {
-            print(25);
+            #message 25  "This bed is MUCH too soft!";
         }
         if (ego.location == babys.bed) {
             work = 3;
             cycle.time(ego, work);
-            print(22);
+            #message 22  "Ahhhh! This bed is just right. You've fallen asleep.";
             snore.timer = 2;
             prevent.input();
         }
@@ -353,11 +353,11 @@ if (drawer.timer == 1)
     {
         if (obj.in.room(i.thimble, current.room))
         {
-            print(7);
+            #message 7  "You open the drawer, and among the clothes, you see a pretty silver thimble.";
         }
         else
         {
-            print(14);
+            #message 14  "You open the drawer and see some bear-sized clothes.";
         }
     }
 }
@@ -370,16 +370,17 @@ if (have.input) {
 
     if (said(look, bed)) {
         if (ego.location == nowhere) {
-            print(15);
+            #message 15  "You are in the Bear family's cozy bedroom. You see three
+beds and a chest of drawers.";
         }
         if (ego.location == papas.bed) {
-            print(27);
+            #message 27  "This is a big, old bed. It must be Papa Bear's.";
         }
         if (ego.location == mamas.bed) {
-            print(28);
+            #message 28  "This looks like a nice, soft bed. Maybe it's Mama Bear's.";
         }
         if (ego.location == babys.bed) {
-            print(29);
+            #message 29  "This bed looks just the right size for you.";
         }
     }
 
@@ -391,7 +392,7 @@ if (have.input) {
         {
             if (drawer.status == open)
             {
-                print(12);
+                #message 12  "It is already open.";
             }
             else
             {
@@ -403,7 +404,7 @@ if (have.input) {
         }
         else                                                // [too far away
         {
-            print(17);
+            #message 17  "You need to move closer.";
         }
     }
 
@@ -415,7 +416,7 @@ if (have.input) {
         {
             if (drawer.status == closed)
             {
-                print(9);
+                #message 9  "The drawer is already closed.";
             }
             else
             {
@@ -427,34 +428,35 @@ if (have.input) {
         }
         else                                                // [too far away
         {
-            print(16);
+            #message 16  "A dresser sits in the corner of the room.";
         }
 
     }
 
     if (said(look, under, bed)) {
         if (ego.location == nowhere) {
-            print(17);
+            #message 17  "You need to move closer.";
         }
         else {
-            print(4);
+            #message 4  "There is nothing of interest under the bed.";
         }
     }
 
     if (said(get, thimble)) {
         if (!obj.in.room(i.thimble, current.room)) {
-            print(13);
+            #message 13  "You have already taken it!";
         }
         else {
             if (!by.drawer) {
-                print(17);
+                #message 17  "You need to move closer.";
             }
             else {
                 if (drawer.status == closed) {
-                    print(5);
+                    #message 5  "You open the drawer, take the thimble, and close the drawer in one
+fluid movement.";
                 }
                 else {
-                    print(8);
+                    #message 8  "You pick up the thimble and carry it with you.";
                 }
                 get(i.thimble);
                 score += 1;
@@ -463,37 +465,38 @@ if (have.input) {
     }
 
     if (said(get, clothes)) {
-        print(26);
+        #message 26  "They wouldn't fit you.";
     }
 
     if ((said(look$in, drawer) || said(look, drawer))) {
         if (by.drawer) {
             if (drawer.status == closed) {
-                print(21);
+                #message 21  "The drawers are shut.";
             }
             else {
                 if (!obj.in.room(i.thimble, current.room)) {
-                    print(11);
+                    #message 11  "You see a few bear-sized clothes.";
                 }
                 else {
-                    print(10);
+                    #message 10  "You see a few bear-sized clothes and a silver thimble.";
                 }
             }
         }
         else {
-            print(17);
+            #message 17  "You need to move closer.";
         }
     }
 
     if ((said(look) || said(look, room) ||
         said(look, bedroom) || said(look, house))) {
-        print(15);
+        #message 15  "You are in the Bear family's cozy bedroom. You see three
+beds and a chest of drawers.";
     }
 
     if ((said(look, chest) ||
         said(look, dresser)))
     {
-        print(16);
+        #message 16  "A dresser sits in the corner of the room.";
     }
 }
 

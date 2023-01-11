@@ -102,11 +102,11 @@ if (have.input)
 {
     if (said(look, rock))
     {
-        print(4);
+        #message 4  "If you've seen one rock, you've seen them all.";
 
         if (obj.in.room(i.cactus, current.room))
         {
-            print(2);
+            #message 2  "You notice an unusual little cactus beside that large rock.";
         }
     }
 
@@ -117,13 +117,13 @@ if (have.input)
             said(look, cactus) ||
             said(look, ground)))
         {
-            print(2);
+            #message 2  "You notice an unusual little cactus beside that large rock.";
         }
 
         if ((said(use, knife, cut, cactus) ||
             said(cut, cactus, with, knife)))
         {
-            print(5);
+            #message 5  "You don't have the cactus.";
         }
 
         if ((said(get, cactus) ||
@@ -134,11 +134,11 @@ if (have.input)
             distance(ego, a.cactus, work);
             if (work > 20)
             {
-                print(3);
+                #message 3  "You are not close enough.";
             }
             else
             {
-                print(1);
+                #message 1  "Ok.";
                 get(i.cactus);
                 score += 1;
                 start.update(a.cactus);

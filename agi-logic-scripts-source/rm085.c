@@ -175,7 +175,8 @@ if (init.log) {
 
 if (theyTookHisShitAgain) {
     reset(theyTookHisShitAgain);
-    print(8);
+    #message 8  "Adding insult to injury, all of your
+belongings have been taken from you again!";
 }
 
 if (current.status == climbing && hit.special) {
@@ -235,26 +236,31 @@ call(lgc.pirates);
 // [******** SAID STUFF ********]
 
 if ((said(look, room) || said(look) || said(look, hold))) {
-    print(1);
+    #message 1  "You are in the dank cargo hold of the pirate ship. With
+caution, you look around the dim surroundings.Mostly, you see stacks
+of wooden crates.Looking upward, you notice a rope ladder dangling
+partway through an opening in the hold ceiling.The ladder is directly
+over the largest crate.";
 }
 
 if (said(look, hole)) {
-    print(3);
+    #message 3  "You see the opening for the cargo hold high above you. A thin rope
+ladder hangs halfway down.";
 }
 
 if ((said(get$out, hold) || said(climb, out, hold))) {
-    print(4);
+    #message 4  "Good idea! How?";
 }
 
 if ((said(look, up) || said(look, up, ladder) || said(look, ladder))) {
     if (current.status == on.big.box) {
-        print(5);
+        #message 5  "The ladder is just out of reach.";
     }
     if (current.status == climbing) {
-        print(6);
+        #message 6  "The ladder is sagging under your weight.";
     }
     if ((current.status == normal.ego || current.status == on.small.box)) {
-        print(7);
+        #message 7  "The ladder is far above you.";
     }
 }
 

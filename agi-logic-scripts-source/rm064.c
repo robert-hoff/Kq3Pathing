@@ -95,7 +95,7 @@ if (hitBottom) {
     reset(hitBottom);
     erase(ego);
     set(certain.death);
-    print(5);
+    #message 5  "No fair taking short cuts!";
     reset(handsOff);
 }
 
@@ -111,14 +111,17 @@ if ((said(look, up) ||
     said(look) ||
     said(look, cave) ||
     said(look$in, cave))) {
-    print(1);
+    #message 1  "Finally, the top of the cave! You notice bright light streaming in from
+outside the cave.Looking down, you see the crumbly stone steps
+precariously descending into the bowels of the mountain.";
 }
 if ((said(look, up, stairs) || said(look, down, stairs) || said(look, stairs))) {
-    print(2);
+    #message 2  "You gaze nervously down the steep stone steps leading into the pit of
+the mountain.Swallowing hard, you realize how dangerous they are.";
 }
 
 if ((said(look, out) || said(look, out, cave))) {
-    print(3);
+    #message 3  "It's very bright outside.  You think you see clouds.";
 }
 
 // [******PAINLESS ROOM EXITS * *****

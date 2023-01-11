@@ -262,20 +262,25 @@ if ((said(look, room) ||
   said(look) ||
   said(look, study)))
 {
-  print(1);
+  #message 1  "Manannan is very private with his study, and doesn't like you poking around.
+The huge oak desk is
+covered with his writing implements.An oak cabinet is in the
+corner.There is a chart on the rear wall.
+The bookshelves are filled with books on every
+subject; the wizard fancies himself to be quite a scholar.";
 }
 
 if ((said(look, basket) ||
   said(look$in, basket)))
 {
-  print(21);
+  #message 21  "Don't you remember... you emptied it yesterday.";
 }
 
 if ((said(look, chart) ||
   said(look, chart, on, wall) ||
   said(look, chart, wall)))
 {
-  print(8);
+  #message 8  "The chart has no meaning to you.";
 }
 
 // [    DESK STUFF.
@@ -283,14 +288,17 @@ if ((said(look, chart) ||
 if ((said(look, table) ||
   said(look, chair)))
 {
-  print(4);
+  #message 4  "The massive desk is made from oak. The wizard does all of
+his reading, writing, and calculating here.";
 }
 
 if ((said(look, top, table) ||
   said(look, on, table) ||
   said(look, top$of, table)))
 {
-  print(5);
+  #message 5  "The desk is covered with the wizard's writing implements: quill pens,
+jars of oak bark ink, and parchment paper.Manannan is a
+prolific writer, recording his many ideasand formulas.";
 }
 
 if ((said(open, table) ||
@@ -303,17 +311,18 @@ if ((said(open, table) ||
 {
   if (ego.location != desk)
   {
-    print(3);
+    #message 3  "You are not close enough.";
   }
   else
   {
     if (wiz.on.screen)
     {
-      print(30);
+      #message 30  "The wizard wouldn't appreciate that.";
     }
     else
     {
-      print(6);
+      #message 6  "You open the large desk's only drawer; but, you see nothing
+interesting.Before you're caught, you close it.";
     }
   }
 }
@@ -322,7 +331,8 @@ if ((said(open, table) ||
 
 if (said(look, cabinet))
 {
-  print(7);
+  #message 7  "The oak cabinet has a brass handle on its door. Your feather duster is
+lying on its top.";
 }
 
 if ((said(unlock, cabinet, use, key) ||
@@ -347,17 +357,17 @@ if ((said(unlock, cabinet, use, key) ||
 {
   if (ego.location != cabinet)
   {
-    print(3);
+    #message 3  "You are not close enough.";
   }
   else
   {
     if (!has(i.key))
     {
-      print(10);
+      #message 10  "You try to turn the handle, but, unfortunately, the door is locked.";
     }
     else
     {
-      print(12);
+      #message 12  "You unlock the oaken cabinet using the brass key.";
       door.timer = 44;
       if (has(i.magic.wand))
       {
@@ -376,17 +386,17 @@ if (has(i.magic.wand) &&
 {
   if (ego.location != cabinet)
   {
-    print(3);
+    #message 3  "You are not close enough.";
   }
   else
   {
     if (!has(i.key))
     {
-      print(10);
+      #message 10  "You try to turn the handle, but, unfortunately, the door is locked.";
     }
     else
     {
-      print(12);
+      #message 12  "You unlock the oaken cabinet using the brass key.";
       set(returning.his.rod);
       door.timer = 44;
     }
@@ -402,7 +412,7 @@ if ((said(look, top$of, cabinet) ||
   said(look, cabinet, top) ||
   said(look, on, top$of, cabinet)))
 {
-  print(9);
+  #message 9  "There is just your feather duster on the cabinet.";
 }
 
 if (!handsOff &&
@@ -414,7 +424,7 @@ if (!handsOff &&
 {
   if (ego.location != cabinet)
   {
-    print(3);
+    #message 3  "You are not close enough.";
   }
   else
   {
@@ -427,18 +437,25 @@ if (!handsOff &&
 
 if (said(look, shelf))
 {
-  print(15);
+  #message 15  "So many books line the bookshelf, you wonder when Manannan
+has time to read them all.Titles cover many subjects :
+from \"Ancient Arabic Mythology,\" to \"A Study of the Heavens,\" to
+\"The Philosophies of Socrates.\"";
 }
 
 if (said(look, book))
 {
   if (ego.location == bookcase)
   {
-    print(14);
+    #message 14  "Carefully examining the bookshelf, you notice a glint of metal
+behind one huge volume.";
   }
   else
   {
-    print(15);
+    #message 15  "So many books line the bookshelf, you wonder when Manannan
+has time to read them all.Titles cover many subjects :
+from \"Ancient Arabic Mythology,\" to \"A Study of the Heavens,\" to
+\"The Philosophies of Socrates.\"";
   }
 }
 
@@ -449,13 +466,14 @@ if ((said(get, book) ||
 {
   if (office.status == book.in.place)
   {
-    print(17);
+    #message 17  "You glance at the titles of the books, but do not see any
+that interest you.Wait... was that a glint of metal behind one large book ? ";
   }
   else
   {
     if (office.status == book.moved)
     {
-      print(18);
+      #message 18  "You glance at the books, but see no others that interest you.";
     }
     else
     {
@@ -466,7 +484,7 @@ if ((said(get, book) ||
 
 if ((said(look, glint)))
 {
-  print(36);
+  #message 36  "There may be something metallic behind that large book.";
 }
 
 if ((said(move, book) ||
@@ -474,7 +492,7 @@ if ((said(move, book) ||
 {
   if (ego.location != bookcase)
   {
-    print(3);
+    #message 3  "You are not close enough.";
   }
   else
   {
@@ -497,7 +515,7 @@ if ((said(put, book, back) ||
 {
   if (ego.location != bookcase)
   {
-    print(3);
+    #message 3  "You are not close enough.";
   }
   else
   {
@@ -509,11 +527,11 @@ if (said(look, lever))
 {
   if (office.status == book.in.place)
   {
-    print(26);
+    #message 26  "You look everywhere in the room, but do not see a lever.";
   }
   else
   {
-    print(22);
+    #message 22  "The metal lever is attached to the back of the bookshelf.";
   }
 }
 
@@ -521,11 +539,11 @@ if (said(get, lever))
 {
   if (office.status == book.in.place)
   {
-    print(26);
+    #message 26  "You look everywhere in the room, but do not see a lever.";
   }
   else
   {
-    print(27);
+    #message 27  "%m22 You cannot take it.";
   }
 }
 
@@ -535,11 +553,12 @@ if ((said(look, trapdoor) ||
 {
   if (office.status == trapdoor.open)
   {
-    print(24);
+    #message 24  "Peering into the dark, frightening trapdoor, you see
+treacherous stone steps.";
   }
   else
   {
-    print(23);
+    #message 23  "You look closely at the floor, but do not see any signs of one.";
   }
 }
 
@@ -548,7 +567,7 @@ if ((said(move, lever) ||
 {
   if (ego.location != bookcase)
   {
-    print(3);
+    #message 3  "You are not close enough.";
   }
   else
   {
@@ -621,21 +640,23 @@ if (book.timer == 11)
 {
   if (office.status == book.moved)
   {
-    print(19);
+    #message 19  "You push the large book aside, revealing a metal lever attached to
+the back of the bookshelf.";
   }
   else
   {
     if (office.status == book.in.place)
     {
-      print(20);
+      #message 20  "You move the big book back where you found it so it again conceals
+the metal lever.";
       if (wiz.status != dead)
       {
-        print(35);
+        #message 35  "You don't want the old wizard to grow suspicious of your activities.";
       }
     }
     else
     {
-      print(33);
+      #message 33  "Before you replace the book, you'd better shut the trapdoor.";
       book.timer = 1;                                       // [  why wait?
     }
   }
@@ -662,21 +683,21 @@ if (door.timer == 22)
   if (returning.his.rod)
   {
     reset(returning.his.rod);
-    print(31);
+    #message 31  "You carefully replace the magic wand exactly as you found it.";
     put(i.magic.wand, current.room);
   }
   else
   {
     if (!obj.in.room(i.magic.wand, current.room))
     {
-      print(13);
+      #message 13  "You find it is empty.";
     }
     else
     {
-      print(11);
+      #message 11  "Inside, you find the wizard's magic wand.";
       if (wiz.status != dead)
       {
-        print(25);
+        #message 25  "You take it with you, knowing it could mean death if he finds it missing.";
       }
       get(i.magic.wand);
       if (!found.magic.wand)
@@ -697,7 +718,7 @@ if (door.done)
 {
   reset(door.done);
   stop.update(a.cabinet.door);
-  print(16);
+  #message 16  "After closing the door, you carefully relock it.";
   start.motion(ego);
   accept.input();
 }
@@ -726,12 +747,12 @@ if (trapdoor.timer == 22)
 {
   if (office.status == trapdoor.open)
   {
-    print(28);
+    #message 28  "A trapdoor opens, revealing steep stone steps leading into darkness.";
   }
 
   if (office.status == book.moved)
   {
-    print(29);
+    #message 29  "The trapdoor groans shut, disappearing into the floorboards.";
   }
 }
 
@@ -820,7 +841,10 @@ if (wiz.on.screen && !PO'd.wiz.init'd)
       trapdoor.timer ||
       door.timer))
   {
-    print(32);
+    #message 32  "Caught in the act! You can see his rage building as the wizard's
+face turns red behind his white beard and his eyes bulge
+alarmingly.He roars at you, \"You know you're not allowed to sneak
+around in my private study!\"";
     make.wiz.come = osw.punish;
     set(force.wiz.come);
   }

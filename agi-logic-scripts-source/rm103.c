@@ -57,7 +57,7 @@ if (aSecondPassed)
     if (stunned.timer == 1)
     {
         reset(sound.done);
-        print(2);
+        #message 2  "Ouch!";
         stop.sound();
         stunned.timer = 0;
         start.climbing = walking;

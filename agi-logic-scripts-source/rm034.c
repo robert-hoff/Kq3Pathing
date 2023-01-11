@@ -301,13 +301,16 @@ if ((said(look, mountain) ||
     said(look, room) ||
     said(look, around)))
 {
-    print(2);
+    #message 2  "The lone mountain rises from the
+forests of Llewdor to this cloud - encircled peak.Here is the somber house
+of Manannan, where youand he reside.";
 }
 
 if ((said(look, path) ||
     said(look, down, path)))
 {
-    print(3);
+    #message 3  "The treacherous path is the only route down the mountain. If you are
+contemplating taking it, you should be very cautious.";
 }
 
 if ((said(look, trees) ||
@@ -316,13 +319,14 @@ if ((said(look, trees) ||
     said(climb, trees) ||
     said(look, plants)))
 {
-    print(4);
+    #message 4  "The foliage is very scant on this steep mountainside.";
 }
 
 if ((said(look, sky) ||
     said(look, up, sky)))
 {
-    print(5);
+    #message 5  "The sky is dark here due to the
+swirling clouds surrounding this summit.";
 }
 
 if ((said(look, clouds) ||
@@ -331,18 +335,19 @@ if ((said(look, clouds) ||
     said(look, clouds, sky) ||
     said(look, up, clouds, sky)))
 {
-    print(6);
+    #message 6  "Dark clouds surround this peak adding a cold,
+sinister feeling to this lonely mountain.";
 }
 
 if ((said(climb, mountain) ||
     said(climb, down, mountain)))
 {
-    print(7);
+    #message 7  "The mountain is too steep to climb. Use the path.";
 }
 
 if (said(look, ground))
 {
-    print(8);
+    #message 8  "The ground is hard and rocky on this lonely mountaintop.";
 }
 
 if ((said(look, house) ||
@@ -350,13 +355,13 @@ if ((said(look, house) ||
     said(look$in, window) ||
     said(look, window, house)))
 {
-    print(9);
+    #message 9  "This is the gloomy home of Manannan, the evil wizard who is your master.";
 }
 
 if ((said(look, door) ||
     said(look, door, house)))
 {
-    print(11);
+    #message 11  "The door of the wizard's house is closed at the moment.";
 }
 
 if ((said(knock, door) ||
@@ -364,7 +369,7 @@ if ((said(knock, door) ||
     said(knock, on, door) ||
     said(knock, on, house, door)))
 {
-    print(12);
+    #message 12  "Why don't you just open it; you DO live here.";
 }
 
 if ((said(open, door) ||
@@ -380,12 +385,12 @@ if ((said(open, door) ||
         }
         else
         {
-            print(1);
+            #message 1  "Not now!";
         }
     }
     else
     {
-        print(13);
+        #message 13  "Your arms are not long enough to reach it from here.";
     }
 }
 
@@ -398,34 +403,37 @@ if ((said(look, chickens) ||
 {
     if (!chick.in.hand)
     {
-        print(14);
+        #message 14  "A couple of chickens strut about their chicken coop. As all chickens
+do, they peck, scratch, and cluck.The poor things; they will end up
+as the old wizard's dinner one day. %m25";
     }
     else
     {
-        print(23);
+        #message 23  "The chicken struggles in your arms, trying to peck you. Apparently, it
+doesn't enjoy being held.";
     }
 }
 
 if (said(talk, chickens))
 {
-    print(30);
+    #message 30  "The chickens pay no attention to you.";
 }
 
 if (said(kill, chicken))
 {
-    print(31);
+    #message 31  "You never were very good at doing that. You'd really rather not.";
 }
 
 if (has(i.dough.balls) &&
     said(listen, bird))
 {
-    print(16);
+    #message 16  "Shhh.  If you're quiet, perhaps you'll hear them.";
 }
 
 if ((said(look, gate) ||
     said(look, gate, pen)))
 {
-    print(15);                                              // [  gate is ALWAYS closed
+    #message 15  "The gate is closed.";                                              // [  gate is ALWAYS closed
 }
 
 if ((said(open, gate) ||
@@ -434,14 +442,15 @@ if ((said(open, gate) ||
     if (ego.location != outside.gate &&
         ego.location != inside.gate)
     {
-        print(13);
+        #message 13  "Your arms are not long enough to reach it from here.";
     }
     else
     {
         if (chick.in.hand)
         {
             set(drop.chicken);
-            print(20);
+            #message 20  "The chicken flies out of your grasp, and again
+struts around the coop.";
         }
         set(ego.arrived);
         ego.script = 0;
@@ -453,13 +462,13 @@ if ((said(get, chicken) ||
 {
     if (!inside.pen)
     {
-        print(17);
+        #message 17  "You cannot reach the chickens.";
     }
     else
     {
         if (chick.in.hand)
         {
-            print(29);
+            #message 29  "What's wrong with the chicken you're holding?";
         }
         else
         {
@@ -484,13 +493,14 @@ if ((said(get, chicken) ||
 
             if (!chick.in.hand)                             // [  still none
             {
-                print(18);
+                #message 18  "The little varmint scoots out of reach.";
             }
             else
             {
                 set(handsOff);
                 set.view(ego, v.ego.with.chicken);
-                print(19);
+                #message 19  "Gotcha! You've managed to catch a chicken. But, what are you going to do
+with it ? ";
             }
         }
     }
@@ -517,20 +527,21 @@ if ((said(get, feather) ||
 {
     if (!obj.in.room(i.chicken.feather, current.room))
     {
-        print(24);
+        #message 24  "You already took a chicken feather.";
     }
     else
     {
         if (!chick.in.hand)
         {
-            print(21);
+            #message 21  "You have to catch a chicken first.";
         }
         else
         {
             get(i.chicken.feather);
             score += 1;
             set(drop.chicken);
-            print(22);
+            #message 22  "Tucking the chicken firmly under one arm, you gently pluck a small
+feather, then let it go.";
         }
     }
 }
@@ -548,17 +559,17 @@ if ((said(look, bag) ||
 {
     if (ego.location != feed.bag)
     {
-        print(25);
+        #message 25  "There is a bag of chicken feed behind the fence, beside the chicken coop.";
     }
     else
     {
-        print(26);
+        #message 26  "The bag behind the fence is full of chicken feed.";
     }
 }
 
 if (said(eat, chicken))
 {
-    print(32);
+    #message 32  "Sorry, Colonel; they're not even dead yet!";
 }
 
 if ((said(get, feed) ||
@@ -571,7 +582,7 @@ if ((said(get, feed) ||
     said(get, chicken, feed, bag) ||
     said(get, chicken, feed, from, bag)))
 {
-    print(27);
+    #message 27  "You only need the chicken feed if you want to feed the chickens.";
 }
 
 if ((said(feed, chickens) ||
@@ -593,13 +604,13 @@ if ((said(feed, chickens) ||
 {
     if (ego.location != feed.bag)
     {
-        print(10);
+        #message 10  "You can't reach it from here.";
     }
     else
     {
         if (handsOff)
         {
-            print(1);
+            #message 1  "Not now!";
         }
         else
         {

@@ -256,10 +256,13 @@ if (hitBottom) {
     erase(ego);
     set(certain.death);
     if (slipped) {
-        print(1);
+        #message 1  "Whoops! You've unsuccessfully defied the law of gravity.";
     }
     else {
-        print(14);
+        #message 14  "A burly pirate has noticed you from inside the crow's nest!
+Before you can react, he yells, \"Yer dead meat, Bucko!\" and slashes at
+you with his sword.He misses, but you lose your balance.Down you
+tumble... to your untimely death.";
     }
 }
 
@@ -268,60 +271,68 @@ if (hitBottom) {
 if ((said(look) ||
     said(look, ship) ||
     said(look, down, ship))) {
-    print(2);
+    #message 2  "Looking down from this height makes
+you dizzy and you almost fall.Holding tight, you look upand notice a
+crow's nest at the top of the mast.";
 }
 
 if ((said(look, land) ||
     said(look, water) ||
     said(look, ocean))) {
     if (shipShape == nearLand) {
-        print(4);
+        #message 4  "You scan the horizon. You see land to the east.";
     }
     if (shipShape == underWay) {
-        print(5);
+        #message 5  "The ocean seems to be endless. In every direction, you see nothing but
+deep, blue water.";
     }
     if (shipShape == atBeach) {
-        print(6);
+        #message 6  "The ship has anchored just offshore of a
+small beach.Further north, in the distance, looms a mountain range.";
     }
 }
 
 if (shipShape == atBeach &&
     (said(look, beach) ||
         said(look, beach))) {
-    print(6);
+    #message 6  "The ship has anchored just offshore of a
+small beach.Further north, in the distance, looms a mountain range.";
 }
 
 if (said(look, mast)) {
-    print(7);
+    #message 7  "The ship's mast dominates your view. Though sturdy, the pitching of the
+vessel causes it to sway to and fro.";
 }
 
 if ((said(look, up, flag) || said(look, flag))) {
-    print(15);
+    #message 15  "An ominous jolly-roger blows in the breeze.";
 }
 
 if ((said(look, crowsnest) || said(look$in, crowsnest))) {
     if (crewAsleep) {
-        print(10);
+        #message 10  "You hear loud snoring coming from inside the crow's nest. The keen-eyed
+lookout has fallen asleep on the job.";
     }
     else {
-        print(9);
+        #message 9  "A crow's nest perches atop the mast you are climbing. Curiously, you
+gaze up at it.But, from this vantage point, you cannot see into it.";
     }
 }
 
 if (said(look, pirate)) {
-    print(11);
+    #message 11  "At the moment, you can see no pirates.";
 }
 
 if ((said(look, rope, ladder) || said(look, ladder))) {
-    print(3);
+    #message 3  "The rope ladder looks flimsy. A careless step might be fatal!";
 }
 
 if ((said(look, sky) || said(look, up, sky))) {
     if (shipShape == underWay) {
-        print(12);
+        #message 12  "The sky is cloudless. Some shore birds can be seen far to the east.";
     }
     else {
-        print(13);
+        #message 13  "The sky is cloudless. Some shore birds are wheeling overhead.";
     }
 }
 

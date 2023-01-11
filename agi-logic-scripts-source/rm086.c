@@ -143,55 +143,56 @@ if (mice.here && !mice.timer && has(i.dough.balls) && work < 15) {
 // [******* SHOW SAID *******]
 
 if ((said(look, room) || said(look) || said(look, hold))) {
-    print(1);
+    #message 1  "You look warily around the dark, dank cargo hold.
+There seems to be nothing but stacks of wooden crates piled around.";
 }
 
 if ((said(look, up, ceiling) || said(look, ceiling))) {
-    print(3);
+    #message 3  "You see an open grating far above you. Too bad you can't reach it.";
 }
 
 if (said(look, mice)) {
     if (mice.here) {
-        print(6);
+        #message 6  "A couple of little gray mice scurry to and fro on the floor of the hold.";
     }
     else {
-        print(5);
+        #message 5  "What mice?";
     }
 }
 
 if (said(listen, mice)) {
-    print(2);
+    #message 2  "Shhhh. If you're quiet, maybe you can hear them.";
 }
 
 if (said(talk, mice)) {
     if (mice.here) {
-        print(7);
+        #message 7  "The little mice totally ignore your attempted conversation.";
     }
     else {
-        print(5);
+        #message 5  "What mice?";
     }
 }
 
 if (said(get, mice)) {
     if (mice.here) {
-        print(8);
+        #message 8  "The mice move much too quickly for you to ever catch.";
     }
     else {
-        print(5);
+        #message 5  "What mice?";
     }
 }
 
 if (said(kill, mice)) {
     if (mice.here) {
-        print(9);
+        #message 9  "How cruel!! You wouldn't want to do that!";
     }
     else {
-        print(5);
+        #message 5  "What mice?";
     }
 }
 
 if ((said(get$out, hold) || said(climb, out, hold))) {
-    print(4);
+    #message 4  "Good idea! How?";
 }
 
 // [********** PAINLESS ROOM EXITS ************

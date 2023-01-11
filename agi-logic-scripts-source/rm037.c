@@ -196,7 +196,8 @@ if (fall.done) {
 // [ don't let a storm happen
 if (has(i.storm.brew) && spell.cast == sc.make.storm) {
     spell.cast = 0;
-    print(13);
+    #message 13  "On second thought, you decide not to make a storm. You remember how
+dangerous it is to be in a tree during a storm.";
 }
 
 // [*****
@@ -208,7 +209,8 @@ if (have.input)
     if ((said(look) ||
         said(look, house) ||
         said(look, tree))) {
-        print(1);
+        #message 1  "You are standing outside a shack that has been built in the branches of the
+spreading oak tree.A rope ladder leads down toward the ground.";
     }
 
     if ((said(look$in, house) ||
@@ -217,38 +219,41 @@ if (have.input)
         said(look, inside, room) ||
         said(look$in, door)))
     {
-        if (bandit.status == awake) { print(2); }
-        else { print(3); }
+        if (bandit.status == awake) { #message 2  "There seems to be somebody moving around inside the treehouse."; }
+        else { #message 3  "You can see very little of the interior from out here. But there seems
+to be a figure sleeping in a chair."; }
     }
 
-    if (said(look, door)) { print(4); }
+    if (said(look, door)) { #message 4  "The doorway of the treehouse is only a rough opening in the planks."; }
 
-    if (said(anyword, window)) { print(5); }
+    if (said(anyword, window)) { #message 5  "There is no window, only a hole cut in the side."; }
 
     if ((said(look, rope, ladder) || said(look, ladder))) {
-        print(6);
+        #message 6  "The rope ladder drops down through the leaves of the huge tree toward
+the ground below.";
     }
 
     if ((said(climb, tree) ||
         said(climb, up, tree) ||
         said(climb, down, tree))) {
-        print(7);
+        #message 7  "The tree looks very difficult to climb around on, but you can try if you
+wish.";
     }
 
     if ((said(look, sky) ||
         said(look, up))) {
-        print(8);
+        #message 8  "The thick leaves of the oak tree allow only rare glimpses of the sky above.";
     }
 
     if ((said(look, ground) ||
         said(look, down))) {
-        print(9);
+        #message 9  "The thick leaves and massive branches obscure the ground below.";
     }
 
     if (said(look, bandit))
     {
-        if (bandit.status == awake) { print(10); }
-        else { print(11); }
+        if (bandit.status == awake) { #message 10  "You can see someone moving about, but can not make out details from here."; }
+        else { #message 11  "You see no one else around."; }
     }
 }
 

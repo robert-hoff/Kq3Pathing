@@ -10,17 +10,17 @@
 // [invisible door.  If wiz locks you in, you can't leave till punish.timer
 // [is done.  Manannan never enters this room.  can hide inventory under bed
 
-#define  l.looking.right    0                               // [rm4    VIEW.LOOKING.UNDER
-#define  l.looking.rear    1                                // [rm22
+#define  l.looking.right          0                               // [rm4    VIEW.LOOKING.UNDER
+#define  l.looking.rear           1                                // [rm22
 
-#define  ego.in.bed      lf1
-#define  zzz's.done      lf2
-#define  door.locked      lf3
-#define  in.bedroom      lf4
-#define  near.door        lf5
+#define  ego.in.bed             lf1
+#define  zzz's.done             lf2
+#define  door.locked            lf3
+#define  in.bedroom             lf4
+#define  near.door              lf5
 
-#define  object                lv0
-#define  room                  lv1
+#define  object                 lv0
+#define  room                   lv1
 #define  ego.timer              lv2
 #define  zzz's.timer            lv4
 #define  reason.going.to.bed    lv5
@@ -29,8 +29,9 @@
 #define  putting    3
 #define  getting    4
 
-#define  obj2hide        lv6
-#define  obj2get        lv7
+#define  obj2hide               lv6
+#define  obj2get                lv7
+
 
 if (init.log)
 {
@@ -176,7 +177,9 @@ if (has(i.dew) &&
 if (has(i.dough.balls) &&
     said(hide, dough, pieces, rol))
 {
-    print(38);
+    #message 38  "You consider removing the dough pieces from your ears, but decide
+    they are too fragile.You carefully comb your scraggly hair over them
+    so the wizard cannot detect them.";
 }
 
 if (has(i.eagle.feather) &&
@@ -327,8 +330,7 @@ if (has(i.toadstool.powder) &&
     obj2hide = toadstool.powder;
 }
 
-if (has(i.fish.jar) &&
-    said(hide, jar, rol))
+if (has(i.fish.jar) && said(hide, jar, rol))
 {
     obj2hide = fish.jar;
 }
@@ -646,124 +648,100 @@ if (obj.in.room(i.toadstool.powder, current.room) &&
     obj2get = toadstool.powder;
 }
 
-if (obj.in.room(i.fish.jar, current.room) &&
-    said(get, jar, rol))
+if (obj.in.room(i.fish.jar, current.room) && said(get, jar, rol))
 {
     obj2get = fish.jar;
 }
 
-if (obj.in.room(i.storm.brew, current.room) &&
-    (said(get, brew, rol) ||
-        said(get, jar, rol)))
+if (obj.in.room(i.storm.brew, current.room) && (said(get, brew, rol) || said(get, jar, rol)))
 {
     obj2get = storm.brew;
 }
 
-if (obj.in.room(i.toad.spit, current.room) &&
-    (said(get, toad, spit, rol) ||
-        said(get, spit, rol)))
+if (obj.in.room(i.toad.spit, current.room) && (said(get, toad, spit, rol) || said(get, spit, rol)))
 {
     obj2get = toad.spit;
 }
 
-if (obj.in.room(i.lard, current.room) &&
-    said(get, lard, rol))
+if (obj.in.room(i.lard, current.room) && said(get, lard, rol))
 {
     obj2get = lard;
 }
 
-if (obj.in.room(i.knife, current.room) &&
-    said(get, knife, rol))
+if (obj.in.room(i.knife, current.room) && said(get, knife, rol))
 {
     obj2get = knife;
 }
 
-if (obj.in.room(i.cactus, current.room) &&
-    said(get, cactus, rol))
+if (obj.in.room(i.cactus, current.room) && said(get, cactus, rol))
 {
     obj2get = cactus;
 }
 
-if (obj.in.room(i.invisible.ointment, current.room) &&
-    said(get, ointment, rol))
+if (obj.in.room(i.invisible.ointment, current.room) && said(get, ointment, rol))
 {
     obj2get = invisible.ointment;
 }
 
-if (obj.in.room(i.magic.wand, current.room) &&
-    (said(get, magic, wand, rol) ||
-        said(get, wand, rol)))
+if (obj.in.room(i.magic.wand, current.room) && (said(get, magic, wand, rol) || said(get, wand, rol)))
 {
     obj2get = magic.wand;
 }
 
-if (obj.in.room(i.key, current.room) &&
-    said(get, key, rol))
+if (obj.in.room(i.key, current.room) && said(get, key, rol))
 {
     obj2get = key;
 }
 
-if (obj.in.room(i.bowl, current.room) &&
-    said(get, bowl, rol))
+if (obj.in.room(i.bowl, current.room) && said(get, bowl, rol))
 {
     obj2get = bowl;
 }
 
-if (obj.in.room(i.spoon, current.room) &&
-    said(get, spoon, rol))
+if (obj.in.room(i.spoon, current.room) && said(get, spoon, rol))
 {
     obj2get = spoon;
 }
 
-if (obj.in.room(i.cup, current.room) &&
-    said(get, cup, rol))
+if (obj.in.room(i.cup, current.room) && said(get, cup, rol))
 {
     obj2get = cup;
 }
 
-if (obj.in.room(i.mirror, current.room) &&
-    said(get, mirror, rol))
+if (obj.in.room(i.mirror, current.room) && said(get, mirror, rol))
 {
     obj2get = mirror;
 }
 
-if ((obj.in.room(i.purse.with.coins, current.room) ||
-    obj.in.room(i.purse.empty, current.room)) &&
-    (said(get, purse, rol) || said(get, coins, rol) ||
-        said(get, gold, coins, rol)))
+if (obj.in.room(i.purse.with.coins, current.room) || obj.in.room(i.purse.empty, current.room)) &&
+    (said(get, purse, rol) || said(get, coins, rol) || said(get, gold, coins, rol))
 {
     if (obj.in.room(i.purse.with.coins, current.room))
     {
         obj2get = purse.with.coins;
     }
-
     if (obj.in.room(i.purse.empty, current.room))
     {
         obj2get = purse.empty;
     }
 }
 
-if (obj.in.room(i.bread, current.room) &&
-    said(get, bread, rol))
+if (obj.in.room(i.bread, current.room) && said(get, bread, rol))
 {
     obj2get = bread;
 }
 
-if (obj.in.room(i.fruit, current.room) &&
-    said(get, fruit, rol))
+if (obj.in.room(i.fruit, current.room) && said(get, fruit, rol))
 {
     obj2get = fruit;
 }
 
-if (obj.in.room(i.mutton, current.room) &&
-    said(get, mutton, rol))
+if (obj.in.room(i.mutton, current.room) && said(get, mutton, rol))
 {
     obj2get = mutton;
 }
 
-if (obj.in.room(i.magic.map, current.room) &&
-    (said(get, map, rol) ||
-        said(get, magic, map, rol)))
+if (obj.in.room(i.magic.map, current.room) && (said(get, map, rol) || said(get, magic, map, rol)))
 {
     obj2get = magic.map;
 }
@@ -784,33 +762,34 @@ if (!have.input) { goto no.input; }
 
 if (current.status == sleeping)
 {
-    if ((said(get, up) ||
+    if (said(get, up) ||
         said(get$out, bed) ||
         said(get, up, from, bed) ||
         said(wake) ||                                       // [wake includes "wake$up"
         said(wake, leave, bed) ||
         said(get, up, bed) ||
-        said(leave, bed)))
+        said(leave, bed))
     {
         ego.location = 8;
         set(ego.arrived);
     }
     else
     {
-        print(27);
+        #message 27  "Shhhh! You're trying to sleep.";
         set(have.match);
     }
 }
 
-if ((said(look, wall) ||
+if (said(look, wall) ||
     said(look, house) ||
     said(look, room) ||
     said(look) ||
-    said(look, tapestry)))
+    said(look, tapestry))
 {
     if (!in.bedroom)
     {
-        print(12);
+        #message 12  "You have always admired this lovely tapestry. It adds one of the few
+bright spots to this dreary house.";
     }
     else
     {
@@ -818,97 +797,103 @@ if ((said(look, wall) ||
     }
 }
 
-if ((said(look, behind, tapestry) ||
-    said(look, under, tapestry)))
+if (said(look, behind, tapestry) || said(look, under, tapestry))
 {
     if (posn(ego, 52, 131, 77, 137))
     {
-        print(13);
+        #message 13  "You lift the bottom of the tapestry and peer behind it. The wall is filled
+with cracks.You can see why Manannan would hang a tapestry here.
+(There are also dozens of charcoal - scribbled drawings, diagrams, maps, and
+    notes to programmers, with the legend \"King's Quest IV,\" but you're
+    uninterested in this, since you presently have your hands full with
+    \"King's Quest III.\") You lower the tapestry and smooth out the wrinkles.";
     }
     else
     {
         if (in.bedroom)
         {
-            print(21);
+            #message 21  "How can you see it through your bedroom wall?";
         }
         else
         {
-            print(2);
+            #message 2  "You are not close enough.";
         }
     }
 }
 
-if ((said(look, room) ||
-    said(look) ||
-    said(look, bedroom)))
+if (said(look, room) || said(look) || said(look, bedroom))
 {
     if (!in.bedroom)
     {
-        print(31);
+        #message 31  "You might try that over there in your bedroom, but not here in the hall.";
     }
     else
     {
-        print(1);
+        #message 1  "This is your own pitiful bed chamber. Compared to Manannan's
+fine room, yours is almost a cell.The bed is hardand
+uncomfortable with only a threadbare blanketand a small, flat pillow.
+The other furnishings are junk.But, as poor as it is,
+it's your own haven, as the wizard never enters it.";
     }
 }
 
-if ((said(look, dresser) ||
-    said(look, cabinet)))
+if (said(look, dresser) || said(look, cabinet))
 {
     if (!in.bedroom)
     {
-        print(31);
+        #message 31  "You might try that over there in your bedroom, but not here in the hall.";
     }
     else
     {
-        print(6);
+        #message 6  "Your dresser is a piece of junk. It's full of nicks and
+scratches, and one drawer is completely missing.";
     }
 }
 
-if ((said(look, on, dresser) ||
+if (said(look, on, dresser) ||
     said(look, above, dresser) ||
     said(look, on, top$of, dresser) ||
     said(look, on, cabinet) ||
     said(look, above, cabinet) ||
-    said(look, on, top$of, cabinet)))
+    said(look, on, top$of, cabinet))
 {
     if (!in.bedroom)
     {
-        print(2);
+        #message 2  "You are not close enough.";
     }
     else
     {
-        print(7);
+        #message 7  "There is nothing you want there.";
     }
 }
 
-if ((said(look$in, dresser) ||
+if (said(look$in, dresser) ||
     said(open, dresser) ||
     said(look$in, cabinet) ||
     said(open, cabinet) ||
     said(look, drawer) ||
-    said(open, drawer)))
+    said(open, drawer))
 {
     if (!in.bedroom)
     {
-        print(2);
+        #message 2  "You are not close enough.";
     }
     else
     {
-        print(9);
+        #message 9  "You have nothing of any interest in your dresser drawer.";
     }
 }
 
-if ((said(look, mirror) ||
-    said(look$in, mirror)))
+if (said(look, mirror) || said(look$in, mirror))
 {
     if (!in.bedroom)
     {
-        print(31);
+        #message 31  "You might try that over there in your bedroom, but not here in the hall.";
     }
     else
     {
-        print(10);
+        #message 10  "You look into the cracked mirror hanging on the wall. Your
+reflection shows a tall, handsome lad dressed in dirty rags.";
     }
 
     if (has(i.mirror))
@@ -921,17 +906,18 @@ if (said(open, door))
 {
     if (!near.door)
     {
-        print(2);
+        #message 2  "You are not close enough.";
     }
     else
     {
         if (door.locked)
         {
-            print(14);
+            #message 14  "You twist the door knob on the bedroom door, but to your
+    frustration, find it locked.";
         }
         else
         {
-            print(15);
+            #message 15  "The door is already open.";
         }
     }
 }
@@ -940,11 +926,12 @@ if (said(close, door))
 {
     if (door.locked)
     {
-        print(16);
+        #message 16  "The door is already closed.";
     }
     else
     {
-        print(17);
+        #message 17  "You start to close the door, but, so as not to arouse the wizard's
+    suspicions, you leave it open.";
     }
 }
 
@@ -952,25 +939,24 @@ if (said(unlock, door))
 {
     if (door.locked)
     {
-        print(18);
+        #message 18  "You don't have a key that unlocks this door. It seems you are at
+    the mercy of the miserable old wizard.";
     }
     else
     {
-        print(19);
+        #message 19  "The door is not locked. It's not even closed!";
     }
 }
 
-if ((said(pick, lock) ||
-    said(pick, door, lock) ||
-    said(pick, lock, door)))
+if (said(pick, lock) || said(pick, door, lock) || said(pick, lock, door))
 {
     if (door.locked)
     {
-        print(20);
+        #message 20  "You have nothing with which to pick a lock.";
     }
     else
     {
-        print(19);
+        #message 19  "The door is not locked. It's not even closed!";
     }
 }
 
@@ -978,45 +964,44 @@ if (said(look, door))
 {
     if (door.locked)
     {
-        print(29);
+        #message 29  "The door is closed.";
     }
     else
     {
-        print(37);
+        #message 37  "The door is wide open.";
     }
 }
 
-if ((said(break, door) ||
-    said(break, down, door) ||
-    said(break, open, door)))
+if (said(break, door) || said(break, down, door) || said(break, open, door))
 {
     if (!near.door)
     {
-        print(2);
+        #message 2  "You are not close enough.";
     }
     else
     {
         if (door.locked)
         {
-            print(22);
+            #message 22  "You throw your body against the locked door, but in vain. The
+    door is too strong for you to break.";
         }
         else
         {
-            print(19);
+            #message 19  "The door is not locked. It's not even closed!";
         }
     }
 }
 
-if ((said(break, window) ||
-    said(break, open, window)))
+if (said(break, window) || said(break, open, window))
 {
     if (!in.bedroom)
     {
-        print(31);
+        #message 31  "You might try that over there in your bedroom, but not here in the hall.";
     }
     else
     {
-        print(23);
+        #message 23  "That would do you no good. The wizard anticipated your escape and placed
+    iron bars outside your window.";
     }
 }
 
@@ -1026,11 +1011,12 @@ if (said(look, bed))
 {
     if (!in.bedroom)
     {
-        print(31);
+        #message 31  "You might try that over there in your bedroom, but not here in the hall.";
     }
     else
     {
-        print(3);
+        #message 3  "The bed is nothing more than a cot, hard and cold, and
+is difficult to sleep on.Your pillow is small, flat, and made of old rags.";
     }
 }
 
@@ -1038,7 +1024,7 @@ if (said(look, under, bed))
 {
     if (!in.bedroom)
     {
-        print(31);
+        #message 31  "You might try that over there in your bedroom, but not here in the hall.";
     }
     else
     {
@@ -1059,7 +1045,7 @@ if ((said(lie, bed) ||
 {
     if (!in.bedroom)
     {
-        print(31);
+        #message 31  "You might try that over there in your bedroom, but not here in the hall.";
     }
     else
     {
@@ -1076,7 +1062,7 @@ if (said(hide, stuff, rol))
 {
     if (!in.bedroom)
     {
-        print(31);
+        #message 31  "You might try that over there in your bedroom, but not here in the hall.";
     }
     else
     {
@@ -1090,7 +1076,7 @@ if (said(get, stuff, rol))
 {
     if (!in.bedroom)
     {
-        print(31);
+        #message 31  "You might try that over there in your bedroom, but not here in the hall.";
     }
     else
     {
@@ -1186,21 +1172,25 @@ if (ego.arrived)
             set.cel(ego, 0);
             accept.input();
             zzz's.timer = 44;
-                reset(zzz's.done);
-                    ego.location = 0;
+            reset(zzz's.done);
+            ego.location = 0;
             current.status = sleeping;                      // [nightie, night sweet ego
-            print(26);
+            #message 26  "You lie down on your hard bed, stretch, then curl up,
+    trying hard to get comfortable.Your thin blanket and small
+    pillow do not help much.";
         }
 
         if (reason.going.to.bed == looking)
         {
             if (stuff.under.bed)
             {
-                print(5);
+                #message 5  "You bend down and peek under the bed. Your possessions are still
+safely hidden.";
             }
             else
             {
-                print(4);
+                #message 4  "You lean down and poke your head under the bed. You see nothing but
+cobwebs and dust.";
             }
         }
 
@@ -1210,7 +1200,8 @@ if (ego.arrived)
 
             if (obj2hide)
             {
-                print(34);
+                #message 34  "You get on your hands and knees and shove it under the bed. It will be
+    safe from the wizard's sharp eyes there.";
                 set(stuff.under.bed);
                 put.v(obj2hide, current.room);
             }
@@ -1236,7 +1227,9 @@ if (ego.arrived)
 
                 if (stuff.under.bed)
                 {
-                    print(24);
+                    #message 24  "You get on your hands and knees and quickly shove all your
+    possessions under the bed.They will be safe from the wizard's sharp
+    eyes there.";
                     if (!hid.stuff.under.bed)
                     {
                         set(hid.stuff.under.bed);
@@ -1245,7 +1238,7 @@ if (ego.arrived)
                 }
                 else
                 {
-                    print(32);
+                    #message 32  "Obviously, you have nothing to hide, Gwydion!";
                 }
             }
         }
@@ -1254,7 +1247,7 @@ if (ego.arrived)
         {
             if (!stuff.under.bed)
             {
-                print(11);
+                #message 11  "There's nothing under the bed.";
             }
             else
             {
@@ -1264,11 +1257,12 @@ if (ego.arrived)
                     get.room.v(obj2get, room);
                     if (room != rm.ego.bedroom)
                     {
-                        print(36);
+                        #message 36  "You drop down, reach under the bed, and then realize
+    you've never put it there!";
                     }
                     else
                     {
-                        print(35);
+                        #message 35  "Dropping to your knees, you reach under the bed and retrieve it.";
                         put.v(obj2get, work);
                         reset(stuff.under.bed);
                         object = 1;                           // [See if there's anything
@@ -1302,7 +1296,8 @@ if (ego.arrived)
                     {
                         goto retrieve.inventory;
                     }
-                    print(25);
+                    #message 25  "Dropping to your knees, you reach under the bed and retrieve all of your
+    possessions.";
                 }
             }
         }
@@ -1355,7 +1350,7 @@ if (ego.arrived)
         if (ego.in.bed)
         {
             reset(ego.in.bed);
-            print(28);
+            #message 28  "You gratefully rise from your hard old bed, stretching your aching muscles.";
         }
     }
 }
@@ -1363,18 +1358,18 @@ if (ego.arrived)
 if (current.status == sleeping)
 {
     --zzz's.timer;
-        if (zzz's.timer == 1)
-        {
-            set(keep.cycling);
-                end.of.loop(ego, zzz's.done);
-                    sound(s.snoring, done);
-            zzz's.timer = 22;
-        }
+    if (zzz's.timer == 1)
+    {
+        set(keep.cycling);
+        end.of.loop(ego, zzz's.done);
+        sound(s.snoring, done);
+        zzz's.timer = 22;
+    }
 
     if (zzz's.done)
     {
         reset(zzz's.done);
-            set.cel(ego, 0);
+        set.cel(ego, 0);
         reset(keep.cycling);
         stop.cycling(ego);
     }
@@ -1382,16 +1377,15 @@ if (current.status == sleeping)
 
 if (ego.poofing.done)
 {
-
-                                                            // [don't reset( ego.poofing.done);
-
+    // [don't reset( ego.poofing.done);
     reset(keep.cycling);
     reset(no.cycling);
     reset(ignore.special);
     reset(ignore.water);
     if (door.locked && current.status != fly)
     {
-        print(30);
+        #message 30  "You suddenly find yourself in your own little room. You
+    notice that the door is closed.";
     }
 }
 
@@ -1399,7 +1393,8 @@ if (punishment.done)
 {
     reset(punishment.done);
     reset(door.locked);
-    print(8);
+    #message 8  "You hear a CLICK at the bedroom door. The old wizard has decided
+to free you by magically unlocking your door.";
 }
 
 if (door.locked)
@@ -1422,4 +1417,20 @@ if (current.status != fly.landing)
 }
 
 call(lgc.wiz.house);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

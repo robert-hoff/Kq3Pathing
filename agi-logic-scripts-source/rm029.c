@@ -165,18 +165,20 @@ if (!have.input) { goto no.input; }
 if ((said(look, town) ||
     said(look, house)))
 {
-    print(1);
+    #message 1  "You see a small seaside village up the coast to the north. Smoke rises
+lazily from chimneys and mingles with the ocean air.";
 }
 
 if (said(look, tree))
 {
     if (!obj.in.room(i.mistletoe, current.room))
     {
-        print(11);
+        #message 11  "The trees are not as large, being so near the coast.";
     }
     else
     {
-        print(2);
+        #message 2  "One of the trees has a light-green colored plant growing upon it. On
+closer inspection, you see that it's mistletoe.";
     }
 }
 
@@ -187,17 +189,19 @@ if ((said(look, mistletoe) ||
 {
     if (!near.mistletoe)
     {
-        print(2);
+        #message 2  "One of the trees has a light-green colored plant growing upon it. On
+closer inspection, you see that it's mistletoe.";
     }
     else
     {
         if (obj.in.room(i.mistletoe, current.room))
         {
-            print(3);
+            #message 3  "The mistletoe hangs from the branches of the tree. There are a few dried
+sprigs mingled with the green mistletoe.";
         }
         else
         {
-            print(17);
+            #message 17  "You look through the remaining mistletoe, but find none that is dry.";
         }
     }
 }
@@ -208,11 +212,11 @@ if ((said(stand, under, mistletoe) ||
 {
     if (!near.mistletoe)
     {
-        print(5);
+        #message 5  "You are not close enough.";
     }
     else
     {
-        print(10);
+        #message 10  "You give yourself a big smack. (Is this fun?)";
     }
 }
 
@@ -222,13 +226,13 @@ if ((said(get, mistletoe) ||
 {
     if (!near.mistletoe)
     {
-        print(5);
+        #message 5  "You are not close enough.";
     }
     else
     {
         if (!obj.in.room(i.mistletoe, current.room))
         {
-            print(17);
+            #message 17  "You look through the remaining mistletoe, but find none that is dry.";
         }
         else
         {
@@ -236,7 +240,8 @@ if ((said(get, mistletoe) ||
             erase(a.mistletoe);
             get(i.mistletoe);
             score += 1;
-            print(4);
+            #message 4  "You search among the hanging mistletoe until you find a
+sprig that has dried.You break it off, and carry it with you.";
         }
     }
 }
@@ -247,11 +252,13 @@ if ((said(look, ship) ||
 {
     if (shipShape == inPort)
     {
-        print(6);
+        #message 6  "There is a three-masted ship docked at the pier. By her sturdy lines and
+broad beam, you guess it to be a merchant vessel, trading goods
+in the town.";
     }
     else
     {
-        print(7);
+        #message 7  "Where?";
     }
 }
 
@@ -259,49 +266,54 @@ if (said(look, pier))
 {
     if (shipShape == inPort)
     {
-        print(8);
+        #message 8  "%m9 You see a vessel tied up there now!";
     }
     else
     {
-        print(9);
+        #message 9  "A pier extends from the village and out into the bay. It is built
+of heavy timbers to withstand winter storms.";
     }
 }
 
 if ((said(look, ocean) ||
     said(look, beach)))
 {
-    print(12);
+    #message 12  "You look out over the vast, blue-gray ocean. You wonder what lands and
+people reside across it.If only you could know!";
 }
 
 if ((said(look) ||
     said(look, bluff)))
 {
-    print(13);
+    #message 13  "You are standing atop a bluff overlooking the ocean, and see a village
+to the north. % m14 The trees here are stunted and twisted by
+strong ocean winds.";
 }
 
 if ((said(look, sky)))
 {
-    print(16);
+    #message 16  "You see seagulls flying overhead.";
 }
 
 if ((said(look, ground) ||
     said(look, grass) ||
     said(look, down)))
 {
-    print(14);
+    #message 14  "The soft grass of the forest has been replaced by the
+coarse grass of the seashore.";
 }
 
 if ((said(jump, down) ||
     said(climb, down) ||
     said(climb, down, cliff)))
 {
-    print(5);
+    #message 5  "You are not close enough.";
 }
 
 if ((said(climb, tree) ||
     said(climb, up, tree)))
 {
-    print(15);
+    #message 15  "There is no need to climb this tree.";
 }
 
 // [*****

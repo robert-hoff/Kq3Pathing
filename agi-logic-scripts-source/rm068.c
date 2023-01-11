@@ -80,7 +80,7 @@ if (hitBottom) {
     reset(hitBottom);
     erase(ego);
     set(certain.death);
-    print(12);
+    #message 12  "The treacherous chasm has claimed another victim.";
     reset(handsOff);
     return();
 }
@@ -88,39 +88,49 @@ if (hitBottom) {
 // [******** SAID STUFF ********]
 
 if ((said(look, room) || said(look))) {
-    print(1);
+    #message 1  "The countryside of Daventry looks as if it had once been beautiful.
+But now, trees are charred, a chasm splits the earth, and wildflowers no
+longer grow.Nearby is an old, broken - down well that someone has
+filled with rocks.It's useless now.";
 }
 
 if ((said(look, plant) || said(look, tree))) {
-    print(2);
+    #message 2  "Some plants and trees around Daventry have been burnt black and
+leafless.";
 }
 
 if ((said(look, flower) || said(get, flower))) {
-    print(3);
+    #message 3  "Wildflowers no longer grow here.";
 }
 
 if (said(look, ground)) {
-    print(4);
+    #message 4  "There is nothing interesting on the ground but grass.";
 }
 
 if (said(look, sky)) {
-    print(5);
+    #message 5  "The sky is blue and the sun is shining, but yet a feeling of sadness
+lingers here.";
 }
 if (said(climb, tree)) {
-    print(6);
+    #message 6  "There are no good climbing trees that you can see.";
 }
 if ((said(look, well) || said(look$in, well) || said(climb, well))) {
-    print(7);
+    #message 7  "The old well has been filled with rocks. It's useless. Like everything
+ else in Daventry, the well gives a feeling of futileness.";
 }
 if ((said(look$in, chasm) || said(look, chasm) || said(look, over, chasm))) {
-    print(8);
+    #message 8  "A deep chasm splits the earth. Possibly, an earthquake ripped
+ through Daventry at one time.Looking across the chasm, you see nothing
+ but more charred countryside.";
 }
 if ((said(look, fence) || said(look, over, fence))) {
-    print(9);
+    #message 9  "A stone wall travels to the north and south. You see if you can climb
+ it, but find it too high.There is nothing of any interest on the
+ other side of the wall, anyway.";
 }
 if ((said(climb, fence) || said(climb, over, fence)
     || said(jump, fence) || said(jump, over, fence))) {
-    print(10);
+    #message 10  "%m9";
 }
 if ((said(jump, over, chasm) ||
     said(climb, chasm) ||
@@ -128,7 +138,8 @@ if ((said(jump, over, chasm) ||
     said(jump, down, chasm) ||
     said(go, across, chasm) ||
     said(jump, chasm))) {
-    print(11);
+    #message 11  "The chasm is much too wide to jump across, and too treacherous to
+ climb.";
 }
 
 // [ ****** PAINLESS ROOM EXITS ******

@@ -368,22 +368,23 @@ if (have.input)
     {
         if (!bear.on.screen)
         {
-            print(40);
+            #message 40  "Where?";
         }
 
         if (bear.on.screen == mama)
         {
-            print(2);
+            #message 2  "%m1 To your surprise, you see a bear, wearing a dress, working in the
+garden.It must be Mama Bear!";
         }
 
         if (bear.on.screen == papa)
         {
-            print(24);
+            #message 24  "He doesn't seem happy to see you.";
         }
 
         if (bear.on.screen == all)
         {
-            print(8);
+            #message 8  "You see three fully-clothed bears!";
         }
     }
 
@@ -391,13 +392,13 @@ if (have.input)
     {
         if (!bear.on.screen)
         {
-            print(40);
+            #message 40  "Where?";
         }
         else
         {
             if (bear.on.screen == all)
             {
-                print(22);
+                #message 22  "Evidently, they don't hear you.";
             }
             else
             {
@@ -407,19 +408,23 @@ if (have.input)
                     if (mama.talk.count == 1)
                     {
                         sound(s.growl, done);
-                        print(28);
+                        #message 28  "Your cordial greeting annoys the bear, and she growls back,
+\"Grrrrrrrrrrrrreetings yourrrrrrrrrrself, young man. Stay out of my
+garden!\"";
                     }
                     else
                     {
                         if (mama.talk.count == 2)
                         {
                             sound(s.growl, done);
-                            print(29);
+                            #message 29  "Again, you speak to the bear. \"Grrrrrrrrrrr!\" she growls menacingly.
+\"We don't take to strangers here. Go away!\"";
                         }
                         else
                         {
                             sound(s.growl, done);
-                            print(30);
+                            #message 30  "Insistently, you talk to the bear yet again. She ignores you, but
+you hear a constant low growl from deep within her.";
                         }
                     }
                 }
@@ -428,17 +433,17 @@ if (have.input)
 
         if (bear.on.screen && said(get, bear))
         {
-            print(31);
+            #message 31  "It is utterly impossible for you to catch a big bear.";
         }
 
         if (bear.on.screen && said(kill, bear))
         {
-            print(32);
+            #message 32  "How could you hurt a big bear? You couldn't.";
         }
 
         if (bear.on.screen && said(kiss, bear))
         {
-            print(33);
+            #message 33  "A strange idea.";
         }
     }
 
@@ -448,17 +453,20 @@ if (have.input)
     {
         if (ego.location == in.flower)
         {
-            print(3);
+            #message 3  "You carefully peek into the pretty flowers of the flower garden. Drops
+of glistening dew have gathered within their soft petals.";
         }
         else
         {
             if (bear.status == mama.in.garden)
             {
-                print(2);
+                #message 2  "%m1 To your surprise, you see a bear, wearing a dress, working in the
+garden.It must be Mama Bear!";
             }
             else
             {
-                print(1);
+                #message 1  "There are lovely flowers growing in this well-tended
+garden.Their sweet scent and beautiful colors delight you.";
             }
         }
     }
@@ -470,18 +478,21 @@ if (have.input)
     {
         if (bear.status == mama.in.garden)
         {
-            print(2);
+            #message 2  "%m1 To your surprise, you see a bear, wearing a dress, working in the
+garden.It must be Mama Bear!";
         }
         else
         {
-            print(1);
+            #message 1  "There are lovely flowers growing in this well-tended
+garden.Their sweet scent and beautiful colors delight you.";
         }
     }
 
     if ((said(look, house) ||
         said(look)))
     {
-        print(4);
+        #message 4  "This is the comfortable home of the Three Bears. A well-tended flower
+garden grows out front.";
     }
 
     if ((said(look, room) ||
@@ -490,18 +501,19 @@ if (have.input)
     {
         if (ego.location == near.window)
         {
-            print(5);
+            #message 5  "You peer through the window, but the inside is dimly lit and you
+cannot make out any details.";
         }
         else
         {
-            print(6);
+            #message 6  "You need to move closer.";
         }
     }
 
     if ((said(look, door) ||
         said(look, door, house)))
     {
-        print(7);
+        #message 7  "The heavy wooden door is closed.";
     }
 
     if ((said(pick, flower) ||
@@ -509,11 +521,11 @@ if (have.input)
     {
         if (ego.location == in.flower)
         {
-            print(9);
+            #message 9  "You wouldn't want to spoil the lovely flower bed by picking one!";
         }
         else
         {
-            print(6);
+            #message 6  "You need to move closer.";
         }
     }
 
@@ -521,7 +533,7 @@ if (have.input)
         (said(look, dew) ||
             said(look, dew, flower)))
     {
-        print(27);
+        #message 27  "The dew is beautiful.";
     }
 
     if ((said(get, dew) ||
@@ -542,25 +554,27 @@ if (have.input)
     {
         if (ego.location != in.flower)
         {
-            print(6);
+            #message 6  "You need to move closer.";
         }
         else
         {
             if (has(i.dew))
             {
-                print(15);
+                #message 15  "Your thimble is already full of dew.";
             }
             else
             {
                 if (!has(i.thimble))
                 {
-                    print(14);
+                    #message 14  "You must have a thimble in order to get a thimbleful of dew.";
                 }
                 else
                 {
                     drop(i.thimble);
                     get(i.dew);
-                    print(13);
+                    #message 13  "Holding the silver thimble beneath a dew-filled flower, you gently tip
+the flower so its dew runs into the thimble.You move from flower to flower,
+repeating the process until your thimble is brimming with dew.";
                     if (!got.dew)
                     {
                         set(got.dew);
@@ -580,17 +594,17 @@ if (have.input)
     {
         if (ego.location != near.door)
         {
-            print(6);
+            #message 6  "You need to move closer.";
         }
         else
         {
             if (bear.status == out.walking)
             {
-                print(34);
-                print(35);
-                print(36);
-                print(37);
-                print(38);
+                #message 34  "You rap lightly on the door of the charming house.";
+                #message 35  "No reply.";
+                #message 36  "You knock again, louder.";
+                #message 37  "Again, there is no response.";
+                #message 38  "Perhaps no one is home?";
             }
             else
             {
@@ -614,7 +628,7 @@ if (have.input)
     {
         if (ego.location != near.door)
         {
-            print(6);
+            #message 6  "You need to move closer.";
         }
         else
         {
@@ -634,7 +648,8 @@ if (have.input)
 
     if (said(look, mountain))
     {
-        print(26);
+        #message 26  "You see a lone mountain peak in the distance. Dark clouds swirl around
+its summit.";
     }
 
 }
@@ -676,7 +691,8 @@ if (aSecondPassed)
         !warning.seconds)
     {
         warning.seconds = warning.time;
-        print(10);
+        #message 10  "Mama Bear growls at you as you near the flower bed. Better stay away from
+it... and HER!";
     }
 }
 
@@ -804,7 +820,7 @@ if (script.done)
         ignore.block(a.bear.papa);
         position(a.bear.papa, 74, 110);
         draw(a.bear.papa);
-        print(12);
+        #message 12  "\"AND STAY OUT!!!\"";
 
         script = 205;                                       // [  also catch rest of code below
     }
@@ -883,7 +899,7 @@ if (script.done)
     if (script == 151)                                      // [  mama's chasing ego
     {
         sound(s.growl, done);
-        print(11);
+        #message 11  "Oh, dear! You have annoyed Mama Bear by trampling her precious flowers.";
         stop.motion(ego);
         set.view(a.bear.mama, v.bear.mama)
             follow.ego(a.bear.mama, 10, script.done);

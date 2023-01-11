@@ -110,10 +110,11 @@ if (hitBottom) {
     if (egoLoc == toDeath) {
         erase(ego);
         set(certain.death);
-        print(10);
+        #message 10  "You successfully fall for twenty meters before
+you hit the bottom.You get a 4.1 from the Russian judge.";
     }
     else {
-        print(11);
+        #message 11  "Whoops, you slipped!";
         program.control();
         current.status = stunned;
         sound(s.ego.stunned, sound.done);
@@ -152,15 +153,22 @@ if (girlSaved) {
 // [****** SAID STUFF ******]
 
 if ((said(look, room) || said(look, mountain) || said(look))) {
-    print(1);
+    #message 1  "You look upward and view the mountain range you so arduously crossed.
+Well, you made it to Daventry!But,
+what is this ? It looks like a cave leading deep into the mountain.You
+see evidence that a door once covered this cave entrance.Huge boulders
+lie scattered about, apparently from tumbling down the mountain.";
 }
 
 if ((said(look$in, cave) || said(look, cave))) {
-    print(2);
+    #message 2  "You gaze into the cave-like entrance. You see nothing but crumbly stone
+steps leading upward.";
 }
 
 if ((said(look$in, chasm) || said(look, chasm) || said(look, over, chasm))) {
-    print(3);
+    #message 3  "A deep chasm has split the earth on this side of the mountain.
+You wonder if an earthquake had once struck Daventryand caused the
+destruction you see before you.You see nothing of interest across it.";
 }
 
 if ((said(jump, over, chasm) ||
@@ -169,37 +177,41 @@ if ((said(jump, over, chasm) ||
     said(jump, down, chasm) ||
     said(go, across, chasm) ||
     said(jump, chasm))) {
-    print(12);
+    #message 12  "The chasm is much too wide to jump across, and too treacherous to
+climb.";
 }
 
 if ((said(look, plants) ||
     said(look, trees))) {
-    print(4);
+    #message 4  "A once green woodland spreads out before you. Now though, many trees
+and bushes have been cruelly charred.";
 }
 
 if (said(look, ground)) {
-    print(5);
+    #message 5  "The ground is strewn with large boulders. A deep chasm cuts into it.";
 }
 
 if (said(look, sky)) {
-    print(6);
+    #message 6  "You see a mysterious cloud cover straight above you in the sky.";
 }
 
 if ((said(look, flowers) ||
     said(get, flowers))) {
-    print(7);
+    #message 7  "You see no flowers about.";
 }
 
 if (said(look, steps)) {
-    print(8);
+    #message 8  "The stone steps within the cave entrance look mighty crumbly.
+Curiously, they lead straight up into the mountain!";
 }
 
 if (said(climb, tree)) {
-    print(9);
+    #message 9  "There are no climbable trees around.";
 }
 
 if ((said(jump, over, chasm) || said(climb, down) || said(jump, chasm))) {
-    print(12);
+    #message 12  "The chasm is much too wide to jump across, and too treacherous to
+climb.";
 }
 
 // [ ****** PAINLESS ROOM EXITS ******

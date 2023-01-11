@@ -123,18 +123,23 @@ if ((said(look, cave) ||
     said(look$in, cave) ||
     said(look) ||
     said(look, room))) {
-    print(1);
+    #message 1  "This cave is disgusting! It reeks of rotting flesh. Half-chewed
+bones of numerous creatures are scattered everywhere.Your skin creeps
+as you look at the sight before you.This is definitely not a good
+place to be!";
 }
 
 if ((said(look, bones) ||
     said(get, bones))) {
-    print(2);
+    #message 2  "You have absolutely no interest in these horrible bones! Your only
+interest is in getting OUT OF THERE!";
 }
 
 if ((said(look, outside) ||
     said(look, outside, cave) ||
     said(look, out))) {
-    print(3);
+    #message 3  "The cold snow sparkles on the mountaintop as you glance out of the cave.
+It would be better to be OUT there than IN here.";
 }
 
 // [*****
@@ -187,11 +192,11 @@ if (spell.cast == sc.fly)
     spell.cast = 0;
     if (handsOff)
     {
-        print(16);
+        #message 16  "You can't do that now.";
     }
     else
     {
-        print(17);
+        #message 17  "The mountain air is too thin to support insect flight.";
     }
 }
 

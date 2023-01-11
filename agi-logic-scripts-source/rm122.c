@@ -43,12 +43,13 @@ if ((said(put, pinch, saffron, essence) ||
     if ((!has(i.saffron) ||
         !has(i.rose.essence)))
     {
-        print(1);
+        #message 1  "It is difficult to use that which you do not have.";
     }
     else
     {
         drop(i.saffron);
-        print(2);
+        #message 2  "You carefully sprinkle the precious saffron into the vial
+of rose petal essence.";
         if (spell.status == ready.for.saffron)
         {
             reset(oops);
@@ -62,11 +63,11 @@ if ((said(wave, wand) ||
 {
     if (!has(i.magic.wand))
     {
-        print(1);
+        #message 1  "It is difficult to use that which you do not have.";
     }
     else
     {
-        print(3);
+        #message 3  "You wave the magic wand over the vial of rose petal essence.";
         if (spell.status == ready.for.wand)
         {
             drop(i.rose.essence);

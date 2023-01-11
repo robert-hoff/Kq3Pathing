@@ -8,15 +8,18 @@
 if (landHo) {
     reset(landHo);
     if (shipShape == nearLand) {
-        print(1);
+        #message 1  "You hear one of the pirates shout, \"Land ho, Captain!\"";
     }
     if (shipShape == atBeach) {
-        print(2);
+        #message 2  "You hear the first mate shout, \"Drop anchor,
+an' prepare ta go ashore!\"";
     }
 }
 
 if (aSecondPassed && shipShape == departed) {
-    print(3);
+    #message 3  "You hear the sounds of the ship setting sail. With a grim sense
+of foreboding, you realize that you are doomed to the life of a
+cabin boy.";
     stop.cycling(ego);
     set(certain.death);
 }

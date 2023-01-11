@@ -61,16 +61,18 @@ if (said(grind, mistletoe, mortar))
 {
     if (!has(i.mistletoe))
     {
-        print(1);
+        #message 1  "You cannot use that which you do not have.";
     }
     else
     {
         drop(i.mistletoe);
-        print(5);
+        #message 5  "Placing the dried sprig of mistletoe in the stone mortar, you
+crush it with the pestle.";
         if (spell.status == ready.for.mistletoe)
         {
             reset(oops);
-            print(6);
+            #message 6  "Soon, you have a crushed mixture of salt and mistletoe in the mortar. You
+remove the pestle and lay it aside.";
         }
     }
 }
@@ -82,15 +84,17 @@ if ((said(rub, amber, stone, mixture) ||
 {
     if (!has(i.amber.stone))
     {
-        print(1);
+        #message 1  "You cannot use that which you do not have.";
     }
     else
     {
-        print(7);
+        #message 7  "You place the beautiful amber stone in the stone mortar.";
         if (spell.status == ready.for.amber.stone)
         {
             reset(oops);
-            print(8);
+            #message 8  "Very carefully, so as not to miss a single spot, you rub the amber
+stone around in the mixture of ground salt and mistletoe.When you have
+finished, you remove the amber stoneand discard the remaining powder.";
         }
     }
 }
@@ -100,7 +104,7 @@ if ((said(kiss, amber, stone) ||
 {
     if (spell.status == ready.for.kiss)
     {
-        print(9);
+        #message 9  "Smack!";
         reset(oops);
         ++spell.status;                                     // [  bring on the poem
     }
@@ -115,11 +119,11 @@ if ((said(wave, wand) ||
 {
     if (!has(i.magic.wand))
     {
-        print(1);
+        #message 1  "You cannot use that which you do not have.";
     }
     else
     {
-        print(14);
+        #message 14  "You wave the magic wand over the encrusted amber stone.";
         if (spell.status == ready.for.wand)
         {
             reset(oops);
@@ -249,12 +253,14 @@ if (put.salt.in)
     reset(put.salt.in);
     if (!has(i.salt))
     {
-        print(1);
+        #message 1  "You cannot use that which you do not have.";
     }
     else
     {
         drop(i.salt);
-        print(3);
+        #message 3  "You place a spoonful of coarse salt grains
+in the mortar.Then, using the stone pestle, you
+grind the salt until it is very fine.";
         if (spell.status == ready.for.salt)
         {
             reset(oops);

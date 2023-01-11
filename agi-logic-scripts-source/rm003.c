@@ -149,19 +149,22 @@ if ((said(look, room) ||
     said(look) ||
     said(look, hall)))
 {
-    print(1);
+    #message 1  "This hallway is on the second level of the old wizard's house.
+There are two stairways here.One goes up and
+the other leads down.An open doorway is to the north.";
 }
 
 if ((said(look, stairs) ||
     said(look, up, stairs) ||
     said(look, down, stairs)))
 {
-    print(2);
+    #message 2  "There are two sets of stairs here. The stairway leading upward is steep
+and narrow.The stairway going down is wider, but rather creaky.";
 }
 
 if (said(look, door))
 {
-    print(6);
+    #message 6  "There is a doorway leading into a room to the north.";
 }
 
 // [*****
@@ -177,7 +180,9 @@ if (ego.poofing.done && current.status == snail)
     reset(no.cycling);
     reset(ignore.special);
     reset(ignore.water);
-    print(8);
+    #message 8  "Suddenly, you feel squishy and slimy, with an awful weight on your back.
+Your tentacled eyes swivel around to see your shell.OH, NO!He's turned
+you into a snail!";
 }
 
 // [*****

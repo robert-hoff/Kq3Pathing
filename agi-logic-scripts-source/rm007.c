@@ -224,7 +224,7 @@ if (!have.input) { goto no.input; }
 
 if (current.status == doing.aerobics)
 {
-    print(2);
+    #message 2  "Pant, pant, pant, pant, pant!!";
     set(have.match);
 }
 
@@ -233,17 +233,20 @@ if ((said(look, room) ||
     said(look) ||
     said(look, hall)))
 {
-    print(1);
+    #message 1  "This is the main entry room of the wizard's house. The front door is to
+the south, creaky stairs go upstairs, and doorways lead northand east.";
 }
 
 if (said(look, stairs))
 {
-    print(4);
+    #message 4  "The stairway leading upward has wide steps. Several of them
+are very creaky, though.You always try to avoid them when going
+up or down these stairs.";
 }
 
 if (said(look, door))
 {
-    print(5);
+    #message 5  "The three doors lead outside, to the north, and to the east.";
 }
 
 if ((said(open, anyword, door) ||
@@ -253,12 +256,12 @@ if ((said(open, anyword, door) ||
 {
     if (posn(ego, 86, 163, 109, 167))
     {
-        print(6);
+        #message 6  "You open the front door of the house and go outside.";
         new.room(34);
     }
     else
     {
-        print(7);
+        #message 7  "You can't reach the door from there!";
     }
 }
 
@@ -267,7 +270,7 @@ if ((said(close, anyword, door) ||
     said(close, door, room) ||
     said(close, anyword, door, room)))
 {
-    print(8);
+    #message 8  "The front door is already closed.";
 }
 
 if ((said(look, candle) ||
@@ -275,7 +278,8 @@ if ((said(look, candle) ||
     said(look, candle, on, wall) ||
     said(look, candle, wall)))
 {
-    print(10);
+    #message 10  "There are two candles attached to the wall to light your way up the dim
+staircase.";
 }
 
 if ((said(get, light) ||
@@ -283,7 +287,8 @@ if ((said(get, light) ||
     said(get, light, from, wall) ||
     said(get, light, wall)))
 {
-    print(11);
+    #message 11  "The candles are firmly attached to the wall. Try as you might, you
+cannot get them free.";
 }
 
 // [*****
@@ -356,7 +361,7 @@ if (current.status == doing.aerobics)
         stop.motion(ego);
         set(keep.cycling);
         reset(on.upper.stairs);
-        print(3);
+        #message 3  "Boy, do you hate these little sessions. But, \"No pain, no magic.\"";
         old.animation.interval = animation.interval;
         animation.interval = fastest;
         work = 5;
@@ -381,7 +386,7 @@ if (current.status == doing.aerobics)
         work = 1;
         cycle.time(a.candle.1, work);
         cycle.time(a.candle.2, work);
-        print(9);
+        #message 9  "Whew!";
     }
 
     if (workout.music.done)
@@ -404,7 +409,7 @@ if (current.status != fly.landing)
         current.status != snail &&
         current.status != fly)
     {
-        print(6);
+        #message 6  "You open the front door of the house and go outside.";
         new.room(rm.wiz.yard);
     }
 }

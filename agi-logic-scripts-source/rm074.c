@@ -131,7 +131,7 @@ program.control();
 
 if (spell.cast)                                             // [ don't let magic work
 {
-  print(16);
+  #message 16  "This is no time for that!";
   spell.cast = 0;
 }
 
@@ -155,13 +155,14 @@ if (nextScript)
 
   if (roomScript == 1)
   {
-    print(1);
+    #message 1  "You nervously enter the throne room with your sister, Princess Rosella.";
     scriptTimer = 3;
   }
 
   if (roomScript == 2)
   {
-    print(2);
+    #message 2  "Before the twin thrones stand your parents,
+King Graham and Queen Valanice.";
   }
 
   if (roomScript == 3)
@@ -197,7 +198,9 @@ if (nextScript)
   if (roomScript == 6)
   {
     stop.cycling(aQueen);
-    print(3);
+    #message 3  "Graham and Valanice are overjoyed to see you.
+\"Alexander, where have you been all these years?\"
+your mother exclaims.Adds your father, \"I'm so proud of both of you!\"";
     scriptTimer = 3;
   }
 
@@ -279,7 +282,7 @@ if (nextScript)
     start.cycling(ego);
     move.obj(aRosella, 57, 98, 1, nextScript);              // [  3
     move.obj(ego, 66, 98, 1, done);                         // [  3
-    print(4);
+    #message 4  "What a joyous family reunion! You are home at last!";
   }
 
   if (roomScript == 12)
@@ -313,7 +316,9 @@ if (nextScript)
     force.update(ego);
     force.update(aKing);
 
-    print(5);
+    #message 5  "King Graham points to the mirror.
+\"That was once a magic mirror, son,\" he says sadly. \"But,
+it has been clouded ever since the night you disappeared from your cradle.\"";
     scriptTimer = 5;
   }
 
@@ -335,7 +340,10 @@ if (nextScript)
 
   if (roomScript == 18)
   {
-    print(6);
+    #message 6  "Before your astonished eyes, the magic mirror clears, and shines anew
+with brilliant clarity.Queen Valanice cries in delight, \"The terrible
+dragon is dead, our children are home, and the future looks bright for
+us all!\"";
     scriptTimer = 3;
   }
 
@@ -357,13 +365,16 @@ if (nextScript)
   {
     start.update(aCap);
     erase(aCap);
-    print(7);
+    #message 7  "King Graham lovingly retrieves his adventurer's hat with the red feather.";
     move.obj(aKing, 42, 111, 1, nextScript);
   }
 
   if (roomScript == 22)
   {
-    print(8);
+    #message 8  "With emotion he tells you,
+\"Alexander, Rosella, this old hat and I have been through a lot together.
+Now, it's time he had a new travelling companion.\"
+He flings it in your direction.";
     move.obj(aKing, 50, 103, 1, nextScript);
   }
 
@@ -380,7 +391,9 @@ if (nextScript)
 
   if (roomScript == 24)
   {
-    print(9);
+    #message 9  "Up and up it gently arcs.
+You raise your arms to catch it, and, so does Princess Rosella!
+Down it comes, nearerand nearer...";
     start.update(aRosella);
     start.update(ego);
     set.view(aRosella, v.catching.venture.cap);
@@ -409,14 +422,16 @@ if (nextScript)
 
   if (roomScript == 26)
   {
-    print(10);
+    #message 10  "The End\n\n";
     scriptTimer = 7;
   }
 
   if (roomScript == 27)
   {
-    print(12);
-    print(14);
+    #message 12  "Congratulations on your successful completion of \"King's Quest III!!\"
+We hope you have enjoyed playing as much as we enjoyed creating
+it for you.";
+    #message 14  "May the adventuring continue with \"King's Quest IV!\"";
   }
 }
 

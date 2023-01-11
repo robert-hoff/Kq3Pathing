@@ -76,7 +76,7 @@ if (init.log)
 if ((said(break, window) ||
     said(break, open, window)))
 {
-    print(1);
+    #message 1  "You don't need to break windows. Use the front door.";
 }
 
 if ((said(look, out, window) ||
@@ -86,17 +86,17 @@ if ((said(look, out, window) ||
 {
     if ((storm.minutes || storm.seconds))
     {
-        print(6);
+        #message 6  "A horribly intense thunderstorm is raging outside.";
     }
     else
     {
         if (current.room < 9)
         {
-            print(20);
+            #message 20  "You can see most of the countryside of Llewdor from this vantage point.";
         }
         else
         {
-            print(21);
+            #message 21  "What window?";
         }
     }
 }
@@ -105,11 +105,11 @@ if (said(open, window))
 {
     if (current.room < 9)
     {
-        print(22);
+        #message 22  "These windows do not open.";
     }
     else
     {
-        print(21);
+        #message 21  "What window?";
     }
 }
 
@@ -117,14 +117,14 @@ if (!pussy.on.screen) { goto no.input; }
 
 if (said(look, cat))
 {
-    print(2);
+    #message 2  "That detestable pet of Manannan's is a constant annoyance.";
 }
 
 if (said(talk, cat))
 {
     if (has(i.dough.balls))
     {
-        print(14);
+        #message 14  "\"Get lost, Gwydion, you creep!\"";
     }
     else
     {
@@ -136,7 +136,8 @@ if (said(talk, cat))
 if ((said(kiss, cat) ||
     said(pet, cat)))
 {
-    print(3);
+    #message 3  "The thought of doing anything nice to that obscene ball of fur makes you
+sick.";
     set(make.cat.wander);
     cat.timer = cat.scared.time;
 }
@@ -148,11 +149,11 @@ if (said(kick, cat))
     {
         if (has(i.dough.balls))
         {
-            print(23);
+            #message 23  "\"Ha, ha! Missed me!!\"";
         }
         else
         {
-            print(4);
+            #message 4  "You're too far away.";
         }
     }
     else
@@ -165,9 +166,9 @@ if (said(kick, cat))
         }
         else
         {
-            print(12);
+            #message 12  "\"Screeeeeeeeeeeeech!!!!!!!!\"";
         }
-        print(13);
+        #message 13  "(heh, heh, heh)";
         set(make.cat.wander);
         cat.timer = cat.scared.time;
     }
@@ -175,7 +176,7 @@ if (said(kick, cat))
 
 if (said(kill, cat))
 {
-    print(7);
+    #message 7  "Good idea, but how? As much as you'd love to, you haven't the heart.";
     set(make.cat.wander);
     cat.timer = cat.scared.time;
 }
@@ -192,11 +193,11 @@ if (!handsOff &&
     {
         if (has(i.dough.balls))
         {
-            print(15);
+            #message 15  "%m5 As he does so he snickers, \"Ha, ha! Missed me!\"";
         }
         else
         {
-            print(4);
+            #message 4  "You're too far away.";
         }
     }
     else
@@ -204,7 +205,8 @@ if (!handsOff &&
         random(1, 4, work);
         if (work > 1)
         {
-            print(5);
+            #message 5  "The despicable cat slips away from your grasp with a fierce scratch to your
+arm.";
             set(make.cat.wander);
             cat.timer = cat.scared.time;
         }
@@ -219,7 +221,8 @@ if (!handsOff &&
             ego.dir = 0;
             set(ego.has.cat);
             set(keep.cycling);
-            print(8);
+            #message 8  "Nimbly, you grab the nasty cat by the scruff of its neck, avoiding its
+needle - sharp claws.Now that you have it, what are you going to do with it ? ";
         }
     }
 }
@@ -228,7 +231,7 @@ if (said(drop, cat))
 {
     if (!ego.has.cat)
     {
-        print(9);
+        #message 9  "You don't have it.";
     }
     else
     {
@@ -250,14 +253,14 @@ if ((said(get, fur, cat) ||
 {
     if (!ego.has.cat)
     {
-        print(11);
+        #message 11  "You don't have the cat.";
     }
     else
     {
         get(i.cat.hair);
         sound(s.screech, done);
-        print(12);
-        print(13);
+        #message 12  "\"Screeeeeeeeeeeeech!!!!!!!!\"";
+        #message 13  "(heh, heh, heh)";
         if (has(i.dough.balls))
         {
             random(24, 27, work);
@@ -268,7 +271,10 @@ if ((said(get, fur, cat) ||
         {
             set(got.cat.hair);
             score += 1;
-            print(19);
+            #message 19  "You manage to pluck some fur before
+he viciously scratches, and leaps from your arms.With grim
+satisfaction, you survey your wounds. \"Stupid cat,\" you scoff,
+\"whether you know it or not, you just helped me.\"";
         }
 
         set(drop.cat);
@@ -332,7 +338,7 @@ if (drop.cat)
     draw(a.cat);
     set(make.cat.wander);
     cat.timer = cat.scared.time;
-    print(10);
+    #message 10  "The detestable cat leaps from your arms, snarling and screeching!";
 }
 
 if (make.cat.wander && !ego.has.cat && pussy.on.screen)

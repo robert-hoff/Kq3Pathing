@@ -15,40 +15,42 @@ if (init.log || !have.input)
 
 if (said(look, room) || said(look))
 {
-    print(1);
+    #message 1  "The soft, loamy soil of the forest here gives way to the sands of the
+great desert stretching off to the west.";
 }
 
 if (said(look, flower))
 {
-    print(2);
+    #message 2  "The flowers are pretty, but otherwise uninteresting to you.";
 }
 
 if (said(look, trees))
 {
-    print(3);
+    #message 3  "The trees here cast a refreshing shade.";
 }
 
 if (said(look, flowers) || said(smell, flowers))
 {
-    print(5);
+    #message 5  "There are no flowers in this area.";
 }
 
 if (said(look, ground))
 {
-    print(1);
+    #message 1  "The soft, loamy soil of the forest here gives way to the sands of the
+great desert stretching off to the west.";
 }
 
 if (said(look, sky))
 {
-    print(9);
+    #message 9  "The clear, blue sky is brilliant with an occasional white cloud.";
 }
 
 if (said(pick, flowers) || said(get, flowers))
 {
-    print(10);
+    #message 10  "There are no wildflowers to pick here.";
 }
 
 if (said(climb, trees))
 {
-    print(11);
+    #message 11  "None of these trees are suitable for climbing.";
 }

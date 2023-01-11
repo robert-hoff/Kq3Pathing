@@ -90,10 +90,10 @@ if (featherHere) {
 
 if ((said(look, bird, feather) || said(look, eagle, feather) || said(look, feather))) {
     if (featherHere) {
-        print(1);
+        #message 1  "Ok, it's a feather.";
     }
     else {
-        print(2);
+        #message 2  "What feather?";
     }
 }
 
@@ -101,10 +101,10 @@ if ((said(get, bird, feather) || said(get, eagle, feather) || said(get, feather)
     if (featherHere) {
         distance(ego, aFeather, work);
         if (work > 25) {
-            print(3);
+            #message 3  "You can't reach it.";
         }
         else {
-            print(4);
+            #message 4  "Ok.";
             reset(featherHere);
             erase(aFeather);
             get(i.eagle.feather);
@@ -112,14 +112,14 @@ if ((said(get, bird, feather) || said(get, eagle, feather) || said(get, feather)
         }
     }
     else {
-        print(2);
+        #message 2  "What feather?";
     }
 }
 
 if ((said(look, up, eagle) || said(look, up, bird) ||
     said(look, bird) || said(look, eagle))) {
     if (eagleHere) {
-        print(5);
+        #message 5  "You see a majestic eagle.";
     }
     else {
         reset(have.match);
@@ -128,19 +128,19 @@ if ((said(look, up, eagle) || said(look, up, bird) ||
 
 if ((said(get, bird) || said(get, eagle))) {
     if (eagleHere) {
-        print(3);
+        #message 3  "You can't reach it.";
     }
     else {
-        print(6);
+        #message 6  "I don't see a bird. Do you?";
     }
 }
 
 if ((said(talk, bird) || said(talk, eagle))) {
     if (eagleHere) {
-        print(3);
+        #message 3  "You can't reach it.";
     }
     else {
-        print(6);
+        #message 6  "I don't see a bird. Do you?";
     }
 }
 
@@ -149,7 +149,7 @@ if ((said(look, on, ground) || said(look, ground))) {
         reset(have.match);
     }
     else {
-        print(8);
+        #message 8  "There is a feather on the ground.";
     }
 }
 

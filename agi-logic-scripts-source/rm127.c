@@ -45,11 +45,12 @@ if ((said(cut, cactus, with, knife) ||
     if ((!has(i.cactus) ||
         !has(i.knife)))
     {
-        print(1);
+        #message 1  "How can you use that which you do not have?";
     }
     else
     {
-        print(11);
+        #message 11  "Using your kitchen carving knife, you cut a gash in the small cactus.
+Juice begins to drip.";
         if (spell.status == ready.for.cutting.cactus)
         {
             reset(oops);
@@ -64,11 +65,14 @@ if ((said(squeeze, cactus, juice, on, spoon) ||
 {
     if (!has(i.cactus))
     {
-        print(1);
+        #message 1  "How can you use that which you do not have?";
     }
     else
     {
-        print(12);
+        #message 12  "Grabbing one of the measuring spoons from the oaken table, you
+grasp the slit cactus in your hand, and squeeze it
+until you have a spoonful of cactus juice.The small
+cactus is quite devoid of liquid now, so you toss it away.";
         drop(i.cactus);
         if (spell.status == ready.for.squeezing.cactus)
         {
@@ -86,11 +90,11 @@ if ((said(put, one, spoon, cactus, juice, bowl) ||
 {
     if (!has(i.bowl))
     {
-        print(1);
+        #message 1  "How can you use that which you do not have?";
     }
     else
     {
-        print(14);
+        #message 14  "You carefully add the spoonful of cactus juice to the bowl.";
         if (spell.status == ready.for.cactus.juice)
         {
             reset(oops);
@@ -105,11 +109,12 @@ if ((said(put, one, cup, lard, bowl) ||
 {
     if (!has(i.lard))
     {
-        print(1);
+        #message 1  "How can you use that which you do not have?";
     }
     else
     {
-        print(13);
+        #message 13  "You scrape the lard into the mixing bowl, and keep the now-empty jar
+nearby to store your finished formula.";
         drop(i.lard);
         get(i.lard.jar);
         if (spell.status == ready.for.lard)
@@ -127,11 +132,11 @@ if ((said(put, two, drops, toad, spit, bowl) ||
 {
     if (!has(i.toad.spit))
     {
-        print(1);
+        #message 1  "How can you use that which you do not have?";
     }
     else
     {
-        print(15);
+        #message 15  "You cautiously pour the two drops of toad spittle into the bowl.";
         drop(i.toad.spit);
         if (spell.status == ready.for.spit)
         {
@@ -148,7 +153,9 @@ if ((said(mix, mixture, spoon) ||
     said(use, spoon, mix) ||
     said(use, spoon, mix, bowl)))
 {
-    print(16);
+    #message 16  "Using one of the stirrers lying on the table,
+you mix the lard, cactus juice, and toad spittle
+until it is smoothand blended.";
     if (spell.status == ready.for.mixing)
     {
         reset(oops);
@@ -161,11 +168,11 @@ if ((said(wave, wand) ||
 {
     if (!has(i.magic.wand))
     {
-        print(1);
+        #message 1  "How can you use that which you do not have?";
     }
     else
     {
-        print(17);
+        #message 17  "You wave the magic wand.";
         if (spell.status == ready.for.wand)
         {
             reset(oops);
@@ -180,7 +187,8 @@ if ((said(return, ointment, jar) ||
 {
     if (spell.status == ready.for.jar)
     {
-        print(18);
+        #message 18  "You scoop the invisibility ointment out of the clay bowl and
+return it to the lard jar.";
         drop(i.lard.jar);
         get(i.invisible.ointment);
         reset(oops);

@@ -83,7 +83,7 @@ if (!medusa.stone && medusa.on.screen)
             distance(ego, a.medusa, work);
             if (work > mirror.kill.distance)
             {
-                print(2);
+                #message 2  "You are too far away for her to see it.";
             }
             else
             {
@@ -105,12 +105,13 @@ if (!medusa.stone && medusa.on.screen)
 
         if (said(kill, medusa))
         {
-            print(5);
+            #message 5  "Good idea! But, how can you do that?";
         }
 
         if (said(talk, medusa))
         {
-            print(8);
+            #message 8  "Apparently, Medusa doesn't speak. The only sounds that emit from her
+mouth are terrible grunts and groans.";
         }
 
         if (said(look, medusa))
@@ -128,7 +129,7 @@ if (!medusa.on.screen && !medusa.stone)
         --medusa.seconds;
         if (medusa.seconds == 1)
         {
-            print(15);
+            #message 15  "The most hideous-looking being has made its appearance! It's Medusa!";
             draw(a.medusa);
             set(medusa.on.screen);
             sound(m.badguy, done);
@@ -191,17 +192,17 @@ if (medusa.stone && medusa.statue.room == current.room)
 {
     if (said(kill, medusa))
     {
-        print(4);
+        #message 4  "Medusa is now just a stone statue, perfectly harmless.";
     }
 
     if (said(get, medusa))
     {
-        print(9);
+        #message 9  "The statue is much too heavy to carry.";
     }
 
     if (said(look, medusa))
     {
-        print(11);
+        #message 11  "Even as a statue, Medusa is indescribably ugly.";
     }
 }
 
@@ -237,11 +238,17 @@ if (medusa.at.ego && !medusa.stone)
 
         if ((dist > 15 || ego.sneaked.a.peek))
         {
-            print(16);                                      // [  You looked at the bitch!
+            #message 16  "Your eyes fall upon a face so hideous, so gruesome, that the horror of it is
+beyond description.People who look
+upon the face of Medusa, with her hair of writhing, live snakes,
+turn instantly to stone.Suddenly, your body feels coldand
+stiffens hard as a rock.You make a nice statue, Gwydion.";                                      // [  You looked at the bitch!
         }
         else
         {
-            print(17);                                      // [  She touched me!
+            #message 17  "Oh no! Medusa's touch is like ice! A cold chill shivers down your
+spine, turning to a stiffness that soon hardens your body like a
+rock.You are now nothing but a statue.";                                      // [  She touched me!
         }
     }
 }
@@ -270,7 +277,9 @@ if (medusa.done)
 {
     reset(medusa.done);
     stop.cycling(a.medusa);
-    print(10);
+    #message 10  "Averting your eyes, you aim the wizard's hand mirror at Medusa's face. A
+scream pierces the air as she beholds her own hideous reflection...
+then... nothing.You dare to look.Medusa has turned herself to stone!";
 }
 
 if ((current.status == stunned ||

@@ -148,7 +148,7 @@ if (ego.poofing.done && current.status == normal.ego) {
 
 // [ walking plank stuff
 if (plankWalk == 1) {
-    print(6);
+    #message 6  "Now you've gone and done it!";
     ++plankWalk;
     move.obj(ego, 60, 68, 1, next);
 }
@@ -190,7 +190,7 @@ if (plankWalk == 5 && next) {
     ++plankWalk;
     erase(aShark);
     reset(next);
-    print(5);
+    #message 5  "As you sink beneath the waves you hear the crew rooting for the shark!";
     stop.cycling(ego);
     set(certain.death);
 }
@@ -199,15 +199,16 @@ call(lgc.seagulls);
 
 // [******* SAID STUFF ********]
 if ((said(look) || said(look, ship))) {
-    print(1);
+    #message 1  "You are standing at the aft end of the ship.";
 }
 if ((said(look, up, sky) ||
     said(look, sky))) {
     if (shipShape == underWay) {
-        print(2);
+        #message 2  "The sky is cloudless. Some sea birds can be seen in the far distance.";
     }
     else {
-        print(3);
+        #message 3  "The sky is cloudless. Some shore birds are wheeling overhead. It appears
+that the ship is near land!";
     }
 }
 
@@ -217,20 +218,23 @@ if ((said(look, land) ||
     said(look, over, water) ||
     said(look, water))) {
     if (shipShape == underWay) {
-        print(4);
+        #message 4  "The deep, blue ocean stretches out to the horizon. There is no land in sight.";
     }
     if (shipShape == nearLand) {
-        print(9);
+        #message 9  "The ocean is calm and untroubled. Sea gulls wing nearby. To the east
+you see what might be land.";
     }
     if (shipShape == atBeach) {
-        print(10);
+        #message 10  "The ocean is calm and untroubled. Sea gulls wing nearby. The ship is anchored
+in a small bay.Further north, a mountain range looms.";
     }
 }
 
 if (shipShape == atBeach &&
     (said(look, beach) ||
         said(look, beach))) {
-    print(10);
+    #message 10  "The ocean is calm and untroubled. Sea gulls wing nearby. The ship is anchored
+in a small bay.Further north, a mountain range looms.";
 }
 
 if ((said(swim, ocean) ||
@@ -247,7 +251,8 @@ if ((said(swim, ocean) ||
     said(jump, ship) ||
     said(jump, water) ||
     said(swim))) {
-    print(7);
+    #message 7  "You endeavor to climb over the railing, but
+change your mind as you feel it might be unsafe!";
 }
 
 // [******** PAINLESS EXITS *********

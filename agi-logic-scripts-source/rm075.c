@@ -271,7 +271,8 @@ if (shipShape == inPort && !voyage.minutes
 }
 
 if (shipShape > inPort) {
-    print(26);
+    #message 26  "With a sinking feeling, you notice that the large ship is no longer
+tied to the pier.It looks like you missed the boat!";
     stop.cycling(ego);
     set(certain.death);
 }
@@ -310,7 +311,7 @@ if (script.done && script == 1) {                           // [ now on lower le
 if (script.done && script == 2) {
     ++script;
     reset(script.done);
-    print(17);                                              // [ first warning
+    #message 17  "\"You'd bet'er get aboard boy, or we'll sail without ya.\"";                                              // [ first warning
     stop.cycling(a.captain);
     stop.update(a.captain);
     script.timer = 15;                                      // [ seconds between messages
@@ -319,13 +320,15 @@ if (script.done && script == 2) {
 if (script.done && script == 3) {
     ++script;
     reset(script.done);
-    print(8);
+    #message 8  "You hear one of the sailors shout down to you, \"Get yer self aboard, laddie.
+We be sailin' on th' tide, wi' or wi'out ye.\"";
     script.timer = 15;                                      // [ seconds between messages
 }
 
 if (script.done && script == 4) {
     reset(script.done);
-    print(9);                                               // [ last message
+    #message 9  "From the deck of the ship you hear, \"Are ye deaf, or just daft, boyo? I said
+come aboard a'fore we leave ye here.\"";                                               // [ last message
 }
 
 if (script.done && script == raise.plank) {                 // [ ego got on board
@@ -341,7 +344,9 @@ if (script.done && script == raise.plank) {                 // [ ego got on boar
 
 if (script.done && script == capture.ego) {                 // [ grab him
     ++script;
-    print(14);
+    #message 14  "As the gangplank is drawn in you hear the Captain shout to his men,
+\"Take 'is things an put 'im in the 'old until I figures out
+what ta do with 'im.\"";
     start.update(a.pirate.guard);
     end.of.loop(a.pirate.guard, done);
     start.update(a.pirate.1);
@@ -354,7 +359,7 @@ if (script.done && script == set.sail) {                    // [ go to new.room
     ++script;
     score += 2;
     reset(script.done);
-    print(10);
+    #message 10  "You have a sneaking suspicion that you have made a big mistake. These are pirates!";
     player.control();
     reset(handsOff);
     new.room(77);
@@ -437,7 +442,7 @@ if (!handsOff && aSecondPassed && anger.timer) {
     if (anger.timer == 0) {
         if (work < 30) {
             set(pirate.pissed);
-            print(13);
+            #message 13  "\"That's it!\" he shouts. \"I warned ya to quit hangin' aroun'.\"";
         }
         else {
             ++anger.timer;                                  // [ he's still angry
@@ -524,84 +529,92 @@ if (have.input) {
 
     if ((said(look, ship) || said(look, pirate, ship))) {
         if (shipShape == inPort) {
-            print(1);
+            #message 1  "A large ship is tied to the dock.";
         }
         else {
-            print(2);
+            #message 2  "What ship?";
         }
     }
 
     if (shipShape == inPort && (said(board, ship) || said(jump, ship))) {
         if (paid.pirates) {
-            print(5);
+            #message 5  "Sounds like a good idea. Just walk across the gang plank.";
         }
         else {
-            print(3);
+            #message 3  "There is no way to do that.";
         }
     }
 
     if (said(look, town)) {
-        print(4);
+        #message 4  "A charming village sits atop a bluff overlooking the ocean.";
     }
 
     if ((said(talk, with, man) || said(talk, man))) {
         if (shipShape == inPort) {
             if (!on.pier) {
-                print(27);
+                #message 27  "Nobody can hear you!";
             }
             else {
                 if (paid.pirates) {
-                    print(19);
+                    #message 19  "\"Climb aboard, laddie! We won't be awaiting all day for ye.\"";
                 }
                 else {
                     ++pirate.msg;
                     if (pirate.msg == 1) {
-                        print(11);
+                        #message 11  "You politely speak to the old sailor on the dock. In response, he
+growls, \"Quit yer yammerin', boy. I ain't got no time fer ya.
+I gotta keep trespassers away from this here jolly - boat.Scram!\"";
                     }
                     if (pirate.msg == 2) {
                         anger.timer = 8;                      // [ he'll get you now
-                        print(12);
+                        #message 12  "Insistently, you speak to the old salt again. He seems displeased
+as he snarls, \"I'm warnin' ya, boy. I gots a tricky sword hand. Better
+go away afore I cain't stop meself!\"";
                     }
                     if (pirate.msg == 3) {
                         anger.timer = 0;
-                        print(13);
+                        #message 13  "\"That's it!\" he shouts. \"I warned ya to quit hangin' aroun'.\"";
                         set(pirate.pissed);
                     }
                     if (pirate.msg > 3) {
-                        print(25);
+                        #message 25  "You had better stop talking, and run for your life.";
                     }
                 }
             }
         }
         else {
-            print(21);
+            #message 21  "There is nobody here but you.";
         }
     }
 
     if (said(look, pirate)) {
         if (shipShape == inPort) {
             if (!paid.pirates) {
-                print(6);
+                #message 6  "The life of a seaman has definitely taken its toll on this grizzled old
+sea dog.His skin is brown and cracked from years in the salty air, his
+voice rasps from too many smokesand too much rum, and he stoops from
+countless swabbings of countless decks.His clothes are none too clean,
+either.";
             }
             else {
-                print(20);
+                #message 20  "The Captain and his crew are waiting for you to come aboard.";
             }
         }
         else {
-            print(21);
+            #message 21  "There is nobody here but you.";
         }
     }
 
     if (said(look, pier)) {
-        print(22);
+        #message 22  "A weathered dock leads into the ocean.";
     }
 
     if ((said(get, man) || said(kill, man))) {
         if (!paid.pirates) {
-            print(23);
+            #message 23  "You're no match for him.";
         }
         else {
-            print(24);
+            #message 24  "Surely, you jest?";
         }
     }
 }
@@ -614,7 +627,7 @@ call(lgc.beach);
 // [*****
 if (edge.ego.hit && chasing.ego) {
     if (!handsOff) {
-        print(18);
+        #message 18  "\"Ya better skedaddle, sonny!\"";
     }
 }
 

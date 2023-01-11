@@ -81,25 +81,28 @@ if (!wiz.on.screen) { goto no.input; }
 if ((said(look, wizard) ||
     said(look, at, wizard)))
 {
-    print(1);
+    #message 1  "Manannan appears older than old. His long, white beard straggles thinly
+past his waist, his skin resembles old parchment paper, and his hands are
+gnarledand twisted.But, don't be
+fooled!The old wizard is smart and powerful, and his magic is formidable.";
 }
 
 if (said(kill, wizard))
 {
-    print(2);
+    #message 2  "Your own death would result from that! He's too powerful for you.";
 }
 
 if ((said(kiss, wizard) ||
     said(rub, wizard) ||
     said(eat, wizard)))
 {
-    print(3);
+    #message 3  "Ugh!! You don't want to do THAT, do you!?";
 }
 
 if ((said(get, wizard) ||
     said(catch, wizard)))
 {
-    print(4);
+    #message 4  "Do you really think you can catch a wizard?";
 }
 
 if ((said(cast, spell) ||
@@ -110,7 +113,8 @@ if ((said(cast, spell) ||
     said(perform, magic, spell, on, wizard) ||
     said(perform, magic, spell, wizard)))
 {
-    print(5);
+    #message 5  "How can you without proper materials? Besides, you have to get up
+pretty early to out - spell this old wizard.";
 }
 
 if (said(talk, wizard))
@@ -137,7 +141,7 @@ if (wiz.on.screen &&
         spell.cast))
     {
         spell.cast = 0;
-        print(12);
+        #message 12  "\"Attempt to use magic around me, will you?!\"";
         make.wiz.come = osw.saw.magic;
     }
 
@@ -161,7 +165,8 @@ if (wiz.on.screen &&
     {
         wiz.temper = assign.chore;
         old.wiz.temper = 0;
-        print(22);
+        #message 22  "\"You aren't to be in this room without my express permission!\"
+Manannan says gruffly. \"Go find something to do.\"";
     }
 
     if (wiz.temper != old.wiz.temper)
@@ -178,7 +183,8 @@ if (wiz.on.screen &&
         {
             if (chore.to.do)
             {
-                print(23);
+                #message 23  "\"Instead of fooling around in here, you should have finished that
+chore I assigned to you earlier!\"";
                 chore.minutes = chore.init.minutes;
                 make.wiz.come = osw.punish;
             }
@@ -231,7 +237,7 @@ if (wiz.on.screen &&
 
         if (wiz.temper == punish)
         {
-            print(21);
+            #message 21  "\"When I assign a chore, I want it done immediately!\"";
             make.wiz.come = osw.punish;
         }
     }
@@ -253,17 +259,17 @@ if (wiz.on.screen &&
             bug.wiz.timer = 30;
             if (bugged.wiz.count == 1)
             {
-                print(9);
+                #message 9  "\"Out of my way, Gwydion!\"";
             }
 
             if (bugged.wiz.count == 2)
             {
-                print(10);
+                #message 10  "\"I mean it, boy... stay away from me!\"";
             }
 
             if (bugged.wiz.count == 3)
             {
-                print(11);
+                #message 11  "\"Gwydion, let this be a lesson to you!\"";
                 make.wiz.come = osw.punish;
             }
         }

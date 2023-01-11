@@ -57,7 +57,9 @@ if (init.log) {
 
 if (!first.msg) {
     set(first.msg);
-    print(1);
+    #message 1  "Dark storm clouds begin to gather around until you are enveloped
+by them.You hear loud reports of thunderclaps and lightning flashes
+frighteningly close.";
 }
 
 // [ lightning flashes

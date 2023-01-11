@@ -106,12 +106,16 @@ if ((said(look, mountain) ||
     said(look, room) ||
     said(look, down)))
 {
-    print(1);
+    #message 1  "You've reached the heights of the mountain range and
+snow and ice surround you.You still see no
+end to the mountains.It's bitterly cold, and you
+shiver in your thin rags.A path, through the snow, leads onward.";
 }
 
 if (said(look, path))
 {
-    print(2);
+    #message 2  "A path has been forged through the heavy snow.
+You wonder who made the path as you see no sign of life.";
 }
 
 if ((said(look, plants) ||
@@ -120,40 +124,43 @@ if ((said(look, plants) ||
     said(get, flowers) ||
     said(look, flowers)))
 {
-    print(3);
+    #message 3  "Plants and trees are scarce in the snowy reaches of these mountains.";
 }
 
 if (said(look, ground))
 {
-    print(4);
+    #message 4  "The ground is completely covered with cold, white snow.";
 }
 
 if (said(look, sky))
 {
-    print(5);
+    #message 5  "The deep-blue sky contrasts sharply with the brilliant white mountain
+peaks.You must admit, even while shivering, it is a beautiful sight.";
 }
 
 if ((said(climb, trees) ||
     said(climb, up, trees)))
 {
-    print(6);
+    #message 6  "There are no trees here.";
 }
 
 if (said(look, snow))
 {
-    print(7);
+    #message 7  "White snow blankets everything here in the upper reaches of the great
+mountains.It's beautiful, but it is VERY cold.";
 }
 
 if (said(play, snow))
 {
-    print(9);
+    #message 9  "Wheee!";
 }
 
 if ((said(look, stream) ||
     said(look, water) ||
     said(look$in, stream)))
 {
-    print(8);
+    #message 8  "The runoff from melting snows feeds a tiny stream cascading down
+through the jumble of stones.";
 }
 
 if ((said(drink, water) ||
@@ -171,11 +178,11 @@ if ((said(drink, water) ||
 {
     if (ego.y > 107)
     {
-        print(10);
+        #message 10  "Ahhh. It tastes like Sierra water!";
     }
     else
     {
-        print(11);
+        #message 11  "Your arms are not that long.";
     }
 }
 

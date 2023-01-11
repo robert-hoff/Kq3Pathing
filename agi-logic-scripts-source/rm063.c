@@ -79,7 +79,7 @@ if (hitBottom) {
     reset(hitBottom);
     erase(ego);
     set(certain.death);
-    print(5);
+    #message 5  "Darn those steps!";
 }
 
 // [ princess dynamic
@@ -89,10 +89,13 @@ if (girlSaved) {
 
 // [******** SAID STUFF ********]
 if ((said(look, up) || said(look, down) || said(look) || said(look, cave))) {
-    print(1);
+    #message 1  "Crumbled stone steps go upward into the depths of this mountain. To
+your amazement, you see light coming down from above.
+Looking down, you see the stairs steeply descending below you.";
 }
 if ((said(look, up, stairs) || said(look, down, stairs) || said(look, stairs))) {
-    print(2);
+    #message 2  "The stone steps go up into the very depths of this mountain. Not only
+are they crumbly, but they are also very steep!";
 }
 
 // [ ****** PAINLESS ROOM EXITS ******

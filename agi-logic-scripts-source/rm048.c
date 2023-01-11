@@ -96,44 +96,45 @@ if (init.log) {
 }
 
 if (said(look, shark)) {
-    print(2);
+    #message 2  "A prowling shark waits offshore.";
 }
 
 if (said(get, shark)) {
-    print(3);
+    #message 3  "You've got to be kidding?!";
 }
 
 if (said(kill, shark)) {
-    print(10);
+    #message 10  "You have no way of killing a shark.";
 }
 
 if (said(talk, shark)) {
-    print(11);
+    #message 11  "He doesn't understand you.";
 }
 
 if ((said(look, ship) || said(look, pirate, ship))) {
     if (shipShape == atBeach) {
-        print(4);
+        #message 4  "The pirate ship is anchored just offshore. You'd best
+ be on your way.";
     }
     else {
-        print(5);
+        #message 5  "The pirate's ship is nowhere in sight!";
     }
 }
 
 if ((said(look) || said(look, beach))) {
-    print(6);
+    #message 6  "You are on a small beach to the south of a looming mountain range.";
 }
 
 if (said(look, ground)) {
-    print(8);
+    #message 8  "Yep. It's sandy here.";
 }
 
 if (said(look, tree)) {
-    print(9);
+    #message 9  "You see no trees.";
 }
 
 if (said(look, mountains)) {
-    print(7);
+    #message 7  "To the north, a mountain range beckons.";
 }
 
 // [ shark business
@@ -154,7 +155,7 @@ if (egoDead) {
     reset(egoDead);
     erase(ego);
     set(certain.death);
-    print(1);
+    #message 1  "Gosh! You barely made a mouthful for that hungry shark!";
 }
 
 if ((current.status == wading || current.status == swimming)) {

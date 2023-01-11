@@ -51,29 +51,35 @@ if ((said(look, mountain) ||
     said(look) ||
     said(look, room) ||
     said(look, down))) {
-    print(1);
+    #message 1  "You carefully make your way down the eastern side of these mountains.
+The path travels
+along the top of a narrow ridge.Looking back, you see the snowy
+peaks through which you so recently journeyed.Whew!You wipe your brow as
+you feel the worst is now behind you.";
 }
 
-if (said(look, path)) { print(2); }
+if (said(look, path)) { #message 2  "You are trekking along a steep ridgetop on a treacherous path. One wrong
+step could mean instant death.Be careful!"; }
 
 if ((said(look, plants) ||
     said(look, tree))) {
-    print(3);
+    #message 3  "You see numerous evergreen trees and bushes. The forest is very tranquil.";
 }
 
-if (said(look, ground)) { print(4); }
+if (said(look, ground)) { #message 4  "The ground is covered with a crunchy carpet of pine needles."; }
 
-if (said(look, sky)) { print(5); }
+if (said(look, sky)) { #message 5  "Looking back, you see snow-capped peaks thrusting their way upward
+toward an azure sky."; }
 
 if ((said(climb, trees) ||
     said(climb, up, trees))) {
-    print(6);
+    #message 6  "There are no climbable trees here.";
 }
 
 if ((said(pick, flowers) ||
     said(get, flowers) ||
     said(look, flowers))) {
-    print(7);
+    #message 7  "You see no flowers around here.";
 }
 
 // [*****

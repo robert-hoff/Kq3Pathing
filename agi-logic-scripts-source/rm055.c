@@ -118,19 +118,23 @@ if ((said(look, mountain) ||
     said(look, room) ||
     said(look, down)))
 {
-    print(1);
+    #message 1  "You have reached the summit, but still the snowy mountains
+continue relentlessly forward.What is this ? A cave with a snowy path
+leading to it!Hmmmmm.What could it all mean ? ";
 }
 
 if (said(look, path))
 {
-    print(2);
+    #message 2  "A narrow path forges its way through the snowdrifts, and another
+leads into a large cave!Nervously, you look around.";
 }
 
 if ((said(look, cave) ||
     said(look$in, cave) ||
     said(look, inside, cave)))
 {
-    print(3);
+    #message 3  "The snowy cave is very large with thick icicles hanging from its
+entrance.It's very dark inside.";
 }
 
 if ((said(look, plants) ||
@@ -139,27 +143,29 @@ if ((said(look, plants) ||
     said(get, flowers) ||
     said(look, flowers)))
 {
-    print(13);
+    #message 13  "Plants and trees are scarce in the snowy reaches of these mountains.";
 }
 
 if (said(look, ground))
 {
-    print(4);
+    #message 4  "The ground is completely covered with cold, white snow.";
 }
 
 if (said(look, sky))
 {
-    print(5);
+    #message 5  "The deep-blue sky contrasts sharply with the brilliant white mountain
+peaks.You must admit, even while shivering, it is a beautiful sight.";
 }
 
 if (said(look, snow))
 {
-    print(7);
+    #message 7  "White snow blankets everything here in the upper reaches of the great
+mountains.It's beautiful, but it is VERY cold.";
 }
 
 if (said(play, snow))
 {
-    print(9);
+    #message 9  "Wheee!";
 }
 
 // [*****

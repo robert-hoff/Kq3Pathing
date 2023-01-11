@@ -98,7 +98,7 @@ if (said(object, room))
 {
     get.num(4, debug.1);
     get.room.f(debug.1, debug.0);
-    print(13);
+    #message 13 "NOT FOUND or parser error";
 }
 
 if (controller(c.show.mem))
@@ -177,10 +177,10 @@ if (said(show, flag))
     get.num(5, debug.0);
     if (isset.v(debug.0))
     {
-        print(10);
+        #message 10 "NOT FOUND or parser error";
     }
     else {
-        print(11);
+        #message 11 "NOT FOUND or parser error";
     }
 }
 
@@ -200,7 +200,7 @@ if (said(show, var))
 {
     get.num(8, debug.0);
     debug.1 = @ debug.0;
-    print(9);
+    #message 9 "NOT FOUND or parser error";
 }
 
 if (said(set, var))
@@ -213,7 +213,7 @@ if (said(set, var))
 if ((said(room, number) ||
     said(room)))
 {
-    print(7);
+    #message 7 "NOT FOUND or parser error";
 }
 
 if (unknown.word)
@@ -264,7 +264,7 @@ if (said(here, wizard))
     wiz.seconds = 0;
     if (chore.to.do)
     {
-        print(19);
+        #message 19 "NOT FOUND or parser error";
     }
 }
 

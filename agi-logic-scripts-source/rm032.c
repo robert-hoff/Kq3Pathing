@@ -221,11 +221,11 @@ if (init.log) {
 // [main(argc, argv)    /* a real structured language would be nice */
 
 if (said(look, ground)) {
-    print(12);
+    #message 12  "The hot ground is parched and dry.";
 }
 
 if (said(look, mountain)) {
-    print(6);
+    #message 6  "The mountain to the north seems to float on the horizon.";
 }
 
 if ((said(drink) ||
@@ -234,25 +234,28 @@ if ((said(drink) ||
     said(drink, ocean, water)))
 {
     if (has(i.ocean.water)) {
-        print(2);
+        #message 2  "Drinking the salty ocean water intensifies your thirst.";
         drop(i.ocean.water);
     }
     else {
-        print(3);
+        #message 3  "You have no water. Your desperate mind must be playing
+tricks on you.";
     }
 }
 
 if ((said(look) || said(look, desert))) {
     if (!wandered) {
-        print(10);
+        #message 10  "You have entered a great desert.";
     }
     else {
-        print(1);
+        #message 1  "You look around and see no familiar landmarks. A tight
+knot of fear begins to form in your stomach as you realize you don't know
+how to get out of this desert.";
     }
 }
 
 if ((said(get, bird) || said(look, bird))) {
-    print(11);
+    #message 11  "You see buzzards circling high above you.";
 }
 
 call(lgc.desert);

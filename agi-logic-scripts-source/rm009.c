@@ -100,7 +100,8 @@ if ((said(look, room) ||
     said(look) ||
     said(look, passage)))
 {
-    print(1);
+    #message 1  "You are on a flight of steep underground stone steps.
+They curve downward toward a dim light.The open trapdoor is above you.";
 }
 
 if ((said(look, stairs) ||
@@ -109,30 +110,31 @@ if ((said(look, stairs) ||
     said(look, down) ||
     said(look, up)))
 {
-    print(2);
+    #message 2  "The steps are made of narrow, rough stones, crudely constructed.";
 }
 
 if ((said(look, trapdoor) ||
     said(look, out, trapdoor)))
 {
-    print(3);
+    #message 3  "The trapdoor from the wizard's study is open.";
 }
 
 if (said(close, trapdoor))
 {
-    print(4);
+    #message 4  "You reach up and grab the trapdoor intending to close it. It won't move from
+this side.You'll just have to leave it open.";
 }
 
 if (said(open, trapdoor))
 {
-    print(5);
+    #message 5  "The trapdoor is already open.";
 }
 
 if ((said(climb, stairs) ||
     said(climb, down, stairs) ||
     said(climb, up, stairs)))
 {
-    print(6);
+    #message 6  "Climb them yourself.";
 }
 
 // [*****
@@ -160,10 +162,11 @@ if (cat.tripped.ego &&
     ego.y > 163)
 {
     reset(cat.tripped.ego);
-    print(7);
+    #message 7  "OH, OH!! That darn cat really did it to you this time! Tripping over
+the cat, you fall to your death.";
     if (has(i.dough.balls))
     {
-        print(8);
+        #message 8  "\"You look mighty funny falling down those stairs, Gwydion,\" he snickers.";
     }
 }
 

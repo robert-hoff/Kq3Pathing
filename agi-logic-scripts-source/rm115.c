@@ -178,24 +178,25 @@ if (!bandit1Here && !bandit2Here)
 
 if (said(look, bandit))
 {
-    print(1);
+    #message 1  "They are dirty and unkempt, their hair is wild and their clothes smell.
+Mean looks darken their faces.These are two to avoid!";
 }
 
 if (said(talk, bandit))
 {
-    print(6);
+    #message 6  "This is no time for conversation! Get out of here!! ";
 }
 
 if ((said(get, bandit) ||
     said(catch, bandit)))
 {
-    print(7);
+    #message 7  "If you think you can capture these two you'd better think again.";
 }
 
 if ((said(kill, bandit) ||
     said(hit, bandit)))
 {
-    print(8);
+    #message 8  "You think you can hurt two husky bandits!? Think again.";
 }
 
 // [*****
@@ -257,7 +258,8 @@ if (nextScript && !banditsConfused)
         {
             follow.ego(aBandit1, 5, nextScript);
             follow.ego(aBandit2, 5, nextScript);
-            print(2);
+            #message 2  "These two are certainly unsavory rogues! They look like they'd
+rob you blind!!";
         }
     }
 
@@ -354,12 +356,13 @@ if (nextScript && !banditsConfused)
             reset(theyHitEgo);
             if (theyStoleSomething)
             {
-                print(3);
+                #message 3  "%m5Taking stock of your holdings, you discover
+that all of your possessions have been stolen.";
                 set(ego.been.robbed);
             }
             else
             {
-                print(4);
+                #message 4  "%m5At least you had nothing for the two bandits to steal.";
             }
         }
     }

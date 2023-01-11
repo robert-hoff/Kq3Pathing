@@ -240,7 +240,7 @@ if (!poked.eye &&
     ego.y == 151)
 {
     set(poked.eye);
-    print(10);
+    #message 10  "Ouch!";
 }
 
 observe.blocks(ego);
@@ -258,56 +258,62 @@ if (have.input)
 {
     if (said(look, ground))
     {
-        print(16);
+        #message 16  "The soft grass of the forest has been replaced by the
+coarse grass of the seashore.";
     }
 
     if ((said(look) ||
         said(look, town) ||
         said(look, buildings)))
     {
-        print(1);
+        #message 1  "You have entered a quaint, seaside town. Smoke curls lazily
+from the houses and shops overlooking the ocean.A pier
+stretches out into the bay.Near the pier, you notice a
+storeand a tavern.";
     }
 
     if (said(look, store))
     {
-        print(2);
+        #message 2  "The store is on the south side of the pier.";
     }
     if (said(look, trees))
     {
-        print(18);
+        #message 18  "The trees are not as large, being so near the coast.";
     }
 
     if (said(look, tavern))
     {
-        print(3);
+        #message 3  "The tavern is on the north side of the pier.";
     }
 
     if (said(look, door))
     {
-        print(14);
+        #message 14  "It's just a door; it opens and closes.";
     }
 
     if (said(look, pier))
     {
         if (shipShape == inPort)
         {
-            print(4);
+            #message 4  "%m5 There is a ship tied to the dock.";
         }
         else
         {
-            print(5);
+            #message 5  "The pier is made of rough, but sturdy, timbers, and stretches out into the
+bay.";
         }
     }
 
     if (said(look, under, pier))
     {
-        print(6);
+        #message 6  "Waves lap gently against the pilings. But, there is nothing else
+interesting down there.";
     }
 
     if ((said(look, anchor) ||
         said(get, anchor)))
     {
-        print(7);
+        #message 7  "The old, rusted anchor is much too heavy to move.";
     }
 
     if ((said(look, window) ||
@@ -316,18 +322,19 @@ if (have.input)
     {
         if (near.window)
         {
-            print(8);
+            #message 8  "You peer into the window, but cannot make out any details of the dim
+interior.";
         }
         else
         {
-            print(15);
+            #message 15  "Wouldn't it help to be near a window?";
         }
     }
 
     if ((said(open, window) ||
         said(break, window)))
     {
-        print(9);
+        #message 9  "If you want to enter, why not try the door?";
     }
 
     if ((said(knock, anyword, door) ||
@@ -338,11 +345,11 @@ if (have.input)
         if ((ego.location == near.tavern ||
             ego.location == near.store))
         {
-            print(13);
+            #message 13  "You don't have to knock, just open the door and go in.";
         }
         else
         {
-            print(12);
+            #message 12  "You are not close enough.";
         }
     }
 
@@ -354,7 +361,7 @@ if (have.input)
         {
             if (tavern.door.open)
             {
-                print(11);
+                #message 11  "The door is already open.";
             }
             else
             {
@@ -367,7 +374,7 @@ if (have.input)
             if (ego.location != near.store &&
                 said(open, door))
             {
-                print(12);
+                #message 12  "You are not close enough.";
             }
         }
     }
@@ -378,13 +385,13 @@ if (have.input)
     {
         if (ego.location != near.store)
         {
-            print(12);
+            #message 12  "You are not close enough.";
         }
         else
         {
             if (store.door.open)
             {
-                print(11);
+                #message 11  "The door is already open.";
             }
             else
             {
@@ -401,7 +408,7 @@ if (have.input)
         {
             if (!tavern.door.open)
             {
-                print(17);
+                #message 17  "The door is already closed.";
             }
             else
             {
@@ -414,7 +421,7 @@ if (have.input)
             if (ego.location != near.store &&
                 said(close, door))
             {
-                print(12);
+                #message 12  "You are not close enough.";
             }
         }
     }
@@ -425,13 +432,13 @@ if (have.input)
     {
         if (ego.location != near.store)
         {
-            print(12);
+            #message 12  "You are not close enough.";
         }
         else
         {
             if (!store.door.open)
             {
-                print(11);
+                #message 11  "The door is already open.";
             }
             else
             {

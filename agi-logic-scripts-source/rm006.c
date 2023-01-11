@@ -259,7 +259,7 @@ if (!have.input) { goto no.input; }
 
 if (current.status == hanging.in.kitchen)
 {
-    print(61);
+    #message 61  ".won taht od t'nac uoY";
     if (!debugging)
     {
         set(have.match);
@@ -269,7 +269,7 @@ if (current.status == hanging.in.kitchen)
 
 if (current.status == sweeping)
 {
-    print(62);
+    #message 62  "You're too busy sweeping.";
     if (!debugging)
     {
         set(have.match);
@@ -284,70 +284,74 @@ if ((said(look, room) ||
     said(look) ||
     said(look, kitchen)))
 {
-    print(1);
+    #message 1  "This is the kitchen of the wizard's house. Other than your own bed
+chamber, this is the only place in the house that you feel you can call
+\"your own.\" The wizard rarely enters the kitchen.
+On cold days, the fireplace is a cozy place to sit.";
 }
 
 if ((said(look, fireplace) ||
     said(look$in, fireplace)))
 {
-    print(3);
+    #message 3  "As it is now summer, the need to light a fire and cook hot food was
+diminished.The fireplace is, at the moment, not burning.";
 }
 
 if ((said(look, barrel) ||
     said(look$in, barrel) ||
     said(get, barrel)))
 {
-    print(36);
+    #message 36  "The barrels only contain foodstuffs. They are too huge to move.";
 }
 
 if (said(look, table))
 {
-    print(5);
+    #message 5  "You use the heavy oak table when you prepare food for the wizard.";
 
     if (obj.in.room(i.bread, current.room) &&
         obj.in.room(i.fruit, current.room) &&
         obj.in.room(i.mutton, current.room))
     {
-        print(6);
+        #message 6  "%m11%m7,%m8, and%m9%m12.";
     }
     else
     {
         if (obj.in.room(i.bread, current.room) &&
             obj.in.room(i.fruit, current.room))
         {
-            print(15);
+            #message 15  "%m11%m7 and%m8%m12.";
         }
         else
         {
             if (obj.in.room(i.bread, current.room) &&
                 obj.in.room(i.mutton, current.room))
             {
-                print(16);
+                #message 16  "%m11%m7 and%m9%m12.";
             }
             else
             {
                 if (obj.in.room(i.fruit, current.room) &&
                     obj.in.room(i.mutton, current.room))
                 {
-                    print(17);
+                    #message 17  "%m11%m8 and%m9%m12.";
                 }
                 else
                 {
                     if (obj.in.room(i.bread, current.room))
                     {
-                        print(10);
+                        #message 10  "%m11%m7%m12.";
                     }
                     else
                     {
                         if (obj.in.room(i.fruit, current.room))
                         {
-                            print(13);
+                            #message 13  "%m11%m8%m12.";
                         }
                         else
                         {
                             if (obj.in.room(i.mutton, current.room))
                             {
-                                print(14);
+                                #message 14  "%m11%m9%m12.";
                             }
                         }
                     }
@@ -359,7 +363,7 @@ if (said(look, table))
 
 if (said(look, under, table))
 {
-    print(25);
+    #message 25  "It's clean under there.";
 }
 
 if ((said(look, shelf) ||
@@ -367,61 +371,66 @@ if ((said(look, shelf) ||
 {
     if (obj.in.room(i.bowl, current.room))
     {
-        print(18);
+        #message 18  "%m19 One useful item that catches your eye is the clay bowl you use
+for all of your mixing.";
     }
     else
     {
-        print(19);
+        #message 19  "The kitchen shelf holds many ingredients and kitchen implements for cooking.";
     }
 }
 
 if (said(look, pots))
 {
-    print(20);
+    #message 20  "There are pots, pans, and skillets hanging on the wall
+beside the fireplace.";
 }
 
 if ((said(look, wall) ||
     said(look, rack) ||
     said(look, rack, wall)))
 {
-    print(21);
+    #message 21  "There is an iron rack hanging on the wall by the fireplace.";
     if (obj.in.room(i.knife, current.room))
     {
-        print(22);
+        #message 22  "Your trusty knife%m24";
     }
 
     if (obj.in.room(i.spoon, current.room))
     {
-        print(23);
+        #message 23  "Your wooden serving spoon%m24";
     }
 }
 
 if (said(look, basket))
 {
-    print(29);
+    #message 29  "There are large baskets hanging from the ceiling beam, and
+smaller baskets on the kitchen shelves.";
 }
 
 if ((said(look, churn) ||
     said(look$in, churn)))
 {
-    print(30);
+    #message 30  "Looking at the butter churn makes your muscles ache as you remember the
+long hours churning cream to make butter.Otherwise, you have no
+interest in it.";
 }
 
 if ((said(look, bucket) ||
     said(look$in, bucket)))
 {
-    print(63);
+    #message 63  "It's just your old, oaken bucket.";
 }
 
 if ((said(look, ceiling) ||
     said(look, beam)))
 {
-    print(31);
+    #message 31  "There are pots, pans, baskets, and drying herbs and spices hanging here.";
 }
 
 if (said(look, herbs))
 {
-    print(59);
+    #message 59  "There are many hanging here. %m35";
 }
 
 // [  HANDLE GETTING STUFF.
@@ -429,29 +438,33 @@ if (said(look, herbs))
 if ((said(get, baskets) ||
     said(get, baskets, from, wall)))
 {
-    print(32);
+    #message 32  "You can think of no use for baskets right now.";
 }
 
 if ((said(get, pots) ||
     said(get, pots, from, wall)))
 {
-    print(33);
+    #message 33  "You are not in the mood for cooking at the moment, so the pots do not
+interest you.";
 }
 
 if (said(get, churn))
 {
-    print(30);
+    #message 30  "Looking at the butter churn makes your muscles ache as you remember the
+long hours churning cream to make butter.Otherwise, you have no
+interest in it.";
 }
 
 if ((said(get, rack) ||
     said(get, rack, from, wall)))
 {
-    print(34);
+    #message 34  "The iron rack is securely attached to the wall. You cannot remove it no
+matter how hard you try.";
 }
 
 if (said(get, herbs))
 {
-    print(35);
+    #message 35  "You have no use for these particular herbs and spices.";
 }
 
 if ((said(get, all, food, table) ||
@@ -465,7 +478,7 @@ if ((said(get, all, food, table) ||
         !obj.in.room(i.fruit, current.room) &&
         !obj.in.room(i.mutton, current.room))
     {
-        print(45);
+        #message 45  "You already have it.";
     }
     else
     {
@@ -501,17 +514,17 @@ if ((said(get, spoon) ||
 {
     if (!obj.in.room(i.spoon, current.room))
     {
-        print(45);
+        #message 45  "You already have it.";
     }
     else
     {
         if (ego.location != rack)
         {
-            print(58);
+            #message 58  "You're too far away.";
         }
         else
         {
-            print(44);
+            #message 44  "You take the wooden spoon from the iron rack and keep it with you.";
             get(i.spoon);
             score += 1;
             start.update(a.spoon);
@@ -526,17 +539,17 @@ if ((said(get, knife) ||
 {
     if (!obj.in.room(i.knife, current.room))
     {
-        print(45);
+        #message 45  "You already have it.";
     }
     else
     {
         if (ego.location != rack)
         {
-            print(58);
+            #message 58  "You're too far away.";
         }
         else
         {
-            print(46);
+            #message 46  "You take the carving knife from the iron rack and keep it with you.";
             get(i.knife);
             score += 1;
             start.update(a.knife);
@@ -551,17 +564,18 @@ if ((said(get, bowl, shelf) ||
 {
     if (!obj.in.room(i.bowl, current.room))
     {
-        print(45);
+        #message 45  "You already have it.";
     }
     else
     {
         if (ego.location != shelf)
         {
-            print(58);
+            #message 58  "You're too far away.";
         }
         else
         {
-            print(48);
+            #message 48  "You retrieve the clay bowl from the kitchen shelf and take it
+with you.";
             get(i.bowl);
             score += 1;
             start.update(a.bowl);
@@ -575,7 +589,8 @@ if ((said(get, bowl, shelf) ||
 if ((said(put, wood, fireplace) ||
     said(get, wood)))
 {
-    print(4);
+    #message 4  "There is no need for you to start a fire in the fireplace, as it is now
+summer and warm outside.";
 }
 
 if ((said(start, fire, fireplace) ||
@@ -585,7 +600,8 @@ if ((said(start, fire, fireplace) ||
     said(make, fire) ||
     said(light, fire, fireplace)))
 {
-    print(4);
+    #message 4  "There is no need for you to start a fire in the fireplace, as it is now
+summer and warm outside.";
 }
 
 if (!handsOff &&
@@ -603,7 +619,7 @@ if (!handsOff &&
 {
     if (ego.location != rack)
     {
-        print(58);
+        #message 58  "You're too far away.";
     }
     else
     {
@@ -643,11 +659,11 @@ if ((get.all.food || get.bread))
         if (ego.location != table)
         {
             reset(get.all.food);
-            print(57);
+            #message 57  "You aren't near the table.";
         }
         else
         {
-            print(38);
+            #message 38  "You take the loaf of bread and carry it with you.";
             get(i.bread);
             score += 1;
             start.update(a.bread);
@@ -658,7 +674,7 @@ if ((get.all.food || get.bread))
     {
         if (!get.all.food)
         {
-            print(45);
+            #message 45  "You already have it.";
         }
     }
 
@@ -676,11 +692,11 @@ if ((get.all.food || get.fruit))
         if (ego.location != table)
         {
             reset(get.all.food);
-            print(57);
+            #message 57  "You aren't near the table.";
         }
         else
         {
-            print(40);
+            #message 40  "You take the fruit and carry it with you.";
             get(i.fruit);
             score += 1;
             start.update(a.fruit);
@@ -691,7 +707,7 @@ if ((get.all.food || get.fruit))
     {
         if (!get.all.food)
         {
-            print(45);
+            #message 45  "You already have it.";
         }
     }
 
@@ -709,11 +725,11 @@ if ((get.all.food || get.mutton))
         if (ego.location != table)
         {
             reset(get.all.food);
-            print(57);
+            #message 57  "You aren't near the table.";
         }
         else
         {
-            print(42);
+            #message 42  "You take the mutton chop and carry it with you.";
             get(i.mutton);
             score += 1;
             start.update(a.mutton);
@@ -724,7 +740,7 @@ if ((get.all.food || get.mutton))
     {
         if (!get.all.food)
         {
-            print(45);
+            #message 45  "You already have it.";
         }
     }
     reset(get.all.food);
@@ -793,7 +809,10 @@ if (ego.poofing.done)
     {
         program.control();
         stop.motion(ego);
-        print(54);
+        #message 54  "You feel the blood rushing to your head as you realize that you are
+upside - down.Straining to look up, you notice your feet have been
+magically attached to a kitchen rafter.You struggle, but can't
+release yourself.What a vexing situation!";
         ego.cycle.time = 2;
         cycle.time(ego, ego.cycle.time);
         wriggle.timer = 23;
@@ -877,7 +896,8 @@ if (aSecondPassed)
         discard.view(v.ego.falling);
         discard.view(v.ego.hanging.in.kitchen);
 
-        print(60);
+        #message 60  "You feel dizzy and nauseated at the sudden changes in body position. It's
+at least some consolation to find yourself on the floor again.";
 
         observe.blocks(ego);
         observe.objs(ego);

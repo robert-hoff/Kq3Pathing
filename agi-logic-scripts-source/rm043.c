@@ -41,7 +41,9 @@ if (init.log)
 
     call.f(spell.in.progress);
 
-    print(1);
+    #message 1  "You know you must work with the utmost care. Every step is
+critical; each must be done in the proper way, in the proper sequence.You
+tremble in anticipation.";
 
     set(music.done);
     return();
@@ -58,7 +60,7 @@ if (!have.input) { goto no.input; }
 
 if (said(use, burner))
 {
-    print(8);
+    #message 8  "What would you do with the brazier?";
 }
 
 if ((said(light, burner) ||
@@ -68,11 +70,12 @@ if ((said(light, burner) ||
     if ((burner.seconds ||
         burner.minutes))
     {
-        print(9);
+        #message 9  "It is already burning.";
     }
     else
     {
-        print(10);
+        #message 10  "Making sure there is fresh charcoal in the brazier (there is a small
+supply here), you light it with the flint.Soon, the brazier is hot.";
         burner.minutes = burner.init.minutes;
     }
 }
@@ -81,21 +84,23 @@ if ((said(look, burner) ||
     said(look, burner, table) ||
     said(look$in, burner)))
 {
-    print(13);
+    #message 13  "The small brazier is made of metal shaped into a bowl, with four small legs.
+It is filled with charcoal and topped with a metal grill.It is used for
+heating or cooking things.";
     if ((burner.seconds || burner.minutes))
     {
-        print(14);
+        #message 14  "%m17 You could heat things quickly with the brazier right now.";
     }
     else
     {
-        print(15);
+        #message 15  "%m18stone cold.";
     }
 }
 
 if ((said(get, charcoal) ||
     said(get, charcoal, from, burner)))
 {
-    print(16);
+    #message 16  "The charcoal belongs in the brazier. You have no need for it anywhere else.";
 }
 
 if ((said(look, charcoal) ||
@@ -103,11 +108,11 @@ if ((said(look, charcoal) ||
 {
     if ((burner.seconds || burner.minutes))
     {
-        print(17);
+        #message 17  "%m18very hot!";
     }
     else
     {
-        print(15);
+        #message 15  "%m18stone cold.";
     }
 }
 
@@ -142,7 +147,7 @@ if (oops)
     set(going.back.to.lab);
     if (!sound.on)
     {
-        print(5);
+        #message 5  "The mysterious music stops. What could this mean?";
     }
 }
 
@@ -154,14 +159,15 @@ if (music.done)
         set(seen.music.start.message);
         if (!sound.on)
         {
-            print(4);
+            #message 4  "A mysterious music fills the laboratory!";
         }
     }
 }
 
 if (spell.status == spell.done)
 {
-    print(6);
+    #message 6  "Successfully completing the spell, you again look at the wizard's
+laboratory.";
     set(going.back.to.lab);
     if (!made.spell.1 && spell.in.progress == 121)
     {
@@ -216,7 +222,8 @@ if (going.back.to.lab)
 
     if (!spell.status)
     {
-        print(2);
+        #message 2  "You scratch your head at the confusing old book, and turn away in
+puzzlement.";
     }
     else
     {
@@ -225,7 +232,8 @@ if (going.back.to.lab)
             set(have.match);
             set(oops);
             call.v(spell.in.progress);
-            print(3);
+            #message 3  "A strange feeling comes over you. You wonder if you could have made a
+mistake!";
         }
     }
 
@@ -246,5 +254,5 @@ if ((said(put, anyword, on, burner) ||
     said(put, anyword, on, burner, heat) ||
     said(put, anyword, on, top, burner, heat)))
 {
-    print(12);
+    #message 12  "For a moment you consider doing that, but then realize it wouldn't work.";
 }

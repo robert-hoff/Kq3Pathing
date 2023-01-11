@@ -223,17 +223,17 @@ if (controller(c.about))                                    // [also give length
 {
     if (gameDays)
     {
-        print(87);
+        #message 87  "%m91%v118 days, %v117 hours, %v116 minutes and %v115 seconds.\n";
     }
     else
     {
         if (gameHours)
         {
-            print(88);
+            #message 88  "%m91%v117 hours, %v116 minutes and %v115 seconds.\n";
         }
         else
         {
-            print(89);
+            #message 89  "%m91%v116 minutes and %v115 seconds.\n";
         }
     }
 }
@@ -309,7 +309,9 @@ if ((controller(c.debug) ||
         load.logics(lgc.trace);
         set(enable.trace);
         set(xy.on);
-        print(11);
+        #message 11  "\n
+King's Quest III\n\n
+Version 2.14  3 / 15 / 88   \n\n";
         version();
         accept.input();
         player.control();
@@ -318,7 +320,9 @@ if ((controller(c.debug) ||
 
 if (controller(c.version))
 {
-    print(11);
+    #message 11  "\n
+King's Quest III\n\n
+Version 2.14  3 / 15 / 88   \n\n";
     version();
 }
 
@@ -328,7 +332,7 @@ if ((controller(c.help) ||
 {
     if (out.of.memory)
     {
-        print(12);
+        #message 12  "The help screen won't work here. Try again elsewhere.";
     }
     else
     {
@@ -417,12 +421,14 @@ if (current.status == dead)
     {
         stop.sound();
         sound(m.whoops, done);
-        print(13);
+        #message 13  "Thanks for playing King's Quest III... next time, be more careful!";
     }
 
     if (have.input && !have.match)
     {
-        print(14);
+        #message 14  "Since you're dead...\n\n
+all you can do is
+restore a saved game or start over.";
     }
 
     if (debugging)
@@ -558,7 +564,7 @@ if (elapsed.seconds != old.seconds)
         if (current.status != eagle.landing &&
             current.status != fly.landing)
         {
-            print(20);
+            #message 20  "Your magic spell is wearing off!";
             set(prevent.new.room);
         }
     }
@@ -627,23 +633,23 @@ if (unknown.word)
 
 if (said(who, wrote, game))
 {
-    print(16);
+    #message 16  "Al Lowe & Bob Heitman.";
 }
 
 if (said(thanks, rol))
 {
-    print(28);
+    #message 28  "\"You're welcome.\"";
 }
 
 if ((said(bye, anyword) ||
     said(anyword, bye)))
 {
-    print(113);
+    #message 113  "\"'Bye.\"";
 }
 
 if (said(hi, rol))
 {
-    print(26);
+    #message 26  "\"Hi.\"";
 }
 
 if ((said(dirty$word, rol) ||
@@ -651,7 +657,7 @@ if ((said(dirty$word, rol) ||
     said(anyword, anyword, dirty$word, rol) ||
     said(anyword, anyword, anyword, dirty$word, rol)))
 {
-    print(29);
+    #message 29  "Obviously, you were raised by a naughty wizard!";
 }
 
 if ((said(how, long, game) ||
@@ -663,17 +669,17 @@ if ((said(how, long, game) ||
 {
     if (elapsed.days)
     {
-        print(17);
+        #message 17  "%v118 days, %m18";
     }
     else
     {
         if (elapsed.hours)
         {
-            print(18);
+            #message 18  "%v117 hours, %m19";
         }
         else
         {
-            print(19);
+            #message 19  "%v116 minutes and %v115 seconds.";
         }
     }
 }
@@ -702,7 +708,7 @@ if (has(i.cat.cookie))
     if ((said(give, cat, cookie, rol) ||
         said(give, cookie, rol)))
     {
-        print(70);
+        #message 70  "They don't want it.";
     }
 
     if (has(i.porridge) &&
@@ -718,13 +724,14 @@ if (has(i.cat.cookie))
         drop(i.cat.cookie);
         drop(i.porridge);
         get(i.porridge.poisoned);
-        print(35);
+        #message 35  "The porridge conceals the crumbled cookie; it still looks
+as appetizing as ever.";
     }
 }
 
 if (current.status == snail)
 {
-    print(15);
+    #message 15  "Ick! You're slimy!";
     set(have.match);
 }
 
@@ -742,12 +749,12 @@ if (said(pour, sleep, powder, on, ground))
     if (has(i.sleep.powder))
     {
         spell.cast = sc.make.sleep;
-        print(9);
+        #message 9  "Ok.";
         drop(i.sleep.powder);
     }
     else
     {
-        print(45);
+        #message 45  "How can you do that?";
     }
 }
 
@@ -761,7 +768,7 @@ if ((said(rub, magic, stone) ||
     }
     else
     {
-        print(45);
+        #message 45  "How can you do that?";
     }
 }
 
@@ -773,7 +780,7 @@ if (current.status == eagle)
     }
     else
     {
-        print(32);
+        #message 32  "Shhhh. (You're flying!)";
         set(have.match);
     }
 }
@@ -787,7 +794,7 @@ if ((said(dip, eagle, feather, essence) ||
     }
     else
     {
-        print(45);
+        #message 45  "How can you do that?";
     }
 }
 
@@ -799,7 +806,7 @@ if (current.status == fly)
     }
     else
     {
-        print(33);
+        #message 33  "Buzzzzzz.";
         set(have.match);
     }
 }
@@ -812,7 +819,7 @@ if ((said(dip, fly, essence) || said(dip, fly, magic, essence)))
     }
     else
     {
-        print(45);
+        #message 45  "How can you do that?";
     }
 }
 
@@ -825,7 +832,7 @@ if ((said(look, magic, map) ||
     }
     else
     {
-        print(45);
+        #message 45  "How can you do that?";
     }
 }
 
@@ -846,7 +853,7 @@ if ((said(rub, ointment, on, me) ||
     }
     else
     {
-        print(45);
+        #message 45  "How can you do that?";
     }
 }
 
@@ -865,11 +872,11 @@ if (said(stir, brew, with, finger))
     if (has(i.storm.brew))
     {
         spell.cast = sc.make.storm;
-        print(9);
+        #message 9  "Ok.";
     }
     else
     {
-        print(45);
+        #message 45  "How can you do that?";
     }
 }
 if ((storm.minutes || storm.seconds) &&
@@ -933,7 +940,7 @@ if (has(i.cat.cookie) &&
     (said(eat, cat, cookie) || said(eat, cookie)))
 {
     set(handsOff);
-    print(9);
+    #message 9  "Ok.";
     start.a.poof = poof.change;
     current.status = ate.cat.cookie;
     poof.change.view = ate.cat.cookie;
@@ -1273,7 +1280,7 @@ if (said(show, food))
 
     if (have.match)
     {
-        print(66);
+        #message 66  "%m68.";
     }
 }
 
@@ -1468,7 +1475,7 @@ if (ego.poofing.done)
 
     if (current.status == ate.cat.cookie)
     {
-        print(23);
+        #message 23  "You purr contentedly, enjoying your new life as a cat!";
         work = 3;
         cycle.time(ego, work);
         start.cycling(ego);
@@ -1612,7 +1619,7 @@ if ((current.status == fly || current.status == eagle ||
 if (spell.cast == sc.start.sleep)
 {
     spell.cast = 0;
-    print(83);
+    #message 83  "Ok, but this place does not meet the spell's requirements.";
 }
 
 if (spell.cast == sc.start.storm)
@@ -1620,7 +1627,7 @@ if (spell.cast == sc.start.storm)
     spell.cast = 0;
     if (handsOff)
     {
-        print(27);
+        #message 27  "You can't do that now.";
     }
     else
     {
@@ -1679,7 +1686,7 @@ if (spell.cast == sc.map)
         current.status == swimming ||
         tooBusyForMap))
     {
-        print(27);
+        #message 27  "You can't do that now.";
     }
     else
     {
@@ -1694,7 +1701,7 @@ if (spell.cast == sc.fly)
     spell.cast = 0;
     if (handsOff)
     {
-        print(27);
+        #message 27  "You can't do that now.";
     }
     else
     {
@@ -1702,7 +1709,7 @@ if (spell.cast == sc.fly)
         start.a.poof = poof.change;
         poof.change.view = fly;
         release.priority(ego);
-        print(9);
+        #message 9  "Ok.";
     }
 }
 
@@ -1711,13 +1718,13 @@ if (spell.cast == sc.eagle)
     spell.cast = 0;
     if (handsOff)
     {
-        print(27);
+        #message 27  "You can't do that now.";
     }
     else
     {
         if (interiorRoom)
         {
-            print(103);
+            #message 103  "There's not enough room to fly in here.";
         }
         else
         {
@@ -1727,7 +1734,7 @@ if (spell.cast == sc.eagle)
             set.priority(ego, 14);
             set(ignore.special);
             set(ignore.water);
-            print(9);
+            #message 9  "Ok.";
         }
     }
 }
@@ -1746,7 +1753,7 @@ if (spell.cast == sc.stop.flying)
         current.status = eagle.landing;
         if (!magic.done)
         {
-            print(107);
+            #message 107  "The urge to fly and soar has left%m110";
         }
     }
 
@@ -1755,7 +1762,8 @@ if (spell.cast == sc.stop.flying)
         current.status = fly.landing;
         if (!magic.done)
         {
-            print(109);
+            #message 109  "The impulse to buzz around has vanished.
+You feel yourself growing bigger % m110";
         }
     }
 }
@@ -1769,7 +1777,7 @@ if (the.eagle.has.landed)
     if (flight.count > 2)
     {
         drop(i.magic.essence);
-        print(112);
+        #message 112  "Your magic essence is all gone.";
     }
 
     start.a.poof = poof.change;
@@ -1783,7 +1791,7 @@ if (spell.cast == sc.invisible)
     spell.cast = 0;
     if ((handsOff || current.status != normal.ego))
     {
-        print(27);
+        #message 27  "You can't do that now.";
     }
     else
     {
@@ -1791,7 +1799,7 @@ if (spell.cast == sc.invisible)
             current.room != 67)
         {
             drop(i.invisible.ointment);
-            print(83);
+            #message 83  "Ok, but this place does not meet the spell's requirements.";
         }
         else
         {
@@ -1800,7 +1808,7 @@ if (spell.cast == sc.invisible)
             start.a.poof = poof.change;
             poof.change.view = invisible;
             release.priority(ego);
-            print(9);
+            #message 9  "Ok.";
         }
     }
 }
@@ -1816,7 +1824,7 @@ if (spell.cast == sc.visible)
     magic.seconds = 0;
     if (!magic.done)
     {
-        print(9);
+        #message 9  "Ok.";
     }
 }
 
@@ -1825,7 +1833,7 @@ if (spell.cast == sc.poof)
     spell.cast = 0;
     if (handsOff)
     {
-        print(27);
+        #message 27  "You can't do that now.";
     }
     else
     {
@@ -1879,7 +1887,7 @@ if (spell.cast == sc.poof)
         }
         else
         {
-            print(22);
+            #message 22  "The stone won't work here.";
         }
     }
 }
@@ -1958,7 +1966,7 @@ if (invisibleEgo)
         magic.minutes = 0;
         magic.seconds = 0;
         reset(invisibleEgo);
-        print(24);
+        #message 24  "You've broken the spell of invisibility.";
     }
 }
 
@@ -1978,111 +1986,111 @@ if ((have.match ||
 
 if (has(i.porridge) || has(i.porridge.poisoned)) && said(give, porridge, rol)
 {
-    print(34);
+    #message 34  "They're not hungry.";
 }
 
 if (has(i.saffron) && said(eat, saffron))
 {
-    print(56);
+    #message 56  "%m9 It tastes bitter!";
 }
 
 if (has(i.invisible.ointment) && said(eat, ointment))
 {
-    print(78);
+    #message 78  "%m9 It tastes terrible!";
 }
 
 if (has(i.sleep.powder) && said(eat, sleep, powder))
 {
-    print(80);
+    #message 80  "%m78 You spit it out, spilling the rest on the ground.";
     drop(i.sleep.powder);
 }
 
 if (has(i.bread) && said(eat, bread))
 {
-    print(9);
+    #message 9  "Ok.";
     drop(i.bread);
 }
 
 if (has(i.fruit) && said(eat, fruit))
 {
-    print(9);
+    #message 9  "Ok.";
     drop(i.fruit);
 }
 
 if (has(i.mutton) && said(eat, mutton))
 {
-    print(9);
+    #message 9  "Ok.";
     drop(i.mutton);
 }
 
 if (has(i.porridge) && said(eat, porridge))
 {
-    print(9);
+    #message 9  "Ok.";
     drop(i.porridge);
 }
 
 if (has(i.mistletoe) && said(eat, mistletoe))
 {
-    print(78);
+    #message 78  "%m9 It tastes terrible!";
     drop(i.mistletoe);
 }
 
 if (has(i.acorns) && said(eat, acorn))
 {
-    print(78);
+    #message 78  "%m9 It tastes terrible!";
     drop(i.acorns);
 }
 
 if (has(i.salt) && said(eat, salt))
 {
-    print(96);
+    #message 96  "You eat a few grains of salt.";
 }
 
 if (has(i.fish.bone) &&
     said(eat, bone, rol))
 {
-    print(78);
+    #message 78  "%m9 It tastes terrible!";
 }
 
 if (has(i.cactus) && has(i.knife) && (said(use, knife, cut, cactus) || said(cut, cactus, rol)))
 {
-    print(40);
+    #message 40  "You don't need to... now.";
 }
 
 if (has(i.bread) && has(i.knife) && (said(use, knife, cut, bread) || said(cut, bread, rol)))
 {
-    print(61);
+    #message 61  "%m55bread without slicing it.";
 }
 
 if (has(i.fruit) && has(i.knife) && (said(use, knife, cut, fruit) || said(cut, fruit, rol)))
 {
-    print(60);
+    #message 60  "%m55fruit without cutting it.";
 }
 
 if (has(i.mutton) && has(i.knife) && (said(use, knife, cut, mutton) || said(cut, mutton, rol)))
 {
-    print(59);
+    #message 59  "%m55mutton without carving it.";
 }
 
 if (has(i.lard) && said(eat, lard))
 {
-    print(78);
+    #message 78  "%m9 It tastes terrible!";
 }
 
 if (has(i.toad.spit) && said(drink, toad, spit))
 {
-    print(71);
+    #message 71  "The thought turns your stomach!";
 }
 
 if (has(i.rose.essence) && said(drink, essence))
 {
-    print(86);
+    #message 86  "%m9 You decide it smells better than it tastes!";
     drop(i.rose.essence);
 }
 
 if (has(i.magic.essence) && (said(drink, essence) || said(drink, magic, essence)))
 {
-    print(86);
+    #message 86  "%m9 You decide it smells better than it tastes!";
     drop(i.magic.essence);
 }
 
@@ -2091,12 +2099,12 @@ if ((has(i.ocean.water) || has(i.cup)) &&
 {
     if (has(i.cup))
     {
-        print(73);
+        #message 73  "Your cup is empty.";
     }
 
     if (has(i.ocean.water))
     {
-        print(78);
+        #message 78  "%m9 It tastes terrible!";
         drop(i.ocean.water);
         get(i.cup);
     }
@@ -2105,21 +2113,21 @@ if ((has(i.ocean.water) || has(i.cup)) &&
 if (has(i.ocean.water) &&
     (said(drink, ocean, water) || said(drink, water)))
 {
-    print(78);
+    #message 78  "%m9 It tastes terrible!";
     drop(i.ocean.water);
     get(i.cup);
 }
 
 if (has(i.fish.oil) && said(drink, fish, oil))
 {
-    print(78);
+    #message 78  "%m9 It tastes terrible!";
     drop(i.fish.oil);
 }
 
 if (has(i.dew) && (said(drink, dew) ||
     said(drink, dew, thimble) || said(drink, thimble, dew)))
 {
-    print(90);
+    #message 90  "%m9 Ummmm, not bad.";
     drop(i.dew);
     get(i.thimble);
 }
@@ -2130,105 +2138,105 @@ if (has(i.dew) && (said(drink, dew) ||
 
 if ((has(i.eagle.feather) || has(i.chicken.feather)) && said(use, feather))
 {
-    print(51);
+    #message 51  "%m53?";
 }
 
 if (has(i.chicken.feather) && said(use, chicken, feather))
 {
-    print(52);
+    #message 52  "%m53 %w3?";
 }
 
 if ((has(i.cat.hair) || has(i.dog.hair)) && said(use, hair))
 {
-    print(51);
+    #message 51  "%m53?";
 }
 
 if (has(i.cat.hair) && said(use, cat, hair))
 {
-    print(52);
+    #message 52  "%m53 %w3?";
 }
 
 if (has(i.dog.hair) && said(use, dog, hair))
 {
-    print(52);
+    #message 52  "%m53 %w3?";
 }
 
 if (has(i.snakeskin) && said(use, snake, skin))
 {
-    print(52);
+    #message 52  "%m53 %w3?";
 }
 
 if (has(i.fish.bone) && said(use, bone))
 {
-    print(52);
+    #message 52  "%m53 %w3?";
 }
 
 if (has(i.thimble) && said(use, thimble))
 {
-    print(51);
+    #message 51  "%m53?";
 }
 
 if (has(i.dew) && (said(use, dew) || said(use, thimble)))
 {
-    print(51);
+    #message 51  "%m53?";
 }
 
 if (has(i.eagle.feather) && said(use, eagle, feather))
 {
-    print(52);
+    #message 52  "%m53 %w3?";
 }
 
 if (has(i.fly.wings) && said(use, fly))
 {
-    print(51);
+    #message 51  "%m53?";
 }
 
 if (has(i.saffron) && said(use, saffron))
 {
-    print(51);
+    #message 51  "%m53?";
 }
 
 if (has(i.salt) && said(use, salt))
 {
-    print(51);
+    #message 51  "%m53?";
 }
 
 if (has(i.mistletoe) && said(use, mistletoe))
 {
-    print(51);
+    #message 51  "%m53?";
 }
 
 if (has(i.nightshade.juice))
 {
     if (said(use, nightshade, juice))
     {
-        print(52);
+        #message 52  "%m53 %w3?";
     }
     else
     {
         if (said(use, juice))
         {
-            print(51);
+            #message 51  "%m53?";
         }
     }
 }
 
 if (has(i.acorns) && said(use, acorns))
 {
-    print(51);
+    #message 51  "%m53?";
 }
 
 if (has(i.empty.pouch))
 {
     if (said(use, empty, pouch))
     {
-        print(52);
+        #message 52  "%m53 %w3?";
     }
     else
     {
         if (said(use, pouch))
         {
-            print(51);
+            #message 51  "%m53?";
         }
     }
 }
@@ -2237,33 +2245,33 @@ if (has(i.mandrake.root))
 {
     if (said(use, mandrake, root))
     {
-        print(52);
+        #message 52  "%m53 %w3?";
     }
     else
     {
         if (said(use, root))
         {
-            print(51);
+            #message 51  "%m53?";
         }
     }
 }
 
 if (has(i.fish.oil) && said(use, fish, oil))
 {
-    print(52);
+    #message 52  "%m53 %w3?";
 }
 
 if (has(i.cat.cookie))
 {
     if (said(use, cookie))
     {
-        print(51);
+        #message 51  "%m53?";
     }
     else
     {
         if (said(use, cat, cookie))
         {
-            print(52);
+            #message 52  "%m53 %w3?";
         }
     }
 }
@@ -2272,126 +2280,126 @@ if (has(i.ocean.water))
 {
     if (said(use, ocean, water))
     {
-        print(52);
+        #message 52  "%m53 %w3?";
     }
     else
     {
         if (said(use, water))
         {
-            print(51);
+            #message 51  "%m53?";
         }
     }
 }
 
 if (has(i.mud) && (said(use, mud) || said(use, spoon)))
 {
-    print(51);
+    #message 51  "%m53?";
 }
 
 if (has(i.toadstool.powder) && said(use, toadstool, powder))
 {
-    print(52);
+    #message 52  "%m53 %w3?";
 }
 
 if (has(i.fish.jar) && said(use, jar))
 {
-    print(51);
+    #message 51  "%m53?";
 }
 
 if (has(i.toad.spit))
 {
     if (said(use, toad, spit))
     {
-        print(52);
+        #message 52  "%m53 %w3?";
     }
     else
     {
         if (said(use, spit))
         {
-            print(51);
+            #message 51  "%m53?";
         }
     }
 }
 
 if (has(i.lard) && said(use, lard))
 {
-    print(51);
+    #message 51  "%m53?";
 }
 
 if (has(i.knife) && said(use, knife))
 {
-    print(51);
+    #message 51  "%m53?";
 }
 
 if (has(i.cactus) && said(use, cactus))
 {
-    print(51);
+    #message 51  "%m53?";
 }
 
 if (has(i.magic.wand) && (said(use, magic, wand) || said(use, wand) ||
     said(wave, magic, wand) || said(wave, wand)))
 {
-    print(82);
+    #message 82  "%m9 Nothing happens.";
 }
 
 if (has(i.key) && said(use, key))
 {
-    print(58);
+    #message 58  "Nothing here fits your key.";
 }
 
 if (has(i.bowl) && said(use, bowl))
 {
-    print(51);
+    #message 51  "%m53?";
 }
 
 if (has(i.spoon) && said(use, spoon))
 {
-    print(51);
+    #message 51  "%m53?";
 }
 
 if (has(i.cup) && said(use, cup))
 {
-    print(51);
+    #message 51  "%m53?";
 }
 
 if (has(i.mirror) && (said(use, mirror) || said(use, hand, mirror)))
 {
-    print(85);
+    #message 85  "You look cute.";
 }
 
 if ((has(i.purse.with.coins) || has(i.purse.empty)) && said(use, purse))
 {
-    print(51);
+    #message 51  "%m53?";
 }
 
 if (has(i.bread) && said(use, bread))
 {
-    print(51);
+    #message 51  "%m53?";
 }
 
 if (has(i.fruit) && said(use, fruit))
 {
-    print(51);
+    #message 51  "%m53?";
 }
 
 if (has(i.mutton) && said(use, mutton))
 {
-    print(51);
+    #message 51  "%m53?";
 }
 
 if (has(i.shovel) && said(use, shovel))
 {
-    print(51);
+    #message 51  "%m53?";
 }
 
 if (has(i.treasure.chest) && said(use, chest))
 {
-    print(51);
+    #message 51  "%m53?";
 }
 
 if ((has(i.porridge.poisoned) || has(i.porridge)) && said(use, porridge))
 {
-    print(51);
+    #message 51  "%m53?";
 }
 
 // [*****
@@ -2402,12 +2410,12 @@ if (has(i.dough.balls) && (said(get, dough, from, ears) ||
     said(remove, dough, from, ears) || said(remove, dough, ears)))
 {
     drop(i.dough.balls);
-    print(101);
+    #message 101  "As you remove the dough from your ears, it crumbles into dust and is lost!";
 }
 
 if (has(i.amber.stone) && said(throw, amber, stone, rol))
 {
-    print(92);
+    #message 92  "You missed!";
     drop(i.amber.stone);
 }
 
@@ -2415,40 +2423,40 @@ if (has(i.purse.with.coins))
 {
     if (said(count, coins) || said(count, coins, purse) || said(count, gold, coins))
     {
-        print(93);
+        #message 93  "You have %v63 gold coins.";
     }
     if (said(buy, rol) || said(buy, anyword, coin))
     {
-        print(94);
+        #message 94  "You can't buy that here.";
     }
 }
 
 if (has(i.bowl) && (said(put, anyword, bowl)))
 {
-    print(57);
+    #message 57  "You don't need to put the %w2 in the bowl.";
 }
 
 if (has(i.fish.jar) &&
     (said(look$in, jar) || said(open, jar) || said(take, lid, off, jar)))
 {
-    print(100);
+    #message 100  "The jar is empty.";
 }
 
 if (has(i.cup) && said(put, anyword, cup))
 {
-    print(75);
+    #message 75  "There is no need to put it in the cup.";
 }
 
 if (has(i.shovel) && (said(dig, rol) || said(use, shovel, rol)))
 {
-    print(69);
+    #message 69  "You can't dig here.";
 }
 
 if (has(i.ocean.water) && said(empty$cup))
 {
     drop(i.ocean.water);
     get(i.cup);
-    print(84);
+    #message 84  "The cup is now empty.";
 }
 
 if ((said(look, wizard) || said(look, spider) ||
@@ -2457,12 +2465,12 @@ if ((said(look, wizard) || said(look, spider) ||
     said(look, dragon) || said(look, eagle) ||
     said(look, girl) || said(look, chicken)))
 {
-    print(72);
+    #message 72  "Where!?";
 }
 
 if (current.status == swimming && said(swim))
 {
-    print(79);
+    #message 79  "You ARE swimming.";
 }
 
 if ((said(talk, squirrel) ||
@@ -2473,17 +2481,17 @@ if ((said(talk, squirrel) ||
     said(talk, woman) ||
     said(talk, bird)))
 {
-    print(41);
+    #message 41  "Funny, no response.";
 }
 
 if (said(look, rock, rol))
 {
-    print(31);
+    #message 31  "If you've seen one rock, you've seen them all.";
 }
 
 if (said(look, bush, rol))
 {
-    print(81);
+    #message 81  "The shrubbery is nice, but you have better things to do.";
 }
 
 if (said(look, rol))
@@ -2500,37 +2508,37 @@ if (said(take, rol))
 
 if (said(go, rol))
 {
-    print(49);
+    #message 49  "Just walk there.";
 }
 
 if (said(use, rol))
 {
-    print(54);
+    #message 54  "How can you use that which you do not have?";
 }
 
 if (said(get, rol))
 {
-    print(76);
+    #message 76  "You have no need to take it.";
 }
 
 if (said(eat, rol))
 {
-    print(67);
+    #message 67  "Once you tasted it, you wouldn't want it!";
 }
 
 if (said(kill, rol))
 {
-    print(50);
+    #message 50  "You're not that cruel.";
 }
 
 if (said(find, rol))
 {
-    print(99);
+    #message 99  "Is it lost?";
 }
 
 if (said(drop, rol))
 {
-    print(25);
+    #message 25  "You might need it.";
 }
 
 // [*****
@@ -2539,7 +2547,7 @@ if (said(drop, rol))
 
 if (!have.match && have.input)
 {
-    print(45);
+    #message 45  "How can you do that?";
     // [if (debugging && !unknown.word)
     // [{
     // [log(21);

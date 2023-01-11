@@ -81,13 +81,14 @@ if ((said(look, mountain) ||
     said(look, room) ||
     said(look, up)))
 {
-    print(1);
+    #message 1  "You are at the foot of a high, snowy mountain range. A cliff looms
+before you with a tricky path winding its way up the steep face.";
 }
 
 if ((said(look, path) ||
     said(look, up, path)))
 {
-    print(2);
+    #message 2  "There is a narrow path winding up the steep cliff.";
 }
 
 if ((said(look, plants) ||
@@ -96,24 +97,25 @@ if ((said(look, plants) ||
     said(get, flowers) ||
     said(look, flowers)))
 {
-    print(3);
+    #message 3  "The shrubbery is scant here.";
 }
 
 if (said(look, ground))
 {
-    print(4);
+    #message 4  "The ground is strewn with large boulders.";
 }
 
 if ((said(look, sky) ||
     said(look, up, sky)))
 {
-    print(5);
+    #message 5  "You look upward and see the mountain range looming toward
+the beautiful blue sky.";
 }
 
 if ((said(climb, trees) ||
     said(climb, up, trees)))
 {
-    print(6);
+    #message 6  "There are no climbable trees here.";
 }
 
 if (has(i.shovel))
@@ -123,7 +125,7 @@ if (has(i.shovel))
         said(dig, hole, ground) ||
         said(dig, with, shovel)))
     {
-        print(7);
+        #message 7  "Not here.";
     }
 }
 

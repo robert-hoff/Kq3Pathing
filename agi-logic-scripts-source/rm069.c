@@ -90,7 +90,11 @@ if (nextStep && script == 0) {                              // [ get up and leav
 
 if (nextStep && script == 1) {                              // [ walk to center of lane
     ++script;
-    print(19);
+    #message 19  "\"Oh YIPPEE! You did it, your majesty!! The gnome squeals in
+delight. \"I KNEW you could save us all. King Graham and Queen Valanice
+will be overjoyed to see you two.\" He claps his gnarled hands. \"I must
+run ahead to announce your arrival!\" The gnome spryly scampers toward
+the castle.";
     set.loop(aGnome, 2);
     fix.loop(aGnome);
     move.obj(aGnome, 34, 61, 1, nextStep);
@@ -113,10 +117,13 @@ if (!gnomeGone && sound.done) {
 
 if ((said(look) || said(look, room) || said(look, house))) {
     if (gnomeGone) {
-        print(2);
+        #message 2  "You stare at the run-down shack. It leans heavily to one side.
+You wonder why it doesn't fall.";
     }
     else {
-        print(1);
+        #message 1  "You stare at the run-down shack. Upon the porch, a withered gnome rocks
+in a creaky old rocking chair, whistling a merry tune.The shack
+leans heavily to one sideand you wonder why it doesn't fall.";
     }
 }
 
@@ -127,88 +134,113 @@ if ((said(look, fence) ||
     said(jump, over, fence) ||
     said(climb, over, fence))) {
     if (ego.x < 80) {
-        print(3);
+        #message 3  "A stone wall travels to the north and south. You try to go over
+it, but find it too high.There is nothing of any interest on the
+other side of it, anyway.";
     }
     else {
-        print(4);
+        #message 4  "The ramshackle wooden fence runs to the north and south. You try to go over
+it, but find it too high.There is nothing of any interest on the
+other side of it, anyway.";
     }
 }
 
 if ((said(look, window) || said(look$in, window))) {
-    print(6);
+    #message 6  "You can't see anything through the window.";
 }
 
 if ((said(look, door) || said(look$in, door) || said(open, door))) {
-    print(7);
+    #message 7  "The door is locked. The gnome is wary of thieves.";
 }
 
 if (said(look, castle)) {
-    print(8);
+    #message 8  "In the distance, you notice a castle. Your excitement
+mounts as you realize it is your home.Your parents,
+King Grahamand Queen Valanice, whom you do not remember, reside there.";
 }
 if ((said(look, porch) || said(look, man, porch))) {
     if (gnomeGone) {
-        print(9);
+        #message 9  "There is nothing on the porch but the rocking chair (which isn't rocking).";
     }
     else {
-        print(10);
+        #message 10  "A wizened old gnome rocks in a creaky rocking chair on the front porch
+of his rickety shack.He whistles a merry tune.";
     }
 }
 if (said(look, man)) {
     if (gnomeGone) {
-        print(11);
+        #message 11  "The last time you saw him he was headed north.";
     }
     else {
-        print(12);
+        #message 12  "This gnome looks to be at least a hundred years old. He's stooped with
+age, and his face is as withered as an old prune.Grey, wispy hair
+tops his head, and gnarled hands clutch the chair.As old as he
+looks, however, his twinkling eyes suggest a youthful
+mischievousness as he whistles a merry tune.";
     }
 }
 
 if (said(talk, man)) {
     if (gnomeGone) {
-        print(13);
+        #message 13  "You'll have to talk extra loud because he's not here.";
     }
     else {
         ++gnomeTalk;
         if (gnomeTalk == 1) {
-            print(14);
-            print(15);
-            print(16);
+            #message 14  "You speak directly to the old gnome. He chuckles softly to
+himself, then replies, \"It's about time you got here, lad... I mean,
+Prince Alexander.Welcome home!Heaven knows, we need you.Daventry's
+been suffering for years now, since that despicable dragon came.\"";
+            #message 15  "The old gnome narrows his eyes to slits and leans forward in his chair.
+\"That monster demanded the sacrifice of your poor sister, Princess
+Rosella, and I'm afraid time is running out. Your parents, the
+King and Queen, are suffering such grief they have locked themselves in
+yon castleand refuse to see anyone.\"";
+            #message 16  "Staring intently at you, the gnome goes on, \"It's up to you, Alexander.
+Your country and family need you.It's written in the wind.\" The
+wizened gnome relaxes and settles back in his chair.He begins
+whistling again.";
         }
         if (gnomeTalk == 2) {
-            print(17);
+            #message 17  "\"You must hurry, Prince Alexander,\" the old gnome urges. \"Time is
+a - wasting.Go save us.\"";
         }
         if (gnomeTalk == 3) {
-            print(18);
+            #message 18  "The gnome now chooses to ignore you. He whistles and rocks in his
+creaky chair.";
             --gnomeTalk;
         }
     }
 }
 
 if ((said(climb, up, tree) || said(climb, tree))) {
-    print(20);
+    #message 20  "There are no climbable trees around.";
 }
 
 if ((said(look, plant) || said(look, tree))) {
-    print(21);
+    #message 21  "Some plants and trees around Daventry have been burnt black and
+leafless.";
 }
 
 if ((said(look, flower) || said(get, flower))) {
-    print(22);
+    #message 22  "Wildflowers no longer grow here.";
 }
 
 if (said(look, ground)) {
-    print(23);
+    #message 23  "There is nothing interesting on the ground but grass.";
 }
 
 if (said(look, sky)) {
-    print(24);
+    #message 24  "The sky is blue and the sun is shining, yet a feeling of sadness
+lingers here.";
 }
 
 if (said(get, gnome)) {
     if (gnomeGone) {
-        print(11);
+        #message 11  "The last time you saw him he was headed north.";
     }
     else {
-        print(25);
+        #message 25  "He belongs to himself.";
     }
 }
 

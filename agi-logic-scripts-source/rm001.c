@@ -163,18 +163,20 @@ if ((said(look, room) ||
     said(look, tower) ||
     said(look, chamber)))
 {
-    print(1);
+    #message 1  "You have entered the musty tower of the old wizard's
+house.A polished brass telescope is directed out a window.From
+here, Manannan spies upon the poor occupants of Llewdor.";
 }
 
 if (said(look, ground))
 {
     if (obj.in.room(i.fly.wings, current.room))
     {
-        print(2);
+        #message 2  "You see nothing on the dusty floor but a dead fly.";
     }
     else
     {
-        print(6);
+        #message 6  "You hope Manannan doesn't notice the floor needs sweeping.";
     }
 }
 
@@ -182,11 +184,13 @@ if (said(look, telescope))
 {
     if (wiz.at.scope)
     {
-        print(10);
+        #message 10  "The wizard wouldn't like that.";
     }
     else
     {
-        print(3);
+        #message 3  "Manannan has the brass telescope pointed out a window.
+It is well polished.He uses the
+telescope to keep tabs on the citizenry of Llewdor.";
     }
 }
 
@@ -196,7 +200,7 @@ if (!handsOff &&
 {
     if (wiz.on.screen)
     {
-        print(10);
+        #message 10  "The wizard wouldn't like that.";
     }
     else
     {
@@ -207,27 +211,30 @@ if (!handsOff &&
 
 if (said(look, stairs))
 {
-    print(5);
+    #message 5  "There are narrow, steep stairs leading downwards.";
 }
 
 if (said(get, fly))
 {
     if (!obj.in.room(i.fly.wings, current.room))
     {
-        print(8);
+        #message 8  "You already took it.";
     }
     else
     {
         if (!posn(ego, 95, 134, 112, 139))
         {
-            print(27);
+            #message 27  "You are not close enough.";
         }
         else
         {
             erase(a.fly);
             get(i.fly.wings);
             score += 1;
-            print(7);
+            #message 7  "You pick up the dead fly and drop it into
+your hand.Disgustedly, you look at it. \"I
+don't want to carry around a dead fly,\" you think. Picking off
+its wings, you throw the rest away.";
         }
     }
 }
@@ -237,24 +244,26 @@ if ((said(move, telescope) ||
 {
     if (wiz.at.scope)
     {
-        print(10);
+        #message 10  "The wizard wouldn't like that.";
     }
     else
     {
-        print(15);
+        #message 15  "You push and pull on the heavy brass telescope, but in vain.
+It's just too heavy for you.";
     }
 }
 
 if (said(get, telescope))
 {
-    print(13);
+    #message 13  "The big brass telescope is much too heavy for you to carry.";
 }
 
 if (wiz.at.scope)
 {
     if (said(look, wizard))
     {
-        print(9);
+        #message 9  "The old white-bearded wizard is peering through his
+telescope.He hasn't noticed you.";
     }
 
     if (said(talk, wizard))
@@ -303,7 +312,7 @@ if (ego.arrived)
                 player.control();
                 start.motion(ego);
                 reset(handsOff);
-                print(27);
+                #message 27  "You are not close enough.";
                 ego.location = 0;
             }
         }
@@ -342,7 +351,10 @@ if (ego.arrived)
         reset(handsOff);
         player.control();
         start.motion(ego);
-        print(4);
+        #message 4  "You put your eye to the glass. It amazes you how near everything seems.
+You can even see squirrels climbing
+faraway trees.No wonder the wizard knows all activities in
+Llewdor.";
     }
 }
 

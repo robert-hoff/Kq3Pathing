@@ -73,11 +73,13 @@ if (sound.done) {
         }
         else {
             reset(replay);
-            print(1);
+            #message 1  "Nothing like a little salt air to perk up a boy's spirits. All things
+being equal, you might have enjoyed this ocean voyage...";
         }
     }
     else {
-        print(2);
+        #message 2  "...however, you have found your accommodations to be slightly
+less than satisfactory.";
         reset(replay);
         reset(sound.done);
         sound(39, replay);

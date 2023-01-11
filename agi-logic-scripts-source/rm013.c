@@ -204,7 +204,7 @@ if (ego.y < 74)
 if (posn(ego, 35, 100, 66, 166) &&
     said(anyword, flowers))
 {
-    print(1);
+    #message 1  "The flowers are pretty, but otherwise uninteresting to you.";
 }
 
 call(lgc.eagle.feather);
@@ -212,12 +212,13 @@ call(lgc.eagle.feather);
 if ((said(look) ||
     said(look, trees)))
 {
-    print(2);
+    #message 2  "The many beautiful trees bring a sense of peace to
+this forest.You see an impassable mountain to the South.";
 }
 
 if (said(look, mountain))
 {
-    print(3);
+    #message 3  "That's the mountain upon which you live, Gwydion.";
 }
 
 if (above.water &&
@@ -236,7 +237,7 @@ if (above.water &&
         said(drink, water) ||
         said(drink)))
 {
-    print(5);
+    #message 5  "Up here, the stream is nearly imperceptible, but it widens to the south.";
 }
 
 if (aSecondPassed)

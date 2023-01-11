@@ -103,7 +103,7 @@ if (first.pass && !escaped.snowman)
 {
     set(escaped.snowman);
     score += 4;
-    print(25);
+    #message 25  "You congratulate yourself on successfully eluding the abominable snowman.";
 }
 set(first.pass);
 
@@ -120,12 +120,13 @@ if ((said(look, mountain) ||
     said(look, room) ||
     said(look, down)))
 {
-    print(1);
+    #message 1  "This is a very steep (and dangerous) cliff! Numerous caves honeycomb
+its face.You could get lost in the caves, IF you survive the cliff.";
 }
 
 if (said(look, path))
 {
-    print(2);
+    #message 2  "A narrow path continues onward.";
 }
 
 if ((said(look, plants) ||
@@ -134,39 +135,40 @@ if ((said(look, plants) ||
     said(get, flowers) ||
     said(look, flowers)))
 {
-    print(3);
+    #message 3  "There are no plants on this rocky cliff.";
 }
 
 if (said(look, ground))
 {
-    print(4);
+    #message 4  "The ground is far below you. Be careful!";
 }
 
 if (said(look, sky))
 {
-    print(5);
+    #message 5  "The cliff face before you towers into the deep, blue sky.";
 }
 
 if ((said(climb, trees) ||
     said(climb, up, trees)))
 {
-    print(6);
+    #message 6  "What trees?";
 }
 
 if ((said(look, cave) ||
     said(look$in, cave)))
 {
-    print(18);
+    #message 18  "The caverns in this mountain form a labyrinth of amazing complexity.";
 }
 
 if (said(look, snow))
 {
-    print(19);
+    #message 19  "The snow here has formed an icepack so hard it is impossible to
+gain a handhold.";
 }
 
 if (said(play, snow))
 {
-    print(20);
+    #message 20  "Not now!";
 }
 
 // [*****
@@ -299,7 +301,7 @@ if (posn(ego, 35, 51, 36, 57))
     if (!seen.hole.message)
     {
         set(seen.hole.message);
-        print(10);
+        #message 10  "Boy, are these caves dark!";
     }
 }
 
@@ -381,7 +383,7 @@ if (spell.cast == sc.poof &&
     current.status == climbing)
 {
     spell.cast = 0;
-    print(21);
+    #message 21  "Removing your hands from the sheer rock wall to rub the magic stone,%m22";
     set(hit.special);
     set(seen.message);
     set.priority(ego, 15);                                  // [  His ass is history!
@@ -393,14 +395,16 @@ if (spell.cast == sc.fly)
 {
     spell.cast = 0;
     drop(i.fly.wings);
-    print(23);
+    #message 23  "As you reach for your fly wings, a sharp gust of wind blows them from
+your grasp.";
 }
 
 if (spell.cast == sc.eagle)
 {
     spell.cast = 0;
     drop(i.eagle.feather);
-    print(24);
+    #message 24  "You watch as your feather floats up, up and away on a sudden blast of
+frigid air.";
 }
 
 // [*****
@@ -417,14 +421,14 @@ if (took.wrong.trail)
     {
         set(seen.message);
         set(hit.special);
-        print(7);
+        #message 7  "Unable to grasp the ice pack,%m22";
     }
 
     if (current.status == falling &&
         ego.y > 162)
     {
         reset(took.wrong.trail);
-        print(8);
+        #message 8  "Your assessment was correct!";
     }
 }
 

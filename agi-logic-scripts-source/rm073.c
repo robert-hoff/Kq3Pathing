@@ -64,15 +64,18 @@ if (ego.there && !leaving) {
 // [*******SAID STUFF********]
 
 if (said(look, castle)) {
-    print(1);
+    #message 1  "You and Princess Rosella have entered a hallway of the dilapidated
+castle.Cracks mar the walls and dusty floor.Cobwebs drape an
+overhanging lamp.Sadly, your sister remarks, \"Alexander, I wish you
+could have seen it in better days.It wasn't always like this, you know.\"";
 }
 
 if (said(look, light)) {
-    print(2);
+    #message 2  "Cobwebs have not been cleaned from the overhanging chandelier.";
 }
 
 if (said(look, door)) {
-    print(3);
+    #message 3  "The doors of this castle are wide open.";
 }
 
 // [******PAINLESS ROOM EXITS * *****

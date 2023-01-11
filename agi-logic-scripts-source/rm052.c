@@ -74,43 +74,47 @@ if ((said(look, mountain) ||
     said(look, room) ||
     said(look, up)))
 {
-    print(1);
+    #message 1  "The snow-capped mountains advance forever upward. A narrow path
+skims along the top of a precipitous ridge.
+As you look down, you see the steep cliff below you.";
 }
 
 if ((said(look, path) ||
     said(look, up, path)))
 {
-    print(2);
+    #message 2  "The thin path runs along the top of a steep ridge. You must be very
+careful as one wrong step will mean death!";
 }
 
 if ((said(look, plants) ||
     said(look, trees)))
 {
-    print(3);
+    #message 3  "A forest begins, with tall evergreen trees and low bushes.";
 }
 
 if (said(look, ground))
 {
-    print(4);
+    #message 4  "The ground goes... way up, or way down. Better be careful.";
 }
 
 if ((said(look, sky) ||
     said(look, up, sky)))
 {
-    print(5);
+    #message 5  "You look upward and see the mountain range looming toward
+the beautiful blue sky.";
 }
 
 if ((said(climb, trees) ||
     said(climb, up, trees)))
 {
-    print(6);
+    #message 6  "There are no climbable trees here.";
 }
 
 if ((said(pick, flowers) ||
     said(get, flowers) ||
     said(look, flowers)))
 {
-    print(7);
+    #message 7  "There are few flowers among the tall evergreens.";
 }
 
 // [*****

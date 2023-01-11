@@ -185,24 +185,24 @@ if (posn(ego, 76, 88, 114, 96))
 if (local.control && spell.cast == sc.stop.flying)
 {
     spell.cast = 0;
-    print(16);
+    #message 16  "Not now!";
 }
 
 if (have.input)
 {
     if (said(look))
     {
-        print(7);
+        #message 7  "A stream flows by a huge, dark cave.";
     }
 
     if (said(look, tree))
     {
-        print(10);
+        #message 10  "It's a nice tree, but totally uninteresting.";
     }
 
     if (said(look$in, cave))
     {
-        print(6);
+        #message 6  "You can see nothing inside but darkness.";
     }
 
     if ((said(cut, web) ||
@@ -210,7 +210,7 @@ if (have.input)
         said(tear, web, with, knife) ||
         said(cut, web, use, knife)))
     {
-        print(5);
+        #message 5  "You need to be closer.";
     }
 
     if ((said(look, cave) ||
@@ -218,11 +218,12 @@ if (have.input)
     {
         if (!spider.dead)
         {
-            print(1);
+            #message 1  "There is an opening in the side of the hill which is covered by a huge
+spider web.Inside, it is as black as pitch.";
         }
         else
         {
-            print(2);
+            #message 2  "The cave opens ominously into the side of the hill.";
         }
     }
 
@@ -233,17 +234,19 @@ if (have.input)
     {
         if (!spider.dead)
         {
-            print(3);
+            #message 3  "It's the largest web you've ever seen! You can't help but wonder about the
+spider which could create such a web.";
         }
         else
         {
-            print(12);
+            #message 12  "The spider web has been torn apart.";
         }
     }
 
     if (said(look, spider))
     {
-        print(4);
+        #message 4  "You inspect the entrance of the cave, but can see nothing
+from this distance.";
     }
 
     if (has(i.knife) &&
@@ -255,8 +258,10 @@ if (have.input)
     {
         work = rm.oracle.cave;
         put(i.knife, work);
-        print(8);                                           // [You throw the knife with true aim
-        print(9);                                           // [it dissappears into the cave and clatters on the floor.
+        #message 8  "You throw the knife at the web. Your aim is true, and the deadly blade
+speeds toward the web.";                                           // [You throw the knife with true aim
+        #message 9  "Your knife passes between the strands and clatters harmlessly
+inside the dark confines of the cave.";                                           // [it dissappears into the cave and clatters on the floor.
     }
 }
 
@@ -381,7 +386,7 @@ if (next.spider.move)
 
     if (spider.script == 103)
     {
-        print(11);
+        #message 11  "Don't you know? Spiders LOVE flies! Yum. Yum!";
         move.obj(a.spider, 87, 62, 1, next.spider.move);
     }
 

@@ -54,7 +54,7 @@ if (next && script == 0) {
 
 if (!beenIn67) {
     set(beenIn67) {
-        print(8);
+        #message 8  "It feels strangely hot up here.";
     }
 
                                                             // [ princess dynamic
@@ -65,7 +65,7 @@ if (!beenIn67) {
     if (spell.cast == sc.map) {
         spell.cast = 0;
         drop(i.magic.map);
-        print(12);
+        #message 12  "As you unroll the delicate map, it crumbles in the intense heat!";
     }
 
                                                             // [****** PICTURE LOGIC ******]
@@ -75,7 +75,7 @@ if (!beenIn67) {
             edge.ego.hit == right ||
             edge.ego.hit == top))
     {
-        print(10);
+        #message 10  "This mystical cloud land may never cease to amaze you, but...";
         sound(s.ego.falling, sound.done);
         erase(ego);
         hitTimer = 2;
@@ -84,7 +84,7 @@ if (!beenIn67) {
             --hitTimer;
         }
         if (!hitTimer) {
-            print(11);
+            #message 11  "...it has ceased to support you!  Enjoy the trip.";
             reset.scan.start();
             set(certain.death);
         }
@@ -94,7 +94,8 @@ if (!beenIn67) {
                                                             // [******** SAID STUFF ********]
 
     if ((said(look) || said(look, cloud))) {
-        print(1);
+        #message 1  "Looking around, you see clouds surrounding this small bit of land
+like a white, cottony sea.Charred stumps of trees spoil the scene.";
     }
 
     if ((said(look, plant) ||
@@ -102,31 +103,38 @@ if (!beenIn67) {
         said(look, flower) ||
         said(pick, flower) ||
         said(climb, tree))) {
-        print(2);
+        #message 2  "All of the trees and plants in this area have been burnt to stumps
+by the evil three - headed dragon!";
     }
 
     if (said(look, ground)) {
-        print(3);
+        #message 3  "The ground is moist from the constant presence of clouds, but yet
+the trees are burnt and blackened.";
     }
 
     if (said(look, sky)) {
-        print(4);
+        #message 4  "The sky is blue and cloudless above this strange cloud land.";
     }
 
     if (said(look, ground)) {
-        print(5);
+        #message 5  "This is a very strange cloud land. There is just a bit of land dotted
+with charred trees encircled by a sea of white, fluffy clouds.This
+gives you the odd feeling of floating upon a cottony ocean.A cave
+entrance leads into a steep mountainside.";
     }
 
     if (said(look, mountain)) {
-        print(6);
+        #message 6  "The mountain rises steeply from this bizarre cloud land.  A cave goes
+into its depths.";
     }
 
     if (said(climb, mountain)) {
-        print(7);
+        #message 7  "The mountain is unclimbable as it is much too steep and rocky.";
     }
 
     if ((said(look, cave) || said(look$in, cave))) {
-        print(9);
+        #message 9  "The cave leads deep into the steep mountainside. Within, crumbly stone
+steps lead downward to murky depths.";
     }
 
                                                             // [ ****** PAINLESS ROOM EXITS ******

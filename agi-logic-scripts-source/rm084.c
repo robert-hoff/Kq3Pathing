@@ -197,7 +197,7 @@ if (!handsOff && pirate.hiding && work < 50) {
 if (start.chase) {
     reset(start.chase);
     set(chase.ego);
-    print(14);
+    #message 14  "Oh no! One of the crew has spotted you! You'd better run.";
     sound(m.badguy, sound.done);
 }
 
@@ -207,7 +207,7 @@ if (start.chase) {
 if (chase.ego) {
     if (ego.poofing.done) {
         if (current.status == fly) {
-            print(18);
+            #message 18  "Your magical transformation has frozen the pirate in his tracks.";
             stop.cycling(aPirate);
             normal.motion(aPirate);
             stop.motion(aPirate);
@@ -230,7 +230,8 @@ if (caught.ego) {
     stop.cycling(aPirate);
     reset(chasing);
     if (!handsOff) {
-        print(7);
+        #message 7  "The pirate growls, \"What ar' ya doin' snoopin' around me digs, laddie.
+I gotcha' now, boy!";
         set(tossed.in);
         new.room(85);
     }
@@ -256,73 +257,82 @@ if (said(look, pirate)) {
     if (pirate.here) {
         if (crewAsleep) {
             if (egoLoc == bunkRoom) {
-                print(11);
+                #message 11  "A pirate is fast asleep in his bunk.";
             }
             else {
-                print(8);
+                #message 8  "You can't see it from here.";
             }
         }
         else {
-            print(9);
+            #message 9  "You'd better leave before the pirate catches you.";
         }
     }
     else {
-        print(10);
+        #message 10  "You don't see anyone else in the area.";
     }
 }
 
 if ((said(look) || said(look, room))) {
     if (egoLoc == bunkRoom) {
-        print(1);
+        #message 1  "This is where your average pirate sleeps. Actually, these bunks don't
+look much more comfortable than your own miserable cot used to be and
+the space is just as cramped.";
     }
     else {
         if (!obj.in.room(i.shovel, current.room)) {
-            print(2);
+            #message 2  "You have found yourself below the lower deck. They keep the ship's
+lifeboat stored here.There are open doorways at either end of the
+compartment.";
         }
         else {
-            print(15);
+            #message 15  "%m2 There is a shovel lying by the lifeboat.";
         }
     }
 }
 if ((said(look, under) || said(look$in, boat) || said(look, boat))) {
     if (egoLoc == bunkRoom) {
-        print(8);
+        #message 8  "You can't see it from here.";
     }
     else {
         if (!obj.in.room(i.shovel, current.room)) {
-            print(3);
+            #message 3  "You scrutinize the boat inside and out, but find it to be empty and
+uninteresting.";
         }
         else {
-            print(16);
+            #message 16  "%m3 There is a shovel lying by the lifeboat.";
         }
     }
 }
 
 if ((said(look$in, door) || said(look, out, door) || said(look, door))) {
     if (egoLoc == bunkRoom) {
-        print(12);
+        #message 12  "You stare out the open doorway and see the wooden lifeboat.";
     }
     else {
-        print(13);
+        #message 13  "You peer through the doorway and see rows of bunks.
+It must be the crew's quarters.";
     }
 }
 
 if ((said(look$in, bed) || said(look, on, bed) || said(look, bed))) {
     if (egoLoc == bunkRoom) {
-        print(4);
+        #message 4  "Rows of hard bunks line the walls of the crew's quarters. They
+don't look very inviting to lie upon. You can't imagine the
+pirates would get a good night's sleep down here in the cramped
+bow of the ship.";
     }
     else {
-        print(8);
+        #message 8  "You can't see it from here.";
     }
 }
 
 if ((said(lie, on, bed) || said(get, on, bed)
     || said(sleep, on, bed) || said(lie, bed))) {
     if (egoLoc == bunkRoom) {
-        print(5);
+        #message 5  "The beds look incredibly hard and uncomfortable. No, thank you.";
     }
     else {
-        print(8);
+        #message 8  "You can't see it from here.";
     }
 }
 

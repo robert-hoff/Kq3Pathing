@@ -107,19 +107,23 @@ if (have.input)
         said(look, top, mountain) ||
         said(look)))
     {
-        print(3);
+        #message 3  "A lone mountain rises sharply from the forest floor, its jagged peak
+encircled by dark clouds.A treacherous path winds its way up the steep
+mountainside.You, and the wizard Manannan, live at the top of this peak.";
     }
 
     if ((said(look, path) ||
         said(look, path, mountain) ||
         said(look, mountain, path)))
     {
-        print(4);
+        #message 4  "The winding path leads dangerously up the steep side of the dark
+mountain.";
     }
 
     if ((said(climb) || said(climb, mountain)))
     {
-        print(5);
+        #message 5  "It would be nearly impossible to scale a mountain this steep. Try using
+the path.";
     }
 }
 

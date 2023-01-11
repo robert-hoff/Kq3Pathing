@@ -54,13 +54,13 @@ if ((said(put, ocean, water, bowl) ||
     if ((!has(i.bowl) ||
         !has(i.ocean.water)))
     {
-        print(1);
+        #message 1  "How can you use that which you do not have?";
     }
     else
     {
         drop(i.ocean.water);
         get(i.cup);
-        print(9);
+        #message 9  "Carefully, you pour the cup of ocean water into the mixing bowl.";
         if (spell.status == ready.for.ocean.water)
         {
             reset(oops);
@@ -83,11 +83,15 @@ if ((said(heat, bowl, burner) ||
 {
     if (!burner.seconds && !burner.minutes)
     {
-        print(10);
+        #message 10  "You place the clay bowl of ocean water on top of the little charcoal brazier.
+To your consternation, you discover that the brazier is unlit, and stone
+cold.";
     }
     else
     {
-        print(11);
+        #message 11  "Being cautious not to burn yourself, you gently place the bowl of ocean water
+on the hot charcoal brazier.You watch as the salt water slowly warms,
+then begins to steam.You remove it just before it boils.";
         if (spell.status == ready.for.heat)
         {
             reset(oops);
@@ -111,11 +115,12 @@ if ((said(put, spoon, mud, bowl, water) ||
 {
     if (!has(i.mud))
     {
-        print(1);
+        #message 1  "How can you use that which you do not have?";
     }
     else
     {
-        print(12);
+        #message 12  "Adding a spoonful of mud to the hot ocean water, you slowly stir
+the mixture.The mud turns the water a cloudy brown.";
         drop(i.mud);
         get(i.spoon);
         if (spell.status == ready.for.mud)
@@ -131,11 +136,11 @@ if ((said(put, pinch, toadstool, powder) ||
 {
     if (!has(i.toadstool.powder))
     {
-        print(1);
+        #message 1  "How can you use that which you do not have?";
     }
     else
     {
-        print(13);
+        #message 13  "You put just a pinch of toadstool powder in the bowl of hot, brown liquid.";
         drop(i.toadstool.powder);
         if (spell.status == ready.for.toadstool.powder)
         {
@@ -151,7 +156,8 @@ if ((said(blow, water) ||
 {
     if (spell.status == ready.for.a.blow.job)
     {
-        print(14);
+        #message 14  "Leaning over the hot brew, you forcefully blow your longest
+breath of air into the bowl, whirling the brew aroundand around.";
         reset(oops);
         ++spell.status;                                     // [  ready to say spell
     }
@@ -166,11 +172,11 @@ if ((said(wave, wand) ||
 {
     if (!has(i.magic.wand))
     {
-        print(1);
+        #message 1  "How can you use that which you do not have?";
     }
     else
     {
-        print(15);
+        #message 15  "You wave the magic wand over the bowl of hot, brown liquid.";
         if (spell.status == ready.for.wand)
         {
             reset(oops);
@@ -185,13 +191,14 @@ if ((said(pour, brew, from, bowl, jar) ||
 {
     if (!has(i.fish.jar))
     {
-        print(1);
+        #message 1  "How can you use that which you do not have?";
     }
     else
     {
         if (spell.status == ready.for.jar)
         {
-            print(16);
+            #message 16  "Waiting until the liquid has cooled, you carefully pour the storm brew
+into an empty glass jar.";
             reset(oops);
             get(i.storm.brew);
             drop(i.fish.jar);

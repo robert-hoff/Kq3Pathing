@@ -97,21 +97,24 @@ if (have.input)
 {
     if ((said(look, plants) ||
         said(look, ground))) {
-        print(1);
+        #message 1  "The soft grass soothes your aching feet.";
     }
 
     if ((said(look, mountain) ||
         said(look, top, mountain))) {
-        print(3);
+        #message 3  "A lone mountain rises sharply from the forest floor, its jagged peak
+encircled by dark clouds.A treacherous path winds its way up the steep
+mountainside.You, and the wizard Manannan, live at the top of the peak.";
     }
 
     if ((said(look, path) ||
         said(look, path, mountain) ||
         said(look, mountain, path))) {
-        print(4);
+        #message 4  "The dangerous, winding path leads up the side of the dark
+mountain.";
     }
 
-    if ((said(climb) || said(climb, mountain))) { print(5); }
+    if ((said(climb) || said(climb, mountain))) { #message 5  "You need to be closer to the mountain for that."; }
 }
 
 // [*****

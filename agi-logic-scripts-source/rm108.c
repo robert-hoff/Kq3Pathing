@@ -53,18 +53,18 @@ if (said(look, shovel)) {
         show.obj(iv.shovel);
     }
     else {
-        print(1);
+        #message 1  "It's just an ordinary shovel.";
     }
 }
 
 if (said(get, shovel)) {
     if (hasShovel) {
-        print(2);
+        #message 2  "You already have it.";
     }
     else {
         distance(ego, aShovel, where);
         if (where > 12) {
-            print(3);
+            #message 3  "You can't get it from there.";
         }
         else {
             get(i.shovel);
@@ -89,28 +89,28 @@ if ((said(use, shovel) ||
 
 if (wants.to.dig) {                                         // [ all the reasons in the world not to let him
     if (current.room != 48 && current.room != 49) {
-        print(9);
+        #message 9  "Now is not the time to think about digging a hole!";
         goto cant;
     }
 
     if (!has(i.shovel)) {
-        print(6);
+        #message 6  "You dig in the sand with your bare hands, but to no avail.";
         goto cant;
     }
     if (current.room == 48 && !posn(ego, 120, 81, 153, 138)) {
-        print(7);
+        #message 7  "You're too close to the ocean to dig. The hole would fill in too quickly.";
         goto cant;
     }
     if (current.room == 49 && !posn(ego, 0, 67, 75, 118)) {
-        print(7);
+        #message 7  "You're too close to the ocean to dig. The hole would fill in too quickly.";
         goto cant;
     }
     if (current.status != normal.ego) {
-        print(8);
+        #message 8  "";
         goto cant;
     }
     if (handsOff) {
-        print(9);
+        #message 9  "Now is not the time to think about digging a hole!";
         goto cant;
     }
                                                             // [ if we got here we are going to dig

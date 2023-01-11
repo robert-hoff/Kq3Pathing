@@ -44,13 +44,14 @@ if ((said(grind, acorns, mortar) ||
 {
     if (!has(i.acorns))
     {
-        print(1);
+        #message 1  "How can you use that which you do not have?";
     }
     else
     {
         if (spell.status == ready.for.grinding)
         {
-            print(9);
+            #message 9  "Putting the dried acorns into the stone mortar, you use the
+pestle to grind them into a rough acorn powder.";
             drop(i.acorns);
             reset(oops);
         }
@@ -66,13 +67,14 @@ if ((said(put, acorn, powder, bowl) ||
 {
     if (!has(i.bowl))
     {
-        print(25);
+        #message 25  "You don't have a bowl.";
     }
     else
     {
         if (spell.status == ready.for.acorns)
         {
-            print(10);
+            #message 10  "Turning the heavy stone mortar upside down, you carefully
+pour the acorn powder into the bowl, then return the mortar to the table.";
             reset(oops);
         }
         else
@@ -97,14 +99,15 @@ if ((said(put, cup, nightshade, bowl) ||
 {
     if (!has(i.nightshade.juice))
     {
-        print(1);
+        #message 1  "How can you use that which you do not have?";
     }
     else
     {
         if (spell.status == ready.for.juice)
         {
-            print(11);
-            print(12);
+            #message 11  "You very carefully pour a cupful of nightshade juice into
+the clay bowl so as to not to spill a single drop.";
+            #message 12  "There is now an ugly, brown, mealy, liquid mixture in the bowl.";
             drop(i.nightshade.juice);
             reset(oops);
         }
@@ -122,7 +125,7 @@ if ((said(mix, mixture, spoon) ||
 {
     if (spell.status == ready.for.mixing)
     {
-        print(15);
+        #message 15  "You gently stir the unappetizing liquid.";
         reset(oops);
     }
     else
@@ -144,22 +147,25 @@ if ((said(heat, mixture, burner) ||
 {
     if (!has(i.bowl))
     {
-        print(1);
+        #message 1  "How can you use that which you do not have?";
     }
     else
     {
-        print(16);
+        #message 16  "You gingerly place the clay bowl of ugly brown liquid on the charcoal
+brazier.";
 
         if (!burner.seconds && !burner.minutes)
         {
-            print(17);
+            #message 17  "How you wish you had lit the burner!";
         }
         else
         {
             if (spell.status == ready.for.boiling)
             {
-                print(18);
-                print(19);
+                #message 18  "Soon, the hot brazier brings the mixture to a bubble, then a boil, releasing
+a bitter smelling steam.";
+                #message 19  "You let it boil until the nightshade juice is
+nearly gone, then remove it from the brazier.";
                 reset(oops);
             }
             else
@@ -175,7 +181,9 @@ if ((said(spread, mixture, table) ||
 {
     if (spell.status == ready.for.drying)
     {
-        print(20);
+        #message 20  "You pour the bowl's contents onto the oaken table,
+then spread the hot sticky mixture over the table top.In
+a few minutes, it has dried to a very crumbly, coarse sleeping powder.";
         reset(oops);
         ++spell.status;                                     // [  bring on the poem
     }
@@ -189,7 +197,9 @@ if (said(get, sleep, powder))
 {
     if (spell.status == ready.for.pouch)
     {
-        print(23);
+        #message 23  "You try to pick up the sleep powder and drop it all over the laboratory
+floor, where it mixes into the dirt.How you wish you had brought a pouch
+in which to carry it!";
     }
     else
     {
@@ -202,13 +212,14 @@ if ((said(put, sleep, powder, pouch) ||
 {
     if (!has(i.empty.pouch))
     {
-        print(1);
+        #message 1  "How can you use that which you do not have?";
     }
     else
     {
         if (spell.status == ready.for.pouch)
         {
-            print(22);
+            #message 22  "You untie the small leather pouch, scoop the powder from the
+table, and place it within.You now have a pouch full of sleep powder.";
             reset(oops);
             drop(i.empty.pouch);
             get(i.sleep.powder);
@@ -225,14 +236,14 @@ if ((said(wave, wand) ||
 {
     if (!has(i.magic.wand))
     {
-        print(1);
+        #message 1  "How can you use that which you do not have?";
         drop(i.sleep.powder);
     }
     else
     {
         if (spell.status == ready.for.wand)
         {
-            print(8);
+            #message 8  "You pass the magic wand over the table.";
             reset(oops);
         }
         else

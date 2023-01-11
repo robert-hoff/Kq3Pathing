@@ -63,7 +63,7 @@ if (said(put, feather, bowl))
     if ((!has(i.chicken.feather) ||
         !has(i.bowl)))
     {
-        print(18);
+        #message 18  "It is difficult to use that which you do not have.";
     }
     else
     {
@@ -103,7 +103,7 @@ if (said(put, hair, bowl))
     if (!has(i.cat.hair) &&
         !has(i.dog.hair))
     {
-        print(18);
+        #message 18  "It is difficult to use that which you do not have.";
     }
     else
     {
@@ -113,7 +113,7 @@ if (said(put, hair, bowl))
             set(which.hair);
             reset(oops);
             --spell.status;                                 // [  a freebie
-            print(22);
+            #message 22  "Which tuft of fur?";
         }
 
         if (!which.hair)
@@ -147,18 +147,18 @@ if ((said(put, snake, skin, bowl) ||
 {
     if (!has(i.snakeskin))
     {
-        print(29);
+        #message 29  "What snake skin?";
     }
     else
     {
         if (!has(i.bowl))
         {
-            print(18);
+            #message 18  "It is difficult to use that which you do not have.";
         }
         else
         {
             drop(i.snakeskin);
-            print(13);
+            #message 13  "You put the dried snake skin in the clay bowl.";
             if (spell.status == ready.for.snake)
             {
                 reset(oops);
@@ -176,11 +176,11 @@ if ((said(add, spoon, bone) ||
     if ((!has(i.fish.bone) ||
         !has(i.bowl)))
     {
-        print(18);
+        #message 18  "It is difficult to use that which you do not have.";
     }
     else
     {
-        print(16);
+        #message 16  "You pour a spoonful of fish bone powder into the clay bowl.";
         drop(i.fish.bone);
         if (spell.status == ready.for.fish.bone)
         {
@@ -195,13 +195,13 @@ if ((said(put, one, thimble, dew, bowl) ||
 {
     if (!has(i.dew))
     {
-        print(18);
+        #message 18  "It is difficult to use that which you do not have.";
     }
     else
     {
         drop(i.dew);
         get(i.thimble);
-        print(19);
+        #message 19  "You pour the thimbleful of dew into the clay bowl.";
         if (spell.status == ready.for.dew)
         {
             reset(oops);
@@ -218,7 +218,8 @@ if ((said(mix, hands) ||
 {
     if (spell.status == ready.for.mixing)
     {
-        print(20);
+        #message 20  "You knead the ingredients in the clay bowl with your hands. It turns
+into a stiff, dough - like substance.";
         reset(oops);
     }
     else
@@ -236,7 +237,7 @@ if ((said(separate, mixture, two, pieces) ||
 {
     if (spell.status == ready.for.separation)
     {
-        print(21);
+        #message 21  "You grasp the doughy mixture in the bowl and divide it into two pieces.";
         reset(oops);
     }
     else
@@ -254,7 +255,8 @@ if ((said(put, two, pieces, dough, ears) ||
 {
     if (spell.status == ready.for.balls.in.ears)
     {
-        print(23);
+        #message 23  "You VERY gently place the two pieces of dough in your ears and pull your
+hair down over them.You prepare to recite the magical incantation.";
         reset(oops);
         ++spell.status;                                     // [  so cursor goes to graphics screen
     }
@@ -269,13 +271,13 @@ if ((said(wave, wand) ||
 {
     if (!has(i.magic.wand))
     {
-        print(18);
+        #message 18  "It is difficult to use that which you do not have.";
     }
     else
     {
         if (spell.status == ready.for.wand)
         {
-            print(25);
+            #message 25  "You wave the magic wand over your dough-filled ears.";
             reset(oops);
             get(i.dough.balls);
         }
@@ -407,12 +409,12 @@ if (put.chicken.feather)
     if ((!has(i.chicken.feather) ||
         !has(i.bowl)))
     {
-        print(18);
+        #message 18  "It is difficult to use that which you do not have.";
     }
     else
     {
         drop(i.chicken.feather);
-        print(4);
+        #message 4  "You place the soft, downy chicken feather in your clay mixing bowl.";
         if (spell.status == ready.for.feather)
         {
             reset(oops);
@@ -425,11 +427,11 @@ if (put.eagle.feather)
     reset(put.eagle.feather);
     if (!has(i.eagle.feather))
     {
-        print(18);
+        #message 18  "It is difficult to use that which you do not have.";
     }
     else
     {
-        print(3);
+        #message 3  "The eagle feather is too big for this particular recipe. It won't work.";
     }
 }
 
@@ -438,12 +440,12 @@ if (put.cat.hair)
     reset(put.cat.hair);
     if (!has(i.cat.hair))
     {
-        print(18);
+        #message 18  "It is difficult to use that which you do not have.";
     }
     else
     {
         drop(i.cat.hair);
-        print(11);
+        #message 11  "You put the tuft of cat hair in the clay bowl.";
         if (spell.status == ready.for.hair)
         {
             reset(oops);
@@ -456,12 +458,12 @@ if (put.dog.hair)
     reset(put.dog.hair);
     if (!has(i.dog.hair))
     {
-        print(18);
+        #message 18  "It is difficult to use that which you do not have.";
     }
     else
     {
         drop(i.dog.hair);
-        print(12);
+        #message 12  "You put the tuft of dog hair in the clay bowl.";
         if (spell.status == ready.for.hair)
         {
             reset(oops);

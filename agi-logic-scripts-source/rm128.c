@@ -133,90 +133,98 @@ if (!have.input) { goto no.input; }
 
 if ((said(look, desert) || said(look)))
 {
-    print(1);
+    #message 1  "You find yourself at the edge of a great desert, stretching as far as the
+eye can see to the west.";
 }
 
 if (said(look, flower))
 {
-    print(2);
+    #message 2  "The flora in this hot, dry desert is scant. The only plants that grow are
+cactus, thorny shrubs, and an occasional stunted tree.";
 }
 
 if (said(look, trees))
 {
-    print(3);
+    #message 3  "Trees are practically non-existent in this dry desert. The few trees that
+do survive are stuntedand dry - looking.";
 }
 
 if (said(look, trees))
 {
-    print(3);
+    #message 3  "Trees are practically non-existent in this dry desert. The few trees that
+do survive are stuntedand dry - looking.";
 }
 
 if (said(look, bones))
 {
-    print(4);
+    #message 4  "They are just some old uninteresting bones.";
 }
 
 if ((said(look, flowers) ||
     said(smell, flowers)))
 {
-    print(5);
+    #message 5  "Occasionally, after a rare rain, flowers spring up everywhere in this great
+desert.There are no flowers now, as it has not rained for a long time.";
 }
 
 if (said(look, ground))
 {
-    print(6);
+    #message 6  "The hot, dry sands of the desert reach seemingly forever to the west. It is
+a parched land.";
 }
 
 if ((said(look, cactus) ||
     said(look, cactus, ground) ||
     said(look, ground)))
 {
-    print(7);
+    #message 7  "All of the cactus around here are too prickly to be touched. You could wind
+up with a handful of thorns.";
 }
 
 if (said(look, sky))
 {
-    print(9);
+    #message 9  "The sky in this desert is a cloudless, deep, deep blue. Overhead, the
+sun is very bright and very hot.";
 }
 
 if ((said(pick, flowers) ||
     said(get, flowers)))
 {
-    print(10);
+    #message 10  "There are no wildflowers to pick here.";
 }
 
 if (said(climb, trees))
 {
-    print(11);
+    #message 11  "The few, scanty trees in this desert are not suitable for climbing.";
 }
 
 if ((lizard.1.on || lizard.2.on))
 {
     if (said(look, lizard))
     {
-        print(8);
+        #message 8  "They're just lizards, scurrying across the desert floor.";
     }
 
     if (said(talk, lizard))
     {
-        print(23);
+        #message 23  "They can't understand you.";
     }
 
     if (has(i.dough.balls) &&
         said(listen, lizard))
     {
-        print(24);
+        #message 24  "Maybe if you're quiet, you'll hear them.";
     }
 
     if (said(anyword, lizard))
     {
-        print(12);
+        #message 12  "The little lizards are much too quick for you.";
     }
 }
 
 if (snake.here && said(anyword, snake))
 {
-    print(13);
+    #message 13  "Any experienced traveller knows better than to mess with snakes!";
 }
 
 // [*****

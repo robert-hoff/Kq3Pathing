@@ -52,7 +52,8 @@ if (current.status == normal.ego && edge.ego.hit == top) {
 }
 
 if (hit.special) {                                          // [falling off the edge
-    print(5);
+    #message 5  "You have skillfully detected the boundaries of cloud land. The rest
+of your quest will go quickly...";
     erase(ego);
     hitTimer = 5;
     sound(s.ego.falling, sound.done);
@@ -62,7 +63,7 @@ if (hit.special) {                                          // [falling off the 
     }
     if (!hitTimer) {
         stop.sound();
-        print(6);
+        #message 6  "...downward!";
         reset.scan.start();
         set(certain.death);
     }
@@ -77,13 +78,14 @@ if (girlSaved) {
 if (spell.cast == sc.map) {
     spell.cast = 0;
     drop(i.magic.map);
-    print(7);
+    #message 7  "As you unroll the delicate map, it crumbles in the intense heat!";
 }
 
 // [******** SAID STUFF ********]
 
 if ((said(look) || said(look, cloud))) {
-    print(1);
+    #message 1  "Looking around, you see clouds surrounding this small bit of land
+like a white, cottony sea.Charred stumps of trees spoil the scene.";
 }
 
 if ((said(look, plant) ||
@@ -91,17 +93,19 @@ if ((said(look, plant) ||
     said(look, flower) ||
     said(pick, flower) ||
     said(climb, tree))) {
-    print(2);
+    #message 2  "All of the trees and plants in this area have been burnt to stumps
+by the evil three - headed dragon!";
 }
 
 if (said(look, ground)) {
-    print(3);
+    #message 3  "The ground is moist from the constant presence of clouds, but yet
+the trees are burnt and blackened.";
 }
 
 if ((said(look, up) ||
     said(look, up, sky) ||
     said(look, sky))) {
-    print(4);
+    #message 4  "The sky is blue and cloudless above this strange cloud land.";
 }
 
 // [ ****** PAINLESS ROOM EXITS ******

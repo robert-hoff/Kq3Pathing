@@ -221,15 +221,18 @@ if (init.log)
     {
         if (beenIn18)
         {
-            print(4);
+            #message 4  "The magic map's faded ink has brightened, but only in those places where you
+have been!";
         }
         else
         {
-            print(7);
+            #message 7  "The magic map's ink has faded away. So far, it isn't much help.";
         }
     }
 
-    print(8);
+    #message 8  "
+Press F6 to teleport.\n\n
+Press F8 to put the map away.";
 
     return();
 
@@ -396,7 +399,9 @@ if ((controller(c.show.mem) ||
 
 if (controller(c.help))
 {
-    print(8);
+    #message 8  "
+Press F6 to teleport.\n\n
+Press F8 to put the map away.";
 }
 
 // [*****
@@ -409,11 +414,11 @@ if (ready.to.leave)
 
     if (!area)
     {
-        print(2);
+        #message 2  "The map looks blank there!";
     }
     else
     {
-        print(1);
+        #message 1  "And so it shall be!";
         erase(ego);
         set.view.v(ego, old.ego.view);
         current.ego = old.ego.view;

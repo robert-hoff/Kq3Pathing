@@ -137,7 +137,7 @@ if (ego.poofing.done && !crewAsleep) {
             stop.cycling(aPirate);
             normal.motion(aPirate);
             stop.motion(aPirate);
-            print(13);
+            #message 13  "The pirate is so terrified by your display of magic that he cannot move!";
         }
         else {
             ignore.blocks(ego);
@@ -177,7 +177,7 @@ if (caughtEgo) {
     stop.cycling(aPirate);
 
     if (!handsOff) {
-        print(1);
+        #message 1  "The nasty pirate growls, \"I gotcha, boy!\"";
         set(tossed.in);
         new.room(85);
     }
@@ -282,16 +282,16 @@ if (current.status == falling && fall.done)
 
 // [******** SAID STUFF ********]
 if ((said(look) || said(look, ship))) {
-    print(2);
+    #message 2  "The lower deck has no railing.";
 }
 if (said(look, mast)) {
-    print(3);
+    #message 3  "The forward mast is slightly shorter than the others.";
 }
 if (said(look, ladder)) {
-    print(4);
+    #message 4  "The wooden ladder leads to the upper deck at the stern of the vessel.";
 }
 if ((said(look$in, hold) || said(look, hold))) {
-    print(5);
+    #message 5  "The hold is open to the elements.";
 }
 
 if ((said(look, land) ||
@@ -299,33 +299,38 @@ if ((said(look, land) ||
     said(look, water) ||
     said(look, sky))) {
     if (shipShape == underWay) {
-        print(6);
+        #message 6  "The sky is a deep, clear blue. You see birds high above you. The ocean
+seems to go on forever.";
     }
     if (shipShape == nearLand) {
-        print(7);
+        #message 7  "The sky is a deep, clear blue. Sea gulls wing nearby. To the east
+you see what might be land.";
     }
     if (shipShape == atBeach) {
-        print(11);
+        #message 11  "The sky is a deep, clear blue. Sea gulls wing nearby. The ship is anchored
+in a small bay.Further north, a mountain range looms.";
     }
 }
 
 if (shipShape == atBeach &&
     (said(look, beach) ||
         said(look, beach))) {
-    print(11);
+    #message 11  "The sky is a deep, clear blue. Sea gulls wing nearby. The ship is anchored
+in a small bay.Further north, a mountain range looms.";
 }
 
 if (said(look, pirate)) {
     if (pirate.here) {
         if (crewAsleep) {
-            print(8);
+            #message 8  "This pirate is fast asleep. If people look more innocent
+when asleep, it certainly wasn't true with this one!";
         }
         else {
-            print(9);
+            #message 9  "You'd better run!! That uncouth character is after you!";
         }
     }
     else {
-        print(12);
+        #message 12  "You don't see any pirates at the moment.";
     }
 }
 
@@ -343,7 +348,7 @@ if ((said(swim, ocean) ||
     said(jump, ship) ||
     said(jump, water) ||
     said(swim))) {
-    print(10);
+    #message 10  "Just walk off the side. I hope you know how to swim!";
 }
 
 call(lgc.seagulls);
