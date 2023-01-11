@@ -43,7 +43,7 @@ namespace kq3_hacking.RoomPathing
                 RoomDefinition roomDef = RoomDefinition.GetRoomDefinition(i);
                 if (roomDef != null)
                 {
-                    SaveRoomControlData(i, $"room{i}.txt");
+                    SaveRoomControlData(i, $"room{i:000}.txt");
                 }
             }
         }
