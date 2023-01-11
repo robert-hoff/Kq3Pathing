@@ -1,55 +1,45 @@
 // [logics for room 74 -- The throne room of Daventry Castle
-// [	February 19, 1988
+// [  February 19, 1988
 
-% include	"gamedefs.reh"
-% include	"rm74.msg"
+#include  "gamedefs.reh"
+#include  "rm74.msg"
 
+// [  This is it.  The big finish!  (thank God).
 
+// [%view  v.hugging         69
+// [%view  v.king         71
+// [%view  v.queen         72
+// [%view  v.princess       73
+// [%view  v.catching.venture.cap   75
+// [%view  v.cartoon.stuff    187
 
-// [	This is it.  The big finish!  (thank God).
+#define  l.ego.catching      0
+#define  l.princess.catching    1
 
+#define  l.king.hugging.ego    0
+#define  l.queen.hugging.ego    1
+#define  l.king.hugging.girl    2
+#define  l.queen.hugging.girl  3
 
+#define  l.mirror.clearing    0
+#define  l.mirror.sparkling    1
+#define  l.venture.cap      2
 
-// [%view	v.hugging				 69
-// [%view	v.king				 71
-// [%view	v.queen				 72
-// [%view	v.princess			 73
-// [%view	v.catching.venture.cap	 75
-// [%view	v.cartoon.stuff		187
+#define  nextScript      lf0
+#define  soundDone        lf1
+#define  stopKing        lf2
+#define  stopQueen        lf3
+#define  stopPrincess      lf4
+#define  stopEgo        lf5
 
+#define  roomScript      lv0
+#define  scriptTimer      lv1
 
-% define	l.ego.catching			0
-% define	l.princess.catching		1
-
-% define	l.king.hugging.ego		0
-% define	l.queen.hugging.ego		1
-% define	l.king.hugging.girl		2
-% define	l.queen.hugging.girl	3
-
-% define	l.mirror.clearing		0
-% define	l.mirror.sparkling		1
-% define	l.venture.cap			2
-
-
-% define	nextScript			lf0
-% define	soundDone				lf1
-% define	stopKing				lf2
-% define	stopQueen				lf3
-% define	stopPrincess			lf4
-% define	stopEgo				lf5
-
-
-% define	roomScript			lv0
-% define	scriptTimer			lv1
-
-
-% object	aRosella				1
-% object	aKing				2
-% object	aQueen				3
-% object	aMirror				4
-% object	aCap					5
-
-
+% object  aRosella        1
+% object  aKing        2
+% object  aQueen        3
+% object  aMirror        4
+% object  aCap          5
 
 if (init.log)
 {
@@ -65,19 +55,16 @@ if (init.log)
   load.view(v.princess);
   load.view(v.cartoon.stuff);
   load.view(v.catching.venture.cap);
-  load.view(v.hugging);			// [	regardless of the number
-
+  load.view(v.hugging);                                     // [  regardless of the number
 
   load.pic(current.room);
   draw.pic(current.room);
   discard.pic(current.room);
 
-
   set.view(ego, v.ego);
   position(ego, 149, 122);
   draw(ego);
   move.obj(ego, 82, 122, 1, done);
-
 
   animate.obj(aRosella);
   position(aRosella, 152, 109);
@@ -137,21 +124,19 @@ if (init.log)
 
   return();
 
-}							// [	end INIT.LOG
-
+}                                                           // [  end INIT.LOG
 
 prevent.input();
 program.control();
 
-if (spell.cast)					// [ don't let magic work
+if (spell.cast)                                             // [ don't let magic work
 {
   print(16);
   spell.cast = 0;
 }
 
-
 // [*****
-:no.input
+// :n
 // [*****
 
 if (aSecondPassed)
@@ -162,7 +147,6 @@ if (aSecondPassed)
     set(nextScript);
   }
 }
-
 
 if (nextScript)
 {
@@ -186,16 +170,16 @@ if (nextScript)
     start.cycling(aQueen);
     start.cycling(aRosella);
     start.cycling(ego);
-    move.obj(aQueen, 45, 85, 1, nextScript);	// [	3 pixel move
-    move.obj(aRosella, 66, 93, 1, stopPrincess);	// [	16
-    move.obj(aKing, 50, 103, 1, stopKing);	// [	12 pixel move
-    move.obj(ego, 63, 103, 1, nextScript);	// [	19
+    move.obj(aQueen, 45, 85, 1, nextScript);                // [  3 pixel move
+    move.obj(aRosella, 66, 93, 1, stopPrincess);            // [  16
+    move.obj(aKing, 50, 103, 1, stopKing);                  // [  12 pixel move
+    move.obj(ego, 63, 103, 1, nextScript);                  // [  19
   }
 
   if (roomScript == 4)
   {
     start.cycling(aQueen);
-    move.obj(aQueen, 53, 93, 1, stopQueen);	// [	8 pixel move
+    move.obj(aQueen, 53, 93, 1, stopQueen);                 // [  8 pixel move
   }
 
   if (roomScript == 5)
@@ -204,10 +188,10 @@ if (nextScript)
     start.cycling(aQueen);
     start.cycling(aRosella);
     start.cycling(ego);
-    move.obj(aRosella, 63, 93, 1, stopPrincess);	// [	3
-    move.obj(aQueen, 57, 93, 1, nextScript);	// [	4 pixel move
-    move.obj(aKing, 54, 103, 1, stopKing);	// [	4 pixel move
-    move.obj(ego, 60, 103, 1, stopEgo);	// [	3
+    move.obj(aRosella, 63, 93, 1, stopPrincess);            // [  3
+    move.obj(aQueen, 57, 93, 1, nextScript);                // [  4 pixel move
+    move.obj(aKing, 54, 103, 1, stopKing);                  // [  4 pixel move
+    move.obj(ego, 60, 103, 1, stopEgo);                     // [  3
   }
 
   if (roomScript == 6)
@@ -249,14 +233,14 @@ if (nextScript)
     draw(ego);
     start.cycling(aRosella);
     start.cycling(ego);
-    move.obj(aRosella, 57, 98, 1, nextScript);	// [	3
-    move.obj(ego, 66, 98, 1, done);	// [	3
+    move.obj(aRosella, 57, 98, 1, nextScript);              // [  3
+    move.obj(ego, 66, 98, 1, done);                         // [  3
   }
 
   if (roomScript == 9)
   {
-    move.obj(aRosella, 60, 103, 1, nextScript);	// [	3
-    move.obj(ego, 63, 93, 1, done);	// [	3
+    move.obj(aRosella, 60, 103, 1, nextScript);             // [  3
+    move.obj(ego, 63, 93, 1, done);                         // [  3
   }
 
   if (roomScript == 10)
@@ -293,15 +277,15 @@ if (nextScript)
     draw(ego);
     start.cycling(aRosella);
     start.cycling(ego);
-    move.obj(aRosella, 57, 98, 1, nextScript);	// [	3
-    move.obj(ego, 66, 98, 1, done);	// [	3
+    move.obj(aRosella, 57, 98, 1, nextScript);              // [  3
+    move.obj(ego, 66, 98, 1, done);                         // [  3
     print(4);
   }
 
   if (roomScript == 12)
   {
-    move.obj(aRosella, 63, 93, 1, stopPrincess);	// [	3
-    move.obj(ego, 60, 103, 1, stopEgo);	// [	3
+    move.obj(aRosella, 63, 93, 1, stopPrincess);            // [  3
+    move.obj(ego, 60, 103, 1, stopEgo);                     // [  3
     scriptTimer = 4;
   }
 
@@ -309,13 +293,13 @@ if (nextScript)
   {
     start.cycling(ego);
     start.cycling(aRosella);
-    move.obj(ego, 82, 122, 1, nextScript);	// [	3
-    move.obj(aRosella, 82, 109, 1, stopPrincess);	// [	3
+    move.obj(ego, 82, 122, 1, nextScript);                  // [  3
+    move.obj(aRosella, 82, 109, 1, stopPrincess);           // [  3
   }
 
   if (roomScript == 14)
   {
-    move.obj(ego, 87, 122, 1, nextScript);	// [	3
+    move.obj(ego, 87, 122, 1, nextScript);                  // [  3
   }
 
   if (roomScript == 15)
@@ -436,8 +420,6 @@ if (nextScript)
   }
 }
 
-
-
 if (stopKing)
 {
   reset(stopKing);
@@ -467,8 +449,7 @@ if (soundDone)
   sound(m.winner, soundDone);
 }
 
-
 // [*****
-:exit							// [	test for leaving the room
+// :e
 // [*****
 

@@ -1,55 +1,46 @@
 // [logics for room 5 -- rm.wiz.office
 
-% include	"rm5.msg"
-% include	"gamedefs.al"
+#include  "rm5.msg"
+#include  "gamedefs.al"
 
-
-
-// [	There is a locked cabinet here that opens and closes.  Inside it is the
+// [  There is a locked cabinet here that opens and closes.  Inside it is the
 // [magic wand.  An invisible trapdoor is in the floor; move a book on the
 // [shelf, then pull a lever to open it.  There is a feather duster on the
 // [cabinet.
 
+#define  l.walking        0                                 // [  loops numbers for dusting view
+#define  l.standing      1
 
+#define  seconds.to.exit    25
+#define  seconds.to.dust    22
 
-% define	l.walking				0	// [	loops numbers for dusting view
-% define	l.standing			1
+#define  book.in.place      0
+#define  book.moved      1
+#define  trapdoor.open      2
 
-% define	seconds.to.exit		25
-% define	seconds.to.dust		22
+#define  cabinet        1                                   // [  ego.location values
+#define  bookcase        2
+#define  desk          3
 
-% define	book.in.place			0
-% define	book.moved			1
-% define	trapdoor.open			2
+#define  returning.his.rod    lf0
+#define  talked.to.wiz      lf1
+#define  wiz.at.desk      lf2
+#define  door.done        lf3
+#define  house.wiz.init'd    lf5
 
-% define	cabinet				1	// [	ego.location values
-% define	bookcase				2
-% define	desk					3
+#define  writing.timer      lv0
+#define  ego.exit.seconds    lv1
+#define  dusting.script      lv2
+#define  door.timer      lv3
+#define  book.timer      lv4
+#define  trapdoor.timer      lv5
+#define  dust.timer      lv6
+#define  dust.seconds      lv7
 
-
-% define	returning.his.rod		lf0
-% define	talked.to.wiz			lf1
-% define	wiz.at.desk			lf2
-% define	door.done				lf3
-% define	house.wiz.init'd		lf5
-
-
-% define	writing.timer			lv0
-% define	ego.exit.seconds		lv1
-% define	dusting.script			lv2
-% define	door.timer			lv3
-% define	book.timer			lv4
-% define	trapdoor.timer			lv5
-% define	dust.timer			lv6
-% define	dust.seconds			lv7
-
-
-% object	a.cabinet.door			1
-% object	a.trapdoor			2
-% object	a.book				3
-% object	a.duster				4
-
-
+% object  a.cabinet.door      1
+% object  a.trapdoor      2
+% object  a.book        3
+% object  a.duster        4
 
 if (init.log)
 {
@@ -66,11 +57,9 @@ if (init.log)
   cat.y = 145;
   load.logics(lgc.wiz.house);
 
-
   load.pic(current.room);
   draw.pic(current.room);
   discard.pic(current.room);
-
 
   load.view(v.ego.dusting);
   load.view(v.door.rm5);
@@ -78,14 +67,13 @@ if (init.log)
   load.view(v.book.rm5);
   load.view(v.feather.duster.rm5);
 
-
-  if ((wiz.away.asleep == home.after.bed ||	// [	If we're home, and he's
+  if ((wiz.away.asleep == home.after.bed ||                 // [  If we're home, and he's
     wiz.away.asleep == home.after.town) &&
     !chore.to.do&&
     wiz.status != dead)
   {
     random(1, 2, work);
-    if (work == 1)						// [	home, he may drop in.
+    if (work == 1)                                          // [  home, he may drop in.
     {
       load.logics(lgc.house.wiz);
       set(lgc.house.wiz.loaded);
@@ -96,15 +84,14 @@ if (init.log)
       {
         set(house.wiz.init'd);
           set(wiz.at.desk);
-        wiz.entrance.time = 0;			// [	he's coming now
+        wiz.entrance.time = 0;                              // [  he's coming now
       }
       else
       {
-        random(6, 12, wiz.entrance.time);	// [	he's coming later
+        random(6, 12, wiz.entrance.time);                   // [  he's coming later
       }
     }
   }
-
 
   animate.obj(a.cabinet.door);
   ignore.blocks(a.cabinet.door);
@@ -118,7 +105,6 @@ if (init.log)
   draw(a.cabinet.door);
   stop.cycling(a.cabinet.door);
   stop.update(a.cabinet.door);
-
 
   animate.obj(a.trapdoor);
   ignore.blocks(a.trapdoor);
@@ -141,7 +127,6 @@ if (init.log)
   draw(a.trapdoor);
   stop.update(a.trapdoor);
 
-
   animate.obj(a.book);
   ignore.horizon(a.book);
   ignore.blocks(a.book);
@@ -163,7 +148,6 @@ if (init.log)
   draw(a.book);
   stop.update(a.book);
 
-
   animate.obj(a.duster);
   ignore.blocks(a.duster);
   ignore.objs(a.duster);
@@ -173,7 +157,6 @@ if (init.log)
   draw(a.duster);
   stop.update(a.duster);
 
-
   if (current.status == fly)
   {
     set(positionEgo);
@@ -181,7 +164,7 @@ if (init.log)
 
   if (positionEgo)
   {
-    if (previous.room == 9)			// [	rm.lab.stairs)
+    if (previous.room == 9)                                 // [  rm.lab.stairs)
     {
       position(ego, 107, 125);
       set.loop(ego, facing.right);
@@ -189,7 +172,7 @@ if (init.log)
     }
     else
     {
-      if (previous.room == 7)		// [	rm.entry)
+      if (previous.room == 7)                               // [  rm.entry)
       {
         position(ego, 96, 167);
       }
@@ -200,16 +183,14 @@ if (init.log)
     }
   }
 
-
   if (drawEgo)
   {
     draw(ego);
   }
 
-
   if (lgc.house.wiz.loaded)
   {
-    cat.y = 0;				// [	no pussy if wiz will come!
+    cat.y = 0;                                              // [  no pussy if wiz will come!
     call(lgc.house.wiz);
     if (wiz.at.desk)
     {
@@ -247,7 +228,6 @@ if (init.log)
 
 }
 
-
 if (posn(ego, 23, 155, 32, 166))
 {
   ego.location = cabinet;
@@ -271,13 +251,11 @@ else
   }
 }
 
-
 // [*****
-:handle.input
+// :h
 // [*****
 
 if (!have.input) { goto no.input; }
-
 
 if ((said(look, room) ||
   said(look, house) ||
@@ -300,9 +278,7 @@ if ((said(look, chart) ||
   print(8);
 }
 
-
-
-// [		DESK STUFF.
+// [    DESK STUFF.
 
 if ((said(look, table) ||
   said(look, chair)))
@@ -342,9 +318,7 @@ if ((said(open, table) ||
   }
 }
 
-
-
-// [		HANDLE THE CABINET, KEY AND WAND.
+// [    HANDLE THE CABINET, KEY AND WAND.
 
 if (said(look, cabinet))
 {
@@ -419,10 +393,7 @@ if (has(i.magic.wand) &&
   }
 }
 
-
-
-
-// [			HANDLE THE FEATHER DUSTER.
+// [      HANDLE THE FEATHER DUSTER.
 
 if ((said(look, top$of, cabinet) ||
   said(look, top, cabinet) ||
@@ -452,9 +423,7 @@ if (!handsOff &&
   }
 }
 
-
-
-// [		HANDLE THE BOOK ON THE BOOKCASE.
+// [    HANDLE THE BOOK ON THE BOOKCASE.
 
 if (said(look, shelf))
 {
@@ -608,9 +577,7 @@ if ((said(move, lever) ||
   }
 }
 
-
-
-// [			ROOM SPECIFIC WIZARD STUFF.
+// [      ROOM SPECIFIC WIZARD STUFF.
 
 if (wiz.on.screen && !PO'd.wiz.init'd)
 {
@@ -621,12 +588,11 @@ if (wiz.on.screen && !PO'd.wiz.init'd)
   }
 }
 
-
 // [*****
-:no.input
+// :n
 // [*****
 
-// [	BOOK STUFF
+// [  BOOK STUFF
 
 --book.timer;
 if (book.timer == 43)
@@ -646,7 +612,7 @@ if (book.timer == 43)
     }
     else
     {
-      book.timer = 22;		// [	why wait?
+      book.timer = 22;                                      // [  why wait?
     }
   }
 }
@@ -670,7 +636,7 @@ if (book.timer == 11)
     else
     {
       print(33);
-      book.timer = 1;		// [	why wait?
+      book.timer = 1;                                       // [  why wait?
     }
   }
 }
@@ -680,9 +646,7 @@ if (book.timer == 1)
   stop.update(a.book);
 }
 
-
-
-// [	DOOR STUFF
+// [  DOOR STUFF
 
 --door.timer;
 if (door.timer == 43)
@@ -738,9 +702,7 @@ if (door.done)
   accept.input();
 }
 
-
-
-// [	TRAPDOOR STUFF
+// [  TRAPDOOR STUFF
 
 --trapdoor.timer;
 if (trapdoor.timer == 43)
@@ -802,15 +764,13 @@ else
   }
 }
 
-
-
-// [	LOCAL ROOM SPECIFIC WIZARD STUFF
+// [  LOCAL ROOM SPECIFIC WIZARD STUFF
 
 if (wiz.on.screen && !PO'd.wiz.init'd)
 {
   if (!house.wiz.init'd)
   {
-    // [	Make wiz walk to desk, sit behind it and start writing.
+// [  Make wiz walk to desk, sit behind it and start writing.
     set(house.wiz.init'd);
       wiz.location = 0;
     set(wiz.arrived);
@@ -838,7 +798,6 @@ if (wiz.on.screen && !PO'd.wiz.init'd)
     }
   }
 
-
   if (wiz.at.desk)
   {
     --writing.timer;
@@ -854,8 +813,6 @@ if (wiz.on.screen && !PO'd.wiz.init'd)
     }
   }
 
-
-
   if (!PO'd.wiz.init'd &&
     (cabinet.unlocked ||
       office.status ||
@@ -867,8 +824,7 @@ if (wiz.on.screen && !PO'd.wiz.init'd)
     make.wiz.come = osw.punish;
     set(force.wiz.come);
   }
-}							// [	end of (wiz.on.screen)
-
+}                                                           // [  end of (wiz.on.screen)
 
 if (aSecondPassed)
 {
@@ -921,10 +877,9 @@ if (ego.arrived)
     move.obj(ego, 40, 145, 1, ego.arrived);
   }
 
+// [  the next two sections loop back and forth while he dusts.
 
-  // [	the next two sections loop back and forth while he dusts.
-
-  if (dusting.script == 3)			// [	he's by the desk
+  if (dusting.script == 3)                                  // [  he's by the desk
   {
     set.view(ego, v.ego.dusting);
     set.loop(ego, l.walking);
@@ -938,10 +893,10 @@ if (ego.arrived)
     random(6, 33, dust.timer);
     set.loop(ego, l.standing);
     fix.loop(ego);
-    dusting.script = 2;			// [	cause dust.timer will trigger
+    dusting.script = 2;                                     // [  cause dust.timer will trigger
   }
 
-  // [	Wrap up this chore.
+// [  Wrap up this chore.
 
   if (dusting.script == 5)
   {
@@ -977,10 +932,8 @@ if (ego.arrived)
   }
 }
 
-
-
 // [*****
-:exit							// [	test for leaving the room
+// :e
 // [*****
 
 if (posn(ego, 94, 125, 102, 126) &&
@@ -1013,14 +966,13 @@ if (lgc.house.wiz.loaded)
 
 if (wiz.on.screen && wiz.at.desk)
 {
-  wiz.x = 59;					// [	fool wiz.logics
+  wiz.x = 59;                                               // [  fool wiz.logics
   wiz.y = 125;
 }
 
-
 if (wiz.on.screen &&
   !PO'd.wiz.init'd &&
-  make.wiz.come)					// [	make him rise, and get pissed
+  make.wiz.come)                                            // [  make him rise, and get pissed
 {
   program.control();
   stop.motion(ego);

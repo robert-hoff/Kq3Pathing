@@ -1,12 +1,8 @@
 // [logics for room 93 -- lgc.gimme.spells
 
-% include	"gamedefs.al"
+#include  "gamedefs.al"
 
-
-
-% message	1	"You are magic (to me)."
-
-
+% message  1  "You are magic (to me)."
 
 display(0, 0, 1);
 
@@ -32,11 +28,9 @@ get(i.invisible.ointment);
 
 get(i.mirror);
 
-
 get(i.bread);
 get(i.fruit);
 get(i.mutton);
-
 
 get(i.magic.map);
 

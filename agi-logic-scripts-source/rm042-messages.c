@@ -1,95 +1,93 @@
-[Messages for room 42 -- the bear's bedroom
+// [Messages for room 42 -- the bear's bedroom
 
-
-
-%message	1
+#message  1
 "You jump onto the medium-sized bed and sink deep into its fluffy depths."
 
-%message	2
+#message  2
 "You flop onto the biggest (and hardest) bed!"
 
-%message	3
+#message  3
 "You lie upon the smallest bed, and snuggle down into the pillow."
 
-%message	4
+#message  4
 "There is nothing of interest under the bed."
 
-%message	5
+#message  5
 "You open the drawer, take the thimble, and close the drawer in one
- fluid movement."
+fluid movement."
 
-%message	6
+#message  6
 ""
 
-%message	7
+#message  7
 "You open the drawer, and among the clothes, you see a pretty silver thimble."
 
-%message	8
+#message  8
 "You pick up the thimble and carry it with you."
 
-%message	9
+#message  9
 "The drawer is already closed."
 
-%message	10
+#message  10
 "You see a few bear-sized clothes and a silver thimble."
 
-%message	11
+#message  11
 "You see a few bear-sized clothes."
 
-%message	12
+#message  12
 "It is already open."
 
-%message	13
+#message  13
 "You have already taken it!"
 
-%message	14
+#message  14
 "You open the drawer and see some bear-sized clothes."
 
-%message	15
+#message  15
 "You are in the Bear family's cozy bedroom. You see three
- beds and a chest of drawers."
+beds and a chest of drawers."
 
-%message	16
+#message  16
 "A dresser sits in the corner of the room."
 
-%message	17
+#message  17
 "You need to move closer."
 
-%message	18
+#message  18
 "This bed is MUCH too hard!"
 
-#message	19
+#message  19
 "Shhhh! You'll wake yourself up."
 
-#message	20
+#message  20
 "Oh No! Papa Bear has found you sleeping in Baby Bear's
- bed! You are in for it now!"
+bed!You are in for it now!"
 
-#message	21
+#message  21
 "The drawers are shut."
 
-#message	22
+#message  22
 "Ahhhh! This bed is just right. You've fallen asleep."
 
-#message	23
+#message  23
 "Good idea. You've got too much to do to be lying around in a strange bed."
- 
-#message	24
+
+#message  24
 "I'm not asleep, are you?"
 
-#message	25
+#message  25
 "This bed is MUCH too soft!"
 
-#message	26
+#message  26
 "They wouldn't fit you."
 
-#message	27
+#message  27
 "This is a big, old bed. It must be Papa Bear's."
 
-#message	28
+#message  28
 "This looks like a nice, soft bed. Maybe it's Mama Bear's."
 
-#message	29
+#message  29
 "This bed looks just the right size for you."
 
 

@@ -1,12 +1,8 @@
 // [logics for room 94 -- lgc.setup.boat
 
-% include	"gamedefs.al"
+#include  "gamedefs.al"
 
-
-
-% message	1	"Sailing, sailing."
-
-
+% message  1  "Sailing, sailing."
 
 display(0, 0, 1);
 
@@ -62,7 +58,6 @@ get(i.spoon);
 get(i.cup);
 get(i.mirror);
 
-
 put(i.purse.empty, work);
 put(i.purse.with.coins, work);
 
@@ -70,10 +65,7 @@ get(i.bread);
 get(i.fruit);
 get(i.mutton);
 
-
 get(i.magic.map);
-
-
 
 gold.coin.count = 0;
 

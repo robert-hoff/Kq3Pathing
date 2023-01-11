@@ -1,82 +1,70 @@
 // [logics for room 16 -- desert.mid.north
 
-% include "gamedefs.al"
+#include "gamedefs.al"
 
-
-
-
-
-% define	medusa.loaded			lf0
-
-
+#define  medusa.loaded      lf0
 
 if (init.log)
 {
-  load.view.f(current.ego);
-  set.view.f(ego, current.ego);
-  load.view(v.ego);
-  map.area = map.llewdor;
-  set(beenIn16);
-  set.horizon(56);
-  wiz.x = 130;
-  if (medusa.stone)
-  {
-    wiz.y = 90;
-  }
-
-  random(1, 3, work);
-  if (work == 1)
-  {
-    landing.x = 140;
-    landing.y = 75;
-  }
-  else
-  {
-    if (work == 2)
+    load.view.f(current.ego);
+    set.view.f(ego, current.ego);
+    load.view(v.ego);
+    map.area = map.llewdor;
+    set(beenIn16);
+    set.horizon(56);
+    wiz.x = 130;
+    if (medusa.stone)
     {
-      landing.x = 90;
-      landing.y = 140;
+        wiz.y = 90;
+    }
+
+    random(1, 3, work);
+    if (work == 1)
+    {
+        landing.x = 140;
+        landing.y = 75;
     }
     else
     {
-      landing.x = 10;
-      landing.y = 70;
+        if (work == 2)
+        {
+            landing.x = 90;
+            landing.y = 140;
+        }
+        else
+        {
+            landing.x = 10;
+            landing.y = 70;
+        }
     }
-  }
 
+    load.logics(lgc.desert);
+    load.logics(lgc.medusa);
 
-  load.logics(lgc.desert);
-  load.logics(lgc.medusa);
+    load.pic(current.room);
+    draw.pic(current.room);
+    discard.pic(current.room);
 
+                                                            // [  if (positionEgo)
+                                                            // [    {
+                                                            // [    }
 
-  load.pic(current.room);
-  draw.pic(current.room);
-  discard.pic(current.room);
+    if (drawEgo)
+    {
+        draw(ego);
+    }
 
+    call(lgc.desert);
+    call(lgc.medusa);
 
-  // [	if (positionEgo)
-  // [		{
-  // [		}
+    show.pic();
 
-  if (drawEgo)
-  {
-    draw(ego);
-  }
-
-
-  call(lgc.desert);
-  call(lgc.medusa);
-
-  show.pic();
-
-  return();
+    return();
 
 }
 
-
-
 // [*****
-:exit							// [	test for leaving the room
+// :e
 // [*****
 
 call(lgc.desert);

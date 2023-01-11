@@ -1,120 +1,113 @@
 // [ rm65.cg
 // [ standing outside the cave at the top
 
-#include	"gamedefs.reh"
-#include	"rm65.msg"
+#include  "gamedefs.reh"
+#include  "rm65.msg"
 
-#define	egoFalling	lf0
-#define	hitTimer		lv0
-
+#define  egoFalling  lf0
+#define  hitTimer    lv0
 
 if (init.log) {
-  load.pic(current.room);
-  draw.pic(current.room);
-  discard.pic(current.room);
+    load.pic(current.room);
+    draw.pic(current.room);
+    discard.pic(current.room);
 
-  set(beenIn65);
-  map.area = map.clouds;
+    set(beenIn65);
+    map.area = map.clouds;
 
-  set.horizon(37);
+    set.horizon(37);
 
-  landing.x = 30;
-  landing.y = 90;
+    landing.x = 30;
+    landing.y = 90;
 
-  if (girlSaved) {
-    load.logics(lgc.princess);
-  }
+    if (girlSaved) {
+        load.logics(lgc.princess);
+    }
 
-  load.view(v.ego);
-  load.view(v.ego.falling);
-  load.view.f(current.ego);
-  set.view.f(ego, current.ego);
+    load.view(v.ego);
+    load.view(v.ego.falling);
+    load.view.f(current.ego);
+    set.view.f(ego, current.ego);
 
-  // [ sound stuff
-  load.sound(s.ego.falling);
+                                                            // [ sound stuff
+    load.sound(s.ego.falling);
 
+    if (positionEgo) {
+    }
 
-  if (positionEgo) {
-  }
+    if (drawEgo) {
+        draw(ego);
+    }
 
-  if (drawEgo) {
-    draw(ego);
-  }
-
-  show.pic();
-  if (girlSaved) {
-    call(lgc.princess);
-  }
+    show.pic();
+    if (girlSaved) {
+        call(lgc.princess);
+    }
 }
-
 
 // [****** PICTURE LOGIC ******]
 
 if (current.status == normal.ego && edge.ego.hit == top) {
-  set(hit.special);
+    set(hit.special);
 }
 
-if (hit.special) {	// [falling off the edge
-  print(5);
-  erase(ego);
-  hitTimer = 5;
-  sound(s.ego.falling, sound.done);
-  set.scan.start();
-  if (aSecondPassed) {
-    --hitTimer;
-  }
-  if (!hitTimer) {
-    stop.sound();
-    print(6);
-    reset.scan.start();
-    set(certain.death);
-  }
-  return();
+if (hit.special) {                                          // [falling off the edge
+    print(5);
+    erase(ego);
+    hitTimer = 5;
+    sound(s.ego.falling, sound.done);
+    set.scan.start();
+    if (aSecondPassed) {
+        --hitTimer;
+    }
+    if (!hitTimer) {
+        stop.sound();
+        print(6);
+        reset.scan.start();
+        set(certain.death);
+    }
+    return();
 }
-
 
 // [ princess dynamic
 if (girlSaved) {
-  call(lgc.princess);
+    call(lgc.princess);
 }
-
 
 if (spell.cast == sc.map) {
-  spell.cast = 0;
-  drop(i.magic.map);
-  print(7);
+    spell.cast = 0;
+    drop(i.magic.map);
+    print(7);
 }
-
 
 // [******** SAID STUFF ********]
 
 if ((said(look) || said(look, cloud))) {
-  print(1);
+    print(1);
 }
 
 if ((said(look, plant) ||
-  said(look, tree) ||
-  said(look, flower) ||
-  said(pick, flower) ||
-  said(climb, tree))) {
-  print(2);
+    said(look, tree) ||
+    said(look, flower) ||
+    said(pick, flower) ||
+    said(climb, tree))) {
+    print(2);
 }
 
 if (said(look, ground)) {
-  print(3);
+    print(3);
 }
 
 if ((said(look, up) ||
-  said(look, up, sky) ||
-  said(look, sky))) {
-  print(4);
+    said(look, up, sky) ||
+    said(look, sky))) {
+    print(4);
 }
 
 // [ ****** PAINLESS ROOM EXITS ******
 
-if (edge.ego.hit == 2) {	// [ right
-  new.room(66);
+if (edge.ego.hit == 2) {                                    // [ right
+    new.room(66);
 }
-
 
 

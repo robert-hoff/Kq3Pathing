@@ -1,94 +1,82 @@
 // [logics for room 12 -- Transitional Forest
 
-% include "gamedefs.al"
-
-
+#include "gamedefs.al"
 
 if (init.log)
 {
-  load.view.f(current.ego);
-  load.view(v.ego);
-  set.view.f(ego, current.ego);
-  map.area = map.llewdor;
-  set(beenIn12);
-  set.horizon(60);
-  wiz.x = 89;
-  wiz.y = 138;
-  landing.x = 137;
-  landing.y = 128;
+    load.view.f(current.ego);
+    load.view(v.ego);
+    set.view.f(ego, current.ego);
+    map.area = map.llewdor;
+    set(beenIn12);
+    set.horizon(60);
+    wiz.x = 89;
+    wiz.y = 138;
+    landing.x = 137;
+    landing.y = 128;
 
+    load.pic(current.room);
+    draw.pic(current.room);
+    discard.pic(current.room);
 
-  load.pic(current.room);
-  draw.pic(current.room);
-  discard.pic(current.room);
+    load.logics(lgc.near.desert);
+    load.logics(lgc.forest);
+    load.logics(lgc.eagle.feather);
 
-
-  load.logics(lgc.near.desert);
-  load.logics(lgc.forest);
-  load.logics(lgc.eagle.feather);
-
-
-  if (positionEgo)
-  {
-    if (previous.room == 17)
+    if (positionEgo)
     {
-      if (ego.x > 136)
-      {
-        ego.x = 136;
-      }
+        if (previous.room == 17)
+        {
+            if (ego.x > 136)
+            {
+                ego.x = 136;
+            }
+        }
+
+        if (previous.room == 13)
+        {
+            if (ego.y > 130 && ego.y < 109)
+            {
+                ego.y = 109;
+            }
+
+            if (ego.y > 127 && ego.y < 133)
+            {
+                ego.y = 127;
+            }
+
+            if (ego.y > 155)
+            {
+                ego.y = 155;
+            }
+        }
+        position.v(ego, ego.x, ego.y);
     }
 
-    if (previous.room == 13)
+    if (drawEgo)
     {
-      if (ego.y > 130 && ego.y < 109)
-      {
-        ego.y = 109;
-      }
-
-      if (ego.y > 127 && ego.y < 133)
-      {
-        ego.y = 127;
-      }
-
-      if (ego.y > 155)
-      {
-        ego.y = 155;
-      }
+        draw(ego);
     }
-    position.v(ego, ego.x, ego.y);
-  }
 
-  if (drawEgo)
-  {
-    draw(ego);
-  }
+    call(lgc.forest);
+    call(lgc.eagle.feather);
 
+    show.pic();
 
-  call(lgc.forest);
-  call(lgc.eagle.feather);
-
-
-  show.pic();
-
-  return();
+    return();
 
 }
-
 
 reset(near.cactus);
 if (posn(ego, 0, 0, 27, 80))
 {
-  set(near.cactus);
+    set(near.cactus);
 }
 
-
-
-// [	NOT MUCH HERE, IS THERE?
-
-
+// [  NOT MUCH HERE, IS THERE?
 
 // [*****
-// [exit							// [	test for leaving the room
+// [exit              // [  test for leaving the room
 // [*****
 
 call(lgc.eagle.feather);

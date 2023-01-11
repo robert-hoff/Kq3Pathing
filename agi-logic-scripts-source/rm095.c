@@ -1,12 +1,8 @@
 // [logics for room 95 -- lgc.setup.mountains
 
-% include	"gamedefs.al"
+#include  "gamedefs.al"
 
-
-
-% message	1	"We be goin' mountain!"
-
-
+% message  1  "We be goin' mountain!"
 
 display(0, 0, 1);
 
@@ -27,7 +23,6 @@ get(i.magic.stone);
 
 get(i.sleep.powder);
 
-
 get(i.storm.brew);
 
 get(i.knife);
@@ -40,14 +35,11 @@ get(i.spoon);
 get(i.cup);
 get(i.mirror);
 
-
 get(i.bread);
 get(i.fruit);
 get(i.mutton);
 
-
 get(i.magic.map);
-
 
 gold.coin.count = 0;
 
