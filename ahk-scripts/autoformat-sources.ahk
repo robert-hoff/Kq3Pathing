@@ -12,7 +12,29 @@ ShowToolTipz(toolTipText, delay = 2000) {
 }
 
 
+; -- autoformat only, select all and apply Ctrl K,D
 sc029 & 1::
+  loop 50 {
+    send {enter}
+    sleep 200
+    send ^a
+    sleep 200
+    send ^k
+    sleep 200
+    send ^d
+    sleep 200
+    send ^s
+    sleep 500
+    send ^w
+    sleep 200
+    send {down}
+
+  }
+  return
+
+
+; -- autoformat with file replacement on Ctrl+h
+sc029 & 9::
   loop 11 {
     send {enter}
     sleep 200

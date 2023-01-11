@@ -74,8 +74,23 @@ namespace kq3_hacking.DataFilesIO
         {
             sw.WriteLine("</pre>\n</html>");
         }
+
+
+        public static void SaveStringsToFile(List<string> lines, string filenamepath)
+        {
+            FileWriter fw = new(filenamepath);
+            foreach (string line in lines)
+            {
+                fw.WriteLine(line);
+            }
+            fw.CloseStreamWriter();
+        }
+
+
+
     }
 }
+
 
 
 
