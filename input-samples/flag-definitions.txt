@@ -1,0 +1,260 @@
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+near.mud                       90
+near.cactus                    91
+found.key                      92
+hid.stuff.under.bed            93
+found.magic.wand               94
+found.trapdoor.lever           95
+got.mud                        96
+the.eagle.has.landed           97
+lgc.house.wiz.loaded           98
+wiz.on.screen                  99
+wiz.done                       100
+wiz.arrived                    101
+got.ocean.water                102
+got.dew                        103
+poof.wiz.out                   104
+poof.ego.out                   105
+fry.ego                        106
+take.his.stuff                 107
+PO'd.wiz.done                  108
+PO'd.wiz.init'd                109
+found.mud                      110
+medusa.stone                   111
+found.rope                     112
+got.it.in.the.hole             113
+erase.ego                      114
+spider.dead                    115
+pussy.on.screen                116
+cabinet.unlocked               117
+stuff.under.bed                118
+testing                        119
+oops                           120
+ego.death.done                 121
+ego.arrived                    122
+punishment.done                123
+caught.in.Llewdor              124
+my.have.match                  125
+clock.on                       126
+magic.done                     127
+got.cat.hair                   128
+openingChoreAssigned           129
+force.wiz.come                 130
+heardB1                        131
+heardB2                        132
+heardB3                        133
+heardB4                        134
+heardC1                        135
+heardC2                        136
+heardC3                        137
+heardC4                        138
+heardS1                        139
+heardS2                        140
+heardS3                        141
+heardS4                        142
+heardL1                        143
+heardL2                        144
+heardL3                        145
+146
+147
+148
+149
+150
+made.spell.1                151
+made.spell.2                152
+made.spell.3                153
+made.spell.4                154
+made.spell.5                155
+made.spell.6                156
+made.spell.7                157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+
+
+
+

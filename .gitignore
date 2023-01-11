@@ -13,3 +13,7 @@
 # Windows shortcuts
 *.lnk
 
+# new source files
+/agi-logic-scripts-source/
+
+

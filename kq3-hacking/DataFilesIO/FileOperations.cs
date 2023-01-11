@@ -9,7 +9,7 @@ namespace kq3_hacking.DataFilesIO
             ChangeLogicScriptFileExtensions();
         }
 
-        private const string SCRIPT_DIR = "../../../../agi-logic-scripts-annotated";
+        private const string SCRIPT_DIR = "../../../../../agi-logic-scripts-annotated";
 
         public static void ChangeLogicScriptFileExtensions()
         {

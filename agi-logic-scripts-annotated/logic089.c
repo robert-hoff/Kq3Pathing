@@ -1,6 +1,6 @@
 if (isset(newRoom))
-{  load.view.v(currentEgoView);  current.view(ego, v223);  v58 = 0;  v31 = 0;  set(f46);  set.horizon(1);  load.view(View5);  load.view(View200);  v220 = 131;  if (isset(f51) &&    !isset(f52))
-  {    v220 = 132;    load.view(View201);  }  if (isset(f52) &&    !isset(f53))
+{  load.view.v(currentEgoView);  current.view(ego, v223);  v58 = 0;  v31 = 0;  set(f46);  set.horizon(1);  load.view(View5);  load.view(View200);  v220 = 131;  if (isset(f51) && !isset(f52))
+  {    v220 = 132;    load.view(View201);  }  if (isset(f52) && !isset(f53))
   {    v220 = 133;  }  if (isset(f53))
   {    v220 = 134;  }  load.pic(v220);  draw.pic(v220);  discard.pic(v220);  if (v220 == 131)
   {    if (!isset(f54))

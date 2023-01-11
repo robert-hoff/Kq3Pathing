@@ -9,6 +9,7 @@ namespace kq3_hacking
         {
             // RunInterface();
             RunFileOperations();
+
         }
 
 
@@ -20,10 +21,9 @@ namespace kq3_hacking
 
         public static void RunFileOperations()
         {
-            FileOperations.RunTrials();
+            // FileOperations.RunTrials();
+            CreateCheatEngineConfigs.RunTrials();
         }
-
-
 
 
     }

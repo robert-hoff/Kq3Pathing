@@ -7,7 +7,7 @@ if (isset(newRoom))
   {    set(f46);    load.view(View24);    load.view(View11);    load.sound(Sound1);  }  else
   {    load.view(View0);    load.view(View33);    if (!isset(f78))
     {      random(1, 3, v36);      if (v36 == 1)
-      {        set(f231);        load.logics(Logic115);      }    }  }  if ((previousRoom == 37 ||    previousRoom == 38))
+      {        set(f231);        load.logics(Logic115);      }    }  }  if ((previousRoom == 37 || previousRoom == 38))
   {    set(f232);  }  v223 = 122;  if (isset(f232))
   {    load.sound(Sound1);    load.view(View11);    load.view(View30);    load.view(View24);    load.pic(v223);  }  load.pic(currentRoom);  draw.pic(currentRoom);  discard.pic(currentRoom);  if (isset(f232))
   {    overlay.pic(v223);    discard.pic(v223);  }  load.view(View35);  load.sound(Sound6);  load.logics(Logic129);  load.logics(Logic111);  if ((isset(f48) ||    previousRoom == 35))
@@ -25,9 +25,9 @@ if (isset(newRoom))
 {  set(f229);}reset(f223);if (posn(ego, 82, 121, 150, 141))
 {  set(f223);}reset(f227);if (posn(ego, 115, 129, 119, 142))
 {  set(f227);}if (isset(haveInput))
-{  if ((said("examine", "area") ||    said("examine")))
-  {    print("The beautiful trees of the forest to the east grow sparse as they "      "reach the edge of the great desert to the west. You do notice one "      "particularly large oak tree. \"What a fine oak,\" you think.");  }  if ((said("examine", "forest") ||    said("examine", "up", "forest")))
-  {    print("You look up into the towering oak tree. You can only see large, "      "spreading branches and thick leaves. Looking down, you see a small "      "hole between the tree's large roots.");  }  if (posn(ego, 53, 90, 72, 135) &&    said("anyword", "flower"))
+{  if (said("examine", "area") || said("examine"))
+  {    print("The beautiful trees of the forest to the east grow sparse as they "      "reach the edge of the great desert to the west. You do notice one "      "particularly large oak tree. \"What a fine oak,\" you think.");  }  if (said("examine", "forest") || said("examine", "up", "forest"))
+  {    print("You look up into the towering oak tree. You can only see large, "      "spreading branches and thick leaves. Looking down, you see a small "      "hole between the tree's large roots.");  }  if (posn(ego, 53, 90, 72, 135) && said("anyword", "flower"))
   {    print("The flowers are pretty, but otherwise uninteresting to you.");  }  if (said("climb", "forest"))
   {    if (isset(f228))
     {      print("You try to climb the huge oak tree, but cannot find a good hand "        "hold. You slip back, and all you gain for your efforts are "        "splinters.");    }    else
@@ -35,12 +35,14 @@ if (isset(newRoom))
   {    if (!isset(f223))
     {      print("You need to be closer.");    }    else
     {      v222 = 0;      set(f221);      v68 = 4;    }  }  if (!isset(f46) &&    isset(f112) &&    said("move", "rope"))
-  {    set(f225);  }  if (!isset(f46) &&    (isset(f225) ||      said("carry", "hole") ||      said("add", "fingers", "hole") ||      said("add", "fingers", "forest") ||      said("move", "rope", "hole") ||      said("examine", "inside", "hole") ||      said("examine", "inside", "forest") ||      said("carry", "inside", "hole") ||      said("carry", "inside", "forest") ||      said("add", "fingers", "inside", "forest") ||      said("carry", "hole", "move", "rope") ||      said("carry", "fingers", "hole", "move", "rope")))
+  {    set(f225);  }
+  if (!isset(f46) && (isset(f225) ||      said("carry", "hole") ||      said("add", "fingers", "hole") ||      said("add", "fingers", "forest") ||      said("move", "rope", "hole") ||      said("examine", "inside", "hole") ||      said("examine", "inside", "forest") ||      said("carry", "inside", "hole") ||      said("carry", "inside", "forest") ||      said("add", "fingers", "inside", "forest") ||      said("carry", "hole", "move", "rope") ||      said("carry", "fingers", "hole", "move", "rope")))
   {    reset(f225);    if (!isset(f223))
     {      print("You need to be closer.");    }    else
     {      v222 = 0;      set(f221);      if (isset(f232))
       {        v68 = 7;      }      else
-      {        v68 = 5;        set(f224);      }    }  }  if ((said("examine", "ladder") ||    said("examine", "rope", "ladder") ||    said("examine", "ladder", "forest")))
+      {        v68 = 5;        set(f224);      }    }  }
+  if ((said("examine", "ladder") ||    said("examine", "rope", "ladder") ||    said("examine", "ladder", "forest")))
   {    if (isset(f232))
     {      print("The rope ladder stretches up into the branches.");    }    else
     {      print("What ladder?");    }  }  if ((said("capture", "ladder") ||    said("capture", "rope", "ladder") ||    said("capture", "ladder", "forest")))

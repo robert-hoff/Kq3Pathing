@@ -10,7 +10,7 @@ if (isset(newRoom))
       {        v176 = 0;        v178 = 31;      }    }    v192 = 0;    if ((previousRoom == 25 ||      previousRoom == 75 ||      previousRoom == 76))
     {      if (v176 == 1)
       {        v192 = 20;      }      if (v176 == 3)
-      {        v192 = 30;      }    }    if (v176 <= 0 &&      v56 == 2)
+      {        v192 = 30;      }    }    if (v176 <= 0 && v56 == 2)
     {      v176 = 2;    }    if (v176 == 1)
     {      v176 = 3;    }    else
     {      if (v176 == 3)
@@ -21,7 +21,7 @@ if (isset(newRoom))
           {            v176 = 4;          }        }      }    }  }  if (v56 == 2)
   {    set(f223);  }  else
   {    reset(f223);  }  draw(o6);  draw(o5);  v36 = 0;  if (v62 != 2)
-  {    v36 = 1;  }  call(Logic112);  if (v173 <= 0 &&    v44 != 26)
+  {    v36 = 1;  }  call(Logic112);  if (v173 <= 0 && v44 != 26)
   {    v36 = 180;    v36 -= 5;    v174 = v36;  }  show.pic();  return();}if (has("Storm Brew*") &&  v71 == 8)
 {  v71 = 0;  print("The jar of storm brew slips from your fingers as you try to open it. "    "In dismay, you watch it sink out of sight. It is gone forever.");  drop("Storm Brew*");}if (v44 == 14 &&  v176 > 0)
 {  v176 = 0;}if (isset(f31) &&  monitorType != MONO)
@@ -43,7 +43,8 @@ if (isset(newRoom))
 {  set.cel(o5, 0);  reset(f224);}if (isset(f225))
 {  set.cel(o6, 0);  reset(f225);  reset(f221);  if (isset(f228))
   {    print.at("\"My, that was a tasty little bug.\"", 2, 2, 37);    set(f44);  }}if (v44 != 11)
-{  goto(Label3);}current.cel(o6, v37);random(2, 5, v36);if (isset(f223) &&  isset(f221) &&  has("Dough in Ears") &&  v36 == 5 &&  v37 > 1)
+{  goto(Label3);}current.cel(o6, v37);random(2, 5, v36);
+if (isset(f223) && isset(f221) && has("Dough in Ears") && v36 == 5 && v37 > 1)
 {  random(1, 4, v36);  v229 = 0;  v230 = 0;  if (v36 == 1 &&    !isset(f192))
   {    set(f192);    v229 = 8;    v230 = 10;  }  if (v36 == 2 &&    !isset(f193))
   {    set(f193);    v229 = 10;    v230 = 12;  }  if (v36 == 3 &&    !isset(f194))
@@ -59,7 +60,8 @@ if (isset(newRoom))
   {    print("They don't understand you.");  }  if (said("hear", "fish"))
   {    print("Shhhh. If you're quiet, maybe you can hear them.");  }  if ((said("dive", "below", "liquid") ||    said("examine", "below", "liquid")))
   {    print("You dip your head under the water, but see nothing. It's too deep, "      "anyway.");  }  if (said("examine", "sky"))
-  {    print("The sky is a clear, cloudless blue.");  }}if (isset(f45) &&  v44 == 11)
+  {    print("The sky is a clear, cloudless blue.");  }}
+if (isset(f45) && v44 == 11)
 {  if (v173 <= 0)
   {    v174 = 180;  }  ++v174;  if (v174 == 120)
   {    print("Your arms are getting very tired. You had better turn around and "      "head for shore.");  }  if (v174 > 180)
@@ -77,8 +79,9 @@ if (isset(newRoom))
       {        v176 = 0;        new.room.v(v178);      }      else
       {        if (v192 > 0 &&          v36 == 1 &&          edgeEgoHit == LEFT_EDGE)
         {          v176 = 0;          new.room.v(v192);        }        else
-        {          new.room(Logic31);        }      }    }  }}if (v56 == 4)
-{  if (edgeEgoHit == v176 &&    !isset(f201))
+        {          new.room(Logic31);        }      }    }  }}
+if (v56 == 4)
+{  if (edgeEgoHit == v176 && !isset(f201))
   {    v176 = 0;    new.room.v(v178);  }  else
   {    if (v178 == 49 &&      edgeEgoHit == LEFT_EDGE)
     {      v178 = 48;      new.room(Logic31);    }    else

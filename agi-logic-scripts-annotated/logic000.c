@@ -390,7 +390,7 @@ if (v44 == 20)
   }
   return ();
 }
-if (egoDir == v82 &&
+vif (egoDir == v82 &&
   v40 == v42 &&
   v41 == v43)
 {
@@ -649,6 +649,7 @@ if (has("Cat Cookie*"))
       "appetizing as ever.");
   }
 }
+
 if (v44 == 27)
 {
   print("Ick! You're slimy!");
@@ -703,11 +704,10 @@ if (v44 == 26)
     set(haveMatch);
   }
 }
-if ((said("add", "eagle", "feather", "essence") ||
-  said("add", "eagle", "feather", "magic", "essence")))
+if (said("add", "eagle", "feather", "essence") ||
+    said("add", "eagle", "feather", "magic", "essence"))
 {
-  if (has("Magic Rose Essence*") &&
-    has("Eagle Feather*"))
+  if (has("Magic Rose Essence*") && has("Eagle Feather*"))
   {
     v71 = 4;
   }
@@ -716,6 +716,7 @@ if ((said("add", "eagle", "feather", "essence") ||
     print("How can you do that?");
   }
 }
+
 if (v44 == 25)
 {
   if (said("bug", "begone", "alexander", "add"))
@@ -728,11 +729,11 @@ if (v44 == 25)
     set(haveMatch);
   }
 }
-if ((said("add", "bug", "essence") ||
-  said("add", "bug", "magic", "essence")))
+
+
+if (said("add", "bug", "essence") || said("add", "bug", "magic", "essence"))
 {
-  if (has("Magic Rose Essence*") &&
-    has("Fly Wings*"))
+  if (has("Magic Rose Essence*") && has("Fly Wings*"))
   {
     v71 = 3;
   }
@@ -741,8 +742,8 @@ if ((said("add", "bug", "essence") ||
     print("How can you do that?");
   }
 }
-if ((said("examine", "magic", "map") ||
-  said("examine", "map")))
+
+if (said("examine", "magic", "map") || said("examine", "map"))
 {
   if (has("Magic Map*"))
   {
@@ -753,16 +754,15 @@ if ((said("examine", "magic", "map") ||
     print("How can you do that?");
   }
 }
-if (isset(f49) &&
-  (said("clean", "ointment", "off") ||
-    said("clean", "off", "ointment")))
+
+if (isset(f49) && (said("clean", "ointment", "off") || said("clean", "off", "ointment")))
 {
   v71 = 6;
 }
-if ((said("pat", "ointment", "on", "alexander") ||
-  said("pat", "ointment", "on") ||
-  said("pat", "on", "ointment") ||
-  said("pat", "ointment", "on", "body")))
+if (said("pat", "ointment", "on", "alexander") ||
+    said("pat", "ointment", "on") ||
+    said("pat", "on", "ointment") ||
+    said("pat", "ointment", "on", "body"))
 {
   if (has("Invisibility Ointment*"))
   {
@@ -773,15 +773,17 @@ if ((said("pat", "ointment", "on", "alexander") ||
     print("How can you do that?");
   }
 }
-if (v71 == 8 &&
-  said("brew", "storm", "butter churn", "up"))
+
+if (v71 == 8 && said("brew", "storm", "butter churn", "up"))
 {
   v71 = 9;
 }
+
 if (v71 == 8)
 {
   v71 = 0;
 }
+
 if (said("knead", "brew", "try", "finger"))
 {
   if (has("Storm Brew*"))
@@ -794,12 +796,12 @@ if (said("knead", "brew", "try", "finger"))
     print("How can you do that?");
   }
 }
-if ((v76 > 0 ||
-  v75 > 0) &&
-  said("brew", "storm", "clear", "up"))
+
+if (v76 > 0 || v75 > 0) && said("brew", "storm", "clear", "up")
 {
   v71 = 10;
 }
+
 if (has("Nightshade Juice*") &&
   (said("drink", "juice") ||
     said("drink", "night shade", "juice") ||
@@ -812,6 +814,7 @@ if (has("Nightshade Juice*") &&
   drop("Nightshade Juice*");
   v94 = 36;
 }
+
 if (has("Mandrake Root*") &&
   (said("drink", "mandrake", "flour") ||
     said("drink", "mandrake", "root", "flour") ||
@@ -834,21 +837,22 @@ if (has("Toadstool Powder*") &&
   drop("Toadstool Powder*");
   v94 = 39;
 }
-if (has("Poisoned Porridge") &&
-  has("Spoon") &&
-  (said("drink", "porridge", "try", "ladle") ||
+
+if (has("Poisoned Porridge") && has("Spoon") &&
+    (said("drink", "porridge", "try", "ladle") ||
     said("drink", "porridge", "ladle") ||
     said("try", "ladle", "drink", "porridge")))
 {
   drop("Poisoned Porridge");
   v94 = 37;
 }
-if (has("Poisoned Porridge") &&
-  said("drink", "porridge"))
+
+if (has("Poisoned Porridge") && said("drink", "porridge"))
 {
   drop("Poisoned Porridge");
   v94 = 37;
 }
+
 if (has("Cat Cookie*") &&
   (said("drink", "cat", "cookie") ||
     said("drink", "cookie")))
@@ -872,14 +876,12 @@ if ((has("Chicken Feather*") ||
     show.obj(View109);
   }
 }
-if (has("Chicken Feather*") &&
-  said("examine", "bird", "feather"))
+if (has("Chicken Feather*") && said("examine", "bird", "feather"))
 {
   show.obj(View101);
 }
-if ((has("Dog Hair*") ||
-  has("Cat Hair*")) &&
-  said("examine", "fur"))
+
+if (has("Dog Hair*") || has("Cat Hair*")) && said("examine", "fur")
 {
   if (has("Cat Hair*"))
   {
@@ -890,67 +892,67 @@ if ((has("Dog Hair*") ||
     show.obj(View103);
   }
 }
-if (has("Cat Hair*") &&
-  said("examine", "cat", "fur"))
+
+if (has("Cat Hair*") && said("examine", "cat", "fur"))
 {
   show.obj(View102);
 }
-if (has("Dog Hair*") &&
-  said("examine", "dog", "fur"))
+
+if (has("Dog Hair*") && said("examine", "dog", "fur"))
 {
   show.obj(View103);
 }
-if (has("Snakeskin*") &&
-  said("examine", "reptile skin"))
+
+if (has("Snakeskin*") && said("examine", "reptile skin"))
 {
   show.obj(View104);
 }
-if (has("Powdered Fish Bone*") &&
-  said("examine", "bone"))
+
+if (has("Powdered Fish Bone*") && said("examine", "bone"))
 {
   show.obj(View105);
 }
-if (has("Thimble*") &&
-  said("examine", "thimble"))
+
+if (has("Thimble*") && said("examine", "thimble"))
 {
   show.obj(View106);
 }
+
 if (has("Thimble and Dew*") &&
-  (said("examine", "dew") ||
+   (said("examine", "dew") ||
     said("examine", "dew", "thimble") ||
     said("examine", "thimble", "dew") ||
     said("examine", "thimble")))
 {
   show.obj(View107);
 }
-if (has("Dough in Ears") &&
-  said("examine", "compound", "ball"))
+
+if (has("Dough in Ears") && said("examine", "compound", "ball"))
 {
   show.obj(View108);
 }
-if (has("Eagle Feather*") &&
-  said("examine", "eagle", "feather"))
+
+if (has("Eagle Feather*") && said("examine", "eagle", "feather"))
 {
   show.obj(View109);
 }
-if (has("Fly Wings*") &&
-  said("examine", "bug"))
+
+if (has("Fly Wings*") && said("examine", "bug"))
 {
   show.obj(View110);
 }
-if (has("Saffron*") &&
-  said("examine", "saffron"))
+
+if (has("Saffron*") && said("examine", "saffron"))
 {
   show.obj(View111);
 }
-if (has("Rose Essence*") &&
-  said("examine", "essence"))
+
+if (has("Rose Essence*") && said("examine", "essence"))
 {
   show.obj(View112);
 }
-if (has("Magic Rose Essence*") &&
-  (said("examine", "essence") ||
-    said("examine", "magic", "essence")))
+
+if (has("Magic Rose Essence*") && (said("examine", "essence") || said("examine", "magic", "essence")))
 {
   show.obj(View139);
 }
@@ -993,9 +995,8 @@ if (has("Mandrake Root*") &&
 {
   show.obj(View121);
 }
-if (has("Fish Oil*") &&
-  (said("examine", "fish", "fish oil") ||
-    said("examine", "fish oil")))
+
+if (has("Fish Oil*") && (said("examine", "fish", "fish oil") || said("examine", "fish oil")))
 {
   show.obj(View122);
 }
@@ -1390,28 +1391,22 @@ if (isset(f33))
     step.size(ego, v61);
   }
 }
-if (v47 > 7 &&
-  v128 != 20 &&
-  v31 > 0 &&
-  !isset(f109) &&
-  currentEgoView == 0 &&
-  !isset(f46))
+
+
+if (v47 > 7 && v128 != 20 && v31 > 0 && !isset(f109) && currentEgoView == 0 && !isset(f46))
 {
   if (v123 <= 0)
   {
-    if (v84 <= 0 &&
-      v83 <= 0)
+    if (v84 <= 0 && v83 <= 0)
     {
       v123 = v127;
     }
-    if ((v127 == 1 ||
-      v127 == 3))
+    if (v127 == 1 || v127 == 3)
     {
       if (v137 > 0)
       {
         v123 = 0;
-        if (v110 <= 0 &&
-          v109 <= 0)
+        if (v110 <= 0 && v109 <= 0)
         {
           v123 = 8;
         }
@@ -1425,8 +1420,7 @@ if (v47 > 7 &&
       {
         v123 = 24;
       }
-      if (currentRoom > 8 &&
-        currentRoom < 87)
+      if (currentRoom > 8 && currentRoom < 87)
       {
         v123 = 20;
       }
@@ -1438,6 +1432,9 @@ if (v47 > 7 &&
     call(Logic106);
   }
 }
+
+
+
 if (v31 > 0 &&
   v128 != 20 &&
   isset(f130))
@@ -1552,9 +1549,7 @@ if (v71 == 10)
 if (v71 == 1)
 {
   v71 = 0;
-  if ((isset(f46) ||
-    v44 == 11 ||
-    isset(f81)))
+  if ((isset(f46) || v44 == 11 || isset(f81)))
   {
     print("You can't do that now.");
   }
@@ -1565,6 +1560,7 @@ if (v71 == 1)
     new.room(Logic89);
   }
 }
+
 if (v71 == 3)
 {
   v71 = 0;
@@ -1816,6 +1812,7 @@ if (isset(f49))
     print("You've broken the spell of invisibility.");
   }
 }
+
 if ((isset(haveMatch) ||
   !isset(haveInput) ||
   currentRoom == 43 ||
@@ -1825,30 +1822,31 @@ if ((isset(haveMatch) ||
 {
   goto(Label3);
 }
+
 if ((has("Porridge") ||
   has("Poisoned Porridge")) &&
   said("feed", "porridge", "rol"))
 {
   print("They're not hungry.");
 }
-if (has("Saffron*") &&
-  said("drink", "saffron"))
+
+if (has("Saffron*") && said("drink", "saffron"))
 {
   print("%m9 It tastes bitter!");
 }
-if (has("Invisibility Ointment*") &&
-  said("drink", "ointment"))
+
+if (has("Invisibility Ointment*") && said("drink", "ointment"))
 {
   print("%m9 It tastes terrible!");
 }
-if (has("Sleep Powder*") &&
-  said("drink", "sleep", "flour"))
+
+if (has("Sleep Powder*") && said("drink", "sleep", "flour"))
 {
   print("%m78 You spit it out, spilling the rest on the ground.");
   drop("Sleep Powder*");
 }
-if (has("Bread") &&
-  said("drink", "bread"))
+
+if (has("Bread") && said("drink", "bread"))
 {
   print("Ok.");
   drop("Bread");

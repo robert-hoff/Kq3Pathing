@@ -5,37 +5,40 @@ if (!isset(f109))
   {    v36 -= 3;  }  v37 = v32;  if (v36 < v37)
   {    set.loop(o15, 1);    v37 += 8;  }  else
   {    set.loop(o15, 0);    v37 += 4;  }  position.v(o14, v37, v31);  v36 = 2;  cycle.time(o15, v36);  set.cel(o15, 0);  stop.cycling(o15);  if (!isset(f99))
-  {    set(f99);    sound(Sound27, f41);    draw(o14);  }}if (isset(f45))
+  {    set(f99);    sound(Sound27, f41);    draw(o14);  }}
+if (isset(f45))
 {  --v132;  if (v132 == 1)
-  {    set(f108);  }}if ((v133 == 0 ||  v133 == 13 ||  v133 == 10))
+  {    set(f108);  }}
+if (v133 == 0 || v133 == 13 || v133 == 10)
 {  current.cel(o14, v36);  if (v36 == 3)
-  {    set(f108);  }}if (isset(f108))
+  {    set(f108);  }}
+if (isset(f108))
 {  reset(f108);  ++v133;  if (v133 == 1)
   {    draw(o15);  }  if (v133 == 2)
   {    erase(o14);    v132 = 4;  }  if (v133 == 3)
-  {    if ((v123 == 15 ||      v123 > 15) &&      v123 < 20)
+  {    if ((v123 == 15 || v123 > 15) && v123 < 20)
     {      reset(f106);      reset(f104);      set(f105);    }    else
     {      if (v123 == 22)
       {        set(f106);        set(f104);        reset(f105);      }      else
-      {        if (v84 <= 0 &&          v83 <= 0)
+      {        if (v84 <= 0 && v83 <= 0)
         {          ++v127;          if (v127 > 4)
           {            v127 = 1;            v84 = 5;          }          if (v127 == 2)
           {            v84 = 25;          }          if (v127 == 3)
           {            v84 = 5;          }          if (v127 == 4)
-          {            v84 = 25;          }          v123 = v127;          reset(f106);          set(f104);          reset(f105);        }        if (v137 > 0 &&          v110 <= 0 &&          v109 <= 0)
-        {          v123 = 8;          v123 += v137;          v137 = 0;          reset(f106);          reset(f104);          set(f105);        }        if (currentRoom > 8 &&          currentRoom < 87)
-        {          if (currentRoom > 10 &&            v56 != 7 &&            !isset(f124))
+          {            v84 = 25;          }          v123 = v127;          reset(f106);          set(f104);          reset(f105);        }        if (v137 > 0 && v110 <= 0 && v109 <= 0)
+        {          v123 = 8;          v123 += v137;          v137 = 0;          reset(f106);          reset(f104);          set(f105);        }        if (currentRoom > 8 && currentRoom < 87)
+        {          if (currentRoom > 10 && v56 != 7 && !isset(f124))
           {            set(f124);            v44 = 14;            v135 = 8;            v123 = 21;            reset(f106);            reset(f104);            set(f105);          }          else
-          {            if ((v56 == 7 ||              v134 > 4))
+          {            if (v56 == 7 || v134 > 4)
             {              v123 = 25;              set(f106);              set(f104);              reset(f105);            }            else
             {              v123 = 20;              reset(f106);              reset(f104);              set(f105);            }          }        }        set(f107);        call(Logic107);        if (v123 > 26)
         {          set(f106);          set(f104);          reset(f105);        }        if (v95 > 0)
         {          v123 = 26;          set(f106);          set(f104);          reset(f105);        }        v36 = 5;        if (!obj.in.room("Magic Wand*", v36))
-        {          v123 = 24;          set(f106);          set(f104);          reset(f105);        }      }    }    if ((isset(f105) ||      isset(f106)))
+        {          v123 = 24;          set(f106);          set(f104);          reset(f105);        }      }    }    if (isset(f105) || isset(f106))
     {      v133 = 4;    }    else
-    {      v133 = 13;    }    if ((v123 < 15 ||      v123 > 20 ||      v123 == 20))
-    {      print.v(v123);    }    if (v123 == v127 &&      v127 == 3)
-    {      v137 = 3;      v110 = 3;    }    if (v123 == v127 &&      isset(f155) &&      v127 == 1)
+    {      v133 = 13;    }    if (v123 < 15 || v123 > 20 || v123 == 20)
+    {      print.v(v123);    }    if (v123 == v127 && v127 == 3)
+    {      v137 = 3;      v110 = 3;    }    if (v123 == v127 && isset(f155) && v127 == 1)
     {      v137 = 3;      v110 = 3;      print("\"I am ravenous. Fix me something immediately!\"");    }  }  if (v133 == 4)
   {    start.cycling(o15);    end.of.loop(o15, f108);    if (isset(f105))
     {      ++v134;      if (v134 > 5)
