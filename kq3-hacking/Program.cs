@@ -9,8 +9,8 @@ namespace kq3_hacking
         static void Main()
         {
             // RunInterface();
-            // RunFileOperations();
-            Pathing();
+            RunFileOperations();
+            // Pathing();
         }
 
 
@@ -22,8 +22,8 @@ namespace kq3_hacking
 
         public static void RunFileOperations()
         {
-            // FileOperations.RunTrials();
-            CreateCheatEngineConfigs.RunTrials();
+            FileOperations.RunTrials();
+            // CreateCheatEngineConfigs.RunTrials();
         }
 
         public static void Pathing()
