@@ -16,4 +16,6 @@
 # new source files
 /agi-logic-scripts-source/
 
+# generated
+/output/
 

@@ -9,9 +9,9 @@ namespace kq3_hacking.DataFilesIO
         private bool writeAsHtml = false; // is set to true if html header is written
         private bool swOpen = true;
 
-        public FileWriter(string outputFilenamepath, bool showOutputToConsole = true)
+        public FileWriter(string outputFilenamepath, bool showOutputToConsole = false)
         {
-            // Debug.WriteLine($"Writing to {outputFilenamepath}");
+            Debug.WriteLine($"Writing to {outputFilenamepath}");
             sw = new StreamWriter(outputFilenamepath);
             this.writeToConsole = showOutputToConsole;
         }
@@ -47,7 +47,7 @@ namespace kq3_hacking.DataFilesIO
             sw.Write(text);
             if (writeToConsole)
             {
-                Debug.Write($"text");
+                Debug.Write($"{text}");
             }
         }
 
@@ -56,7 +56,7 @@ namespace kq3_hacking.DataFilesIO
             sw.WriteLine(text);
             if (writeToConsole)
             {
-                Debug.WriteLine($"text");
+                Debug.WriteLine($"{text}");
             }
         }
 

@@ -1,4 +1,5 @@
 using kq3_hacking.DataFilesIO;
+using kq3_hacking.RoomPathing;
 
 namespace kq3_hacking
 {
@@ -8,8 +9,8 @@ namespace kq3_hacking
         static void Main()
         {
             // RunInterface();
-            RunFileOperations();
-
+            // RunFileOperations();
+            Pathing();
         }
 
 
@@ -23,6 +24,11 @@ namespace kq3_hacking
         {
             // FileOperations.RunTrials();
             CreateCheatEngineConfigs.RunTrials();
+        }
+
+        public static void Pathing()
+        {
+            PrintRoomControlData.RunTrials();
         }
 
 
