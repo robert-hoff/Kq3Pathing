@@ -1,5 +1,5 @@
-[Room 96 -- lgc.trace
-[	Trace messages
+// [Room 96 -- lgc.trace
+// [	Trace messages
 
 
 #message	1	"increment"
@@ -21,7 +21,7 @@
 #message	16	"reset.v"
 #message	17	"toggle.v"
 
-[Logics
+// [Logics
 #message	18	"new.room"
 #message	19	"new.room.v"
 #message	20	"load.logics"
@@ -29,7 +29,7 @@
 #message	22	"call"
 #message	23	"call.v"
 
-[Pictures
+// [Pictures
 #message	24	"load.pic"
 #message	25	"draw.pic"
 #message	26	"show.pic"
@@ -37,12 +37,12 @@
 #message	28	"overlay.pic"
 #message	29	"show.pri.screen"
 
-[Views
+// [Views
 #message	30	"load.view"
 #message	31	"load.view.v"
 #message	32	"discard.view"
 
-[Animated objects
+// [Animated objects
 #message	33	"animate.obj"
 #message	34	"unanimate.all"
 #message	35	"draw"
@@ -52,7 +52,7 @@
 #message	39	"get.posn"
 #message	40	"reposition"
 
-[Views of animated objects
+// [Views of animated objects
 #message	41	"set.view"
 #message	42	"set.view.v"
 #message	43	"set.loop"
@@ -67,13 +67,13 @@
 #message	52	"current.view"
 #message	53	"number.of.loops"
 
-[Priority control of animated objects
+// [Priority control of animated objects
 #message	54	"set.priority"
 #message	55	"set.priority.v"
 #message	56	"release.priority"
 #message	57	"get.priority"
 
-[Attributes of animated objects
+// [Attributes of animated objects
 #message	58	"stop.update"
 #message	59	"start.update"
 #message	60	"force.update"
@@ -87,7 +87,7 @@
 #message	68	"observe.objs"
 #message	69	"distance"
 
-[Cycling of animated objects
+// [Cycling of animated objects
 #message	70	"stop.cycling"
 #message	71	"start.cycling"
 #message	72	"normal.cycle"
@@ -96,7 +96,7 @@
 #message	75	"reverse.loop"
 #message	76	"cycle.time"
 
-[Motion of animated objects
+// [Motion of animated objects
 #message	77	"stop.motion"
 #message	78	"start.motion"
 #message	79	"step.size"
@@ -114,7 +114,7 @@
 #message	90	"block"
 #message	91	"unblock"
 
-[Inventory objects
+// [Inventory objects
 #message	92	"get"
 #message	93	"get.v"
 #message	94	"drop"
@@ -122,12 +122,12 @@
 #message	96	"put.v"
 #message	97	"get.room.v"
 
-[Sounds
+// [Sounds
 #message	98	"load.sound"
 #message	99	"sound"
 #message	100	"stop.sound"
 
-[Screen Display
+// [Screen Display
 #message	101	"print"
 #message	102	"print.v"
 #message	103	"display"
@@ -139,38 +139,38 @@
 #message	109	"set.text.attribute"
 #message	110	"shake.screen"
 
-[Screen handling
+// [Screen handling
 #message	111	"configure.screen"
 #message	112	"status.line.on"
 #message	113	"status.line.off"
 
-[String handling
+// [String handling
 #message	114	"set.string"
 #message	115	"get.string"
 #message	116	"word.to.string"
 #message	117	"parse"
 #message	118	"get.num"
 
-[Input handling
+// [Input handling
 #message	119	"prevent.input"
 #message	120	"accept.input"
 #message	121	"set.key"
 
-[Add to picture
+// [Add to picture
 #message	122	"add.to.pic"
 #message	123	"add.to.pic.v"
 
-[User requested actions
+// [User requested actions
 #message	124	"status"
 #message	125	"save.game"
 #message	126	"restore.game"
 #message	127	"init.disk"
 #message	128	"restart.game"
 
-[Show object view
+// [Show object view
 #message	129	"show.obj"
 
-[Miscellaneous
+// [Miscellaneous
 #message	130	"random"
 #message	131	"program.control"
 #message	132	"player.control"
