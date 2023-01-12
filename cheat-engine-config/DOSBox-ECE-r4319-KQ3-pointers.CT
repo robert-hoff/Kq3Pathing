@@ -5695,6 +5695,36 @@
         <Offset>0xC8A8</Offset>
       </Offsets>
     </CheatEntry>
+    <CheatEntry>
+      <ID>522</ID>
+      <Description>"save dialog showing"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xD99B</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>523</ID>
+      <Description>"load dialog showing"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xD99D</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>524</ID>
+      <Description>"restart dialog showing"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xD99F</Offset>
+      </Offsets>
+    </CheatEntry>
   </CheatEntries>
   <UserdefinedSymbols/>
 </CheatTable>

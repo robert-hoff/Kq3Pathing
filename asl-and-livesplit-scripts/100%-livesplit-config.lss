@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Run version="1.7.0">
+  <GameIcon />
+  <GameName>
+  </GameName>
+  <CategoryName>
+  </CategoryName>
+  <LayoutPath>
+  </LayoutPath>
+  <Metadata>
+    <Run id="" />
+    <Platform usesEmulator="False">
+    </Platform>
+    <Region>
+    </Region>
+    <Variables />
+  </Metadata>
+  <Offset>00:00:00</Offset>
+  <AttemptCount>9</AttemptCount>
+  <AttemptHistory>
+    <Attempt id="1" started="01/11/2023 06:20:17" isStartedSynced="True" ended="01/11/2023 06:20:17" isEndedSynced="True">
+      <RealTime>00:00:00.0197090</RealTime>
+    </Attempt>
+    <Attempt id="2" started="01/11/2023 23:14:50" isStartedSynced="True" ended="01/11/2023 23:14:50" isEndedSynced="True" />
+    <Attempt id="3" started="01/11/2023 23:14:50" isStartedSynced="True" ended="01/11/2023 23:14:50" isEndedSynced="True" />
+    <Attempt id="4" started="01/11/2023 23:14:50" isStartedSynced="True" ended="01/11/2023 23:14:50" isEndedSynced="True" />
+    <Attempt id="5" started="01/11/2023 23:14:50" isStartedSynced="True" ended="01/11/2023 23:14:50" isEndedSynced="True" />
+    <Attempt id="6" started="01/11/2023 23:14:50" isStartedSynced="True" ended="01/11/2023 23:14:51" isEndedSynced="True" />
+    <Attempt id="7" started="01/11/2023 23:14:52" isStartedSynced="True" ended="01/11/2023 23:14:55" isEndedSynced="True" />
+    <Attempt id="8" started="01/11/2023 23:15:01" isStartedSynced="True" ended="01/11/2023 23:15:05" isEndedSynced="True" />
+  </AttemptHistory>
+  <Segments>
+    <Segment>
+      <Name>eagle fly</Name>
+      <Icon><![CDATA[AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAnQEAAAKJUE5HDQoaCgAAAA1JSERSAAAAPAAAABYIBgAAAJzL/yIAAAABc1JHQgCuzhzpAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOmwAADpsBVdD1ogAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNui8sowAAAEKSURBVFhH5dFBDsMwCETRXjKX7CXbsMPDlwHRRpFi6W0GZLD8Os9n4n1cK5uvdYBhmQ78t2y+1sEa6AV3kx19D1gDGnIn2dH3BHTprZxLenqO41icydbzHhy+vClbsF1X0p+f8EAVgpZswXZdSX9+rn6wsh6PejZo5hCGZbTkwno86tmgmUMYloUlLfO6dUEzhzAsC0ta5nXrgmYOYVhGSy6sx6OeDZo5hGEZLbmwHo96NmjmEIZlYUnLPK030cwhDMvCkpZ5Wm+imUMYltGSC+vxqGeDZg5hWEZLLqzHo54NmjmEYVlY0jJP6yK7T+s/gGGZLvi8Bzdl92n9BzAs0wW7svu0PvP6fAEd4RsBNbxeMQAAAABJRU5ErkJgggs=]]></Icon>
+      <SplitTimes>
+        <SplitTime name="Personal Best" />
+      </SplitTimes>
+      <BestSegmentTime />
+      <SegmentHistory />
+    </Segment>
+    <Segment>
+      <Name>all the warez</Name>
+      <Icon />
+      <SplitTimes>
+        <SplitTime name="Personal Best" />
+      </SplitTimes>
+      <BestSegmentTime />
+      <SegmentHistory />
+    </Segment>
+    <Segment>
+      <Name>spells</Name>
+      <Icon />
+      <SplitTimes>
+        <SplitTime name="Personal Best" />
+      </SplitTimes>
+      <BestSegmentTime />
+      <SegmentHistory />
+    </Segment>
+    <Segment>
+      <Name>take care of wizard</Name>
+      <Icon />
+      <SplitTimes>
+        <SplitTime name="Personal Best" />
+      </SplitTimes>
+      <BestSegmentTime />
+      <SegmentHistory />
+    </Segment>
+    <Segment>
+      <Name>boat trip done</Name>
+      <Icon />
+      <SplitTimes>
+        <SplitTime name="Personal Best" />
+      </SplitTimes>
+      <BestSegmentTime />
+      <SegmentHistory />
+    </Segment>
+    <Segment>
+      <Name>game complete</Name>
+      <Icon><![CDATA[AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAMAIAAAKJUE5HDQoaCgAAAA1JSERSAAAAUAAAADwIBgAAAPEnPYwAAAABc1JHQgCuzhzpAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOmwAADpsBVdD1ogAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNui8sowAAAGdSURBVHhe7dEhS4NRFMbxYRCbWGQgIoLVicOqsiAyBcGJS0vL+xyCYLT5PUQEv8PKyjYMxhlNpqNve5H/4AEPNz2DX/lz7+Wcd43fX9i/YDQdRtNhNB1G02E0HUbTYTQdRtNhNB1G02E0HUbTYTQdRtNhNB1G02E0HUbTYTQdRtNhNB1G02E0HcZihsPdeH+/iIhb9PZ2Gp3OJt6tazbX4vHxEN+g84kwFtPrbcV02sXFK8/Px9FqrePdv+7vW/gGnU2EsZh+fztms+Uf8OXlONrtDbxbt7q6Eg8PB/gGnU+EMdVgsLPU09NRLBZXuHhlMjmPu7t9vFs3Gu3F6+sJvkEzJcKYajw+W+rj4zK+v29w8crX13XM5128W1d96M9P/iNopkQYU9FSJdFMiTCmoqVKopkSYUxFS5VEMyXCmIqWKolmSoQxFS1VEs2UCGMqWqokmikRxlS0VEk0UyKMpsNoOoymw2g6jKbDaDqMpsNoOoymw2g6jKbDaDqMpsNoOoymw2g6jKbDaDqMpsNoOoymw2g6jKbDaJJG/ADJpokWcai5PwAAAABJRU5ErkJgggs=]]></Icon>
+      <SplitTimes>
+        <SplitTime name="Personal Best" />
+      </SplitTimes>
+      <BestSegmentTime />
+      <SegmentHistory />
+    </Segment>
+  </Segments>
+  <AutoSplitterSettings />
+</Run>
