@@ -1,0 +1,210 @@
+100% Route (210 points)
+-----------------------
+
+# house
+cup, bread, fruit, chop, spoon, knife, bowl [7]
+cat fur, fly, mirror, essence magic map, brass key [14]
+hide all under bed [4]
+magic wand, pull lever [9]
+
+# basement
+bone, juice, mandrake, saffron, spittle, mushroom, [6]
+make 'eagle/fly spell' [10]
+
+# out-and-about-part1
+chicken feather [1]
+eagle feather, SS, porridge, thimble, dew, S, mud, EE, water, NW NW mistletoe N (head to tavern) [9]
+dip fly in essence and listen to bandits [3]
+fly over to their tree and into hole [5]
+
+# out-and-about-part2
+get acorn, grab hole, discover hidout, get coin [10]
+W toast medusa, cactus, N,N skin [7]
+waste spider, visit oracle and get stone [7]
+
+# out-and-about-part3
+pet dog, buy pouch, lard, oil, salt [5]
+talk captain, give coin [3] (don't sign up too early or the ship will leave before ready)
+
+# basement-2
+cat-spell [10]
+understanding animals [10]
+teleport stone [10]
+invisibility [10]
+deep sleep [10]
+storm [10]
+
+# wizard-return (wizard leaves at 5:00 and returns at 30:00)
+return wand, close trapdoor, move the book back [0]
+put cookie in porridge [0]
+give cookie to wizard [12]
+
+# voyage
+board boat, climb out of hold, get shovel, get things back from the chest [8]
+walk back to the hold of the ship [0]
+pour sleep powder on deck [0]
+wait till the timer runs down [0]
+sleep henceforth [0]
+
+# rescue princess
+look map, rub rock (to get off boat) - visit room48 to get points [5]
+dig up treasure [7]
+tp or fly past yeti [4]
+kill the dragon [7]
+rescue princess [3]
+walk to the castle [4]
+
+
+
+
+Spells
+------
+
+All spells need the magic wand
+
+## Flying like an Eagle or a Fly
+Logic122
+-	saffron
+-	essence
+also need eagle and fly feather to actually use (but can make the spell without)
+
+    Turn to page IV                                         see page iv ####
+    I. Put a pinch of saffron in essence                    put bit saffron essence ##
+    II. Recite the following verse:
+    Oh winged spirits set me free
+    Of earthly bindings just like thee
+    In this essence behold the might
+    To grant the precious gift of flight
+    III. Wave magic wand                                    aim rod ###
+
+## Transforming another into a Cat
+Logic125
+-	mandrake root
+-	cat hair
+-	fish oil
+
+    Turn to page XXV                                       see page xxv ####
+    I. Put the mandrake root powder in a bowl              put mandrake root flour bowl ##
+    II. Put the cat hair in the bowl                       put cat fur bowl ##
+    III. Put two spoons of fish oil in the bowl            put two spoon oil bowl ##
+    IV. Stir the mixture with a spoon                      mix dough ##
+    V. Put the dough on the table                          put dough on desk ##
+    VI. Pat the dough into a cookie                        pat dough patty ##
+    VII. Recite the following verse:
+    Mandrake root and hair of cat
+    Mix oil of fish and give a pat
+    A feline from the one who eats
+    This appetizing magic treat
+    VIII. Wave magic wand                                   aim rod ###
+
+
+## Understanding the Language of Creatures
+-	chicken feather
+-	dog fur
+-	reptile skin
+-	powdered fish bone
+-	thimbleful of dew
+
+    Turn to page II                                        see page ii ####
+    I. Put the small feather in a bowl                     put feather bowl ##
+    II. Put the fur in the bowl                            put fur bowl ##
+    III. Put the reptile skin in a bowl                    put skin bowl ##
+    IV. Add a spoonful of powdered fish bone               add spoonful fish bone ##
+    V. Put a thimbleful of dew in the bowl                 put dew bowl ##
+    VI. Mix with hands                                     mix hands ##
+    VII. Separate mixture into two pieces                  separate dough into two pieces ##
+    VIII. Put dough pieces in your ears                    put dough ears ##
+    IX. Recite the following verse:
+    Feather of fowl and bone of fish
+    Molded together in this dish
+    Give me wisdom to understand
+    Creatures of air sea and land
+    X. Wave magic wand                                     aim rod ###
+
+
+## Teleportation at Random
+Logic123
+-	salt
+-	mistletoe
+-	stone
+
+    Turn to page VII                                      see page vii ####
+    I. Grind a spoon of salt in a mortar                  add salt spoon ##
+    II. Grind the mistletoe in the mortar                 grind mistletoe mortar ###
+    III. Rub the stone in the mixture                     rub rock dough ###
+    IV. Kiss the stone                                    hug rock ##
+    V. Recite the following verse:
+    With this kiss I thee impart
+    Power most dear to my heart
+    Take me now from this place hither
+    To another place far thither
+    VI. Wave the magic wand                               aim wand ###
+
+
+## Invisibility
+Logic127
+
+    Turn to page CLXIX                                    see page clxix ####
+    I. Cut the cactus with a knife                        cut cactus with knife ##
+    II. Squeeze the cactus juice onto a spoon             flatten cactus on spoon ##
+    III. Put the cactus juice in a bowl                   add cactus juice bowl ##
+    IV. Put the lard in the bowl                          put lard bowl ##
+    V. Add two drops of toad spittle                      add frog spit ##
+    VI. Stir the mixture with a spoon                     mix spoon ##
+    VII. Recite the following verse:
+    Cactus plant and horny toad
+    I now start down a dangerous road
+    Combine with fire and mist to make
+    Me disappear without a trace
+    VIII. Wave magic wand                                 aim rod ##
+    IX. Put ointment in the empty lard jar                put ointment bottle ###
+
+
+## Causing a Deep Sleep
+Logic124
+-	acorns
+-	nightshade juice
+-	pouch (bought from the store)
+
+    Turn to page XIV                                   see page xiv ####
+    I. Grind the acorns in a mortar                    grind acorn mortar ##
+    II. Put the acorn powder in a bowl                 put acorn flour bowl ##
+    III. Put the nightshade juice in the bowl          put nightshade bowl ###
+    IV. Stir the mixture with a spoon                  mix dough ##
+    V. Light a charcoal brazier                        burn coal ##
+    VI. Heat the mixture on the brazier                heat dough burner ####
+    VII. Spread the mixture on a table                 press dough on desk ##
+    VIII. Recite the following verse:
+    Acorn powder ground so fine
+    Nightshade juice like bitter wine
+    Silently in darkness you creep
+    To bring a soporific sleep
+    IX. Wave magic wand                                aim rod ##
+    X. Put the sleep powder in the pouch               put sleep grain pouch ###
+    use spell by typing slumber henceforth
+
+## Brewing a Storm
+Logic126
+-	cup with ocean water
+-	toadstool powder
+
+    Turn to page LXXXIV                                  see page lxxxiv ####
+    I. Put a cup of ocean water in a bowl                put water bowl ##
+    II. Light a charcoal brazier                         burn coal
+    III. Heat the bowl on the brazier                    heat bowl burner ##
+    IV. Put a spoon of mud in the bowl                   put mud bowl ##
+    V. Add a pinch of toadstool powder                   add pinch mushroom flour ##
+    VI. Blow into the hot brew                           blow brew ##
+    VII. Recite the following verse:
+    Elements from the earth and sea
+    Combine to set the heavens free
+    When I stir this magic brew
+    Great god Thor I call on you
+    VIII. Wave magic wand                                aim rod ##
+    IX. Pour the storm brew into the jar                 pour brew jar ####
+
+
+
+
+
+
