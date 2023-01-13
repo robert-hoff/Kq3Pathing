@@ -1765,7 +1765,7 @@
     </CheatEntry>
     <CheatEntry>
       <ID>177</ID>
-      <Description>"v170"</Description>
+      <Description>"v170 - snowman.x"</Description>
       <ShowAsSigned>0</ShowAsSigned>
       <VariableType>Byte</VariableType>
       <Address>Dosbox.exe + 0x1B58E20</Address>
@@ -1775,7 +1775,7 @@
     </CheatEntry>
     <CheatEntry>
       <ID>178</ID>
-      <Description>"v171"</Description>
+      <Description>"v171 - snowman.y"</Description>
       <ShowAsSigned>0</ShowAsSigned>
       <VariableType>Byte</VariableType>
       <Address>Dosbox.exe + 0x1B58E20</Address>
@@ -1785,7 +1785,7 @@
     </CheatEntry>
     <CheatEntry>
       <ID>179</ID>
-      <Description>"v172"</Description>
+      <Description>"v172 - bandit.status (asleep/awake)"</Description>
       <ShowAsSigned>0</ShowAsSigned>
       <VariableType>Byte</VariableType>
       <Address>Dosbox.exe + 0x1B58E20</Address>
@@ -1805,7 +1805,7 @@
     </CheatEntry>
     <CheatEntry>
       <ID>181</ID>
-      <Description>"v174"</Description>
+      <Description>"v174 - desert seconds"</Description>
       <ShowAsSigned>0</ShowAsSigned>
       <VariableType>Byte</VariableType>
       <Address>Dosbox.exe + 0x1B58E20</Address>
@@ -1815,7 +1815,7 @@
     </CheatEntry>
     <CheatEntry>
       <ID>182</ID>
-      <Description>"v175"</Description>
+      <Description>"v175 - desert minutes"</Description>
       <ShowAsSigned>0</ShowAsSigned>
       <VariableType>Byte</VariableType>
       <Address>Dosbox.exe + 0x1B58E20</Address>
@@ -1905,7 +1905,7 @@
     </CheatEntry>
     <CheatEntry>
       <ID>191</ID>
-      <Description>"v184"</Description>
+      <Description>"v184 - eagletimer"</Description>
       <ShowAsSigned>0</ShowAsSigned>
       <VariableType>Byte</VariableType>
       <Address>Dosbox.exe + 0x1B58E20</Address>
@@ -1915,7 +1915,7 @@
     </CheatEntry>
     <CheatEntry>
       <ID>192</ID>
-      <Description>"v185"</Description>
+      <Description>"v185 - boxXpos"</Description>
       <ShowAsSigned>0</ShowAsSigned>
       <VariableType>Byte</VariableType>
       <Address>Dosbox.exe + 0x1B58E20</Address>
@@ -1925,7 +1925,7 @@
     </CheatEntry>
     <CheatEntry>
       <ID>193</ID>
-      <Description>"v186"</Description>
+      <Description>"v186 - boxYpos"</Description>
       <ShowAsSigned>0</ShowAsSigned>
       <VariableType>Byte</VariableType>
       <Address>Dosbox.exe + 0x1B58E20</Address>
@@ -1935,7 +1935,7 @@
     </CheatEntry>
     <CheatEntry>
       <ID>194</ID>
-      <Description>"v187"</Description>
+      <Description>"v187 - timesCaught (by the pirates)"</Description>
       <ShowAsSigned>0</ShowAsSigned>
       <VariableType>Byte</VariableType>
       <Address>Dosbox.exe + 0x1B58E20</Address>
@@ -1945,7 +1945,7 @@
     </CheatEntry>
     <CheatEntry>
       <ID>195</ID>
-      <Description>"v188"</Description>
+      <Description>"v188 - shovelX"</Description>
       <ShowAsSigned>0</ShowAsSigned>
       <VariableType>Byte</VariableType>
       <Address>Dosbox.exe + 0x1B58E20</Address>
@@ -1955,7 +1955,7 @@
     </CheatEntry>
     <CheatEntry>
       <ID>196</ID>
-      <Description>"v189"</Description>
+      <Description>"v189 - shovelY"</Description>
       <ShowAsSigned>0</ShowAsSigned>
       <VariableType>Byte</VariableType>
       <Address>Dosbox.exe + 0x1B58E20</Address>
@@ -1965,7 +1965,7 @@
     </CheatEntry>
     <CheatEntry>
       <ID>197</ID>
-      <Description>"v190"</Description>
+      <Description>"v190 - bowlsOnTable (bears)"</Description>
       <ShowAsSigned>0</ShowAsSigned>
       <VariableType>Byte</VariableType>
       <Address>Dosbox.exe + 0x1B58E20</Address>
@@ -1975,7 +1975,7 @@
     </CheatEntry>
     <CheatEntry>
       <ID>198</ID>
-      <Description>"v191"</Description>
+      <Description>"v191 - snowman.script"</Description>
       <ShowAsSigned>0</ShowAsSigned>
       <VariableType>Byte</VariableType>
       <Address>Dosbox.exe + 0x1B58E20</Address>
@@ -1985,7 +1985,7 @@
     </CheatEntry>
     <CheatEntry>
       <ID>199</ID>
-      <Description>"v192"</Description>
+      <Description>"v192 - west.room"</Description>
       <ShowAsSigned>0</ShowAsSigned>
       <VariableType>Byte</VariableType>
       <Address>Dosbox.exe + 0x1B58E20</Address>
@@ -2365,7 +2365,7 @@
     </CheatEntry>
     <CheatEntry>
       <ID>237</ID>
-      <Description>"v230"</Description>
+      <Description>"v230 - bedroom status"</Description>
       <ShowAsSigned>0</ShowAsSigned>
       <VariableType>Byte</VariableType>
       <Address>Dosbox.exe + 0x1B58E20</Address>
@@ -4665,7 +4665,7 @@
     </CheatEntry>
     <CheatEntry>
       <ID>433</ID>
-      <Description>"f170"</Description>
+      <Description>"f170 was.invisible"</Description>
       <VariableType>Binary</VariableType>
       <BitStart>5</BitStart>
       <BitLength>1</BitLength>
@@ -4677,7 +4677,7 @@
     </CheatEntry>
     <CheatEntry>
       <ID>434</ID>
-      <Description>"f171"</Description>
+      <Description>"f171 escaped snowman"</Description>
       <VariableType>Binary</VariableType>
       <BitStart>4</BitStart>
       <BitLength>1</BitLength>
@@ -4689,7 +4689,7 @@
     </CheatEntry>
     <CheatEntry>
       <ID>435</ID>
-      <Description>"f172"</Description>
+      <Description>"f172 - snowman.on.screen"</Description>
       <VariableType>Binary</VariableType>
       <BitStart>3</BitStart>
       <BitLength>1</BitLength>
@@ -4701,7 +4701,7 @@
     </CheatEntry>
     <CheatEntry>
       <ID>436</ID>
-      <Description>"f173"</Description>
+      <Description>"f173 - snowman.arrived"</Description>
       <VariableType>Binary</VariableType>
       <BitStart>2</BitStart>
       <BitLength>1</BitLength>
@@ -4725,7 +4725,7 @@
     </CheatEntry>
     <CheatEntry>
       <ID>438</ID>
-      <Description>"f175"</Description>
+      <Description>"f175 - baby chair broke"</Description>
       <VariableType>Binary</VariableType>
       <BitStart>0</BitStart>
       <BitLength>1</BitLength>
@@ -4737,7 +4737,7 @@
     </CheatEntry>
     <CheatEntry>
       <ID>439</ID>
-      <Description>"f176"</Description>
+      <Description>"f176 - seen.oracle"</Description>
       <VariableType>Binary</VariableType>
       <BitStart>7</BitStart>
       <BitLength>1</BitLength>
@@ -4785,7 +4785,7 @@
     </CheatEntry>
     <CheatEntry>
       <ID>443</ID>
-      <Description>"f180"</Description>
+      <Description>"f180 - eagleGone"</Description>
       <VariableType>Binary</VariableType>
       <BitStart>3</BitStart>
       <BitLength>1</BitLength>
@@ -4797,7 +4797,7 @@
     </CheatEntry>
     <CheatEntry>
       <ID>444</ID>
-      <Description>"f181"</Description>
+      <Description>"f181 - boat crew asleep"</Description>
       <VariableType>Binary</VariableType>
       <BitStart>2</BitStart>
       <BitLength>1</BitLength>
@@ -4809,7 +4809,7 @@
     </CheatEntry>
     <CheatEntry>
       <ID>445</ID>
-      <Description>"f182"</Description>
+      <Description>"f182 - princess saved"</Description>
       <VariableType>Binary</VariableType>
       <BitStart>1</BitStart>
       <BitLength>1</BitLength>
@@ -4821,7 +4821,7 @@
     </CheatEntry>
     <CheatEntry>
       <ID>446</ID>
-      <Description>"f183"</Description>
+      <Description>"f183 - dragon dead"</Description>
       <VariableType>Binary</VariableType>
       <BitStart>0</BitStart>
       <BitLength>1</BitLength>
@@ -4857,7 +4857,7 @@
     </CheatEntry>
     <CheatEntry>
       <ID>449</ID>
-      <Description>"f186"</Description>
+      <Description>"f186 - has shovel"</Description>
       <VariableType>Binary</VariableType>
       <BitStart>5</BitStart>
       <BitLength>1</BitLength>
@@ -4881,7 +4881,7 @@
     </CheatEntry>
     <CheatEntry>
       <ID>451</ID>
-      <Description>"f188"</Description>
+      <Description>"f188 - chestOpen (captain's)"</Description>
       <VariableType>Binary</VariableType>
       <BitStart>3</BitStart>
       <BitLength>1</BitLength>
@@ -4893,7 +4893,7 @@
     </CheatEntry>
     <CheatEntry>
       <ID>452</ID>
-      <Description>"f189"</Description>
+      <Description>"f189 - gnomeGone"</Description>
       <VariableType>Binary</VariableType>
       <BitStart>2</BitStart>
       <BitLength>1</BitLength>
@@ -4905,7 +4905,7 @@
     </CheatEntry>
     <CheatEntry>
       <ID>453</ID>
-      <Description>"f190"</Description>
+      <Description>"f190 - bombsAway (feather dropped)"</Description>
       <VariableType>Binary</VariableType>
       <BitStart>1</BitStart>
       <BitLength>1</BitLength>
@@ -4917,7 +4917,7 @@
     </CheatEntry>
     <CheatEntry>
       <ID>454</ID>
-      <Description>"f191"</Description>
+      <Description>"f191 - featherHere"</Description>
       <VariableType>Binary</VariableType>
       <BitStart>0</BitStart>
       <BitLength>1</BitLength>
@@ -4929,7 +4929,7 @@
     </CheatEntry>
     <CheatEntry>
       <ID>455</ID>
-      <Description>"f192"</Description>
+      <Description>"f192 - holeDug (on beach)"</Description>
       <VariableType>Binary</VariableType>
       <BitStart>7</BitStart>
       <BitLength>1</BitLength>
@@ -4941,7 +4941,7 @@
     </CheatEntry>
     <CheatEntry>
       <ID>456</ID>
-      <Description>"f193"</Description>
+      <Description>"f193 - mice.1"</Description>
       <VariableType>Binary</VariableType>
       <BitStart>6</BitStart>
       <BitLength>1</BitLength>
@@ -4953,7 +4953,7 @@
     </CheatEntry>
     <CheatEntry>
       <ID>457</ID>
-      <Description>"f194"</Description>
+      <Description>"f194 - mice.2 (knows chest location)"</Description>
       <VariableType>Binary</VariableType>
       <BitStart>5</BitStart>
       <BitLength>1</BitLength>
@@ -4977,7 +4977,7 @@
     </CheatEntry>
     <CheatEntry>
       <ID>459</ID>
-      <Description>"f196"</Description>
+      <Description>"f196 - got purse"</Description>
       <VariableType>Binary</VariableType>
       <BitStart>3</BitStart>
       <BitLength>1</BitLength>
@@ -4989,7 +4989,7 @@
     </CheatEntry>
     <CheatEntry>
       <ID>460</ID>
-      <Description>"f197"</Description>
+      <Description>"f197 - found house"</Description>
       <VariableType>Binary</VariableType>
       <BitStart>2</BitStart>
       <BitLength>1</BitLength>
@@ -5001,7 +5001,7 @@
     </CheatEntry>
     <CheatEntry>
       <ID>461</ID>
-      <Description>"f198"</Description>
+      <Description>"f198 - entered castle"</Description>
       <VariableType>Binary</VariableType>
       <BitStart>1</BitStart>
       <BitLength>1</BitLength>
