@@ -13,8 +13,9 @@ namespace kq3_hacking.RoomPathing
         public static void RunTrials()
         {
             // ShowRoomControlData(1);
+            ShowRoomAreaTriggers(33);
             // SaveRoomControlData(1, "testfile.txt");
-            SaveAllControlData();
+            // SaveAllControlData();
 
         }
 
@@ -28,9 +29,16 @@ namespace kq3_hacking.RoomPathing
 
         static string OUTPUT_FOLDER = "../../../../output/";
 
+        public static void ShowRoomAreaTriggers(int roomNr)
+        {
+            RoomControl roomControl = new(roomNr);
+            roomControl.ShowWaterAreaTriggers();
+        }
+
+
         public static void SaveRoomControlData(int roomNr, string filename)
         {
-            FileWriter sw = new(OUTPUT_FOLDER+filename);
+            FileWriter sw = new(OUTPUT_FOLDER + filename);
             RoomControl roomControl = new(roomNr);
             roomControl.ShowControlData(sw.Write);
             sw.CloseStreamWriter();

@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using kq3_hacking.DataFilesIO;
 using kq3_hacking.RoomPathing;
 
@@ -9,8 +10,8 @@ namespace kq3_hacking
         static void Main()
         {
             // RunInterface();
-            RunFileOperations();
-            // Pathing();
+            // RunFileOperations();
+            Pathing();
         }
 
 
