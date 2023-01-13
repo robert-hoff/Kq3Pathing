@@ -113,7 +113,8 @@ if (wants.to.dig) {                                         // [ all the reasons
         #message 9  "Now is not the time to think about digging a hole!";
         goto cant;
     }
-                                                            // [ if we got here we are going to dig
+
+    // [ if we got here we are going to dig
     if (!has(i.treasure.chest) && posn(ego, luckyLeft, luckyTop, luckyRight, luckyBottom)) {
         goto luckyDig;
     }
@@ -127,7 +128,8 @@ if (wants.to.dig) {                                         // [ all the reasons
         reset(can.dig.it);
         set.loop(aChest, 1);
     }
-    if (!crewAsleep) {                                      // [ only if pirates aren't awake
+    // [ only if pirates aren't awake
+    if (!crewAsleep) {
         reset(can.dig.it);
         set.loop(aChest, 1);
     }
@@ -143,7 +145,7 @@ if (wants.to.dig) {                                         // [ all the reasons
     set(dugOne);
 
     :cant
-        reset(wants.to.dig);                                // [ we won't let him
+        reset(wants.to.dig);      // [ we won't let him
 }
 
 if (dugOne && script == 1) {
@@ -154,7 +156,7 @@ if (dugOne && script == 1) {
     set(keep.cycling);
     work = 2;
     cycle.time(ego, work);
-    end.of.loop(ego, dugOne);                               // [ one scoop of shovel
+    end.of.loop(ego, dugOne);     // [ one scoop of shovel
 }
 
 if (dugOne && script == 2) {
@@ -166,7 +168,7 @@ if (dugOne && script == 2) {
     end.of.loop(ego, dugOne);
 }
 if (dugOne && script == 3) {
-    current.cel(aChest, work);                              // [ we print on next to last
+    current.cel(aChest, work);    // [ we print on next to last
     if (work == 6) {
         ++script;
     }
@@ -177,7 +179,9 @@ if (dugOne && script == 3) {
         end.of.loop(ego, dugOne);
     }
 }
-if (dugOne && script == 4) {                                // [ the chest is exposed
+
+// [ the chest is exposed
+if (dugOne && script == 4) {
     reset(dugOne);
     if (can.dig.it) {
         get(i.treasure.chest);

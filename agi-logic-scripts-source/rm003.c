@@ -144,14 +144,11 @@ if (init.log)
 
 if (!have.input) { goto no.input; }
 
-if ((said(look, room) ||
-    said(look, house) ||
-    said(look) ||
-    said(look, hall)))
+if (said(look, room) || said(look, house) || said(look) || said(look, hall))
 {
-    #message 1  "This hallway is on the second level of the old wizard's house.
-There are two stairways here.One goes up and
-the other leads down.An open doorway is to the north.";
+    #message 1  "This hallway is on the second level of the old wizard's house."
+                "There are two stairways here.One goes up and"
+                "the other leads down.An open doorway is to the north.";
 }
 
 if ((said(look, stairs) ||

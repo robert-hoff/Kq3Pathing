@@ -297,14 +297,11 @@ if (!have.input) { goto no.input; }
 
 // [  FIRST, WE DO THE GENERAL STUFF.
 
-if ((said(look, room) ||
-    said(look, house) ||
-    said(look) ||
-    said(look, bedroom)))
+if (said(look, room) || said(look, house) || said(look) || said(look, bedroom))
 {
-    #message 1  "You look at Manannan's elegant bed chamber. You see fine
-furnishings from a regal bed to a beautifully carved closet.
-You can't help but compare this handsome room to your own meager cubicle.";
+    #message 1  "You look at Manannan's elegant bed chamber. You see fine"
+                "furnishings from a regal bed to a beautifully carved closet."
+                "You can't help but compare this handsome room to your own meager cubicle.";
 }
 
 if (said(look, vanity))
@@ -493,15 +490,14 @@ if ((said(look$in, dresser) ||
                 #message 32  "You are not close enough.";
             }
         }
-    }
 }
+
 
 // [  NOW, LET'S HANDLE THE CLOSET/ARMOIRE/CABINET.
 
 if (said(look, closet))
 {
-    if (!near.closet &&
-        obj.in.room(i.key, current.room))
+    if (!near.closet && obj.in.room(i.key, current.room))
     {
         #message 40  "%m2 There may be something metallic on its top.";
     }
@@ -511,13 +507,10 @@ if (said(look, closet))
     }
 }
 
+
 if (bedroom.status == closet.shut &&
-    (said(look$in, closet) ||
-        said(look, inside, closet) ||
-        said(open, door) ||
-        said(open, door, closet) ||
-        said(open, closet, door) ||
-        said(open, closet)))
+   (said(look$in, closet) || said(look, inside, closet) || said(open, door) ||
+    said(open, door, closet) || said(open, closet, door) || said(open, closet)))
 {
     if (!near.closet)
     {
@@ -543,12 +536,8 @@ if (bedroom.status == closet.shut &&
 if (bedroom.status)
 {
     if (obj.in.room(i.magic.map, current.room) &&
-        (said(examine, closet) ||
-            said(look, behind, rol) ||
-            said(move, anyword, search, rol) ||
-            said(move, clothes, rol) ||
-            said(move, anyword) ||
-            said(search, closet)))
+       (said(examine, closet) || said(look, behind, rol) || said(move, anyword, search, rol) ||
+        said(move, clothes, rol) || said(move, anyword) || said(search, closet)))
     {
         if (!near.closet)
         {
@@ -557,19 +546,15 @@ if (bedroom.status)
         else
         {
             bedroom.status = got.map;
-            #message 28  "You're startled to discover an ancient parchment scroll. Its ink has faded,
-but it seems to be a map.Taking this treasure,
-you leave everything else exactly as it was.";
+            #message 28  "You're startled to discover an ancient parchment scroll. Its ink has faded,"
+                         "but it seems to be a map.Taking this treasure,"
+                         "you leave everything else exactly as it was.";
             get(i.magic.map);
             score += 7;
         }
     }
 
-    if ((said(look$in, closet) ||
-        said(look, inside, closet) ||
-        said(look, hats) ||
-        said(examine, closet) ||
-        said(search, closet)))
+    if (said(look$in, closet) || said(look, inside, closet) || said(look, hats) || said(examine, closet) || said(search, closet))
     {
         if (!near.closet)
         {
@@ -577,18 +562,16 @@ you leave everything else exactly as it was.";
         }
         else
         {
-            #message 3  "You see voluminous velvet robes,
-satin slippers, peaked hats, and soft linen gowns.";
+            #message 3  "You see voluminous velvet robes, satin slippers, peaked hats, and soft linen gowns.";
             bedroom.status = looked.through.closet;
         }
     }
 }
 
-if (bedroom.status &&
-    (said(close, closet) ||
-        said(close, door, closet) ||
-        said(close, closet, door) ||
-        said(close, door)))
+
+
+
+if (bedroom.status && (said(close, closet) || said(close, door, closet) || said(close, closet, door) || said(close, door)))
 {
     if (!near.closet)
     {
@@ -604,14 +587,9 @@ if (bedroom.status &&
     }
 }
 
-if ((said(search, top$of, closet) ||
-    said(search, top, closet) ||
-    said(search, on, closet) ||
-    said(search, on, top$of, closet) ||
-    said(look, top$of, closet) ||
-    said(look, top, closet) ||
-    said(look, on, closet) ||
-    said(look, on, top$of, closet)))
+
+if (said(search, top$of, closet) || said(search, top, closet) || said(search, on, closet) || said(search, on, top$of, closet) ||
+    said(look, top$of, closet) || said(look, top, closet) || said(look, on, closet) || said(look, on, top$of, closet))
 {
     if (!near.closet)
     {
@@ -638,10 +616,11 @@ a small brass key!What could it unlock ? ";
     }
 }
 
+
+
 // [  HOW ABOUT THE WINDOW AND CHAMBER POT NEXT:
 
-if ((said(open, window) ||
-    said(close, window)))
+if (said(open, window) || said(close, window))
 {
     if (!near.window)
     {
@@ -653,17 +632,13 @@ if ((said(open, window) ||
     }
 }
 
-if ((said(look, bowl) ||
-    said(look, pot) ||
-    said(look, floor) ||
-    said(look, chamber$pot)))
+
+if (said(look, bowl) || said(look, pot) || said(look, floor) || said(look, chamber$pot))
 {
     #message 29  "Manannan's chamber pot is on the floor beside his bed.";
 }
 
-if ((said(use, bowl) ||
-    said(use, pot) ||
-    said(use, chamber$pot)))
+if (said(use, bowl) || said(use, pot) || said(use, chamber$pot))
 {
     if (!near.potty)
     {
@@ -675,9 +650,9 @@ if ((said(use, bowl) ||
     }
 }
 
-if ((said(look$in, bowl) ||
-    said(look$in, pot) ||
-    said(look$in, chamber$pot)))
+
+
+if (said(look$in, bowl) || said(look$in, pot) || said(look$in, chamber$pot))
 {
     if (!near.potty)
     {
@@ -691,12 +666,8 @@ if ((said(look$in, bowl) ||
 }
 
 if (!handsOff &&
-    (said(empty, chamber$pot) ||
-        said(empty, bowl) ||
-        said(empty, pot) ||
-        said(get, chamber$pot) ||
-        said(get, bowl) ||
-        said(get, pot)))
+    (said(empty, chamber$pot) || said(empty, bowl) || said(empty, pot) ||
+     said(get, chamber$pot) || said(get, bowl) || said(get, pot)))
 {
     if (!near.potty)
     {
@@ -709,27 +680,26 @@ if (!handsOff &&
     }
 }
 
+
+
 // [  HANDLE THE LOCAL WIZ STUFF.
 
 if (wiz.status == sleeping)
 {
     if (said(look, wizard))
     {
-        #message 19  "Manannan is asleep on his great bed. His snores are so loud they
-rumble off the walls.Be quiet; you wouldn't want to disturb him.";
+        #message 19  "Manannan is asleep on his great bed. His snores are so loud they"
+                     "rumble off the walls.Be quiet; you wouldn't want to disturb him.";
     }
 
-    if ((said(talk, wizard) ||
-        said(wake, up, wizard) ||
-        said(wake, wizard, up) ||
-        said(wake, wizard)))
+    if (said(talk, wizard) || said(wake, up, wizard) || said(wake, wizard, up) || said(wake, wizard))
     {
         if (!talked.to.wiz)
         {
             set(talked.to.wiz);
-            #message 20  "You speak softly to the sleeping wizard. \"Hhrrummph!\" he
-grumbles sleepily, thumbing his nose as if at a fly.But, soon the
-snoring resumes again.";
+            #message 20  "You speak softly to the sleeping wizard. \"Hhrrummph!\" he"
+                         "grumbles sleepily, thumbing his nose as if at a fly.But, soon the"
+                         "snoring resumes again.";
         }
         else
         {
@@ -738,6 +708,8 @@ snoring resumes again.";
         }
     }
 }
+
+
 
 // [*****
 // :no.input
@@ -756,9 +728,7 @@ if (next.dump.script)
         set(handsOff);
         start.update(a.chamber.pot);
         erase(a.chamber.pot);
-
         ignore.obj(a.cat);
-
         got.pot.x = ego.x;
         got.pot.y = ego.y;                                  // [  save for return flight
         x = dumper.x;
@@ -780,9 +750,9 @@ if (next.dump.script)
 
     if (dump.script == 3)
     {
-        #message 24  "Wrinkling your nose in disgust, you throw the smelly contents of the
-chamber pot out the open window.What a way to make a living!";
-        move.obj.v(ego, ego.x, got.pot.y, step, next.dump.script);
+        #message 24  "Wrinkling your nose in disgust, you throw the smelly contents of the"
+                     "chamber pot out the open window.What a way to make a living!";
+        "move.obj.v(ego, ego.x, got.pot.y, step, next.dump.script);
     }
 
     if (dump.script == 4)
@@ -806,6 +776,8 @@ if (closet.done)
     stop.update(a.closet.doors);
 }
 
+
+
 // [  HANDLE THE DRAWER BENEATH THE MIRROR:
 
 --drawer.1.timer;
@@ -822,14 +794,15 @@ if (drawer.1.timer == 22)
     {
         get(i.mirror);
         score += 1;
-        #message 37  "In the vanity drawer are many uninteresting items, although the wizard's
-hand mirror may come in handy.You grab it, then close the drawer.";
+        #message 37  "In the vanity drawer are many uninteresting items, although the wizard's"
+                     "hand mirror may come in handy.You grab it, then close the drawer.";
     }
     else
     {
         #message 34  "You find baubles and trinkets which do not interest you.";
     }
 }
+
 
 if (drawer.1.timer == 1)
 {
@@ -842,6 +815,8 @@ if (drawer.1.done)
     stop.update(a.drawer.1);
     start.motion(ego);
 }
+
+
 
 // [  HANDLE THE DRAWER IN THE DRESSER:
 
@@ -859,8 +834,8 @@ if (drawer.2.timer == 22)
     {
         get(i.rose.essence);
         score += 1;
-        #message 11  "%m34 Suddenly, your eye falls on something that does... a vial labeled
-\"Rose Petal Essence,\" which you eagerly take.";
+        #message 11  "%m34 Suddenly, your eye falls on something that does... a vial labeled"
+                     "\"Rose Petal Essence,\" which you eagerly take.";
     }
     else
     {
@@ -879,6 +854,8 @@ if (drawer.2.done)
     stop.update(a.drawer.2);
     start.motion(ego);
 }
+
+
 
 // [  HERE'S THE DEPARTMENT OF WIZZES:
 
@@ -914,7 +891,8 @@ if (aSecondPassed)
 
     if (!wiz.minutes && wiz.seconds < 8)
     {
-        wiz.seconds = 8;                                    // [  keep wiz asleep while in bed
+        // [  keep wiz asleep while in bed
+        wiz.seconds = 8;
     }
 }
 
@@ -927,17 +905,13 @@ if (lcl.wiz.script == 204)
     }
 }
 
+// [  Handle the two forms of wiz arising from the good sleep that
+// [comes from knowing his royalties are secure!
 if (lcl.wiz.arrived)
 {
-
-                                                            // [  Handle the two forms of wiz arising from the good sleep that
-                                                            // [comes from knowing his royalties are secure!
-
     reset(lcl.wiz.arrived);
     ++lcl.wiz.script;
-
-                                                            // [  First, handle "wake-wiz-via-squeeking-furniture."
-
+    // [  First, handle "wake-wiz-via-squeeking-furniture."
     if (lcl.wiz.script == 101)
     {
         prevent.input();
@@ -956,10 +930,10 @@ if (lcl.wiz.arrived)
     if (lcl.wiz.script == 102)
     {
         set.cel(a.wiz, 1);
-        #message 22  "You try to be quiet, but an unfortunate squeak wakes Manannan. He
-turns in his bed, then sits up, staring angrily at you.
-\"You know you're to stay out of my things,\" he growls. \"I've no
-choice but to punish you for this.\"";
+        #message 22  "You try to be quiet, but an unfortunate squeak wakes Manannan. He"
+                     "turns in his bed, then sits up, staring angrily at you."
+                     "\"You know you're to stay out of my things,\" he growls. \"I've no"
+                     "choice but to punish you for this.\"";
         wiz.timer = 4;
     }
 
@@ -970,38 +944,29 @@ choice but to punish you for this.\"";
         force.update(a.wiz);
         work = wiz.cycle.time;
         cycle.time(a.wiz, work);
-
         wiz.away.asleep = home.after.bed;
         wiz.minutes = wiz.home.minutes;
-
         force.update(ego);
-
-                                                            // [  out with the good wiz, in with the bad...
-
+        // [  out with the good wiz, in with the bad...
         unanimate.all();
-
         animate.obj(ego);
         draw(ego);
         force.update(ego);
-
         animate.obj(a.wiz);
         draw(a.wiz);
         force.update(a.wiz);
-
         make.wiz.come = osw.punish;
         set(force.wiz.come);
         lcl.wiz.script = 0;
     }
 
-                                                            // [  Next, handle "wake-wiz-by-talking-to-him-while-he's-asleep."
-
+    // [  Next, handle "wake-wiz-by-talking-to-him-while-he's-asleep."
     if (lcl.wiz.script == 201)
     {
         prevent.input();
         program.control();
         stop.motion(ego);
         set(handsOff);
-
         wiz.status = leaving.room;
         stop.cycling(a.wiz);
         set.view(a.wiz, v.wiz.leaving.bed);
@@ -1014,9 +979,9 @@ choice but to punish you for this.\"";
     if (lcl.wiz.script == 202)
     {
         set.cel(a.wiz, 1);
-        #message 21  "This time your words awaken Manannan. A grumpy look comes to his
-face. \"Don't you have anything better to do, boy, than to come in MY
-bed chamber and wake me from my peaceful repose ? \"";
+        #message 21  "This time your words awaken Manannan. A grumpy look comes to his"
+                     "face. \"Don't you have anything better to do, boy, than to come in MY"
+                     "bed chamber and wake me from my peaceful repose ? \"";
         wiz.timer = 4;
     }
 
@@ -1026,10 +991,8 @@ bed chamber and wake me from my peaceful repose ? \"";
         reposition.to(a.wiz, 37, 133);
         work = wiz.cycle.time;
         cycle.time(a.wiz, work);
-
         wiz.away.asleep = home.after.bed;
         wiz.minutes = wiz.home.minutes;
-
         wiz.temper = assign.chore;
         wiz.timer = 4;
     }
@@ -1060,11 +1023,8 @@ bed chamber and wake me from my peaceful repose ? \"";
     {
         erase(a.poof);
         reset(wiz.on.screen);
-
-                                                            // [  prevents punishment after 25" from non-existant wizards
-
+        // [  prevents punishment after 25" from non-existant wizards
         reset(lgc.house.wiz.loaded);
-
         wiz.x = 20;
         wiz.y = 150;
         accept.input();
@@ -1078,7 +1038,6 @@ bed chamber and wake me from my peaceful repose ? \"";
 }
 
 // [  DO THE MIRROR IMAGE OF EGO SCHTICK.
-
 if (erase.ego)
 {
     erase(a.alter.ego);
@@ -1139,10 +1098,25 @@ if (lgc.house.wiz.loaded)
     call(lgc.house.wiz);
 }
 
-if (edge.ego.hit == bottom &&
-    current.status != fly.landing &&
-    ego.x > 36 && ego.x < 52)
+if (edge.ego.hit == bottom && current.status != fly.landing && ego.x > 36 && ego.x < 52)
 {
     new.room(rm.hallway);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

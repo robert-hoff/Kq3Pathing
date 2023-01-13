@@ -167,16 +167,15 @@ if (ego.poofing.done && someoneHere) {                      // [ handle a state 
 
 if (someoneHere && !first.said) {
     set(first.said);
-    #message 1  "Not again! One of the nasty pirates is here on the beach, and
-he would like to capture you.You'd better run!";
+    #message 1  "Not again! One of the nasty pirates is here on the beach, and"+
+                "he would like to capture you.You'd better run!";
 }
 
 // [ pirate business
 if (pirateCaughtEgo) {
     reset(pirateCaughtEgo);
     if (!handsOff) {
-        #message 12  "How could you! You let yourself get caught again! Well, it's curtains for
-you this time.";
+        #message 12  "How could you! You let yourself get caught again! Well, it's curtains for you this time.";
         set(handsOff);
         program.control();
         set.view(aPirate, v.attacking);
@@ -258,8 +257,8 @@ if (obj.hit.edge == 4) {                                    // [ must change if 
 }
 
 // [ swimming/wading/walking stuff
-
-if (hit.special) {                                          // [ surf line
+// [ surf line
+if (hit.special) {
     set(on.water);
     if (current.status == swimming) {
         current.status = wading;
@@ -321,4 +320,10 @@ if ((edge.ego.hit == bottom || edge.ego.hit == right)) {
     exit.edge = edge.ego.hit;
     new.room(31);
 }
-
+
+
+
+
+
+
+

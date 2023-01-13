@@ -20,7 +20,6 @@
 // ["survivability".
 
 #define  hit.bottom      df8
-
 #define  stunned.timer      dv9
 #define  test.x        dv10
 #define  test.y        dv11
@@ -82,10 +81,8 @@ if (stunned.timer && sound.done)
     sound(s.ego.stunned, sound.done);
 }
 
-if (current.status != falling &&                            // [  do "accident" detection
-    !init.log &&
-    !test.counter &&
-    hit.special)
+// [  do "accident" detection
+if (current.status != falling && !init.log && !test.counter && hit.special)
 {
     start.climbing = falling;
 }

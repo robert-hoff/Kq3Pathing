@@ -63,30 +63,25 @@ if (said(use, burner))
     #message 8  "What would you do with the brazier?";
 }
 
-if ((said(light, burner) ||
-    said(light, charcoal, burner) ||
-    said(light, charcoal)))
+if (said(light, burner) || said(light, charcoal, burner) || said(light, charcoal))
 {
-    if ((burner.seconds ||
-        burner.minutes))
+    if (burner.seconds || burner.minutes)
     {
         #message 9  "It is already burning.";
     }
     else
     {
         #message 10  "Making sure there is fresh charcoal in the brazier (there is a small
-supply here), you light it with the flint.Soon, the brazier is hot.";
+                     "supply here), you light it with the flint.Soon, the brazier is hot.";
         burner.minutes = burner.init.minutes;
     }
 }
 
-if ((said(look, burner) ||
-    said(look, burner, table) ||
-    said(look$in, burner)))
+if (said(look, burner) || said(look, burner, table) || said(look$in, burner))
 {
     #message 13  "The small brazier is made of metal shaped into a bowl, with four small legs.
-It is filled with charcoal and topped with a metal grill.It is used for
-heating or cooking things.";
+                 "It is filled with charcoal and topped with a metal grill.It is used for
+                  "heating or cooking things.";
     if ((burner.seconds || burner.minutes))
     {
         #message 14  "%m17 You could heat things quickly with the brazier right now.";
@@ -97,14 +92,12 @@ heating or cooking things.";
     }
 }
 
-if ((said(get, charcoal) ||
-    said(get, charcoal, from, burner)))
+if (said(get, charcoal) || said(get, charcoal, from, burner))
 {
     #message 16  "The charcoal belongs in the brazier. You have no need for it anywhere else.";
 }
 
-if ((said(look, charcoal) ||
-    said(look, charcoal, burner)))
+if (said(look, charcoal) || said(look, charcoal, burner))
 {
     if ((burner.seconds || burner.minutes))
     {
@@ -132,9 +125,7 @@ if ((said(leave, room) ||
 // :n
 // [*****
 
-if (aSecondPassed &&
-    burner.seconds == 1 &&
-    !burner.minutes)
+if (aSecondPassed && burner.seconds == 1 && !burner.minutes)
 {
     print.at(11, 2, 2, 36);
 }
@@ -166,8 +157,7 @@ if (music.done)
 
 if (spell.status == spell.done)
 {
-    #message 6  "Successfully completing the spell, you again look at the wizard's
-laboratory.";
+    #message 6  "Successfully completing the spell, you again look at the wizard's laboratory.";
     set(going.back.to.lab);
     if (!made.spell.1 && spell.in.progress == 121)
     {
@@ -219,11 +209,9 @@ laboratory.";
 if (going.back.to.lab)
 {
     reset(going.back.to.lab);
-
     if (!spell.status)
     {
-        #message 2  "You scratch your head at the confusing old book, and turn away in
-puzzlement.";
+        #message 2  "You scratch your head at the confusing old book, and turn away in puzzlement.";
     }
     else
     {
@@ -232,8 +220,7 @@ puzzlement.";
             set(have.match);
             set(oops);
             call.v(spell.in.progress);
-            #message 3  "A strange feeling comes over you. You wonder if you could have made a
-mistake!";
+            #message 3  "A strange feeling comes over you. You wonder if you could have made a mistake!";
         }
     }
 

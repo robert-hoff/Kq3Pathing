@@ -4,8 +4,8 @@
 #include "rm111.msg"
 
 // [  Called by Rooms 12, 13, 14, 17, 22, & 27.
-// [      Rooms 12, 13,     17,     & 27 have talking animals.
-// [      Rooms       14,   & 22    just use the messages.
+// [  Rooms 12, 13, 17, & 27 have talking animals.
+// [  Rooms 14, & 22    just use the messages.
 
 #define  l.gray.right      0                                // [  squirrel loops
 #define  l.gray.left      1
@@ -35,33 +35,30 @@
 if (init.log)
 {
     random(1, 4, work);
-    if ((work > 2 ||                                        // [  no animals this time.
-        current.status == eagle ||
-        current.status == fly))
+
+    // [  no animals this time.
+    if (work > 2 || current.status == eagle || current.status == fly)
     {
         return();
     }
 
-    if (current.room != 12 &&
-        current.room != 13 &&
-        current.room != 17 &&
-        current.room != 27)
+    // [  no animals in this room
+    if (current.room != 12 && current.room != 13 && current.room != 17 && current.room != 27)
     {
-        return();                                           // [  no animals in this room
+        return();
     }
 
-    if (work == 1)                                          // [  The birds are here.
+    // [  The birds are here.
+    if (work == 1)
     {
         set(birds.here);
         load.view(v.bird);
-
         animate.obj(a.animal.1);
         set.view(a.animal.1, v.bird);
         ignore.horizon(a.animal.1);
         ignore.obj(a.animal.1);
         set.priority(a.animal.1, 15);
         stop.cycling(a.animal.1);
-
         animate.obj(a.animal.2);
         set.view(a.animal.2, v.bird);
         ignore.horizon(a.animal.2);
@@ -102,17 +99,11 @@ if (init.log)
         }
 
         random(1, animal.talk.odds, work);
-        if (has(i.dough.balls) &&
-            work == 1 &&
-            (!heardB1 ||
-                !heardB2 ||
-                !heardB3 ||
-                !heardB4))
+        if (has(i.dough.balls) && work == 1 &&
+            (!heardB1 || !heardB2 || !heardB3 || !heardB4))
         {
-
             :which.bird.message
-
-                random(1, 4, work);
+            random(1, 4, work);
             if (work == 1)
             {
                 if (heardB1)
@@ -172,7 +163,8 @@ if (init.log)
             random(3, 10, talk.seconds);
         }
     }
-    else                                                    // [  if (work != 1, thus birds !here)
+    // [  if (work != 1, thus birds !here)
+    else
     {
         set(squirrels.here);
         load.view(v.squirrel);

@@ -39,11 +39,9 @@ if ((!have.input || have.match)) { goto spell.input; }
 set(oops);
 ++spell.status;
 
-if ((said(cut, cactus, with, knife) ||
-    said(cut, open, cactus, with, knife)))
+if (said(cut, cactus, with, knife) || said(cut, open, cactus, with, knife))
 {
-    if ((!has(i.cactus) ||
-        !has(i.knife)))
+    if (!has(i.cactus) || !has(i.knife))
     {
         #message 1  "How can you use that which you do not have?";
     }

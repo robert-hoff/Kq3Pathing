@@ -389,6 +389,8 @@ if ((said("look in", "bureau") ||
   }
 }
 
+
+
 if (said("examine", "cabinet"))
 {
   if (!isset(f223) && obj.in.room("Brass Key*", currentRoom))
@@ -400,6 +402,9 @@ if (said("examine", "cabinet"))
     print("The closet is fashioned of ornately carved mahogany.");
   }
 }
+
+
+
 
 if (v230 == 0 &&
   (said("look in", "cabinet") ||
@@ -429,6 +434,8 @@ if (v230 == 0 &&
     }
   }
 }
+
+
 
 if (v230 > 0)
 {

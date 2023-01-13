@@ -19,7 +19,7 @@ if (init.log)
 
     set.horizon(49);
 
-    load.logics(lgc.climbing);
+    load.logics(lgc.climbing); // (logic 103)
     reset(survivable.fall);
     room.bottom = 166;
 
@@ -53,12 +53,9 @@ if (init.log)
     }
 
     reset(ignore.special);
-
     call(lgc.climbing);
-
     show.pic();
     return();
-
 }                                                           // [  end INIT.LOG
 
 // [*****
@@ -137,38 +134,32 @@ if (hit.special)
         set.priority(ego, 6);
     }
 
-    if (!ego.location &&
-        (posn(ego, 0, 0, 21, 59) ||
-            posn(ego, 0, 60, 8, 68)))
+    if (!ego.location && (posn(ego, 0, 0, 21, 59) || posn(ego, 0, 60, 8, 68)))
     {
         ego.location = 2;
         set.priority(ego, 4);
     }
 
-    if (!ego.location &&
-        posn(ego, 7, 79, 31, 87))
+    if (!ego.location && posn(ego, 7, 79, 31, 87))
     {
         ego.location = 3;
         set.priority(ego, 6);
     }
 
-    if (!ego.location &&
-        posn(ego, 0, 89, 53, 100))
+    if (!ego.location && posn(ego, 0, 89, 53, 100))
     {
         ego.location = 4;
         set.priority(ego, 8);
     }
 
-    if (!ego.location &&
-        (posn(ego, 47, 75, 72, 80) ||
-            posn(ego, 46, 81, 56, 88)))
+    if (!ego.location && (posn(ego, 47, 75, 72, 80) || posn(ego, 46, 81, 56, 88)))
     {
         ego.location = 5;
         set.priority(ego, 7);
     }
 
-    if (!ego.location &&
-        posn(ego, 54, 65, 59, 74))                          // [  formerly included in area 15
+    // [  formerly included in area 15
+    if (!ego.location && posn(ego, 54, 65, 59, 74))
     {
         ego.location = 6;
         ego.x += 6;
@@ -176,8 +167,7 @@ if (hit.special)
         set.priority(ego, 6);
     }
 
-    if (!ego.location &&
-        posn(ego, 140, 64, 154, 71))
+    if (!ego.location && posn(ego, 140, 64, 154, 71))
     {
         ego.location = 7;
         set.priority(ego, 5);
@@ -185,15 +175,13 @@ if (hit.special)
         reposition.to.v(ego, ego.x, ego.y);
     }
 
-    if (!ego.location &&
-        posn(ego, 62, 84, 115, 89))
+    if (!ego.location && posn(ego, 62, 84, 115, 89))
     {
         ego.location = 8;
         set.priority(ego, 7);
     }
 
-    if (!ego.location &&
-        posn(ego, 54, 87, 62, 130))
+    if (!ego.location && posn(ego, 54, 87, 62, 130))
     {
         ego.location = 9;
         ego.x -= 8;
@@ -201,23 +189,19 @@ if (hit.special)
         set.priority(ego, 8);
     }
 
-    if (!ego.location &&
-        posn(ego, 77, 95, 132, 131))
+    if (!ego.location && posn(ego, 77, 95, 132, 131))
     {
         ego.location = 10;
         set.priority(ego, 8);
     }
 
-    if (!ego.location &&
-        (posn(ego, 65, 132, 123, 157) ||
-            posn(ego, 29, 153, 65, 167)))
+    if (!ego.location && (posn(ego, 65, 132, 123, 157) || posn(ego, 29, 153, 65, 167)))
     {
         ego.location = 11;
         set.priority(ego, 13);
     }
 
-    if (!ego.location &&
-        posn(ego, 12, 145, 29, 167))
+    if (!ego.location && posn(ego, 12, 145, 29, 167))
     {
         ego.location = 12;
         ego.x -= 8;
@@ -225,15 +209,13 @@ if (hit.special)
         set.priority(ego, 11);
     }
 
-    if (!ego.location &&
-        posn(ego, 29, 141, 49, 147))
+    if (!ego.location && posn(ego, 29, 141, 49, 147))
     {
         ego.location = 13;
         set.priority(ego, 11);
     }
 
-    if (!ego.location &&
-        posn(ego, 49, 130, 63, 146))
+    if (!ego.location && posn(ego, 49, 130, 63, 146))
     {
         ego.location = 14;
         ego.x -= 8;
@@ -241,13 +223,14 @@ if (hit.special)
         set.priority(ego, 12);
     }
 
-    if (!ego.location &&
-        posn(ego, 32, 65, 120, 74))                         // [  includes area 6, above
+    // [  includes area 6, above
+    if (!ego.location && posn(ego, 32, 65, 120, 74))
     {
         ego.location = 15;
         set.priority(ego, 6);
     }
 }
+
 
 // [*****
 // :exit              // [  test for leaving the room
@@ -257,4 +240,8 @@ if (edge.ego.hit == bottom) { new.room(18); }
 if (edge.ego.hit == top) { new.room(34); }
 
 call(lgc.climbing);
+
+
+
+
 

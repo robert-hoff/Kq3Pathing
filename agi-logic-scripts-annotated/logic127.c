@@ -1,20 +1,22 @@
 if (isset(newRoom))
 {  v240 = 143;  return();}if ((!isset(haveInput) ||  isset(haveMatch)))
-{  goto(Label1);}set(f120);++v103;if ((said("carve", "cactii", "try", "dagger") ||  said("carve", "lift", "cactii", "try", "dagger")))
-{  if ((!has("Cactus*") ||    !has("Knife")))
+{  goto(Label1);}set(f120);++v103;if (said("carve", "cactii", "try", "dagger") || said("carve", "lift", "cactii", "try", "dagger"))
+{  if (!has("Cactus*") || !has("Knife"))
   {    print("How can you use that which you do not have?");  }  else
   {    print("Using your kitchen carving knife, you cut a gash in the small "      "cactus. Juice begins to drip.");    if (v103 == 1)
     {      reset(f120);    }  }}
 
-if ((said("flatten", "cactii", "juice", "on", "ladle") ||  said("flatten", "cactii", "on", "ladle") ||  said("flatten", "cactii", "juice", "ladle") ||  said("flatten", "cactii", "ladle")))
+if (said("flatten", "cactii", "juice", "on", "ladle") ||    said("flatten", "cactii", "on", "ladle") ||    said("flatten", "cactii", "juice", "ladle") ||    said("flatten", "cactii", "ladle"))
 {  if (!has("Cactus*"))
   {    print("How can you use that which you do not have?");  }  else
   {    print("Grabbing one of the measuring spoons from the oaken table, you grasp "      "the slit cactus in your hand, and squeeze it until you have a "      "spoonful of cactus juice. The small cactus is quite devoid of liquid "      "now, so you toss it away.");    drop("Cactus*");    if (v103 == 2)
-    {      reset(f120);    }  }}if ((said("add", "one", "ladle", "cactii", "juice", "basin") ||  said("add", "ladle", "cactii", "juice", "basin") ||  said("add", "cactii", "juice", "basin") ||  said("drain", "one", "ladle", "cactii", "juice", "basin") ||  said("drain", "ladle", "cactii", "juice", "basin") ||  said("drain", "cactii", "juice", "basin")))
+    {      reset(f120);    }  }}
+if (said("add", "one", "ladle", "cactii", "juice", "basin") ||    said("add", "ladle", "cactii", "juice", "basin") ||    said("add", "cactii", "juice", "basin") ||    said("drain", "one", "ladle", "cactii", "juice", "basin") ||    said("drain", "ladle", "cactii", "juice", "basin") ||    said("drain", "cactii", "juice", "basin"))
 {  if (!has("Bowl"))
   {    print("How can you use that which you do not have?");  }  else
   {    print("You carefully add the spoonful of cactus juice to the bowl.");    if (v103 == 3)
-    {      reset(f120);    }  }}if ((said("add", "one", "cup", "lard", "basin") ||  said("add", "cup", "lard", "basin") ||  said("add", "lard", "basin") ||  said("add", "one", "cup", "lard", "basin")))
+    {      reset(f120);    }  }}
+if (said("add", "one", "cup", "lard", "basin") ||    said("add", "cup", "lard", "basin") ||    said("add", "lard", "basin") ||    said("add", "one", "cup", "lard", "basin"))
 {  if (!has("Lard*"))
   {    print("How can you use that which you do not have?");  }  else
   {    print("You scrape the lard into the mixing bowl, and keep the now-empty jar "      "nearby to store your finished formula.");    drop("Lard*");    get("Empty Lard Jar*");    if (v103 == 4)

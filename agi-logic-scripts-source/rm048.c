@@ -27,8 +27,6 @@ if (init.log) {
 
     load.sound(m.shark);
 
-                                                            // [ misc
-                                                            // [ this is a new map area so we must clear the last areas beenIn flags
     if (!beenIn48) {
         score += 5;
         work = firstIn48;                                   // [ start at end of range
