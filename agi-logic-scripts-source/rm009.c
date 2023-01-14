@@ -20,7 +20,6 @@ if (init.log)
     landing.y = 140;
     wiz.x = 130;
     wiz.y = 0;                                              // [  until we're ready for him.
-
     cat.x = 122;
     cat.y = 129;
     load.logics(lgc.wiz.house);

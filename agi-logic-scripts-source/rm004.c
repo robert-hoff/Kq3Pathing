@@ -10,8 +10,8 @@
 // [invisible door.  If wiz locks you in, you can't leave till punish.timer
 // [is done.  Manannan never enters this room.  can hide inventory under bed
 
-#define  l.looking.right          0                               // [rm4    VIEW.LOOKING.UNDER
-#define  l.looking.rear           1                                // [rm22
+#define  l.looking.right          0 // [rm4    VIEW.LOOKING.UNDER
+#define  l.looking.rear           1 // [rm22
 
 #define  ego.in.bed             lf1
 #define  zzz's.done             lf2
@@ -41,17 +41,15 @@ if (init.log)
     map.area = map.wiz.house;
     landing.x = 110;
     landing.y = 149;
-    wiz.y = 0;                                              // [NEVER load lgc.wiz in this room!
-
+    // [NEVER load lgc.wiz in this room!
+    wiz.y = 0;
     cat.x = 52;
     cat.y = 131;
     load.logics(lgc.wiz.house);
-
     load.view(v.ego.leaving.bed);
     load.view(v.ego.sleeping);
     load.sound(s.snoring);
     load.view(v.ego.looking.under);
-
     load.pic(current.room);
     draw.pic(current.room);
     discard.pic(current.room);
@@ -92,11 +90,10 @@ if (init.log)
 
     if (door.locked)
     {
-        set(drawEgo);                                       // [to fool rm0 into !drawing him
+        // [to fool rm0 into !drawing him
+        set(drawEgo);
     }
-
     call(lgc.wiz.house);
-
     show.pic();
 
     if (door.locked)
@@ -120,174 +117,147 @@ if (ego.x > 77)
     set(in.bedroom);
 }
 
+
+
 // [*****
 // [handle.input
 // [*****
 
-if ((!have.input || !in.bedroom ||
-    current.status == sleeping)) {
+if (!have.input || !in.bedroom || current.status == sleeping)
+{
     goto normal.input;
 }
 
 obj2hide = 0;
 
-if (has(i.chicken.feather) &&
-    said(hide, chicken, feather, rol))
+if (has(i.chicken.feather) && said(hide, chicken, feather, rol))
 {
     obj2hide = chicken.feather;
 }
 
-if (has(i.cat.hair) &&
-    said(hide, cat, hair, rol))
+if (has(i.cat.hair) && said(hide, cat, hair, rol))
 {
     obj2hide = cat.hair;
 }
 
-if (has(i.dog.hair) &&
-    said(hide, dog, hair, rol))
+if (has(i.dog.hair) && said(hide, dog, hair, rol))
 {
     obj2hide = dog.hair;
 }
 
-if (has(i.snakeskin) &&
-    said(hide, snake$skin, rol))
+if (has(i.snakeskin) && said(hide, snake$skin, rol))
 {
     obj2hide = snakeskin;
 }
 
-if (has(i.fish.bone) &&
-    said(hide, fish$bone, rol))
+if (has(i.fish.bone) && said(hide, fish$bone, rol))
 {
     obj2hide = fish.bone;
 }
 
-if (has(i.thimble) &&
-    said(hide, thimble, rol))
+if (has(i.thimble) && said(hide, thimble, rol))
 {
     obj2hide = thimble;
 }
 
-if (has(i.dew) &&
-    (said(hide, thimble, rol) ||
-        said(hide, dew, rol)))
+if (has(i.dew) && (said(hide, thimble, rol) || said(hide, dew, rol)))
 {
     obj2hide = dew;
 }
 
-if (has(i.dough.balls) &&
-    said(hide, dough, pieces, rol))
+if (has(i.dough.balls) && said(hide, dough, pieces, rol))
 {
-    #message 38  "You consider removing the dough pieces from your ears, but decide
-    they are too fragile.You carefully comb your scraggly hair over them
-    so the wizard cannot detect them.";
+    #message 38  "You consider removing the dough pieces from your ears, but decide"
+                 "they are too fragile.You carefully comb your scraggly hair over them"
+                 "so the wizard cannot detect them.";
 }
 
-if (has(i.eagle.feather) &&
-    said(hide, eagle, feather, rol))
+if (has(i.eagle.feather) && said(hide, eagle, feather, rol))
 {
     obj2hide = eagle.feather;
 }
 
-if (has(i.fly.wings) &&
-    said(hide, fly, rol))
+if (has(i.fly.wings) && said(hide, fly, rol))
 {
     obj2hide = fly.wings;
 }
 
-if (has(i.saffron) &&
-    said(hide, saffron, rol))
+if (has(i.saffron) && said(hide, saffron, rol))
 {
     obj2hide = saffron;
 }
 
 if (has(i.rose.essence) &&
-    (said(hide, essence, rol) ||
-        said(hide, magic, essence, rol)))
+   (said(hide, essence, rol) || said(hide, magic, essence, rol)))
 {
     obj2hide = rose.essence;
 }
 
 if (has(i.magic.essence) &&
-    (said(hide, essence, rol) ||
-        said(hide, magic, essence, rol)))
+   (said(hide, essence, rol) || said(hide, magic, essence, rol)))
 {
     obj2hide = magic.essence;
 }
 
-if (has(i.salt) &&
-    said(hide, salt, rol))
+if (has(i.salt) && said(hide, salt, rol))
 {
     obj2hide = salt;
 }
 
-if (has(i.amber.stone) &&
-    said(hide, amber, stone, rol))
+if (has(i.amber.stone) && said(hide, amber, stone, rol))
 {
     obj2hide = amber.stone;
 }
 
-if (has(i.mistletoe) &&
-    said(hide, mistletoe, rol))
+if (has(i.mistletoe) && said(hide, mistletoe, rol))
 {
     obj2hide = mistletoe;
 }
 
-if (has(i.magic.stone) &&
-    (said(hide, amber, stone, rol) ||
-        said(hide, magic, stone, rol)))
+if (has(i.magic.stone) && (said(hide, amber, stone, rol) || said(hide, magic, stone, rol)))
 {
     obj2hide = magic.stone;
 }
 
-if (has(i.nightshade.juice) &&
-    said(hide, nightshade, juice, rol))
+if (has(i.nightshade.juice) && said(hide, nightshade, juice, rol))
 {
     obj2hide = nightshade.juice;
 }
 
-if (has(i.acorns) &&
-    said(hide, acorns, rol))
+if (has(i.acorns) && said(hide, acorns, rol))
 {
     obj2hide = acorns;
 }
 
 if (has(i.empty.pouch) &&
-    (said(hide, empty, pouch, rol) ||
-        said(hide, pouch, rol)))
+   (said(hide, empty, pouch, rol) || said(hide, pouch, rol)))
 {
     obj2hide = empty.pouch;
 }
 
 if (has(i.sleep.powder) &&
-    (said(hide, pouch, rol) ||
-        said(hide, sleep, powder, rol)))
+   (said(hide, pouch, rol) || said(hide, sleep, powder, rol)))
 {
     obj2hide = sleep.powder;
 }
 
 if (has(i.mandrake.root) &&
-    (said(hide, mandrake, root, powder, rol) ||
-        said(hide, mandrake, root, rol) ||
-        said(hide, root, rol)))
+   (said(hide, mandrake, root, powder, rol) || said(hide, mandrake, root, rol) || said(hide, root, rol)))
 {
     obj2hide = mandrake.root;
 }
 
-if (has(i.fish.oil) &&
-    said(hide, oil, rol))
+if (has(i.fish.oil) && said(hide, oil, rol))
 {
     obj2hide = fish.oil;
 }
 
-if (has(i.cat.cookie) &&
-    (said(hide, cookie, rol) ||
-        said(hide, cat, cookie, rol)))
+if (has(i.cat.cookie) && (said(hide, cookie, rol) || said(hide, cat, cookie, rol)))
 {
     obj2hide = cat.cookie;
 }
 
-if ((has(i.porridge.poisoned) || has(i.porridge)) &&
-    said(hide, porridge, rol))
+if (has(i.porridge.poisoned) || has(i.porridge)) && said(hide, porridge, rol)
 {
     if (has(i.porridge.poisoned))
     {
@@ -300,8 +270,7 @@ if ((has(i.porridge.poisoned) || has(i.porridge)) &&
     }
 }
 
-if (has(i.porridge.poisoned) &&
-    said(hide, poison, porridge, rol))
+if (has(i.porridge.poisoned) && said(hide, poison, porridge, rol))
 {
     if (has(i.porridge.poisoned))
     {
@@ -310,22 +279,17 @@ if (has(i.porridge.poisoned) &&
 }
 
 if (has(i.ocean.water) &&
-    (said(hide, ocean, water, rol) ||
-        said(hide, cup, rol) ||
-        said(hide, water, rol)))
+   (said(hide, ocean, water, rol) || said(hide, cup, rol) || said(hide, water, rol)))
 {
     obj2hide = ocean.water;
 }
 
-if (has(i.mud) &&
-    (said(hide, spoon, rol) ||
-        said(hide, mud, rol)))
+if (has(i.mud) && (said(hide, spoon, rol) || said(hide, mud, rol)))
 {
     obj2hide = mud;
 }
 
-if (has(i.toadstool.powder) &&
-    said(hide, toadstool, powder, rol))
+if (has(i.toadstool.powder) && said(hide, toadstool, powder, rol))
 {
     obj2hide = toadstool.powder;
 }
@@ -335,84 +299,68 @@ if (has(i.fish.jar) && said(hide, jar, rol))
     obj2hide = fish.jar;
 }
 
-if (has(i.storm.brew) &&
-    (said(hide, brew, rol) ||
-        said(hide, jar, rol)))
+if (has(i.storm.brew) && (said(hide, brew, rol) || said(hide, jar, rol)))
 {
     obj2hide = storm.brew;
 }
 
-if (has(i.toad.spit) &&
-    (said(hide, toad, spit, rol) ||
-        said(hide, spit, rol)))
+if (has(i.toad.spit) && (said(hide, toad, spit, rol) || said(hide, spit, rol)))
 {
     obj2hide = toad.spit;
 }
 
-if (has(i.lard) &&
-    said(hide, lard, rol))
+if (has(i.lard) && said(hide, lard, rol))
 {
     obj2hide = lard;
 }
 
-if (has(i.knife) &&
-    said(hide, knife, rol))
+if (has(i.knife) && said(hide, knife, rol))
 {
     obj2hide = knife;
 }
 
-if (has(i.cactus) &&
-    said(hide, cactus, rol))
+if (has(i.cactus) && said(hide, cactus, rol))
 {
     obj2hide = cactus;
 }
 
-if (has(i.invisible.ointment) &&
-    said(hide, ointment, rol))
+if (has(i.invisible.ointment) && said(hide, ointment, rol))
 {
     obj2hide = invisible.ointment;
 }
 
-if (has(i.magic.wand) &&
-    (said(hide, wand, rol) ||
-        said(hide, magic, wand, rol)))
+if (has(i.magic.wand) && (said(hide, wand, rol) || said(hide, magic, wand, rol)))
 {
     obj2hide = magic.wand;
 }
 
-if (has(i.key) &&
-    said(hide, key, rol))
+if (has(i.key) && said(hide, key, rol))
 {
     obj2hide = key;
 }
 
-if (has(i.bowl) &&
-    said(hide, bowl, rol))
+if (has(i.bowl) && said(hide, bowl, rol))
 {
     obj2hide = bowl;
 }
 
-if (has(i.spoon) &&
-    said(hide, spoon, rol))
+if (has(i.spoon) && said(hide, spoon, rol))
 {
     obj2hide = spoon;
 }
 
-if (has(i.cup) &&
-    said(hide, cup, rol))
+if (has(i.cup) && said(hide, cup, rol))
 {
     obj2hide = cup;
 }
 
-if (has(i.mirror) &&
-    said(hide, mirror, rol))
+if (has(i.mirror) && said(hide, mirror, rol))
 {
     obj2hide = mirror;
 }
 
-if ((has(i.purse.with.coins) || has(i.purse.empty)) &&
-    (said(hide, purse, rol) || said(hide, coins, rol) ||
-        said(hide, gold, coins, rol)))
+if (has(i.purse.with.coins) || has(i.purse.empty)) &&
+   (said(hide, purse, rol) || said(hide, coins, rol) || said(hide, gold, coins, rol))
 {
     if (has(i.purse.with.coins))
     {
@@ -424,27 +372,22 @@ if ((has(i.purse.with.coins) || has(i.purse.empty)) &&
     }
 }
 
-if (has(i.bread) &&
-    said(hide, bread, rol))
+if (has(i.bread) && said(hide, bread, rol))
 {
     obj2hide = bread;
 }
 
-if (has(i.fruit) &&
-    said(hide, fruit, rol))
+if (has(i.fruit) && said(hide, fruit, rol))
 {
     obj2hide = fruit;
 }
 
-if (has(i.mutton) &&
-    said(hide, mutton, rol))
+if (has(i.mutton) && said(hide, mutton, rol))
 {
     obj2hide = mutton;
 }
 
-if (has(i.magic.map) &&
-    (said(hide, map, rol) ||
-        said(hide, magic, map, rol)))
+if (has(i.magic.map) && (said(hide, map, rol) || said(hide, magic, map, rol)))
 {
     obj2hide = magic.map;
 }
@@ -459,156 +402,125 @@ if (obj2hide)
 
 obj2get = 0;
 
-if (obj.in.room(i.chicken.feather, current.room) &&
-    said(get, chicken, feather, rol))
+if (obj.in.room(i.chicken.feather, current.room) && said(get, chicken, feather, rol))
 {
     obj2get = chicken.feather;
 }
 
-if (obj.in.room(i.cat.hair, current.room) &&
-    said(get, cat, hair, rol))
+if (obj.in.room(i.cat.hair, current.room) && said(get, cat, hair, rol))
 {
     obj2get = cat.hair;
 }
 
-if (obj.in.room(i.dog.hair, current.room) &&
-    said(get, dog, hair, rol))
+if (obj.in.room(i.dog.hair, current.room) && said(get, dog, hair, rol))
 {
     obj2get = dog.hair;
 }
 
-if (obj.in.room(i.snakeskin, current.room) &&
-    said(get, snake$skin, rol))
+if (obj.in.room(i.snakeskin, current.room) && said(get, snake$skin, rol))
 {
     obj2get = snakeskin;
 }
 
-if (obj.in.room(i.fish.bone, current.room) &&
-    said(get, fish$bone, rol))
+if (obj.in.room(i.fish.bone, current.room) && said(get, fish$bone, rol))
 {
     obj2get = fish.bone;
 }
 
-if (obj.in.room(i.thimble, current.room) &&
-    said(get, thimble, rol))
+if (obj.in.room(i.thimble, current.room) && said(get, thimble, rol))
 {
     obj2get = thimble;
 }
 
-if (obj.in.room(i.dew, current.room) &&
-    (said(get, thimble, rol) ||
-        said(get, dew, rol)))
+if (obj.in.room(i.dew, current.room) && (said(get, thimble, rol) || said(get, dew, rol)))
 {
     obj2get = dew;
 }
 
-if (obj.in.room(i.eagle.feather, current.room) &&
-    said(get, eagle, feather, rol))
+if (obj.in.room(i.eagle.feather, current.room) && said(get, eagle, feather, rol))
 {
     obj2get = eagle.feather;
 }
 
-if (obj.in.room(i.fly.wings, current.room) &&
-    said(get, fly, rol))
+if (obj.in.room(i.fly.wings, current.room) && said(get, fly, rol))
 {
     obj2get = fly.wings;
 }
 
-if (obj.in.room(i.saffron, current.room) &&
-    said(get, saffron, rol))
+if (obj.in.room(i.saffron, current.room) && said(get, saffron, rol))
 {
     obj2get = saffron;
 }
 
-if (obj.in.room(i.rose.essence, current.room) &&
-    (said(get, essence, rol) ||
-        said(get, magic, essence, rol)))
+if (obj.in.room(i.rose.essence, current.room) && (said(get, essence, rol) || said(get, magic, essence, rol)))
 {
     obj2get = rose.essence;
 }
 
 if (obj.in.room(i.magic.essence, current.room) &&
-    (said(get, essence, rol) ||
-        said(get, magic, essence, rol)))
+   (said(get, essence, rol) || said(get, magic, essence, rol)))
 {
     obj2get = magic.essence;
 }
 
-if (obj.in.room(i.salt, current.room) &&
-    said(get, salt, rol))
+if (obj.in.room(i.salt, current.room) && said(get, salt, rol))
 {
     obj2get = salt;
 }
 
-if (obj.in.room(i.amber.stone, current.room) &&
-    said(get, amber, stone, rol))
+if (obj.in.room(i.amber.stone, current.room) && said(get, amber, stone, rol))
 {
     obj2get = amber.stone;
 }
 
-if (obj.in.room(i.mistletoe, current.room) &&
-    said(get, mistletoe, rol))
+if (obj.in.room(i.mistletoe, current.room) && said(get, mistletoe, rol))
 {
     obj2get = mistletoe;
 }
 
-if (obj.in.room(i.magic.stone, current.room) &&
-    (said(get, amber, stone, rol) ||
-        said(get, magic, stone, rol)))
+if (obj.in.room(i.magic.stone, current.room) && (said(get, amber, stone, rol) || said(get, magic, stone, rol)))
 {
     obj2get = magic.stone;
 }
 
-if (obj.in.room(i.nightshade.juice, current.room) &&
-    said(get, nightshade, juice, rol))
+if (obj.in.room(i.nightshade.juice, current.room) && said(get, nightshade, juice, rol))
 {
     obj2get = nightshade.juice;
 }
 
-if (obj.in.room(i.acorns, current.room) &&
-    said(get, acorns, rol))
+if (obj.in.room(i.acorns, current.room) && said(get, acorns, rol))
 {
     obj2get = acorns;
 }
 
-if (obj.in.room(i.empty.pouch, current.room) &&
-    (said(get, empty, pouch, rol) ||
-        said(get, pouch, rol)))
+if (obj.in.room(i.empty.pouch, current.room) && (said(get, empty, pouch, rol) || said(get, pouch, rol)))
 {
     obj2get = empty.pouch;
 }
 
-if (obj.in.room(i.sleep.powder, current.room) &&
-    (said(get, pouch, rol) ||
-        said(get, sleep, powder, rol)))
+if (obj.in.room(i.sleep.powder, current.room) && (said(get, pouch, rol) || said(get, sleep, powder, rol)))
 {
     obj2get = sleep.powder;
 }
 
 if (obj.in.room(i.mandrake.root, current.room) &&
-    (said(get, mandrake, root, powder, rol) ||
-        said(get, mandrake, root, rol) ||
-        said(get, root, rol)))
+    (said(get, mandrake, root, powder, rol) || said(get, mandrake, root, rol) || said(get, root, rol)))
 {
     obj2get = mandrake.root;
 }
 
-if (obj.in.room(i.fish.oil, current.room) &&
-    said(get, oil, rol))
+if (obj.in.room(i.fish.oil, current.room) && said(get, oil, rol))
 {
     obj2get = fish.oil;
 }
 
-if (obj.in.room(i.cat.cookie, current.room) &&
-    (said(get, cookie, rol) ||
-        said(get, cat, cookie, rol)))
+if (obj.in.room(i.cat.cookie, current.room) && (said(get, cookie, rol) || said(get, cat, cookie, rol)))
 {
     obj2get = cat.cookie;
 }
 
-if ((obj.in.room(i.porridge.poisoned, current.room) ||
-    obj.in.room(i.porridge, current.room)) &&
-    said(get, porridge, rol))
+if (obj.in.room(i.porridge.poisoned, current.room) ||
+    obj.in.room(i.porridge, current.room)) && said(get, porridge, rol)
 {
     if (obj.in.room(i.porridge.poisoned, current.room))
     {
@@ -621,29 +533,24 @@ if ((obj.in.room(i.porridge.poisoned, current.room) ||
     }
 }
 
-if (obj.in.room(i.porridge.poisoned, current.room) &&
-    said(get, poison, porridge))
+if (obj.in.room(i.porridge.poisoned, current.room) && said(get, poison, porridge))
 {
     obj2get = porridge.poisoned;
 }
 
 if (obj.in.room(i.ocean.water, current.room) &&
-    (said(get, ocean, water, rol) ||
-        said(get, cup, rol) ||
-        said(get, water, rol)))
+   (said(get, ocean, water, rol) || said(get, cup, rol) || said(get, water, rol)))
 {
     obj2get = ocean.water;
 }
 
 if (obj.in.room(i.mud, current.room) &&
-    (said(get, mud, rol) ||
-        said(get, spoon, rol)))
+    (said(get, mud, rol) || said(get, spoon, rol)))
 {
     obj2get = mud;
 }
 
-if (obj.in.room(i.toadstool.powder, current.room) &&
-    said(get, toadstool, powder, rol))
+if (obj.in.room(i.toadstool.powder, current.room) && said(get, toadstool, powder, rol))
 {
     obj2get = toadstool.powder;
 }
@@ -762,10 +669,11 @@ if (!have.input) { goto no.input; }
 
 if (current.status == sleeping)
 {
+    // [wake includes "wake$up"
     if (said(get, up) ||
         said(get$out, bed) ||
         said(get, up, from, bed) ||
-        said(wake) ||                                       // [wake includes "wake$up"
+        said(wake) ||
         said(wake, leave, bed) ||
         said(get, up, bed) ||
         said(leave, bed))
@@ -788,8 +696,8 @@ if (said(look, wall) ||
 {
     if (!in.bedroom)
     {
-        #message 12  "You have always admired this lovely tapestry. It adds one of the few
-bright spots to this dreary house.";
+        #message 12  "You have always admired this lovely tapestry. It adds one of the few"
+                     "bright spots to this dreary house.";
     }
     else
     {
@@ -801,12 +709,12 @@ if (said(look, behind, tapestry) || said(look, under, tapestry))
 {
     if (posn(ego, 52, 131, 77, 137))
     {
-        #message 13  "You lift the bottom of the tapestry and peer behind it. The wall is filled
-with cracks.You can see why Manannan would hang a tapestry here.
-(There are also dozens of charcoal - scribbled drawings, diagrams, maps, and
-    notes to programmers, with the legend \"King's Quest IV,\" but you're
-    uninterested in this, since you presently have your hands full with
-    \"King's Quest III.\") You lower the tapestry and smooth out the wrinkles.";
+        #message 13  "You lift the bottom of the tapestry and peer behind it. The wall is filled"
+                     "with cracks.You can see why Manannan would hang a tapestry here."
+                     "(There are also dozens of charcoal - scribbled drawings, diagrams, maps, and"
+                     "notes to programmers, with the legend \"King's Quest IV,\" but you're"
+                     "uninterested in this, since you presently have your hands full with"
+                     "\"King's Quest III.\") You lower the tapestry and smooth out the wrinkles.";
     }
     else
     {
@@ -829,11 +737,11 @@ if (said(look, room) || said(look) || said(look, bedroom))
     }
     else
     {
-        #message 1  "This is your own pitiful bed chamber. Compared to Manannan's
-fine room, yours is almost a cell.The bed is hardand
-uncomfortable with only a threadbare blanketand a small, flat pillow.
-The other furnishings are junk.But, as poor as it is,
-it's your own haven, as the wizard never enters it.";
+        #message 1  "This is your own pitiful bed chamber. Compared to Manannan's"
+                    "fine room, yours is almost a cell.The bed is hardand"
+                    "uncomfortable with only a threadbare blanketand a small, flat pillow."
+                    "The other furnishings are junk.But, as poor as it is,"
+                    "it's your own haven, as the wizard never enters it.";
     }
 }
 
@@ -846,7 +754,7 @@ if (said(look, dresser) || said(look, cabinet))
     else
     {
         #message 6  "Your dresser is a piece of junk. It's full of nicks and
-scratches, and one drawer is completely missing.";
+                    "scratches, and one drawer is completely missing.";
     }
 }
 
@@ -893,7 +801,7 @@ if (said(look, mirror) || said(look$in, mirror))
     else
     {
         #message 10  "You look into the cracked mirror hanging on the wall. Your
-reflection shows a tall, handsome lad dressed in dirty rags.";
+                     "reflection shows a tall, handsome lad dressed in dirty rags.";
     }
 
     if (has(i.mirror))
@@ -913,7 +821,7 @@ if (said(open, door))
         if (door.locked)
         {
             #message 14  "You twist the door knob on the bedroom door, but to your
-    frustration, find it locked.";
+                         "frustration, find it locked.";
         }
         else
         {
@@ -931,7 +839,7 @@ if (said(close, door))
     else
     {
         #message 17  "You start to close the door, but, so as not to arouse the wizard's
-    suspicions, you leave it open.";
+                     "suspicions, you leave it open.";
     }
 }
 
@@ -940,7 +848,7 @@ if (said(unlock, door))
     if (door.locked)
     {
         #message 18  "You don't have a key that unlocks this door. It seems you are at
-    the mercy of the miserable old wizard.";
+                     "the mercy of the miserable old wizard.";
     }
     else
     {
@@ -983,7 +891,7 @@ if (said(break, door) || said(break, down, door) || said(break, open, door))
         if (door.locked)
         {
             #message 22  "You throw your body against the locked door, but in vain. The
-    door is too strong for you to break.";
+                         "door is too strong for you to break.";
         }
         else
         {
@@ -1001,7 +909,7 @@ if (said(break, window) || said(break, open, window))
     else
     {
         #message 23  "That would do you no good. The wizard anticipated your escape and placed
-    iron bars outside your window.";
+                     "iron bars outside your window.";
     }
 }
 
@@ -1015,8 +923,8 @@ if (said(look, bed))
     }
     else
     {
-        #message 3  "The bed is nothing more than a cot, hard and cold, and
-is difficult to sleep on.Your pillow is small, flat, and made of old rags.";
+        #message 3  "The bed is nothing more than a cot, hard and cold, and"
+                    "is difficult to sleep on.Your pillow is small, flat, and made of old rags.";
     }
 }
 
@@ -1034,14 +942,14 @@ if (said(look, under, bed))
     }
 }
 
-if ((said(lie, bed) ||
+if (said(lie, bed) ||
     said(go, bed) ||
     said(lie, on, bed) ||
     said(go, sleep) ||
     said(go, sleep, on, bed) ||
     said(sleep, on, bed) ||
     said(sleep, bed) ||
-    said(get, on, bed)))
+    said(get, on, bed))
 {
     if (!in.bedroom)
     {
@@ -1090,7 +998,7 @@ if (said(get, stuff, rol))
 // :no.input
 // [*****
 
-// [  EGO'S WALKING TO THE BE
+// [  EGO'S WALKING TO THE BED
 
 --ego.timer;
 if (ego.timer == 1)
@@ -1106,10 +1014,10 @@ if (ego.arrived)
     prevent.input();
     set(handsOff);
     set(keep.cycling);
-
     if (ego.location == 1)
     {
-        if (posn(ego, 88, 120, 115, 167))                   // [if here, skip the first move.obj
+        // [if here, skip the first move.obj
+        if (posn(ego, 88, 120, 115, 167))
         {
             ++ego.location;
         }
@@ -1174,23 +1082,21 @@ if (ego.arrived)
             zzz's.timer = 44;
             reset(zzz's.done);
             ego.location = 0;
-            current.status = sleeping;                      // [nightie, night sweet ego
-            #message 26  "You lie down on your hard bed, stretch, then curl up,
-    trying hard to get comfortable.Your thin blanket and small
-    pillow do not help much.";
+            current.status = sleeping; // [nightie, night sweet ego
+            #message 26  "You lie down on your hard bed, stretch, then curl up,"
+                         "trying hard to get comfortable.Your thin blanket and small"
+                         "pillow do not help much.";
         }
 
         if (reason.going.to.bed == looking)
         {
             if (stuff.under.bed)
             {
-                #message 5  "You bend down and peek under the bed. Your possessions are still
-safely hidden.";
+                #message 5  "You bend down and peek under the bed. Your possessions are still safely hidden.";
             }
             else
             {
-                #message 4  "You lean down and poke your head under the bed. You see nothing but
-cobwebs and dust.";
+                #message 4  "You lean down and poke your head under the bed. You see nothing but cobwebs and dust.";
             }
         }
 
@@ -1201,7 +1107,7 @@ cobwebs and dust.";
             if (obj2hide)
             {
                 #message 34  "You get on your hands and knees and shove it under the bed. It will be
-    safe from the wizard's sharp eyes there.";
+                             "safe from the wizard's sharp eyes there.";
                 set(stuff.under.bed);
                 put.v(obj2hide, current.room);
             }
@@ -1209,7 +1115,7 @@ cobwebs and dust.";
             {
                 object = 1;                                 // [Hide everything in inventory,
                 :mr.looper                                  // [under the bed.
-                    get.room.f(object, room);
+                get.room.f(object, room);
                 if (room == inventory)
                 {
                     put.v(object, current.room);
@@ -1227,9 +1133,9 @@ cobwebs and dust.";
 
                 if (stuff.under.bed)
                 {
-                    #message 24  "You get on your hands and knees and quickly shove all your
-    possessions under the bed.They will be safe from the wizard's sharp
-    eyes there.";
+                    #message 24  "You get on your hands and knees and quickly shove all your"
+                                 "possessions under the bed.They will be safe from the wizard's sharp"
+                                 "eyes there.";
                     if (!hid.stuff.under.bed)
                     {
                         set(hid.stuff.under.bed);
@@ -1257,8 +1163,8 @@ cobwebs and dust.";
                     get.room.v(obj2get, room);
                     if (room != rm.ego.bedroom)
                     {
-                        #message 36  "You drop down, reach under the bed, and then realize
-    you've never put it there!";
+                        #message 36  "You drop down, reach under the bed, and then realize"
+                                     "you've never put it there!";
                     }
                     else
                     {
@@ -1286,7 +1192,7 @@ cobwebs and dust.";
                     work = inventory;
                     object = 1;                             // [Return everything that
                     : retrieve.inventory                    // [he hid under the bed.
-                        get.room.f(object, room);
+                    get.room.f(object, room);
                     if (room == rm.ego.bedroom)
                     {
                         put.v(object, work);
@@ -1296,8 +1202,7 @@ cobwebs and dust.";
                     {
                         goto retrieve.inventory;
                     }
-                    #message 25  "Dropping to your knees, you reach under the bed and retrieve all of your
-    possessions.";
+                    #message 25  "Dropping to your knees, you reach under the bed and retrieve all of your possessions.";
                 }
             }
         }
@@ -1316,12 +1221,13 @@ cobwebs and dust.";
         ego.location = 10;
     }
 
+    // [can't be an 8.  See "get out of bed" above.
     if (ego.location == 8)
     {
-                                                            // [can't be an 8.  See "get out of bed" above.
     }
 
-    if (ego.location == 9)                                  // [do the "get out of bed" schtick
+    // [do the "get out of bed" schtick
+    if (ego.location == 9)
     {
         set.view(ego, v.ego.leaving.bed);
         reposition.to(ego, 118, 130);
@@ -1385,7 +1291,7 @@ if (ego.poofing.done)
     if (door.locked && current.status != fly)
     {
         #message 30  "You suddenly find yourself in your own little room. You
-    notice that the door is closed.";
+                     "notice that the door is closed.";
     }
 }
 
@@ -1394,7 +1300,7 @@ if (punishment.done)
     reset(punishment.done);
     reset(door.locked);
     #message 8  "You hear a CLICK at the bedroom door. The old wizard has decided
-to free you by magically unlocking your door.";
+                "to free you by magically unlocking your door.";
 }
 
 if (door.locked)

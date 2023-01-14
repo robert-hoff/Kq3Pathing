@@ -97,7 +97,8 @@ if (init.log)
 
     if (positionEgo)
     {
-        if (previous.room == 43)                            // [  rm.spells)
+        // [  rm.spells)
+        if (previous.room == 43)
         {
             if (!funny.death.view)
             {
@@ -131,12 +132,12 @@ if (init.log)
         }
         else
         {
-            if (previous.room == 9)                         // [  rm.lab.stairs)
+            // [  rm.lab.stairs)
+            if (previous.room == 9)
             {
                 if (current.status == falling)
                 {
                     load.view(v.ego.dead);
-
                     ego.location = 0;
                     position(ego, 40, 42);
                     set(ignore.special);
@@ -180,13 +181,11 @@ if (init.log)
 // [wear.da.fawgawee
 // [*****
 
-if (hit.special &&
-    posn(ego, 35, 143, 55, 167))                            // [  the trip wire below stairs
+// [  the trip wire below stairs
+if (hit.special && posn(ego, 35, 143, 55, 167))
 {
     reset(hit.special);
-    if ((ego.dir == ego.left ||
-        ego.dir == ego.up.left ||
-        ego.dir == ego.down.left))
+    if (ego.dir == ego.left || ego.dir == ego.up.left || ego.dir == ego.down.left)
     {
         set(on.stairs);
         ignore.block(ego);
@@ -239,26 +238,23 @@ else
 if (!have.input) { goto no.input; }
 
 // [  LET'S DO THE BOOK LARNIN' FIRST:
-
-if ((said(look, book) ||
-    said(read, book) ||
-    said(look, in, book)))
+if (said(look, book) || said(read, book) || said(look, in, book))
 {
     #message 69  "Covered with gold trimmings, the old book's leather cover is
-cracked and worn, its pages yellowedand brittle.The title, however, is
-clear : % m32.\"";
+                 "cracked and worn, its pages yellowedand brittle.The title, however, is
+                 "clear : % m32.\"";
     #message 70  "You eagerly thumb through page after page of what you assume to be magic
-formulas.The ink of the old handwriting is faint, and barely readable.";
+                 "formulas.The ink of the old handwriting is faint, and barely readable.";
     #message 71  "Most of the formulas are indecipherable, but a few are in a language you
-know.You treat the old book with great care as you can tell it
-contains recipes for some very oldand powerful magic spells.
-Your hands shake as you realize this book
-could be the key to your escape from the evil Manannan.";
+                 "know.You treat the old book with great care as you can tell it
+                 "contains recipes for some very oldand powerful magic spells.
+                 "Your hands shake as you realize this book
+                 "could be the key to your escape from the evil Manannan.";
 }
 
 if (ego.location != table)
 {
-    if ((said(book, anyword) ||
+    if (said(book, anyword) ||
         said(anyword, book) ||
         said(book, anyword, anyword) ||
         said(anyword, book, anyword) ||
@@ -267,116 +263,116 @@ if (ego.location != table)
         said(open, book, page, anyword) ||
         said(turn, page, anyword) ||
         said(turn, page) ||
-        said(open, book, page, anyword)))
+        said(open, book, page, anyword))
     {
         #message 10  "You can't reach the book from here.";
     }
 }
 else
 {
-    if ((said(turn, page, ii) ||
+    if (said(turn, page, ii) ||
         said(turn, book, page, ii) ||
         said(look, page, ii) ||
         said(read, page, ii) ||
         said(open, page, ii) ||
-        said(open, book, page, ii)))
+        said(open, book, page, ii))
     {
         spell.in.progress = 121;
     }
 
-    if ((said(turn, page, iv) ||
+    if (said(turn, page, iv) ||
         said(turn, book, page, iv) ||
         said(look, page, iv) ||
         said(read, page, iv) ||
         said(open, page, iv) ||
-        said(open, book, page, iv)))
+        said(open, book, page, iv))
     {
         spell.in.progress = 122;
     }
 
-    if ((said(turn, page, vii) ||
+    if (said(turn, page, vii) ||
         said(turn, book, page, vii) ||
         said(look, page, vii) ||
         said(read, page, vii) ||
         said(open, page, vii) ||
-        said(open, book, page, vii)))
+        said(open, book, page, vii))
     {
         spell.in.progress = 123;
     }
 
-    if ((said(turn, page, xiv) ||
+    if (said(turn, page, xiv) ||
         said(turn, book, page, xiv) ||
         said(look, page, xiv) ||
         said(read, page, xiv) ||
         said(open, page, xiv) ||
-        said(open, book, page, xiv)))
+        said(open, book, page, xiv))
     {
         spell.in.progress = 124;
     }
 
-    if ((said(turn, page, xxv) ||
+    if (said(turn, page, xxv) ||
         said(turn, book, page, xxv) ||
         said(look, page, xxv) ||
         said(read, page, xxv) ||
         said(open, page, xxv) ||
-        said(open, book, page, xxv)))
+        said(open, book, page, xxv))
     {
         spell.in.progress = 125;
     }
 
-    if ((said(turn, page, lxxxiv) ||
+    if (said(turn, page, lxxxiv) ||
         said(turn, book, page, lxxxiv) ||
         said(look, page, lxxxiv) ||
         said(read, page, lxxxiv) ||
         said(open, page, lxxxiv) ||
-        said(open, book, page, lxxxiv)))
+        said(open, book, page, lxxxiv))
     {
         spell.in.progress = 126;
     }
 
-    if ((said(turn, page, clxix) ||
+    if (said(turn, page, clxix) ||
         said(turn, book, page, clxix) ||
         said(look, page, clxix) ||
         said(read, page, clxix) ||
         said(open, page, clxix) ||
-        said(open, book, page, clxix)))
+        said(open, book, page, clxix))
     {
         spell.in.progress = 127;
     }
 
-    if ((said(turn, page, rol) ||
+    if (said(turn, page, rol) ||
         said(turn, book, page, rol) ||
         said(look, page, rol) ||
         said(read, page, rol) ||
         said(turn, page, book, rol) ||
         said(open, book, page, rol) ||
         said(open, page, rol) ||
-        said(read, page, rol)))
+        said(read, page, rol))
     {
         #message 2  "Not being an experienced sorcerer, most spells in this book are too
-complicated for you to understand.";
+                    complicated for you to understand.";
     }
 }
 
+
+
 // [  GENERIC SAID STUFF:
 
-if ((said(look, room) ||
+if (said(look, room) ||
     said(look, house) ||
     said(look) ||
-    said(look, lab)))
+    said(look, lab))
 {
     #message 4  "You look in awe around this torch-lit underground room. It appears to
-be a laboratory... a \"wizard's\" laboratory.";
+                "be a laboratory... a \"wizard's\" laboratory.";
     #message 34  "Against the earthen walls there are rows of shelves holding numerous jars
-which contain strange, unknown ingredients.";
+                 "which contain strange, unknown ingredients.";
     #message 6  "The shelves also hold skeletons of small animals and birds, some human
-skulls and bones, and other odd instruments, whose use you do not know.
-% m8% m7";
+                "skulls and bones, and other odd instruments, whose use you do not know.
+                "% m8% m7";
 }
 
-if ((said(look, table) ||
-    said(look, top, table) ||
-    said(look, table, top)))
+if (said(look, table) || said(look, top, table) || said(look, table, top))
 {
     if (posn(ego, 77, 95, 128, 120))
     {
@@ -385,19 +381,17 @@ if ((said(look, table) ||
     else
     {
         #message 9  "%m8 Atop the oak table are a large leather-bound book, a mortar and
-pestle, a little brazier holding charcoal, and a flint, plus
-measuring cups, beakers, flasks, and stirrers.";
+                    "pestle, a little brazier holding charcoal, and a flint, plus
+                    "measuring cups, beakers, flasks, and stirrers.";
     }
 }
 
 if (said(look, under, table))
 {
-    #message 11  "You lean down and peek under the table. You see nothing but an
-earthen floor.";
+    #message 11  "You lean down and peek under the table. You see nothing but an earthen floor.";
 }
 
-if ((said(look, stairs) ||
-    said(look, up, stairs)))
+if (said(look, stairs) || said(look, up, stairs))
 {
     #message 7  "The narrow stone steps lead up to the wizard's study.";
 }
@@ -411,10 +405,10 @@ if (said(look, flint))
 {
     #message 25  "The flint is used for lighting the brazier.";
 }
+
 if (said(look, flask))
 {
-    #message 65  "There are many measuring, stirring, and mixing implements on the
-laboratory table.";
+    #message 65  "There are many measuring, stirring, and mixing implements on the laboratory table.";
 }
 
 if (said(get, flask))
@@ -430,18 +424,18 @@ if (said(get, charcoal))
 if (said(look, torch))
 {
     #message 14  "The burning torches throw flickering shadows across the walls,
-making the room even more ominous.";
+                  making the room even more ominous.";
 }
 
 if (said(look, shelf))
 {
-    #message 16  "You curiously gaze at the strange jars of ingredients,
-the animal and human bones, and other odd implements which
-line the rows of shelves.
-You see jars of ingredients resting on labeled shelves... shelves
-bearing such ghastly names as \"Powdered Fish Bone,\" \"Nightshade Juice,\"
-\"Mandrake Root Powder,\" \"Saffron,\" \"Toad Spittle,\" and
-\"Toadstool Powder.\"";
+    #message 16  "You curiously gaze at the strange jars of ingredients,"
+                 "the animal and human bones, and other odd implements which"
+                 "line the rows of shelves."
+                 "You see jars of ingredients resting on labeled shelves... shelves"
+                 "bearing such ghastly names as \"Powdered Fish Bone,\" \"Nightshade Juice,\""
+                 "\"Mandrake Root Powder,\" \"Saffron,\" \"Toad Spittle,\" and"
+                 "\"Toadstool Powder.\"";
 }
 
 if (said(close, book))
@@ -462,28 +456,26 @@ if (said(get, book))
     }
     else
     {
-        #message 65  "There are many measuring, stirring, and mixing implements on the
-laboratory table.";
+        #message 65  "There are many measuring, stirring, and mixing implements on the laboratory table.";
     }
 }
 
-if ((said(make, magic) ||
+if (said(make, magic) ||
     said(do, magic) ||
     said(mix, magic) ||
     said(make, magic, spell) ||
     said(do, magic, spell) ||
-    said(mix, magic, spell)))
+    said(mix, magic, spell))
 {
-    #message 68  "You must open %m32\" to the proper page to read the instructions for a magic
-spell.";
+    #message 68  "You must open %m32\" to the proper page to read the instructions for a magic spell.";
 }
 
-if ((said(look, flask) ||
+if (said(look, flask) ||
     said(look$in, flask) ||
     said(open, flask) ||
     said(get, lid, off, flask) ||
     said(take, lid, from, flask) ||
-    said(take, lid, flask)))
+    said(take, lid, flask))
 {
     #message 21  "You have no flask.";
 }
@@ -491,9 +483,10 @@ if ((said(look, flask) ||
 if (said(look, equipment))
 {
     #message 23  "There is much equipment here: a mortar and pestle, a charcoal brazier
-and flint, measuring cups, beakers, flasks, stirrers,
-and many jarsand vials of strange ingredients.";
+                  and flint, measuring cups, beakers, flasks, stirrers,
+                  and many jarsand vials of strange ingredients.";
 }
+
 
 // [  YOUR BASIC "GET THE WORLD" SECTION:
 
@@ -502,53 +495,45 @@ if (said(get, fish$oil))
     #message 1  "Where?";
 }
 
-if ((said(get, torch) ||
+if (said(get, torch) ||
     said(get, torch, off, wall) ||
     said(get, torch, wall) ||
-    said(get, torch, anyword, wall)))
+    said(get, torch, anyword, wall))
 {
     #message 15  "The torches are firmly attached to the earthen wall. You cannot loosen them.";
 }
+
 
 if (waiting.to.name.jar)
 {
     reset(waiting.to.name.jar);
 
-    if ((said(fishbone, rol) ||
-        said(bone, rol)))
+    if (said(fishbone, rol) || said(bone, rol))
     {
         set(getFishBone);
     }
 
-    if ((said(nightshade, juice) ||
-        said(nightshade)))
+    if (said(nightshade, juice) || said(nightshade))
     {
         set(getNightshade);
     }
 
-    if ((said(mandrake, root, powder) ||
-        said(mandrake, powder) ||
-        said(mandrake) ||
-        said(mandrake, root)))
+    if (said(mandrake, root, powder) || said(mandrake, powder) || said(mandrake) || said(mandrake, root))
     {
         set(getMandrake);
     }
 
-    if ((said(saffron) ||
-        said(saffron, powder)))
+    if (said(saffron) || said(saffron, powder))
     {
         set(getSaffron);
     }
 
-    if ((said(toad, spit) ||
-        said(toad) ||
-        said(spit)))
+    if (said(toad, spit) || said(toad) || said(spit))
     {
         set(getSpit);
     }
 
-    if ((said(toadstool, powder) ||
-        said(toadstool)))
+    if (said(toadstool, powder) || said(toadstool))
     {
         set(getToadstool);
     }
@@ -582,13 +567,13 @@ if ((said(get, jar, powder, from, shelf) ||
             obj.in.room(i.toadstool.powder, current.room)))
         {
             #message 27  "There are many jars of ingredients on the laboratory shelves. Which
-do you want ? ";
+                         "do you want ? ";
             set(waiting.to.name.jar);
         }
         else
         {
             #message 28  "You already have all the jars of ingredients you are likely to need. You
-have no interest in any other.";
+                         "have no interest in any other.";
         }
     }
 }
@@ -608,7 +593,7 @@ if ((said(get, fishbone, rol) ||
     }
 }
 
-if ((said(get, juice) ||
+if (said(get, juice) ||
     said(get, nightshade, juice) ||
     said(get, juice, shelf) ||
     said(get, nightshade, juice, shelf) ||
@@ -619,7 +604,7 @@ if ((said(get, juice) ||
     said(get, jar, nightshade, juice) ||
     said(get, jar, nightshade, juice, from, shelf) ||
     said(get, nightshade, juice, jar, shelf) ||
-    said(get, nightshade, juice, jar, from, shelf)))
+    said(get, nightshade, juice, jar, from, shelf))
 {
     if (ego.location != shelves)
     {
@@ -631,7 +616,7 @@ if ((said(get, juice) ||
     }
 }
 
-if ((said(get, mandrake, powder) ||
+if (said(get, mandrake, powder) ||
     said(get, mandrake, powder, shelf) ||
     said(get, mandrake, powder, from, shelf) ||
     said(get, mandrake, powder, jar, shelf) ||
@@ -647,7 +632,7 @@ if ((said(get, mandrake, powder) ||
     said(get, jar, mandrake, root) ||
     said(get, jar, mandrake, root, powder) ||
     said(get, jar, mandrake, root, powder, shelf) ||
-    said(get, jar, mandrake, root, powder, from, shelf)))
+    said(get, jar, mandrake, root, powder, from, shelf))
 {
     if (ego.location != shelves)
     {
@@ -659,7 +644,7 @@ if ((said(get, mandrake, powder) ||
     }
 }
 
-if ((said(get, saffron) ||
+if (said(get, saffron) ||
     said(get, saffron, shelf) ||
     said(get, saffron, from, shelf) ||
     said(get, saffron, jar, shelf) ||
@@ -668,7 +653,7 @@ if ((said(get, saffron) ||
     said(get, jar, saffron, from, shelf) ||
     said(get, jar, saffron) ||
     said(get, jar, saffron, shelf) ||
-    said(get, jar, saffron, from, shelf)))
+    said(get, jar, saffron, from, shelf))
 {
     if (ego.location != shelves)
     {
@@ -680,7 +665,7 @@ if ((said(get, saffron) ||
     }
 }
 
-if ((said(get, toadstool, powder) ||
+if (said(get, toadstool, powder) ||
     said(get, toadstool) ||
     said(get, toadstool, powder, shelf) ||
     said(get, jar, toadstool, powder, shelf) ||
@@ -689,7 +674,7 @@ if ((said(get, toadstool, powder) ||
     said(get, jar, toadstool, powder) ||
     said(get, jar, toadstool, powder, shelf) ||
     said(get, toadstool, powder, jar, shelf) ||
-    said(get, toadstool, powder, jar, from, shelf)))
+    said(get, toadstool, powder, jar, from, shelf))
 {
     if (ego.location != shelves)
     {
@@ -701,7 +686,7 @@ if ((said(get, toadstool, powder) ||
     }
 }
 
-if ((said(get, jar, spit, from, shelf) ||
+if (said(get, jar, spit, from, shelf) ||
     said(get, spit) ||
     said(get, toad, spit) ||
     said(get, spit, shelf) ||
@@ -716,7 +701,7 @@ if ((said(get, jar, spit, from, shelf) ||
     said(get, toad, spit, jar, shelf) ||
     said(get, jar, toad, spit, shelf) ||
     said(get, jar, toad, spit, from, shelf) ||
-    said(get, toad, spit, jar, from, shelf)))
+    said(get, toad, spit, jar, from, shelf))
 {
     if (ego.location != shelves)
     {
@@ -730,16 +715,16 @@ if ((said(get, jar, spit, from, shelf) ||
 
 // [  MORTAR AND PESTLE STUFF:
 
-if ((said(get, pestle) ||
+if (said(get, pestle) ||
     said(get, pestle, from, table) ||
-    said(get, pestle, off, table)))
+    said(get, pestle, off, table))
 {
     #message 39  "%m36mortar and pestle%m38";
 }
 
-if ((said(look, pestle) ||
+if (said(look, pestle) ||
     said(look, pestle, table) ||
-    said(look$in, pestle)))
+    said(look$in, pestle))
 {
     if (ego.location != table)
     {
@@ -748,8 +733,8 @@ if ((said(look, pestle) ||
     else
     {
         #message 41  "The mortar is a bowl-shaped implement made of stone. The pestle is a
-rounded stone that fits into the mortar.The mortar and pestle are used
-for grinding things into a powder.They are resting on the oak table.";
+                     "rounded stone that fits into the mortar.The mortar and pestle are used
+                     "for grinding things into a powder.They are resting on the oak table.";
     }
 }
 
@@ -790,8 +775,7 @@ if ((said(get, brazier) ||
     #message 40  "%m36charcoal brazier%m38";
 }
 
-if ((said(use, burner) ||
-    said(use, charcoal, burner)))
+if (said(use, burner) || said(use, charcoal, burner))
 {
     if (ego.location != table)
     {
@@ -803,9 +787,7 @@ if ((said(use, burner) ||
     }
 }
 
-if ((said(light, burner) ||
-    said(light, charcoal, burner) ||
-    said(light, charcoal)))
+if (said(light, burner) || said(light, charcoal, burner) || said(light, charcoal))
 {
     if (ego.location != table)
     {
@@ -820,14 +802,13 @@ if ((said(light, burner) ||
         else
         {
             #message 48  "You fill the brazier with charcoal from the small supply
-Manannan keeps here and strike the flint on it.Soon, the brazier burns
-hotly.";
+                         "Manannan keeps here and strike the flint on it.Soon, the brazier burns hotly.";
             burner.minutes = burner.init.minutes;
         }
     }
 }
 
-if ((said(put, anyword, on, burner) ||
+if (said(put, anyword, on, burner) ||
     said(put, anyword, on, top, burner) ||
     said(heat, anyword, on, burner) ||
     said(heat, anyword, on, top, burner) ||
@@ -838,7 +819,7 @@ if ((said(put, anyword, on, burner) ||
     said(heat, anyword, on, charcoal, burner) ||
     said(heat, anyword, on, top, charcoal, burner) ||
     said(put, anyword, on, charcoal, burner, heat) ||
-    said(put, anyword, on, top, charcoal, burner, heat)))
+    said(put, anyword, on, top, charcoal, burner, heat))
 {
     if (ego.location != table)
     {
@@ -850,12 +831,12 @@ if ((said(put, anyword, on, burner) ||
     }
 }
 
-if ((said(look, burner) ||
+if (said(look, burner) ||
     said(look, burner, table) ||
     said(look$in, burner) ||
     said(look, charcoal, burner) ||
     said(look, charcoal, burner, table) ||
-    said(look$in, charcoal, burner)))
+    said(look$in, charcoal, burner))
 {
     if (ego.location != table)
     {
@@ -864,8 +845,8 @@ if ((said(look, burner) ||
     else
     {
         #message 43  "Resting on the table is a small metal brazier.
-It holds charcoal and is used for heating or cooking things.";
-        if ((burner.seconds || burner.minutes))
+                     "It holds charcoal and is used for heating or cooking things.";
+        if (burner.seconds || burner.minutes)
         {
             #message 51  "%m54 You could heat things quickly with the brazier, right now.";
         }
@@ -876,8 +857,7 @@ It holds charcoal and is used for heating or cooking things.";
     }
 }
 
-if ((said(get, charcoal) ||
-    said(get, charcoal, from, burner)))
+if (said(get, charcoal) || said(get, charcoal, from, burner))
 {
     if (ego.location != table)
     {
@@ -908,13 +888,12 @@ if (said(look, charcoal))
     }
 }
 
+
 // [*****
 // :n
 // [*****
 
-if (aSecondPassed &&
-    burner.seconds == 1 &&
-    !burner.minutes)
+if (aSecondPassed && burner.seconds == 1 && !burner.minutes)
 {
     #message 55  "The brazier has burned all the charcoal, and is now cool.";
 }
@@ -1167,20 +1146,34 @@ if (aSecondPassed)
 
 if (current.status != fly.landing)
 {
-    if (edge.ego.hit == top &&
-        current.status == fly &&
-        ego.x > 46 && ego.x < 75) {
-        new.room(9);
+    if (edge.ego.hit == top && current.status == fly && ego.x > 46 && ego.x < 75) {
+      new.room(9);
     }
-    if (edge.ego.hit == top) { new.room(9); }
+    if (edge.ego.hit == top) {
+      new.room(9);
+    }
 }
 
 if (spell.in.progress)
 {
     #message 30  "With trembling hands you turn the pages of %m32,\" and
-prepare to follow its instructions precisely.";
-    new.room(43);                                           // [  rm.spells);
+                 "prepare to follow its instructions precisely.";
+    // [  rm.spells);
+    new.room(43);
 }
 
 call(lgc.wiz.house);
+
+
+
+
+
+
+
+
+
+
+
+
+
 

@@ -60,7 +60,6 @@ if (init.log)
     landing.y = 143;
     wiz.x = 29;
     wiz.y = 140;
-
     cat.x = 131;
     cat.y = 144;
     load.logics(lgc.wiz.house);
@@ -153,7 +152,7 @@ if (init.log)
         stop.update(a.cup);
     }
 
-    if ((positionEgo || current.status == fly))
+    if (positionEgo || current.status == fly)
     {
         if (previous.room == rm.entry)
         {
@@ -231,24 +230,23 @@ if ((said(look, room) ||
     said(look)))
 {
     #message 1  "This is where Manannan eats his meals. You, of course, are not supposed
-to eat here.YOU eat in the kitchen.There is a pine table
-and benches large enough to seat at least ten people; but the wizard has
-never HAD any guests for dinner.";
+                "to eat here.YOU eat in the kitchen.There is a pine table
+                "and benches large enough to seat at least ten people; but the wizard has
+                "never HAD any guests for dinner.";
 }
 
 if (said(look, table))
 {
     #message 3  "The large dining table is made of pine planking.
-Matching benches run its length on both sides.The
-table is big enough to seat at least ten people.";
+                "Matching benches run its length on both sides.The
+                "table is big enough to seat at least ten people.";
     if (obj.in.room(i.cup, current.room))
     {
         #message 21  "There is a little metal cup on the table.";
     }
 }
 
-if (obj.in.room(i.cup, current.room) &&
-    said(look, cup))
+if (obj.in.room(i.cup, current.room) && said(look, cup))
 {
     #message 21  "There is a little metal cup on the table.";
 }
@@ -264,35 +262,32 @@ if ((said(look, top, table) ||
     else
     {
         #message 4  "There is nothing on the dining table. You keep it very clean as
-Manannan will not eat on a dirty table.";
+                    "Manannan will not eat on a dirty table.";
     }
 }
 
 if (said(look, under, table))
 {
     #message 5  "You bend over and peer under the table. You see nothing but
-a few crumbs left over from one of Manannan's meals.";
+                "a few crumbs left over from one of Manannan's meals.";
 }
 
-if ((said(look, moose) ||
-    said(look, wall) ||
-    said(look, moose, wall)))
+if (said(look, moose) || said(look, wall) || said(look, moose, wall))
 {
     #message 8  "You scrutinize the moosehead very carefully. But, you see
-it is nothing but an old head.You do feel sorry for the poor thing, though.";
+                "it is nothing but an old head.You do feel sorry for the poor thing, though.";
 }
 
-if ((said(get, moose) ||
+if (said(get, moose) ||
     said(get, moose, wall) ||
     said(get, moose, off, wall) ||
     said(remove, moose) ||
-    said(remove, moose, wall)))
+    said(remove, moose, wall))
 {
     #message 9  "The moosehead is securely fastened to the wall. You cannot remove it.";
 }
 
-if ((said(look, light) ||
-    said(look, flame)))
+if (said(look, light) || said(look, flame))
 {
     #message 10  "Flickering candles from the wrought iron lamp light the room.";
 }
@@ -300,12 +295,10 @@ if ((said(look, light) ||
 if (said(look, door))
 {
     #message 11  "There are two doorways here. One leads to the kitchen,
-the other to the entry hall.";
+                 "the other to the entry hall.";
 }
 
-if ((said(get, cup) ||
-    said(get, cup, table) ||
-    said(get, cup, from, table)))
+if (said(get, cup) || said(get, cup, table) || said(get, cup, from, table))
 {
     if (!obj.in.room(i.cup, current.room))
     {
@@ -582,7 +575,7 @@ taught a lesson or two about OBEYING!\"";
             if (!wants.to.feed.wiz)
             {
                 #message 15  "You are carrying more than one type of food. Which would you like
-to give the wizard ? ";
+                             "to give the wizard ? ";
                 wants.to.feed.wiz = something;
                 goto no.input;
             }
@@ -776,7 +769,7 @@ if (wiz.on.screen && !PO'd.wiz.init'd)
             wiz.status = eating;
             wiz.chewing.timer = 2;
             #message 16  "You place the food on the dining table before the
-hungry wizard.Ravenously, he devours every bit of it.";
+                         "hungry wizard.Ravenously, he devours every bit of it.";
             work = 3;
             cycle.time(a.wiz, work);
             if (chore.to.do == fix.meal)
@@ -820,12 +813,12 @@ hungry wizard.Ravenously, he devours every bit of it.";
                 set(wiz.arrived);
                 wiz.location = 50;
                 #message 30  "You fooled him! Manannan didn't realize the porridge was tainted,
-and ate the whole bowl!";
+                             "and ate the whole bowl!";
             }
             else
             {
                 #message 18  "It's obvious the wizard enjoyed his meal as he lets out a satisfied
-belch.He rises and leaves without so much as a \"Thank you!\"";
+                             "belch.He rises and leaves without so much as a \"Thank you!\"";
                 erase(a.food);
                 wiz.status = leaving.room;
                 stop.cycling(a.wiz);
@@ -835,8 +828,7 @@ belch.He rises and leaves without so much as a \"Thank you!\"";
         }
     }
 
-    if ((wiz.location == 51 ||
-        wiz.location == 101))
+    if (wiz.location == 51 || wiz.location == 101)
     {
         current.cel(a.poof, work);
         if (work == 3)
@@ -845,8 +837,7 @@ belch.He rises and leaves without so much as a \"Thank you!\"";
         }
     }
 
-                                                            // [  HERE'S THIS ROOM'S TWO POSSIBLE WIZARD SCENERIOS:
-
+    // [  HERE'S THIS ROOM'S TWO POSSIBLE WIZARD SCENERIOS:
     if (wiz.arrived)
     {
         reset(wiz.arrived);
@@ -855,16 +846,13 @@ belch.He rises and leaves without so much as a \"Thank you!\"";
         program.control();
         stop.motion(ego);
 
-                                                            // [  HERE'S WHAT WE'VE ALL BEEN WAITING FOR:  TURN THAT WIZ-BANG INTO A PUSSY!
-
+        // [  HERE'S WHAT WE'VE ALL BEEN WAITING FOR:  TURN THAT WIZ-BANG INTO A PUSSY!
         if (wiz.location == 51)
         {
             load.view(v.cat);
             load.sound(m.title);
-
             sound(m.title, done);
             erase(a.food);
-
             animate.obj(a.poof);
             set.view(a.poof, v.poof);
             set.priority(a.poof, 15);
@@ -906,7 +894,7 @@ belch.He rises and leaves without so much as a \"Thank you!\"";
         if (wiz.location == 54)
         {
             #message 36  "Congratulations! Manannan will never again enslave you or the people
-of Llewdor!!At last, you are free!";
+                         "of Llewdor!!At last, you are free!";
             wander(a.cat);
             observe.objs(a.cat);
             set(wiz.pussy.on.screen);
@@ -916,13 +904,11 @@ of Llewdor!!At last, you are free!";
             wiz.location = 0;
         }
 
-                                                            // [  THIS ONE poofS HIM FROM THE ROOM AFTER HE'S FINISHED EATING.
-
+        // [  THIS ONE poofS HIM FROM THE ROOM AFTER HE'S FINISHED EATING.
         if (wiz.location == 101)
         {
             stop.cycling(a.wiz);
             erase(a.food);
-
             animate.obj(a.poof);
             set.view(a.poof, v.poof);
             set.priority(a.poof, 15);
@@ -964,6 +950,8 @@ of Llewdor!!At last, you are free!";
     }
 }
 
+
+
 // [  THIS SCRIPT WALKS EGO FROM WHEREVER HE IS, TO THE TABLE, AND SEATS HIM.
 // [IF HE WANTED TO EAT, HE THEN BEGINS EATING.
 
@@ -981,7 +969,8 @@ if (ego.arrived)
     reset(ego.arrived);
     ++ego.location;
 
-    get.posn(ego, x, y);                                    // [  defaults
+    // [  defaults
+    get.posn(ego, x, y);
     step = 1;
 
     if (ego.location == 1)
@@ -989,11 +978,8 @@ if (ego.arrived)
         set(handsOff);
         program.control();
         current.status = walking;
-
-        if (ego.y > 141 &&                                  // [  between the bench and the table
-            ego.y < 144 &&
-            ego.x > 50 &&
-            ego.x < 115)
+        // [  between the bench and the table
+        if (ego.y > 141 && ego.y < 144 && ego.x > 50 && ego.x < 115)
         {
             x = 115;
         }
@@ -1053,7 +1039,7 @@ if (ego.arrived)
     if (ego.location == 5)
     {
         #message 6  "You take a well deserved moment's rest. But, you wonder if
-you have time to be sitting here ? ";
+                    "you have time to be sitting here ? ";
         ego.location = 0;
     }
 }
@@ -1067,15 +1053,13 @@ if (ego.wants.to.eat)
     }
     else
     {
-
-                                                            // [reset ego.wants.to.eat only when he's seated and ready to chew.
-
+        // [reset ego.wants.to.eat only when he's seated and ready to chew.
         if (!handsOff)
         {
-            if ((ego.y < 124 ||                             // [  in doorway,
-                ego.y > 152 ||                              // [  in lower corners,
-                ego.x < 41 ||                               // [  could be in entry hall door
-                ego.x > 152))                               // [  could get trapped by table
+            if (ego.y < 124 ||                             // [  in doorway,
+                ego.y > 152 ||                             // [  in lower corners,
+                ego.x < 41 ||                              // [  could be in entry hall door
+                ego.x > 152)                               // [  could get trapped by table
             {
                 #message 26  "You're too far from the table.";
                 ego.wants.to.eat = 0;
@@ -1119,10 +1103,8 @@ if (ego.wants.to.eat)
                 drop(i.porridge.poisoned);
                 set.cel(a.food, c.porridge);
             }
-
             ego.wants.to.eat = 0;
             draw(a.food);
-
             set(handsOff);
             set(keep.cycling);
             stop.motion(ego);
@@ -1134,6 +1116,7 @@ if (ego.wants.to.eat)
         }
     }
 }
+
 
 if (aSecondPassed)
 {
@@ -1147,7 +1130,7 @@ if (aSecondPassed)
             #message 31  "You purr contentedly. You will enjoy your new life as a cat!";
             load.view(v.gag.dead.ego.2);
             set.view(ego, v.gag.dead.ego.2);
-            set.loop(ego, 0);                               // [  cat with ego head
+            set.loop(ego, 0); // [  cat with ego head
             set.priority(ego, 15);
             reposition.to(ego, 91, 123);
             start.cycling(ego);
@@ -1170,6 +1153,7 @@ if (aSecondPassed)
         }
     }
 }
+
 
 if (current.status == eating)
 {
@@ -1236,3 +1220,15 @@ if (!wiz.on.screen && chore.to.do == fix.meal)
 {
     chore.seconds = 55;
 }
+
+
+
+
+
+
+
+
+
+
+
+

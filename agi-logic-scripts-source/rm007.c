@@ -10,19 +10,20 @@
 // [rooms.  The wizard can appear here.  He just poofs in and poofs out,
 // [assigning the opening chore, if it's not already assigned.
 
-#define  aerobics.x      97
-#define  aerobics.y      131
+#define  aerobics.x             97
+#define  aerobics.y             131
 
-#define  door.open        lf0
-#define  on.upper.stairs    lf1
-#define  workout.music.done    lf2
-#define  house.wiz.init'd    lf3
+#define  door.open              lf0
+#define  on.upper.stairs        lf1
+#define  workout.music.done     lf2
+#define  house.wiz.init'd       lf3
 
-#define  loop.timer      lv0
-#define  lcl.wiz.seconds    lv1
+#define  loop.timer             lv0
+#define  lcl.wiz.seconds        lv1
 
-% object  a.candle.1      1
-% object  a.candle.2      2
+#object  a.candle.1             1
+#object  a.candle.2             2
+
 
 if (init.log)
 {
@@ -59,7 +60,6 @@ if (init.log)
     landing.y = 137;
     wiz.x = 39;
     wiz.y = 92;
-
     cat.x = 81;
     cat.y = 123;
     load.logics(lgc.wiz.house);
@@ -299,16 +299,12 @@ cannot get them free.";
 
 if (on.water)
 {
-    if ((ego.dir == ego.up ||
-        ego.dir == ego.up.left ||
-        ego.dir == ego.up.right))
+    if (ego.dir == ego.up || ego.dir == ego.up.left || ego.dir == ego.up.right)
     {
         reset(on.upper.stairs);
     }
 
-    if ((ego.dir == ego.down ||
-        ego.dir == ego.down.left ||
-        ego.dir == ego.down.right))
+    if (ego.dir == ego.down || ego.dir == ego.down.left || ego.dir == ego.down.right)
     {
         set(on.upper.stairs);
     }
@@ -325,14 +321,13 @@ else
     observe.block(ego);
 }
 
-if (on.upper.stairs &&
-    hit.special &&
-    posn(ego, 45, 87, 62, 107))
+if (on.upper.stairs && hit.special && posn(ego, 45, 87, 62, 107))
 {
     ego.dir = 0;
     start.motion(ego);
     reposition.to.v(ego, old.ego.x, old.ego.y);
 }
+
 
 // [  HANDLE THE AEROBICS CLASS.
 
@@ -395,19 +390,26 @@ if (current.status == doing.aerobics)
     }
 }
 
+
 // [*****
 // :e
 // [*****
 
 if (current.status != fly.landing)
 {
-    if (posn(ego, 93, 116, 110, 118)) { new.room(rm.wiz.office); }
-    if (posn(ego, 131, 134, 140, 144)) { new.room(rm.dining); }
-    if (posn(ego, 93, 42, 109, 44)) { new.room(rm.hallway); }
-
-    if (edge.ego.hit == bottom &&
-        current.status != snail &&
-        current.status != fly)
+    if (posn(ego, 93, 116, 110, 118))
+    {
+      new.room(rm.wiz.office);
+    }
+    if (posn(ego, 131, 134, 140, 144))
+    {
+        new.room(rm.dining);
+    }
+    if (posn(ego, 93, 42, 109, 44))
+    {
+        new.room(rm.hallway);
+    }
+    if (edge.ego.hit == bottom && current.status != snail && current.status != fly)
     {
         #message 6  "You open the front door of the house and go outside.";
         new.room(rm.wiz.yard);
@@ -420,4 +422,8 @@ if (lgc.house.wiz.loaded)
 {
     call(lgc.house.wiz);
 }
+
+
+
+
 

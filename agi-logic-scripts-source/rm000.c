@@ -8,14 +8,15 @@
 #include  "iv-views.h"
 #include  "contrlrs.h"
 
-#view  v.ego              0
-#view  v.ego.collapsing     23
-#view  v.ego.fly         25
-#view  v.ego.eagle           26
-#view  v.ego.footprints     28
-#view  v.gag.dead.ego.2     39
-#view  v.poof            199
-#view  v.cat.wagging.tail    204
+#view  v.ego                  0
+#view  v.ego.collapsing       23
+#view  v.ego.fly              25
+#view  v.ego.eagle            26
+#view  v.ego.footprints       28
+#view  v.gag.dead.ego.2       39
+#view  v.poof                 199
+#view  v.cat.wagging.tail     204
+
 
 if (error.number)
 {
@@ -116,8 +117,8 @@ if (clock.on && (update.clock || init.log))
 
 if (init.log)
 {
-    call(100);                                              // [call and toss init.log resets
-
+    // [call and toss init.log resets
+    call(100);
     if (debugging)
     {
         load.logics(lgc.debug);
@@ -128,7 +129,8 @@ if (init.log)
     call.v(current.room);
     if (current.status == deferred.entry)
     {
-        current.status = normal.ego;                        // [local room "couldn't bother"
+        // [local room "couldn't bother"
+        current.status = normal.ego;
     }
 
     if (!positionEgo && !drawEgo && current.status != eagle && current.status != fly)
@@ -147,12 +149,13 @@ if (init.log)
 
     if (!drawEgo)
     {
-        draw(ego);                                          // [interesting, no ?
+        // [interesting, no ?
+        draw(ego);
     }
+    // [DO NOT return(); here.Start.a.poof(and others) need the init pass.
+} // [end init.logs
 
-                                                            // [DO NOT return(); here.Start.a.poof(and others) need the init pass.
 
-}                                                           // [end init.logs
 
 // [*****
 // [FIRST, A LITTLE HOUSEKEEPING
@@ -219,7 +222,8 @@ if (controller(c.quit) || said(quit))
     }
 }
 
-if (controller(c.about))                                    // [also give length of game play.
+// [also give length of game play.
+if (controller(c.about))
 {
     if (gameDays)
     {
@@ -286,17 +290,14 @@ if (controller(c.sound.toggle))
     set(update.clock);
 }
 
-if ((said(show, status) ||
-    said(status) ||
-    said(inventory) ||
-    controller(c.status)))
+if (said(show, status) || said(status) || said(inventory) || controller(c.status))
 {
     status();
     set(update.clock);
 }
 
-if ((controller(c.debug) ||
-    said(rat, shit)))
+
+if (controller(c.debug) || said(rat, shit))
 {
     toggle(debugging);
     if (!debugging)
@@ -309,9 +310,7 @@ if ((controller(c.debug) ||
         load.logics(lgc.trace);
         set(enable.trace);
         set(xy.on);
-        #message 11  "\n
-King's Quest III\n\n
-Version 2.14  3 / 15 / 88   \n\n";
+        #message 11  "\n King's Quest III\n\n Version 2.14  3 / 15 / 88   \n\n";
         version();
         accept.input();
         player.control();
@@ -320,15 +319,11 @@ Version 2.14  3 / 15 / 88   \n\n";
 
 if (controller(c.version))
 {
-    #message 11  "\n
-King's Quest III\n\n
-Version 2.14  3 / 15 / 88   \n\n";
+    #message 11  "\n King's Quest III\n\n Version 2.14  3 / 15 / 88   \n\n";
     version();
 }
 
-if ((controller(c.help) ||
-    said(help) ||
-    said(help, me)))
+if (controller(c.help) || said(help) || said(help, me))
 {
     if (out.of.memory)
     {
@@ -344,8 +339,9 @@ if (controller(c.toggle.monitor))
 {
     toggle.monitor();
 }
+reset(my.have.match);
 
-reset(my.have.match);                                       // [speed stuff
+// [speed stuff
 if (controller(c.speed))
 {
     set(my.have.match);
@@ -356,29 +352,25 @@ if (controller(c.speed))
     }
 }
 
-if ((controller(c.speed.slow) ||
-    said(slow)))
+if (controller(c.speed.slow) || said(slow))
 {
     set(my.have.match);
     animation.interval = slow;
 }
 
-if ((controller(c.speed.normal) ||
-    said(normal)))
+if (controller(c.speed.normal) || said(normal))
 {
     set(my.have.match);
     animation.interval = normal;
 }
 
-if ((controller(c.speed.fast) ||
-    said(fast)))
+if (controller(c.speed.fast) || said(fast))
 {
     set(my.have.match);
     animation.interval = fast;
 }
 
-if ((controller(c.speed.fastest) ||
-    said(fastest)))
+if (controller(c.speed.fastest) || said(fastest))
 {
     set(my.have.match);
     animation.interval = fastest;
@@ -398,6 +390,8 @@ if (my.have.match)
         clear.status.seconds = 6;
     }
 }
+
+
 
 // [*****
 // [DEAD EGO
@@ -427,8 +421,8 @@ if (current.status == dead)
     if (have.input && !have.match)
     {
         #message 14  "Since you're dead...\n\n
-all you can do is
-restore a saved game or start over.";
+                     "all you can do is
+                     "restore a saved game or start over.";
     }
 
     if (debugging)
@@ -438,13 +432,12 @@ restore a saved game or start over.";
     return();
 }
 
+
 // [*****
 // [EGO CYCLING
 // [*****
 
-if (ego.dir == old.ego.dir &&
-    ego.x == old.ego.x &&
-    ego.y == old.ego.y)
+if (ego.dir == old.ego.dir && ego.x == old.ego.x && ego.y == old.ego.y)
 {
     stop.cycling(ego);
 }
@@ -453,7 +446,7 @@ else
     start.cycling(ego);
 }
 
-if ((!ego.dir || no.cycling))
+if (!ego.dir || no.cycling)
 {
     stop.cycling(ego);
 }
@@ -561,8 +554,7 @@ if (elapsed.seconds != old.seconds)
             spell.cast = sc.visible;
         }
 
-        if (current.status != eagle.landing &&
-            current.status != fly.landing)
+        if (current.status != eagle.landing && current.status != fly.landing)
         {
             #message 20  "Your magic spell is wearing off!";
             set(prevent.new.room);
@@ -615,6 +607,8 @@ if (elapsed.seconds != old.seconds)
 
 }                                                           // [end of "aSecondPassed"
 
+
+
 // [*****
 // [HANDLE PRELIMINARY INPUT
 // [*****
@@ -641,8 +635,7 @@ if (said(thanks, rol))
     #message 28  "\"You're welcome.\"";
 }
 
-if ((said(bye, anyword) ||
-    said(anyword, bye)))
+if (said(bye, anyword) || said(anyword, bye))
 {
     #message 113  "\"'Bye.\"";
 }
@@ -652,20 +645,21 @@ if (said(hi, rol))
     #message 26  "\"Hi.\"";
 }
 
-if ((said(dirty$word, rol) ||
+
+if (said(dirty$word, rol) ||
     said(anyword, dirty$word, rol) ||
     said(anyword, anyword, dirty$word, rol) ||
-    said(anyword, anyword, anyword, dirty$word, rol)))
+    said(anyword, anyword, anyword, dirty$word, rol))
 {
     #message 29  "Obviously, you were raised by a naughty wizard!";
 }
 
-if ((said(how, long, game) ||
+if (said(how, long, game) ||
     said(how, long, playing, game) ||
     said(how, long, playing) ||
     said(length, game) ||
     said(game, length) ||
-    said(game, time)))
+    said(game, time))
 {
     if (elapsed.days)
     {
@@ -684,8 +678,8 @@ if ((said(how, long, game) ||
     }
 }
 
-if ((said(anyword, clock, rol) ||
-    said(clock, rol)))
+
+if (said(anyword, clock, rol) || said(clock, rol))
 {
     toggle(clock.on);
     if (clock.on)
@@ -698,6 +692,8 @@ if ((said(anyword, clock, rol) ||
         status.line.on();
     }
 }
+
+
 
 // [*****
 // [MAGIC SPELLS// [NOTE:Much of this next block is sequence dependent.
@@ -712,20 +708,20 @@ if (has(i.cat.cookie))
     }
 
     if (has(i.porridge) &&
-        (said(put, cat, cookie, porridge) ||
-            said(put, cookie, porridge) ||
-            said(put, cat, cookie, bowl, porridge) ||
-            said(put, cookie, bowl, porridge) ||
-            said(crumble, cat, cookie, porridge) ||
-            said(crumble, cookie, porridge) ||
-            said(crumble, cat, cookie, bowl, porridge) ||
-            said(crumble, cookie, bowl, porridge)))
+       (said(put, cat, cookie, porridge) ||
+        said(put, cookie, porridge) ||
+        said(put, cat, cookie, bowl, porridge) ||
+        said(put, cookie, bowl, porridge) ||
+        said(crumble, cat, cookie, porridge) ||
+        said(crumble, cookie, porridge) ||
+        said(crumble, cat, cookie, bowl, porridge) ||
+        said(crumble, cookie, bowl, porridge)))
     {
         drop(i.cat.cookie);
         drop(i.porridge);
         get(i.porridge.poisoned);
         #message 35  "The porridge conceals the crumbled cookie; it still looks
-as appetizing as ever.";
+                     "as appetizing as ever.";
     }
 }
 
@@ -735,15 +731,17 @@ if (current.status == snail)
     set(have.match);
 }
 
-if (spell.cast == sc.make.sleep &&
-    said(slumber, henceforth))
+
+if (spell.cast == sc.make.sleep && said(slumber, henceforth))
 {
     spell.cast = sc.start.sleep;
 }
+
 if (spell.cast == sc.make.sleep)
 {
     spell.cast = 0;
 }
+
 if (said(pour, sleep, powder, on, ground))
 {
     if (has(i.sleep.powder))
@@ -758,9 +756,8 @@ if (said(pour, sleep, powder, on, ground))
     }
 }
 
-if ((said(rub, magic, stone) ||
-    said(rub, stone) ||
-    said(rub, amber, stone)))
+
+if (said(rub, magic, stone) || said(rub, stone) || said(rub, amber, stone))
 {
     if (has(i.magic.stone))
     {
@@ -784,8 +781,10 @@ if (current.status == eagle)
         set(have.match);
     }
 }
-if ((said(dip, eagle, feather, essence) ||
-    said(dip, eagle, feather, magic, essence)))
+
+
+if (said(dip, eagle, feather, essence) ||
+    said(dip, eagle, feather, magic, essence))
 {
     if (has(i.magic.essence) &&
         has(i.eagle.feather))
@@ -797,6 +796,7 @@ if ((said(dip, eagle, feather, essence) ||
         #message 45  "How can you do that?";
     }
 }
+
 
 if (current.status == fly)
 {
@@ -810,10 +810,11 @@ if (current.status == fly)
         set(have.match);
     }
 }
-if ((said(dip, fly, essence) || said(dip, fly, magic, essence)))
+
+
+if (said(dip, fly, essence) || said(dip, fly, magic, essence))
 {
-    if (has(i.magic.essence) &&
-        has(i.fly.wings))
+    if (has(i.magic.essence) && has(i.fly.wings))
     {
         spell.cast = sc.fly;
     }
@@ -823,8 +824,8 @@ if ((said(dip, fly, essence) || said(dip, fly, magic, essence)))
     }
 }
 
-if ((said(look, magic, map) ||
-    said(look, map)))
+
+if (said(look, magic, map) || said(look, map))
 {
     if (has(i.magic.map))
     {
@@ -836,16 +837,17 @@ if ((said(look, magic, map) ||
     }
 }
 
+
 if (invisibleEgo &&
-    (said(wipe, ointment, off) ||
-        said(wipe, off, ointment)))
+   (said(wipe, ointment, off) || said(wipe, off, ointment)))
 {
     spell.cast = sc.visible;
 }
-if ((said(rub, ointment, on, me) ||
+
+if((said(rub, ointment, on, me) ||
     said(rub, ointment, on) ||
     said(rub, on, ointment) ||
-    said(rub, ointment, on, body)))
+    said(rub, ointment, on, body))
 {
     if (has(i.invisible.ointment))
     {
@@ -858,15 +860,16 @@ if ((said(rub, ointment, on, me) ||
 }
 
 // [Next block is sequence dependent :
-if (spell.cast == sc.make.storm &&
-    said(brew, storms, churn, up))
+if (spell.cast == sc.make.storm && said(brew, storms, churn, up))
 {
     spell.cast = sc.start.storm;
 }
+
 if (spell.cast == sc.make.storm)
 {
     spell.cast = 0;
 }
+
 if (said(stir, brew, with, finger))
 {
     if (has(i.storm.brew))
@@ -879,8 +882,8 @@ if (said(stir, brew, with, finger))
         #message 45  "How can you do that?";
     }
 }
-if ((storm.minutes || storm.seconds) &&
-    said(brew, storms, clear, up))
+
+if (storm.minutes || storm.seconds) && said(brew, storms, clear, up)
 {
     spell.cast = sc.stop.storm;
 }
@@ -890,54 +893,51 @@ if ((storm.minutes || storm.seconds) &&
 // [*****
 
 if (has(i.nightshade.juice) &&
-    (said(drink, juice) ||
-        said(drink, nightshade, juice) ||
-        said(drink, nightshade) ||
-        said(drink, juice, jar) ||
-        said(drink, nightshade, juice, jar) ||
-        said(drink, juice, from, jar) ||
-        said(drink, nightshade, juice, from, jar)))
+   (said(drink, juice) ||
+    said(drink, nightshade, juice) ||
+    said(drink, nightshade) ||
+    said(drink, juice, jar) ||
+    said(drink, nightshade, juice, jar) ||
+    said(drink, juice, from, jar) ||
+    said(drink, nightshade, juice, from, jar)))
 {
     drop(i.nightshade.juice);
     death.message = 36;
 }
 
 if (has(i.mandrake.root) &&
-    (said(eat, mandrake, powder) || said(eat, mandrake, root, powder) ||
-        said(eat, root) || said(eat, mandrake, powder, from, jar) ||
-        said(eat, mandrake) || said(eat, mandrake, root) ||
-        said(eat, mandrake, root, powder, from, jar)))
+   (said(eat, mandrake, powder) || said(eat, mandrake, root, powder) ||
+    said(eat, root) || said(eat, mandrake, powder, from, jar) ||
+    said(eat, mandrake) || said(eat, mandrake, root) ||
+    said(eat, mandrake, root, powder, from, jar)))
 {
     drop(i.mandrake.root);
     death.message = 38;
 }
 
 if (has(i.toadstool.powder) &&
-    (said(eat, toadstool) || said(eat, toadstool, powder) ||
-        said(eat, toadstool, powder, from, jar)))
+   (said(eat, toadstool) || said(eat, toadstool, powder) ||
+    said(eat, toadstool, powder, from, jar)))
 {
     drop(i.toadstool.powder);
     death.message = 39;
 }
 
 if (has(i.porridge.poisoned) && has(i.spoon) &&
-    (said(eat, porridge, with, spoon) ||
-        said(eat, porridge, spoon) ||
-        said(use, spoon, eat, porridge)))                   // [fix so turn in to cat
+   (said(eat, porridge, with, spoon) || said(eat, porridge, spoon) ||
+    said(use, spoon, eat, porridge)))                   // [fix so turn in to cat
 {
     drop(i.porridge.poisoned);
     death.message = 37;
 }
 
-if (has(i.porridge.poisoned) &&
-    said(eat, porridge))
+if (has(i.porridge.poisoned) && said(eat, porridge))
 {
     drop(i.porridge.poisoned);
     death.message = 37;
 }
 
-if (has(i.cat.cookie) &&
-    (said(eat, cat, cookie) || said(eat, cookie)))
+if (has(i.cat.cookie) && (said(eat, cat, cookie) || said(eat, cookie)))
 {
     set(handsOff);
     #message 9  "Ok.";
@@ -945,6 +945,8 @@ if (has(i.cat.cookie) &&
     current.status = ate.cat.cookie;
     poof.change.view = ate.cat.cookie;
 }
+
+
 
 // [*****
 // [HANDLE "SHOWING" THINGS
@@ -1007,8 +1009,8 @@ if (has(i.thimble) && said(show, thimble))
 }
 
 if (has(i.dew) &&
-    (said(show, dew) || said(show, dew, thimble) ||
-        said(show, thimble, dew) || said(show, thimble)))
+   (said(show, dew) || said(show, dew, thimble) ||
+    said(show, thimble, dew) || said(show, thimble)))
 {
     show.obj(iv.dew);
 }
@@ -1039,7 +1041,7 @@ if (has(i.rose.essence) && said(show, essence))
 }
 
 if (has(i.magic.essence) &&
-    (said(show, essence) || said(show, magic, essence)))
+   (said(show, essence) || said(show, magic, essence)))
 {
     show.obj(iv.magic.essence);
 }
@@ -1055,8 +1057,7 @@ if (has(i.amber.stone) && said(show, amber, stone))
 }
 
 if (has(i.magic.stone) &&
-    (said(show, magic, stone) ||
-        said(show, amber, stone)))
+   (said(show, magic, stone) || said(show, amber, stone)))
 {
     show.obj(iv.magic.stone);
 }
@@ -1110,23 +1111,23 @@ if (has(i.porridge.poisoned) && said(show, poison, porridge))
 }
 
 if (has(i.ocean.water) &&
-    (said(show, cup) ||
-        said(show, water) ||
-        said(show, cup, water) ||
-        said(show, cup, ocean, water) ||
-        said(show, ocean, water)))
+   (said(show, cup) ||
+    said(show, water) ||
+    said(show, cup, water) ||
+    said(show, cup, ocean, water) ||
+    said(show, ocean, water)))
 {
     show.obj(iv.ocean.water);
 }
 
 if (has(i.mud) &&
-    (said(show, mud) || said(show, spoon, mud) || said(show, spoon)))
+   (said(show, mud) || said(show, spoon, mud) || said(show, spoon)))
 {
     show.obj(iv.mud);
 }
 
 if (has(i.toadstool.powder) &&
-    (said(show, toad, powder) || said(show, toadstool, powder)))
+   (said(show, toad, powder) || said(show, toadstool, powder)))
 {
     show.obj(iv.toadstool.powder);
 }
@@ -2402,6 +2403,7 @@ if ((has(i.porridge.poisoned) || has(i.porridge)) && said(use, porridge))
     #message 51  "%m53?";
 }
 
+
 // [*****
 // [HANDLE WHATEVER'S LEFT
 // [*****
@@ -2437,7 +2439,7 @@ if (has(i.bowl) && (said(put, anyword, bowl)))
 }
 
 if (has(i.fish.jar) &&
-    (said(look$in, jar) || said(open, jar) || said(take, lid, off, jar)))
+   (said(look$in, jar) || said(open, jar) || said(take, lid, off, jar)))
 {
     #message 100  "The jar is empty.";
 }
@@ -2459,11 +2461,11 @@ if (has(i.ocean.water) && said(empty$cup))
     #message 84  "The cup is now empty.";
 }
 
-if ((said(look, wizard) || said(look, spider) ||
+if (said(look, wizard) || said(look, spider) ||
     said(look, boy) || said(look, medusa) ||
     said(look, man) || said(look, queen) ||
     said(look, dragon) || said(look, eagle) ||
-    said(look, girl) || said(look, chicken)))
+    said(look, girl) || said(look, chicken))
 {
     #message 72  "Where!?";
 }
@@ -2473,13 +2475,13 @@ if (current.status == swimming && said(swim))
     #message 79  "You ARE swimming.";
 }
 
-if ((said(talk, squirrel) ||
+if (said(talk, squirrel) ||
     said(talk, lizard) ||
     said(talk, snake) ||
     said(talk, spider) ||
     said(talk, man) ||
     said(talk, woman) ||
-    said(talk, bird)))
+    said(talk, bird))
 {
     #message 41  "Funny, no response.";
 }
@@ -2554,7 +2556,9 @@ if (!have.match && have.input)
     // [}
 }
 
-get.posn(ego, old.ego.x, old.ego.y);                        // [Clean up, fix up for next pass.
+
+// [Clean up, fix up for next pass.
+get.posn(ego, old.ego.x, old.ego.y);
 old.ego.dir = ego.dir;
 reset(ego.poofing.done);
 reset(aSecondPassed);

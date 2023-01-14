@@ -184,15 +184,15 @@ if (snowman.on.screen)
             start.cycling(a.snowman);
             current.status = being.dragged;
             #message 3  "The terrible, hairy creature grabs you with bone-crushing force!
-You resist, but it is no use.";
+                        "You resist, but it is no use.";
             ignore.block(a.snowman);
 
             if (current.room == 60)
             {
                 erase(a.snowman);
-                #message 5  "The despicable creature grabs you roughly around the neck and...
-and... it's too horrible to describe! Suffice it to say, you are
-quite dead.";
+                #message 5  "The despicable creature grabs you roughly around the neck and..."
+                            "and... it's too horrible to describe! Suffice it to say, you are"
+                            "quite dead.";
                 set(certain.death);
             }
             else
@@ -204,16 +204,14 @@ quite dead.";
         if (snowman.script == snowman.off.screen)
         {
             erase(a.snowman);
-            #message 4  "He carries you away to his cave, where you meet an early (and unspeakable)
-demise.";
+            #message 4  "He carries you away to his cave, where you meet an early (and unspeakable) demise.";
             set(certain.death);
         }
 
         if (snowman.script == exit.stage.left)
         {
             #message 2  "The abominable snowman seems quite confused by this! He stares
-in amazement, then heads back to his cave.";
-
+                        "in amazement, then heads back to his cave.";
             ignore.blocks(a.snowman);
             set.priority(a.snowman, 15);
             normal.motion(a.snowman);

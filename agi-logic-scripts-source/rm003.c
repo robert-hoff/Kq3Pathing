@@ -5,7 +5,6 @@
 #include  "rm-names.h"
 
 // [  No objects to get here.  Wiz might poof in.
-
 if (init.log)
 {
     load.view.v(current.ego);
@@ -106,28 +105,28 @@ if (init.log)
         if (previous.room == lgc.PO'd.wiz)
         {
             reset(drawEgo);
-                set(positionEgo);
-                set(handsOff);
-                start.a.poof = poof.in;
-                position.v(ego, landing.x, landing.y);
+            set(positionEgo);
+            set(handsOff);
+            start.a.poof = poof.in;
+            position.v(ego, landing.x, landing.y);
         }
     }
 
     observe.block(ego);
-        observe.objs(ego);
+    observe.objs(ego);
 
     if (drawEgo)
     {
         draw(ego);
     }
 
+    // [  to fool rm0 into !drawing him
     if (current.status == snail)
     {
-        set(drawEgo);                                       // [  to fool rm0 into !drawing him
+        set(drawEgo);
     }
 
     call(lgc.wiz.house);
-
     if (lgc.house.wiz.loaded)
     {
         call(lgc.house.wiz);
@@ -137,6 +136,8 @@ if (init.log)
     return();
 
 }
+
+
 
 // [*****
 // :h
@@ -151,12 +152,10 @@ if (said(look, room) || said(look, house) || said(look) || said(look, hall))
                 "the other leads down.An open doorway is to the north.";
 }
 
-if ((said(look, stairs) ||
-    said(look, up, stairs) ||
-    said(look, down, stairs)))
+if (said(look, stairs) || said(look, up, stairs) || said(look, down, stairs))
 {
-    #message 2  "There are two sets of stairs here. The stairway leading upward is steep
-and narrow.The stairway going down is wider, but rather creaky.";
+    #message 2  "There are two sets of stairs here. The stairway leading upward is steep"
+                "and narrow.The stairway going down is wider, but rather creaky.";
 }
 
 if (said(look, door))
@@ -164,23 +163,26 @@ if (said(look, door))
     #message 6  "There is a doorway leading into a room to the north.";
 }
 
+
+
 // [*****
 // :n
 // [*****
 
 if (ego.poofing.done && current.status == snail)
 {
-                                                            // [don't reset( ego.poofing.done);
+    // [don't reset( ego.poofing.done);
     player.control();
     start.motion(ego);
     reset(keep.cycling);
     reset(no.cycling);
     reset(ignore.special);
     reset(ignore.water);
-    #message 8  "Suddenly, you feel squishy and slimy, with an awful weight on your back.
-Your tentacled eyes swivel around to see your shell.OH, NO!He's turned
-you into a snail!";
+    #message 8  "Suddenly, you feel squishy and slimy, with an awful weight on your back."
+                "Your tentacled eyes swivel around to see your shell.OH, NO!He's turned"
+                "you into a snail!";
 }
+
 
 // [*****
 // :e
@@ -188,9 +190,8 @@ you into a snail!";
 
 if (current.status != fly.landing)
 {
-    if (edge.ego.hit == bottom &&
-        ego.x > 84 && ego.x < 105) {
-        new.room(rm.entry);
+    if (edge.ego.hit == bottom && ego.x > 84 && ego.x < 105) {
+      new.room(rm.entry);
     }
     if (posn(ego, 38, 90, 53, 118)) { new.room(rm.wiz.bedroom); }
     if (posn(ego, 120, 50, 139, 52)) { new.room(rm.tower); }

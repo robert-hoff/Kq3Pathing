@@ -54,13 +54,12 @@ if (init.log)
             load.logics(lgc.house.wiz);
             set(lgc.house.wiz.loaded);
             load.view(v.wiz.at.scope);                      // [  load any local views necessary
-
             random(1, 2, work);
             if (work == 1)
             {
                 set(wiz.at.scope);
                 set(house.wiz.init'd);
-                    wizard.timer = 2;
+                wizard.timer = 2;
                 wiz.entrance.time = 0;                      // [  he's coming now
             }
             else
@@ -294,7 +293,8 @@ if (ego.arrived)
 
     if (ego.location == 1)
     {
-        if (posn(ego, 42, 120, 110, 131))                   // [  above the scope
+        // [  above the scope
+        if (posn(ego, 42, 120, 110, 131))
         {
             y = 131;
             move.obj.v(ego, ego.x, y, step, ego.arrived);
@@ -302,7 +302,8 @@ if (ego.arrived)
         }
         else
         {
-            if (posn(ego, 42, 132, 115, 167))               // [  even/below the scope
+            // [  even/below the scope
+            if (posn(ego, 42, 132, 115, 167))
             {
                 y = 139;
                 move.obj.v(ego, ego.x, y, step, ego.arrived);
@@ -351,12 +352,13 @@ if (ego.arrived)
         reset(handsOff);
         player.control();
         start.motion(ego);
-        #message 4  "You put your eye to the glass. It amazes you how near everything seems.
-You can even see squirrels climbing
-faraway trees.No wonder the wizard knows all activities in
-Llewdor.";
+        #message 4  "You put your eye to the glass. It amazes you how near everything seems."
+                    "You can even see squirrels climbing"
+                    "faraway trees.No wonder the wizard knows all activities in"
+                    "Llewdor.";
     }
 }
+
 
 // [  HANDLE THE LOCAL WIZARD STUFF.
 
@@ -364,7 +366,8 @@ if (aSecondPassed)
 {
     if (wiz.on.screen && wiz.at.scope && !PO'd.wiz.init'd)
     {
-        --wizard.timer;                                     // [  this makes wizzie talk/gesture
+        // [  this makes wizzie talk/gesture
+        --wizard.timer;
         if (wizard.timer == 5)
         {
             start.cycling(a.wiz);
@@ -380,6 +383,7 @@ if (aSecondPassed)
         }
     }
 }
+
 
 if (wiz.on.screen && !PO'd.wiz.init'd)
 {
@@ -432,8 +436,7 @@ if (wiz.on.screen && !PO'd.wiz.init'd)
 // :exit              // [  test for leaving the room
 // [*****
 
-if (edge.ego.hit == bottom &&
-    current.status != fly.landing &&
+if (edge.ego.hit == bottom && current.status != fly.landing &&
     ego.x > 25 && ego.x < 47) {
     new.room(rm.hallway);
 }
@@ -443,3 +446,10 @@ if (lgc.house.wiz.loaded)
 {
     call(lgc.house.wiz);
 }
+
+
+
+
+
+
+

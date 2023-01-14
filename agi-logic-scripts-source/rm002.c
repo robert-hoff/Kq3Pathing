@@ -261,8 +261,7 @@ if (posn(ego, 58, 132, 70, 142))
 }
 
 reset(near.window);
-if ((posn(ego, 77, 120, 91, 132) ||
-    posn(ego, 0, 133, 27, 156)))
+if (posn(ego, 77, 120, 91, 132) || posn(ego, 0, 133, 27, 156))
 {
     set(near.window);
 }
