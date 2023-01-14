@@ -15,7 +15,7 @@ namespace kq3_hacking.RoomPathing
         public const int GLITCH_NOT_PERMITTED = 1;
 
         // returns true if permitted
-        public static bool checkEdgeGlitch(int roomNr, int x, int y, int DIR, int eval)
+        public static bool CheckEdgeGlitch(int roomNr, int x, int y, int DIR, int eval)
         {
             if (knownEdgeGlitches.Count == 0)
             {
@@ -47,6 +47,7 @@ namespace kq3_hacking.RoomPathing
         public const int ACTION_TILE_WATER_TRIGGER = 4;
         public const int ACTION_TILE_ROOM_TRIGGER = 5;
         public const int ACTION_TILE_SPECIAL = 6;
+        public const int ACTION_TILE_BARRIER = 7;
 
         public const int BLOCKS_UNDEFINED = 1;
         public const int BLOCKS_IGNORED = 2;
@@ -265,37 +266,60 @@ namespace kq3_hacking.RoomPathing
                     return null;
 
                 case 1:
-                    roomDefinition.useBlockControl = BLOCKS_IGNORED;
-                    roomDefinition.useActionControl = ACTION_TILE_DEATH_TRIGGER;
+                    roomDefinition.SetSouthRoom(3);
+                    roomDefinition.rewriteRule = (int previousRoom, int x, int y, int footprintWidth) =>
+                    {
+                        if (previousRoom == 3)
+                        {
+                            return (38, 158);
+                        }
+                        throw new Exception($"unknown room {previousRoom}");
+                    };
+
                     break;
 
                 case 2:
                     roomDefinition.useBlockControl = BLOCKS_OBSERVED;
-
-                    // near closet
-                    roomDefinition.AddWaterTrigger(95, 127, 112, 131);
-
-                    // near dresser
-                    roomDefinition.AddWaterTrigger(102, 134, 117, 153);
-                    // in way of drawer
-                    roomDefinition.AddWaterTrigger(108, 144, 112, 146);
-
-                    // near mirror
-                    roomDefinition.AddWaterTrigger(58, 132, 70, 142);
-
-
+                    roomDefinition.SetSouthRoom(3);
+                    roomDefinition.rewriteRule = (int previousRoom, int x, int y, int footprintWidth) =>
+                    {
+                        if (previousRoom == 3)
+                        {
+                            return (41, 167);
+                        }
+                        throw new Exception($"unknown room {previousRoom}");
+                    };
                     break;
 
                 case 3:
+                    roomDefinition.SetSouthRoom(35);
                     roomDefinition.useActionControl = ACTION_TILE_IGNORED;
-
-                    // bedroom
-                    roomDefinition.AddWaterTrigger(38, 90, 53, 118);
-                    // tower
-                    roomDefinition.AddWaterTrigger(120, 50, 139, 52);
-                    // bedroom
-                    roomDefinition.AddWaterTrigger(139, 133, 159, 166);
-
+                    // roomDefinition.AddRoomTrigger(4, 139, 133, 159, 166); // Gwydion bedroom
+                    // This works better, for some reason my area triggers don't work exactly like they should
+                    roomDefinition.SetEastRoom(4);
+                    roomDefinition.edgeEast = 145;
+                    roomDefinition.AddRoomTrigger(2, 38, 90, 53, 118); // wiz bedroom
+                    roomDefinition.AddRoomTrigger(1, 120, 50, 139, 52); // tower
+                    roomDefinition.rewriteRule = (int previousRoom, int x, int y, int footprintWidth) =>
+                    {
+                        if (previousRoom == 35)
+                        {
+                            return (90, 167);
+                        }
+                        if (previousRoom == 4)
+                        {
+                            return (y < 133) ? (133, 133) : (133, y);
+                        }
+                        if (previousRoom == 2)
+                        {
+                            return (40, 120);
+                        }
+                        if (previousRoom == 1)
+                        {
+                            return (133, 54);
+                        }
+                        throw new Exception($"unknown room {previousRoom}");
+                    };
                     break;
 
                 case 4:
@@ -303,9 +327,18 @@ namespace kq3_hacking.RoomPathing
                     roomDefinition.useActionControl = ACTION_TILE_IGNORED;
                     roomDefinition.actionTriggerRoom = 3;
                     // to hallway
-                    roomDefinition.AddWaterTrigger(11, 131, 12, 165);
-                    // to tower
-                    roomDefinition.AddWaterTrigger(47, 0, 69, 43);
+                    // roomDefinition.AddWaterTrigger(11, 131, 12, 165);
+                    // set up an edge boundary rather than an area trigger (like in room 3)
+                    roomDefinition.SetWestRoom(3);
+                    roomDefinition.edgeWest = 12;
+                    roomDefinition.rewriteRule = (int previousRoom, int x, int y, int footprintWidth) =>
+                    {
+                        if (previousRoom == 3)
+                        {
+                            return (14, y);
+                        }
+                        throw new Exception($"unknown room {previousRoom}");
+                    };
                     break;
 
                 case 5:
@@ -313,7 +346,6 @@ namespace kq3_hacking.RoomPathing
                     roomDefinition.useWaterControl = WATER_TILES_IGNORED;
                     // wand pickup
                     roomDefinition.AddWaterTrigger(23, 155, 32, 166);
-
                     // trapdoor lever
                     roomDefinition.AddWaterTrigger(113, 125, 121, 140);
                     break;
@@ -334,16 +366,22 @@ namespace kq3_hacking.RoomPathing
 
                 case 7:
                     roomDefinition.SetSouthRoom(34);
-                    roomDefinition.useBlockControl = BLOCKS_OBSERVED;
-                    roomDefinition.useActionControl = ACTION_TILE_IGNORED;
+                    roomDefinition.useWaterControl = WATER_TILES_IGNORED;
+
+                    // roomDefinition.useBlockControl = BLOCKS_OBSERVED;
+                    // roomDefinition.useActionControl = ACTION_TILE_IGNORED;
+
+                    roomDefinition.useBlockControl = BLOCKS_IGNORED;
+                    roomDefinition.useActionControl = ACTION_TILE_BARRIER;
+                    // room35 (this room in a different state)
+                    roomDefinition.AddRoomTrigger(roomNr: 35, 20, 103, 46, 103);
                     roomDefinition.AddRoomTrigger(5, 93, 116, 110, 118); // office
                     roomDefinition.AddRoomTrigger(8, 131, 134, 140, 144); // dining room
-                    roomDefinition.AddRoomTrigger(3, 93, 42, 109, 44); // upstairs hallway
                     roomDefinition.rewriteRule = (int previousRoom, int x, int y, int footprintWidth) =>
                     {
-                        if (previousRoom == 3)
+                        if (previousRoom == 35)
                         {
-                            return (95,46);
+                            return (x, y);
                         }
                         if (previousRoom == 5)
                         {
@@ -360,6 +398,32 @@ namespace kq3_hacking.RoomPathing
                         throw new Exception($"unknown room {previousRoom}");
                     };
                     break;
+
+
+                /*
+                 * Define this room, room 35 as the other state that room 7 can be in when going up the stairs.
+                 *
+                 */
+                case 35:
+                    roomDefinition.SetSouthRoom(34);
+                    roomDefinition.useBlockControl = BLOCKS_IGNORED;
+                    roomDefinition.useActionControl = ACTION_TILE_BARRIER;
+                    roomDefinition.AddRoomTrigger(roomNr: 7, 20, 101, 46, 101);  // hallway (room7)
+                    roomDefinition.AddRoomTrigger(3, 93, 42, 109, 44); // upstairs hallway
+                    roomDefinition.rewriteRule = (int previousRoom, int x, int y, int footprintWidth) =>
+                    {
+                        if (previousRoom == 7)
+                        {
+                            return (x, y);
+                        }
+                        if (previousRoom == 3)
+                        {
+                            return (95, 46);
+                        }
+                        throw new Exception($"unknown room {previousRoom}");
+                    };
+                    break;
+
 
                 case 8:
                     roomDefinition.useActionControl = ACTION_TILE_IGNORED;

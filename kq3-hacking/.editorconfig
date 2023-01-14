@@ -35,6 +35,7 @@ dotnet_diagnostic.IDE0017.severity = none
 dotnet_diagnostic.IDE0044.severity = none
 dotnet_diagnostic.IDE0074.severity = none
 dotnet_diagnostic.IDE0090.severity = none
+dotnet_diagnostic.IDE0045.severity = none
 
 #
 # CSharp code style settings:

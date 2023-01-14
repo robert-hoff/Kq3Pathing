@@ -496,7 +496,7 @@ namespace kq3_hacking.RoomPathing
                 // edge glitch with inconsistent behaviour
                 if (result < EVAL_BARRIER)
                 {
-                    if (RoomDefinition.checkEdgeGlitch(roomNr, x, y, DIR, result))
+                    if (RoomDefinition.CheckEdgeGlitch(roomNr, x, y, DIR, result))
                     {
                         return EVAL_EXIT_NORTH;
                     }
@@ -517,7 +517,7 @@ namespace kq3_hacking.RoomPathing
                 // edge glitch with inconsistent behaviour
                 if (result < EVAL_BARRIER)
                 {
-                    if (RoomDefinition.checkEdgeGlitch(roomNr, x, y, DIR, result))
+                    if (RoomDefinition.CheckEdgeGlitch(roomNr, x, y, DIR, result))
                     {
                         return EVAL_EXIT_SOUTH;
                     }
@@ -541,7 +541,7 @@ namespace kq3_hacking.RoomPathing
                 // edge glitch with inconsistent behaviour
                 if (result < EVAL_BARRIER)
                 {
-                    if (RoomDefinition.checkEdgeGlitch(roomNr, x, y, DIR, result))
+                    if (RoomDefinition.CheckEdgeGlitch(roomNr, x, y, DIR, result))
                     {
                         return EVAL_EXIT_EAST;
                     }
@@ -567,7 +567,7 @@ namespace kq3_hacking.RoomPathing
                 // edge glitch with inconsistent behaviour
                 if (result < EVAL_BARRIER)
                 {
-                    if (RoomDefinition.checkEdgeGlitch(roomNr, x, y, DIR, result))
+                    if (RoomDefinition.CheckEdgeGlitch(roomNr, x, y, DIR, result))
                     {
                         return EVAL_EXIT_WEST;
                     }

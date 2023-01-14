@@ -15,6 +15,16 @@ namespace kq3_hacking.RoomPathing
         public static readonly int[] KNIFE_SPOON_PICKUP_AREA = { 55, 123, 70, 133 };
         public static readonly int[] BOWL_PICKUP_AREA = { 10, 123, 54, 133 };
 
+        public static readonly int[] WIZBEDROOM_NEAR_CLOSET = { 95, 127, 112, 131 };
+        public static readonly int[] WIZBEDROOM_NEAR_DRAWER = { 102, 134, 117, 153 };
+        public static readonly int[] WIZBEDROOM_BLOCKING_DRAWER = { 108, 144, 112, 146 };
+        public static readonly int[] WIZBEDROOM_NEAR_MIRROR = { 58, 132, 70, 142 };
+
+        public static readonly int[] FLY_PICKUP1 = { 105, 125, 110, 130 };
+        public static readonly int[] FLY_PICKUP2 = { 114, 134, 115, 139 };
+        public static readonly int[] FLY_PICKUP3 = { 107, 145, 112, 150 };
+
+
         public const int START_ROOM = 7;
         public static readonly (int x, int y, int roomNr) START_POS = (96, 137, 7);
 

@@ -1,6 +1,7 @@
 using System.Diagnostics;
 using kq3_hacking.DataFilesIO;
 using kq3_hacking.GlobalPathing;
+using kq3_hacking.RoomPathing;
 
 namespace kq3_hacking
 {
@@ -31,9 +32,9 @@ namespace kq3_hacking
         public static void Pathing()
         {
             // PrintRoomControlData.RunTrials();
-            // TestMapTraversals.RunTrials();
+            TestMapTraversals.RunTrials();
             // TestPathFinder.RunTrials();
-            TestPathSequences.RunTrials();
+            // TestPathSequences.RunTrials();
         }
     }
 }

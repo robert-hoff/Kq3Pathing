@@ -80,9 +80,13 @@ namespace kq3_hacking.RoomPathing
                             {
                                 roomControlDatal[i, j] = RoomControl.TRAVERSABLE;
                             }
+                            else if (roomDefinition.useActionControl == RoomDefinition.ACTION_TILE_BARRIER)
+                            {
+                                roomControlDatal[i, j] = RoomControl.BARRIER;
+                            }
                             else
                             {
-                                throw new Exception("Unknown property value for" +
+                                throw new Exception("Unknown property value for " +
                                     $"roomProperties.useDarkGreenControl {roomDefinition.useActionControl}");
                             }
                             break;
