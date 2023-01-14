@@ -271,36 +271,91 @@ namespace kq3_hacking.RoomPathing
 
                 case 2:
                     roomDefinition.useBlockControl = BLOCKS_OBSERVED;
+
+                    // near closet
+                    roomDefinition.AddWaterTrigger(95, 127, 112, 131);
+
+                    // near dresser
+                    roomDefinition.AddWaterTrigger(102, 134, 117, 153);
+                    // in way of drawer
+                    roomDefinition.AddWaterTrigger(108, 144, 112, 146);
+
+                    // near mirror
+                    roomDefinition.AddWaterTrigger(58, 132, 70, 142);
+
+
                     break;
 
                 case 3:
-                    roomDefinition.useActionControl = ACTION_TILE_ROOM_TRIGGER;
-                    roomDefinition.actionTriggerRoom = 4;
+                    roomDefinition.useActionControl = ACTION_TILE_IGNORED;
+
+                    // bedroom
+                    roomDefinition.AddWaterTrigger(38, 90, 53, 118);
+                    // tower
+                    roomDefinition.AddWaterTrigger(120, 50, 139, 52);
+                    // bedroom
+                    roomDefinition.AddWaterTrigger(139, 133, 159, 166);
+
                     break;
 
                 case 4:
                     roomDefinition.useBlockControl = BLOCKS_IGNORED;
-                    roomDefinition.useActionControl = ACTION_TILE_ROOM_TRIGGER;
+                    roomDefinition.useActionControl = ACTION_TILE_IGNORED;
                     roomDefinition.actionTriggerRoom = 3;
+                    // to hallway
+                    roomDefinition.AddWaterTrigger(11, 131, 12, 165);
+                    // to tower
+                    roomDefinition.AddWaterTrigger(47, 0, 69, 43);
                     break;
 
                 case 5:
                     roomDefinition.useBlockControl = BLOCKS_OBSERVED;
                     roomDefinition.useWaterControl = WATER_TILES_IGNORED;
+                    // wand pickup
+                    roomDefinition.AddWaterTrigger(23, 155, 32, 166);
+
+                    // trapdoor lever
+                    roomDefinition.AddWaterTrigger(113, 125, 121, 140);
                     break;
 
                 case 6:
                     roomDefinition.useBlockControl = BLOCKS_OBSERVED;
                     roomDefinition.useWaterControl = WATER_TILES_IGNORED;
+                    roomDefinition.rewriteRule = (int previousRoom, int x, int y, int footprintWidth) =>
+                    {
+                        if (previousRoom == 8)
+                        {
+                            return (104, 166);
+                        }
+                        throw new Exception($"unknown room {previousRoom}");
+                    };
                     break;
 
                 case 7:
-                    roomDefinition.useBlockControl = BLOCKS_IGNORED;
-                    roomDefinition.useActionControl = ACTION_TILE_SPECIAL;
+                    roomDefinition.SetSouthRoom(34);
+                    roomDefinition.useBlockControl = BLOCKS_OBSERVED;
+                    roomDefinition.useActionControl = ACTION_TILE_IGNORED;
+                    roomDefinition.AddRoomTrigger(5, 93, 116, 110, 118); // office
+                    roomDefinition.AddRoomTrigger(8, 131, 134, 140, 144); // dining room
+                    roomDefinition.AddRoomTrigger(3, 93, 42, 109, 44); // upstairs hallway
                     break;
 
                 case 8:
-                    roomDefinition.useActionControl = ACTION_TILE_SPECIAL;
+                    roomDefinition.useActionControl = ACTION_TILE_IGNORED;
+                    roomDefinition.AddRoomTrigger(7, 21, 132, 25, 144); // hallway
+                    roomDefinition.AddRoomTrigger(6, 101, 110, 115, 120); // kitchen
+                    roomDefinition.rewriteRule = (int previousRoom, int x, int y, int footprintWidth) =>
+                    {
+                        if (previousRoom == 7)
+                        {
+                            return (26, 138);
+                        }
+                        if (previousRoom == 6)
+                        {
+                            return (104, 121);
+                        }
+                        throw new Exception($"unknown room {previousRoom}");
+                    };
                     break;
 
                 case 9:
@@ -311,7 +366,11 @@ namespace kq3_hacking.RoomPathing
 
                 case 10:
                     roomDefinition.useBlockControl = BLOCKS_OBSERVED;
-                    roomDefinition.useActionControl = ACTION_TILE_SPECIAL;
+                    roomDefinition.useActionControl = ACTION_TILE_DEATH_TRIGGER;
+                    // shelves
+                    roomDefinition.AddWaterTrigger(58, 90, 96, 109);
+                    // spell book
+                    roomDefinition.AddWaterTrigger(92, 139, 119, 139);
                     break;
 
                 case 11:

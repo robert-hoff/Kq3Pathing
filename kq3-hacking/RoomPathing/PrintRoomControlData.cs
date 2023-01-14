@@ -12,8 +12,8 @@ namespace kq3_hacking.RoomPathing
 
         public static void RunTrials()
         {
-            // ShowRoomControlData(1);
-            ShowRoomAreaTriggers(33);
+            // ShowRoomControlData(3);
+            ShowRoomAreaTriggers(10);
             // SaveRoomControlData(1, "testfile.txt");
             // SaveAllControlData();
 
