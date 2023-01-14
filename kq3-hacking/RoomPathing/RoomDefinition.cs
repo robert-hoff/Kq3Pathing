@@ -35,7 +35,7 @@ namespace kq3_hacking.RoomPathing
 
         public int roomNr;
 
-        public const int DEFAULT_FOOTPRINT = 6;
+        public const int DEFAULT_FOOTPRINT = 7;
         private const int DEFAULT_LOWER_LIMIT = 36;
         public const int ROOM_WIDTH = 160;
         public const int ROOM_HEIGHT = 168;
@@ -345,11 +345,20 @@ namespace kq3_hacking.RoomPathing
                     roomDefinition.useBlockControl = BLOCKS_OBSERVED;
                     roomDefinition.useWaterControl = WATER_TILES_IGNORED;
                     roomDefinition.SetSouthRoom(7);
+                    if (gameState.IsTrapDoorOpen())
+                    {
+                        roomDefinition.AddSpecialBarrier(95, 127, 111, 144);
+                        roomDefinition.AddRoomTrigger(9, 100, 125, 101, 126);
+                    }
                     roomDefinition.rewriteRule = (int previousRoom, int x, int y, int footprintWidth) =>
                     {
                         if (previousRoom == 7)
                         {
                             return (96, 167);
+                        }
+                        if (previousRoom == 9)
+                        {
+                            return (107,125);
                         }
                         throw new Exception($"unknown room {previousRoom}");
                     };
@@ -394,7 +403,7 @@ namespace kq3_hacking.RoomPathing
                         }
                         if (previousRoom == 34)
                         {
-                            return (95,165);
+                            return (95, 165);
                         }
                         throw new Exception($"unknown room {previousRoom}");
                     };
@@ -445,9 +454,22 @@ namespace kq3_hacking.RoomPathing
                     break;
 
                 case 9:
+                    // FIXME - north boundary needs to be set explicity to avoid failures
+                    roomDefinition.NorthBoundary = 33;
+                    roomDefinition.SetNorthRoom(5, horizon: 33);
                     roomDefinition.useBlockControl = BLOCKS_OBSERVED;
                     roomDefinition.useActionControl = ACTION_TILE_DEATH_TRIGGER;
                     roomDefinition.useWaterControl = WATER_TILES_IGNORED;
+
+                    roomDefinition.stopPoints.Add((107, 35), true);
+                    roomDefinition.rewriteRule = (int previousRoom, int x, int y, int footprintWidth) =>
+                    {
+                        if (previousRoom == 5)
+                        {
+                            return (107, 35);
+                        }
+                        throw new Exception($"unknown room {previousRoom}");
+                    };
                     break;
 
                 case 10:
@@ -541,7 +563,7 @@ namespace kq3_hacking.RoomPathing
                     roomDefinition.useActionControl = ACTION_TILE_DEATH_TRIGGER;
                     roomDefinition.AddWaterTrigger(9, 60, 18, 78);
                     roomDefinition.AddWaterTrigger(0, 0, 21, 59);
-                    roomDefinition.AddWaterTrigger(0, 60, 8, 68 );
+                    roomDefinition.AddWaterTrigger(0, 60, 8, 68);
                     roomDefinition.AddWaterTrigger(7, 79, 31, 87);
                     roomDefinition.AddWaterTrigger(0, 89, 53, 100);
                     roomDefinition.AddWaterTrigger(47, 75, 72, 80);

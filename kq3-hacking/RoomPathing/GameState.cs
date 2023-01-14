@@ -50,9 +50,13 @@ namespace kq3_hacking.RoomPathing
             stateDescription[TRAPDOOR_OPEN] = false;
         }
 
-        public void SetTrapDoorOpen(bool trapDoorOpen)
+        public void SetTrapDoorOpen()
         {
-            stateDescription[TRAPDOOR_OPEN] = trapDoorOpen;
+            stateDescription[TRAPDOOR_OPEN] = true;
+        }
+        public void SetTrapDoorClosed()
+        {
+            stateDescription[TRAPDOOR_OPEN] = false;
         }
         public bool IsTrapDoorOpen()
         {

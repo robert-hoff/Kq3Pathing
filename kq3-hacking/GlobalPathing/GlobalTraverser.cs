@@ -16,6 +16,7 @@ namespace kq3_hacking.GlobalPathing
         private int startY;
         public int pathLength = 0;
         public string pathDescription = "";
+        public List<string> pathDescriptions = new();
 
         public GlobalTraverser(GameState gameState, int startRoomNr, int startX, int startY)
         {
@@ -31,9 +32,16 @@ namespace kq3_hacking.GlobalPathing
             return nextGameState;
         }
 
+        private void AddPathDescription(string desc)
+        {
+            pathDescription += $"{desc} ";
+            pathDescriptions.Add(desc);
+        }
+
+
         public void SetGoalCup()
         {
-            pathDescription += "CUP ";
+            AddPathDescription("CUP");
             currentGameState = nextGameState;
             nextGameState = currentGameState.CloneState();
             GoalState goalState = new();
@@ -43,7 +51,7 @@ namespace kq3_hacking.GlobalPathing
 
         public void SetGoalBowl()
         {
-            pathDescription += "BWL ";
+            AddPathDescription("BWL");
             currentGameState = nextGameState;
             nextGameState = currentGameState.CloneState();
             GoalState goalState = new();
@@ -53,7 +61,7 @@ namespace kq3_hacking.GlobalPathing
 
         public void SetGoalSpoon()
         {
-            pathDescription += "SPN ";
+            AddPathDescription("SPN");
             currentGameState = nextGameState;
             nextGameState = currentGameState.CloneState();
             GoalState goalState = new();
@@ -63,7 +71,7 @@ namespace kq3_hacking.GlobalPathing
 
         public void SetGoalExitKitchen()
         {
-            pathDescription += "EXT ";
+            AddPathDescription("EKt");
             currentGameState = nextGameState;
             nextGameState = currentGameState.CloneState();
             GoalState goalState = new GoalState();
@@ -73,7 +81,7 @@ namespace kq3_hacking.GlobalPathing
 
         public void SetGoalEssence()
         {
-            pathDescription += "ESS ";
+            AddPathDescription("ESS");
             currentGameState = nextGameState;
             nextGameState = currentGameState.CloneState();
             GoalState goalState = new GoalState();
@@ -85,7 +93,7 @@ namespace kq3_hacking.GlobalPathing
 
         public void SetGoalMapKey()
         {
-            pathDescription += "MAP ";
+            AddPathDescription("MAP");
             currentGameState = nextGameState;
             nextGameState = currentGameState.CloneState();
             GoalState goalState = new GoalState();
@@ -95,7 +103,7 @@ namespace kq3_hacking.GlobalPathing
 
         public void SetGoalWizBedroom()
         {
-            pathDescription += "WBR ";
+            AddPathDescription("WBr");
             currentGameState = nextGameState;
             nextGameState = currentGameState.CloneState();
             GoalState goalState = new GoalState();
@@ -105,7 +113,7 @@ namespace kq3_hacking.GlobalPathing
 
         public void SetGoalTower()
         {
-            pathDescription += "TWR ";
+            AddPathDescription("TWR");
             currentGameState = nextGameState;
             nextGameState = currentGameState.CloneState();
             GoalState goalState = new GoalState();
@@ -115,7 +123,7 @@ namespace kq3_hacking.GlobalPathing
 
         public void SetGoalWand()
         {
-            pathDescription += "WND ";
+            AddPathDescription("WND");
             currentGameState = nextGameState;
             nextGameState = currentGameState.CloneState();
             GoalState goalState = new GoalState();
@@ -125,11 +133,22 @@ namespace kq3_hacking.GlobalPathing
 
         public void SetGoalTrapdoor()
         {
-            pathDescription += "TPD ";
+            AddPathDescription("TPD");
+            currentGameState = nextGameState;
+            nextGameState = currentGameState.CloneState();
+            nextGameState.SetTrapDoorOpen();
+            GoalState goalState = new GoalState();
+            goalState.SetGoalRegion(goalRoomNr: 5, TRAPDOOR_LEVER);
+            traverser.RegisterPathingComponents(currentGameState, goalState);
+        }
+
+        public void SetGoalBasement()
+        {
+            AddPathDescription("BSM");
             currentGameState = nextGameState;
             nextGameState = currentGameState.CloneState();
             GoalState goalState = new GoalState();
-            goalState.SetGoalRegion(goalRoomNr: 5, TRAPDOOR_LEVER);
+            goalState.SetGoalRegion(goalRoomNr: 9, WHOLE_ROOM);
             traverser.RegisterPathingComponents(currentGameState, goalState);
         }
 

@@ -27,6 +27,7 @@ namespace kq3_hacking.GlobalPathing
         public const int GOAL_WAND = 10;
         public const int GOAL_TRAPDOOR = 11;
 
+        public const int GOAL_BASEMENT = 12;
 
         public GlobalPathFinder()
         {
@@ -86,6 +87,10 @@ namespace kq3_hacking.GlobalPathing
                     currentTraverser.SetGoalTrapdoor();
                     break;
 
+                case GOAL_BASEMENT:
+                    currentTraverser.SetGoalBasement();
+                    break;
+
                 default:
                     throw new Exception($"unknown goal {goal}");
             }
@@ -99,6 +104,38 @@ namespace kq3_hacking.GlobalPathing
                 foreach (Traversal t in pathSequence)
                 {
                     Debug.WriteLine($"{t}");
+                }
+            }
+        }
+
+        public void ShowTraverserPaths()
+        {
+            for (int i = 0; i < traversers.Count; i++)
+            {
+                GlobalTraverser traverser = traversers[i];
+
+                List<Traversal> pathSequence = traverser.FindPathSequence();
+                string enumTitle = $"{traverser.pathDescription} [{pathSequence.Count-1}]";
+                Debug.WriteLine($"{enumTitle}");
+                Debug.WriteLine($"{new string('-', enumTitle.Length)}");
+
+                int lastMapId = 0;
+                int stepCount = 0;
+                Traversal t0 = pathSequence[0];
+                Debug.WriteLine($"start ({t0.X()},{t0.Y()})({t0.RNr()})");
+
+                for (int j = 1; j < pathSequence.Count; j++)
+                {
+                    Traversal t = pathSequence[j];
+                    Debug.Write($"{MapTraversal.actionNames[t.action]} ");
+                    stepCount++;
+                    if (t.mapStateId != lastMapId)
+                    {
+                        string goalDesc = traverser.pathDescriptions[lastMapId].ToLower();
+                        Debug.WriteLine($"[{stepCount}] {goalDesc} ({t.X()},{t.Y()})({t.RNr()})");
+                        stepCount = 0;
+                        lastMapId = t.mapStateId;
+                    }
                 }
             }
         }
