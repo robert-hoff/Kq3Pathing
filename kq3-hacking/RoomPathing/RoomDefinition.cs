@@ -319,6 +319,7 @@ namespace kq3_hacking.RoomPathing
                     break;
 
                 case 6:
+                    roomDefinition.SetSouthRoom(8);
                     roomDefinition.useBlockControl = BLOCKS_OBSERVED;
                     roomDefinition.useWaterControl = WATER_TILES_IGNORED;
                     roomDefinition.rewriteRule = (int previousRoom, int x, int y, int footprintWidth) =>
@@ -338,6 +339,26 @@ namespace kq3_hacking.RoomPathing
                     roomDefinition.AddRoomTrigger(5, 93, 116, 110, 118); // office
                     roomDefinition.AddRoomTrigger(8, 131, 134, 140, 144); // dining room
                     roomDefinition.AddRoomTrigger(3, 93, 42, 109, 44); // upstairs hallway
+                    roomDefinition.rewriteRule = (int previousRoom, int x, int y, int footprintWidth) =>
+                    {
+                        if (previousRoom == 3)
+                        {
+                            return (95,46);
+                        }
+                        if (previousRoom == 5)
+                        {
+                            return (97, 121);
+                        }
+                        if (previousRoom == 8)
+                        {
+                            return (128, 140);
+                        }
+                        if (previousRoom == 34)
+                        {
+                            return (95,165);
+                        }
+                        throw new Exception($"unknown room {previousRoom}");
+                    };
                     break;
 
                 case 8:

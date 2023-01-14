@@ -26,7 +26,10 @@ namespace kq3_hacking.RoomPathing
             // ShowTraversal(mapTraversal, GameState.START_POS, RoomControl.DIR_NW); // expected (82,123)(7)
             // ShowTraversal(mapTraversal, GameState.START_POS, RoomControl.DIR_E); // expected (48,138)(8)
             // ShowTraversal(mapTraversal, 8, 48, 138, RoomControl.DIR_NW); // expected (40,130)(8)
-            ShowTraversal(mapTraversal, 8, 40, 130, RoomControl.DIR_S); // expected (40,136)(8)
+            // ShowTraversal(mapTraversal, 8, 40, 130, RoomControl.DIR_S); // expected (40,136)(8)
+            // ShowTraversal(mapTraversal, 6, 62, 124, RoomControl.DIR_SE); // expected (137,154)(8)
+            ShowTraversal(mapTraversal, 8, 48, 138, RoomControl.DIR_W); // expected (77,140)(7)
+
 
         }
 
