@@ -48,7 +48,22 @@ namespace kq3_hacking.RoomPathing
             // ShowTraversal(mapTraversal, 3, 18, 142, RoomControl.DIR_NE); // expected (88,120)(2)
             // ShowTraversal(mapTraversal, 2, 43, 134, RoomControl.DIR_S); //
             // ShowTraversal(mapTraversal, 3, 102, 85, RoomControl.DIR_NE); // expected (76,120)(1)
-            ShowTraversal(mapTraversal, 1, 76, 120, RoomControl.DIR_SW); // expected (102,85)(3)
+            // ShowTraversal(mapTraversal, 1, 76, 120, RoomControl.DIR_SW); // expected (102,85)(3)
+            // ShowTraversal(mapTraversal, 7, 124, 135, RoomControl.DIR_SE); // expected (51,163)(8)
+            // ShowTraversal(mapTraversal, 7, 124, 165, RoomControl.DIR_E); // expected (137,165)(8)
+
+            // from the starting position to upstairs
+            ShowTraversal(mapTraversal, 7, 96, 137, RoomControl.DIR_W); // expected (75,137)(7)
+            ShowTraversal(mapTraversal, 7, 75, 137, RoomControl.DIR_N); // expected (75,123)(7)
+            ShowTraversal(mapTraversal, 7, 75, 123, RoomControl.DIR_NW); // expected (40,88)(7)
+            ShowTraversal(mapTraversal, 7, 40, 88, RoomControl.DIR_S); // expected (40,98)(7)
+            ShowTraversal(mapTraversal, 7, 40, 98, RoomControl.DIR_SW); // expected (40,98)(7)
+
+
+
+
+            // ShowTraversal(mapTraversal, roomNr: 35, 79, 68, RoomControl.DIR_SW); // expected (26,121)(35)
+
 
         }
 

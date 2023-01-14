@@ -71,6 +71,68 @@ namespace kq3_hacking.GlobalPathing
             traverser.RegisterPathingComponents(currentGameState, goalState);
         }
 
+        public void SetGoalEssence()
+        {
+            pathDescription += "ESS ";
+            currentGameState = nextGameState;
+            nextGameState = currentGameState.CloneState();
+            GoalState goalState = new GoalState();
+            goalState.SetGoalRegion(goalRoomNr: 2, ESSENCE_PICKUP1);
+            goalState.SetGoalRegion(goalRoomNr: 2, ESSENCE_PICKUP2);
+
+            traverser.RegisterPathingComponents(currentGameState, goalState);
+        }
+
+        public void SetGoalMapKey()
+        {
+            pathDescription += "MAP ";
+            currentGameState = nextGameState;
+            nextGameState = currentGameState.CloneState();
+            GoalState goalState = new GoalState();
+            goalState.SetGoalRegion(goalRoomNr: 2, WIZBEDROOM_NEAR_CLOSET);
+            traverser.RegisterPathingComponents(currentGameState, goalState);
+        }
+
+        public void SetGoalWizBedroom()
+        {
+            pathDescription += "WBR ";
+            currentGameState = nextGameState;
+            nextGameState = currentGameState.CloneState();
+            GoalState goalState = new GoalState();
+            goalState.SetGoalRegion(goalRoomNr: 2, WHOLE_ROOM);
+            traverser.RegisterPathingComponents(currentGameState, goalState);
+        }
+
+        public void SetGoalTower()
+        {
+            pathDescription += "TWR ";
+            currentGameState = nextGameState;
+            nextGameState = currentGameState.CloneState();
+            GoalState goalState = new GoalState();
+            goalState.SetGoalRegion(goalRoomNr: 1, WHOLE_ROOM);
+            traverser.RegisterPathingComponents(currentGameState, goalState);
+        }
+
+        public void SetGoalWand()
+        {
+            pathDescription += "WND ";
+            currentGameState = nextGameState;
+            nextGameState = currentGameState.CloneState();
+            GoalState goalState = new GoalState();
+            goalState.SetGoalRegion(goalRoomNr: 5, WAND_PICKUP);
+            traverser.RegisterPathingComponents(currentGameState, goalState);
+        }
+
+        public void SetGoalTrapdoor()
+        {
+            pathDescription += "TPD ";
+            currentGameState = nextGameState;
+            nextGameState = currentGameState.CloneState();
+            GoalState goalState = new GoalState();
+            goalState.SetGoalRegion(goalRoomNr: 5, TRAPDOOR_LEVER);
+            traverser.RegisterPathingComponents(currentGameState, goalState);
+        }
+
         public void DeterminePathLength()
         {
             pathDescription = pathDescription.Trim();

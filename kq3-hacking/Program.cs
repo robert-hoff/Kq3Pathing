@@ -32,9 +32,9 @@ namespace kq3_hacking
         public static void Pathing()
         {
             // PrintRoomControlData.RunTrials();
-            TestMapTraversals.RunTrials();
+            // TestMapTraversals.RunTrials();
             // TestPathFinder.RunTrials();
-            // TestPathSequences.RunTrials();
+            TestPathSequences.RunTrials();
         }
     }
 }

@@ -20,9 +20,16 @@ namespace kq3_hacking.RoomPathing
         public static readonly int[] WIZBEDROOM_BLOCKING_DRAWER = { 108, 144, 112, 146 };
         public static readonly int[] WIZBEDROOM_NEAR_MIRROR = { 58, 132, 70, 142 };
 
+
+        public static readonly int[] ESSENCE_PICKUP1 = { 102, 134, 117, 143 };
+        public static readonly int[] ESSENCE_PICKUP2 = { 102, 147, 117, 153 };
+
         public static readonly int[] FLY_PICKUP1 = { 105, 125, 110, 130 };
         public static readonly int[] FLY_PICKUP2 = { 114, 134, 115, 139 };
         public static readonly int[] FLY_PICKUP3 = { 107, 145, 112, 150 };
+
+        public static readonly int[] WAND_PICKUP = { 23, 155, 32, 166 };
+        public static readonly int[] TRAPDOOR_LEVER = { 113, 125, 121, 140 };
 
 
         public const int START_ROOM = 7;

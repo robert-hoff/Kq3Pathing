@@ -57,11 +57,13 @@ namespace kq3_hacking.RoomPathing
         public const int EVAL_ROOMTRIGGER = -ROOM_TRIGGER;
         public const int EVAL_ROOMACTION_AREA1 = -ROOM_TRIGGER - 1;
         public const int EVAL_ROOMACTION_AREA2 = -ROOM_TRIGGER - 2;
+        public const int EVAL_ROOMACTION_AREA3 = -ROOM_TRIGGER - 3;
         // Used to indicate traversal into an adjacent room (by crossing a room boundary or horizon)
-        public const int EVAL_EXIT_NORTH = -9;
-        public const int EVAL_EXIT_EAST = -10;
-        public const int EVAL_EXIT_SOUTH = -11;
-        public const int EVAL_EXIT_WEST = -12;
+
+        public const int EVAL_EXIT_NORTH = -ROOM_TRIGGER - 4;
+        public const int EVAL_EXIT_EAST = -ROOM_TRIGGER - 5;
+        public const int EVAL_EXIT_SOUTH = -ROOM_TRIGGER - 6;
+        public const int EVAL_EXIT_WEST = -ROOM_TRIGGER - 7;
 
         public readonly int footprintWidth;
         public readonly int[,] walkAdjacencies = new int[ROOM_WIDTH * ROOM_HEIGHT, 9];
@@ -234,6 +236,8 @@ namespace kq3_hacking.RoomPathing
                     return roomDefinition.actionAreasRoomNumbers[0];
                 case EVAL_ROOMACTION_AREA2:
                     return roomDefinition.actionAreasRoomNumbers[1];
+                case EVAL_ROOMACTION_AREA3:
+                    return roomDefinition.actionAreasRoomNumbers[2];
                 default:
                     throw new Exception($"wrong value for this method ({evaluation})");
             }
@@ -637,6 +641,10 @@ namespace kq3_hacking.RoomPathing
                     if (i == 1)
                     {
                         return EVAL_ROOMACTION_AREA2;
+                    }
+                    if (i == 2)
+                    {
+                        return EVAL_ROOMACTION_AREA3;
                     }
                     if (i > 1)
                     {

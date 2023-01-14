@@ -344,10 +344,15 @@ namespace kq3_hacking.RoomPathing
                 case 5:
                     roomDefinition.useBlockControl = BLOCKS_OBSERVED;
                     roomDefinition.useWaterControl = WATER_TILES_IGNORED;
-                    // wand pickup
-                    roomDefinition.AddWaterTrigger(23, 155, 32, 166);
-                    // trapdoor lever
-                    roomDefinition.AddWaterTrigger(113, 125, 121, 140);
+                    roomDefinition.SetSouthRoom(7);
+                    roomDefinition.rewriteRule = (int previousRoom, int x, int y, int footprintWidth) =>
+                    {
+                        if (previousRoom == 7)
+                        {
+                            return (96, 167);
+                        }
+                        throw new Exception($"unknown room {previousRoom}");
+                    };
                     break;
 
                 case 6:
@@ -367,14 +372,10 @@ namespace kq3_hacking.RoomPathing
                 case 7:
                     roomDefinition.SetSouthRoom(34);
                     roomDefinition.useWaterControl = WATER_TILES_IGNORED;
-
-                    // roomDefinition.useBlockControl = BLOCKS_OBSERVED;
-                    // roomDefinition.useActionControl = ACTION_TILE_IGNORED;
-
-                    roomDefinition.useBlockControl = BLOCKS_IGNORED;
-                    roomDefinition.useActionControl = ACTION_TILE_BARRIER;
-                    // room35 (this room in a different state)
-                    roomDefinition.AddRoomTrigger(roomNr: 35, 20, 103, 46, 103);
+                    roomDefinition.useBlockControl = BLOCKS_OBSERVED;
+                    roomDefinition.useActionControl = ACTION_TILE_IGNORED;
+                    // room35 (= room 7, in a different state)
+                    roomDefinition.AddRoomTrigger(roomNr: 35, 20, 100, 42, 100);
                     roomDefinition.AddRoomTrigger(5, 93, 116, 110, 118); // office
                     roomDefinition.AddRoomTrigger(8, 131, 134, 140, 144); // dining room
                     roomDefinition.rewriteRule = (int previousRoom, int x, int y, int footprintWidth) =>
@@ -405,10 +406,10 @@ namespace kq3_hacking.RoomPathing
                  *
                  */
                 case 35:
-                    roomDefinition.SetSouthRoom(34);
+                    roomDefinition.useWaterControl = WATER_TILES_IGNORED;
                     roomDefinition.useBlockControl = BLOCKS_IGNORED;
                     roomDefinition.useActionControl = ACTION_TILE_BARRIER;
-                    roomDefinition.AddRoomTrigger(roomNr: 7, 20, 101, 46, 101);  // hallway (room7)
+                    roomDefinition.AddRoomTrigger(roomNr: 7, 20, 98, 42, 98);  // hallway (room7)
                     roomDefinition.AddRoomTrigger(3, 93, 42, 109, 44); // upstairs hallway
                     roomDefinition.rewriteRule = (int previousRoom, int x, int y, int footprintWidth) =>
                     {

@@ -238,6 +238,7 @@ namespace kq3_hacking.RoomPathing
                     case RoomControl.EVAL_ROOMTRIGGER:
                     case RoomControl.EVAL_ROOMACTION_AREA1:
                     case RoomControl.EVAL_ROOMACTION_AREA2:
+                    case RoomControl.EVAL_ROOMACTION_AREA3:
                     {
                         Step nextStep = EvaluateRoomTriggerTransition(
                             evaluation, traversal.RNr(), traversal.X(), traversal.Y(), traversal.direction);
