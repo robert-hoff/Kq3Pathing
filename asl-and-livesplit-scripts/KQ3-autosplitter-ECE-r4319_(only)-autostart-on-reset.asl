@@ -17,7 +17,7 @@ state("dosbox", "ECE r4319")
 
 init
 {
-  refreshRate = 30;
+  refreshRate = 60;
   vars.prevPlayerXPos = 0;
   vars.prevPlayerYPos = 0;
   vars.gameScore = 0;
@@ -45,6 +45,24 @@ update
   if (current.restartDialogShowing == 1) {
     vars.prevPlayerXPos = current.playerXPos;
     vars.prevPlayerYPos = current.playerYPos;
+  }
+}
+
+// it's best to check the player position as well
+// this allows for hitting F9 to get back to start screen and then to prepare whatever
+// string one wants to F3. As well as checking speed setting (which needs to be above Fast)
+start {
+  if (settings["begin-on-reset"] && current.currentRoom == 7
+    && current.secondsPassed < 1 && current.minutesPassed == 0
+    && vars.prevPlayerXPos == 96 && vars.prevPlayerYPos == 137) {
+    vars.prevPlayerXPos = 0;
+    vars.prevPlayerYPos = 0;
+    vars.eagleSpell = false;
+    vars.allWarez = false;
+    vars.tookCareOfWizard = false;
+    vars.reachedIsland = false;
+    vars.completedGame = false;
+    return true;
   }
 }
 
@@ -80,24 +98,6 @@ split
     vars.completedGame = true;
 		return true;
 	}
-}
-
-// it's best to check the player position as well
-// this allows for hitting F9 to get back to start screen and then to prepare whatever
-// string one wants to F3. As well as checking speed setting (which needs to be above Fast)
-start {
-  if (settings["begin-on-reset"] && current.currentRoom == 7
-    && current.secondsPassed < 1 && current.minutesPassed == 0
-    && vars.prevPlayerXPos == 96 && vars.prevPlayerYPos == 137) {
-    vars.prevPlayerXPos = 0;
-    vars.prevPlayerYPos = 0;
-    vars.eagleSpell = false;
-    vars.allWarez = false;
-    vars.tookCareOfWizard = false;
-    vars.reachedIsland = false;
-    vars.completedGame = false;
-    return true;
-  }
 }
 
 // reset if hitting restart anywhere in the run

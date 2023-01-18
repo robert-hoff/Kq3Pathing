@@ -885,7 +885,7 @@
     </CheatEntry>
     <CheatEntry>
       <ID>89</ID>
-      <Description>"v082 - wizard_countdown"</Description>
+      <Description>"v082"</Description>
       <ShowAsSigned>0</ShowAsSigned>
       <VariableType>Byte</VariableType>
       <Address>Dosbox.exe + 0x1B58E20</Address>
@@ -905,7 +905,7 @@
     </CheatEntry>
     <CheatEntry>
       <ID>91</ID>
-      <Description>"v084"</Description>
+      <Description>"v084 - wizard_countdown"</Description>
       <ShowAsSigned>0</ShowAsSigned>
       <VariableType>Byte</VariableType>
       <Address>Dosbox.exe + 0x1B58E20</Address>
@@ -3177,7 +3177,7 @@
     </CheatEntry>
     <CheatEntry>
       <ID>309</ID>
-      <Description>"f046"</Description>
+      <Description>"f046 - handsOff"</Description>
       <VariableType>Binary</VariableType>
       <BitStart>1</BitStart>
       <BitLength>1</BitLength>

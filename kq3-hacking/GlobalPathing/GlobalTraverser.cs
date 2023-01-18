@@ -152,6 +152,16 @@ namespace kq3_hacking.GlobalPathing
             traverser.RegisterPathingComponents(currentGameState, goalState);
         }
 
+        public void SetGoalExitHouse()
+        {
+            AddPathDescription("EXH");
+            currentGameState = nextGameState;
+            nextGameState = currentGameState.CloneState();
+            GoalState goalState = new GoalState();
+            goalState.SetGoalRegion(goalRoomNr: 34, WHOLE_ROOM);
+            traverser.RegisterPathingComponents(currentGameState, goalState);
+        }
+
         public void DeterminePathLength()
         {
             pathDescription = pathDescription.Trim();

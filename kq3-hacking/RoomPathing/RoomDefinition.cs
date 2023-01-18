@@ -558,6 +558,8 @@ namespace kq3_hacking.RoomPathing
                     roomDefinition.useBlockControl = BLOCKS_OBSERVED;
                     break;
 
+
+                // the point 61,86 doesn't seem to be covered by any of the areas
                 case 33:
                     roomDefinition.useBlockControl = BLOCKS_OBSERVED;
                     roomDefinition.useActionControl = ACTION_TILE_DEATH_TRIGGER;

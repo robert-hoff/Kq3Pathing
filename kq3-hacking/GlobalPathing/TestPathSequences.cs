@@ -10,7 +10,8 @@ namespace kq3_hacking.GlobalPathing
             // PathsDetailsForSpoonBowlCup();
             // PathsDetailsForBowlSpoonCup();
             // PathsEssencePickup();
-            Enumeration1();
+            // Enumeration1();
+            DogPercent();
 
         }
 
@@ -147,6 +148,18 @@ namespace kq3_hacking.GlobalPathing
             pathFinder.NextGoal(GlobalPathFinder.GOAL_WAND);
             pathFinder.NextGoal(GlobalPathFinder.GOAL_TRAPDOOR);
             pathFinder.NextGoal(GlobalPathFinder.GOAL_BASEMENT);
+            // pathFinder.FindPathLengths();
+            // pathFinder.ShowPathLengths();
+            pathFinder.ShowTraverserPaths();
+        }
+
+
+        // get the map and exit
+        public static void DogPercent()
+        {
+            GlobalPathFinder pathFinder = new GlobalPathFinder();
+            pathFinder.NextGoal(GlobalPathFinder.GOAL_KEY_AND_MAP);
+            pathFinder.NextGoal(GlobalPathFinder.GOAL_EXIT_HOUSE);
             // pathFinder.FindPathLengths();
             // pathFinder.ShowPathLengths();
             pathFinder.ShowTraverserPaths();

@@ -16,18 +16,15 @@ namespace kq3_hacking.GlobalPathing
         public const int GOAL_SPOON = 2;
         public const int GOAL_BOWL = 3;
         public const int GOAL_EXIT_KITCHEN = 4;
-
         public const int GOAL_KEY_AND_MAP = 5;
         public const int GOAL_ESSENCE = 6;
-
         public const int GOAL_FLY = 7;
         public const int GOAL_WIZ_BEDROOM= 8;
-
         public const int GOAL_TOWER = 9;
         public const int GOAL_WAND = 10;
         public const int GOAL_TRAPDOOR = 11;
-
         public const int GOAL_BASEMENT = 12;
+        public const int GOAL_EXIT_HOUSE = 13;
 
         public GlobalPathFinder()
         {
@@ -89,6 +86,10 @@ namespace kq3_hacking.GlobalPathing
 
                 case GOAL_BASEMENT:
                     currentTraverser.SetGoalBasement();
+                    break;
+
+                case GOAL_EXIT_HOUSE:
+                    currentTraverser.SetGoalExitHouse();
                     break;
 
                 default:
