@@ -11,7 +11,10 @@ namespace kq3_hacking.RoomPathing
 
         public static void RunTrials()
         {
-            UpstairsToWizBedroom();
+            // TopOfStairsToExit();
+            BedroomExitToDownstairs();
+            // BedroomEntryToMapPickup();
+            // UpstairsToWizBedroom();
             // StartToUpstairs();
             // StartToCupPickup();
             // StartToSpoonPickup();
@@ -20,11 +23,42 @@ namespace kq3_hacking.RoomPathing
         }
 
 
+        public static void TopOfStairsToExit()
+        {
+            PathFinder pathFinder = new();
+            // pathFinder.SetGoalRegion(34, GameState.WHOLE_ROOM);
+            // south-exit (which is the only viable one)
+            pathFinder.SetGoalTargetPosition(34, 39, 152);
+
+            // there are 9-length solutions from here
+            // pathFinder.FindPathsFrom(roomNr: 35, 79, 62, MAXDEPTH: 10, stopPathOnSolution: true);
+
+            // only 10-length from here
+            // pathFinder.FindPathsFrom(roomNr: 35, 95, 50, MAXDEPTH: 10, stopPathOnSolution: true);
+
+            // and only 10-length from here
+            // pathFinder.FindPathsFrom(roomNr: 35, 97, 48, MAXDEPTH: 10, stopPathOnSolution: true);
+            pathFinder.ShowSolutions(omitPositionsSeen: false);
+        }
+
+
+        public static void BedroomExitToDownstairs()
+        {
+            PathFinder pathFinder = new();
+            pathFinder.SetGoalRegion(35, GameState.WHOLE_ROOM);
+            // pathFinder.FindPathsFrom(roomNr: 3, 40, 163, MAXDEPTH: 8, stopPathOnSolution: true);
+            pathFinder.FindPathsFrom(roomNr: 3, 18, 142, MAXDEPTH: 5, stopPathOnSolution: true);
+            pathFinder.ShowSolutions(omitPositionsSeen: false);
+        }
+
+
         public static void BedroomEntryToMapPickup()
         {
             PathFinder pathFinder = new();
             pathFinder.SetGoalRegion(2, GameState.WIZBEDROOM_NEAR_CLOSET);
-            pathFinder.FindPathsFrom(roomNr: 2, 88, 120, MAXDEPTH: 4, stopPathOnSolution: true);
+            // pathFinder.FindPathsFrom(roomNr: 2, 88, 120, MAXDEPTH: 4, stopPathOnSolution: true);
+            pathFinder.FindPathsFrom(roomNr: 2, 41, 133, MAXDEPTH: 4, stopPathOnSolution: true);
+            // pathFinder.FindPathsFrom(roomNr: 2, 39, 165, MAXDEPTH: 4, stopPathOnSolution: true);
             pathFinder.ShowSolutions(omitPositionsSeen: false);
         }
 

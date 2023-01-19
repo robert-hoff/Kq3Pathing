@@ -358,7 +358,7 @@ namespace kq3_hacking.RoomPathing
                         }
                         if (previousRoom == 9)
                         {
-                            return (107,125);
+                            return (107, 125);
                         }
                         throw new Exception($"unknown room {previousRoom}");
                     };
@@ -561,31 +561,53 @@ namespace kq3_hacking.RoomPathing
 
                 // the point 61,86 doesn't seem to be covered by any of the areas
                 case 33:
+                    roomDefinition.SetNorthRoom(34, horizon: 49);
                     roomDefinition.useBlockControl = BLOCKS_OBSERVED;
                     roomDefinition.useActionControl = ACTION_TILE_DEATH_TRIGGER;
-                    roomDefinition.AddWaterTrigger(9, 60, 18, 78);
-                    roomDefinition.AddWaterTrigger(0, 0, 21, 59);
-                    roomDefinition.AddWaterTrigger(0, 60, 8, 68);
-                    roomDefinition.AddWaterTrigger(7, 79, 31, 87);
-                    roomDefinition.AddWaterTrigger(0, 89, 53, 100);
-                    roomDefinition.AddWaterTrigger(47, 75, 72, 80);
-                    roomDefinition.AddWaterTrigger(46, 81, 56, 88);
-                    roomDefinition.AddWaterTrigger(54, 65, 59, 74);
-                    roomDefinition.AddWaterTrigger(140, 64, 154, 71);
-                    roomDefinition.AddWaterTrigger(62, 84, 115, 89);
-                    roomDefinition.AddWaterTrigger(54, 87, 62, 130);
-                    roomDefinition.AddWaterTrigger(77, 95, 132, 131);
-                    roomDefinition.AddWaterTrigger(65, 132, 123, 157);
-                    roomDefinition.AddWaterTrigger(29, 153, 65, 167);
-                    roomDefinition.AddWaterTrigger(12, 145, 29, 167);
-                    roomDefinition.AddWaterTrigger(29, 141, 49, 147);
-                    roomDefinition.AddWaterTrigger(49, 130, 63, 146);
-                    roomDefinition.AddWaterTrigger(32, 65, 120, 74);
+                    //roomDefinition.AddWaterTrigger(9, 60, 18, 78);
+                    //roomDefinition.AddWaterTrigger(0, 0, 21, 59);
+                    //roomDefinition.AddWaterTrigger(0, 60, 8, 68);
+                    //roomDefinition.AddWaterTrigger(7, 79, 31, 87);
+                    //roomDefinition.AddWaterTrigger(0, 89, 53, 100);
+                    //roomDefinition.AddWaterTrigger(47, 75, 72, 80);
+                    //roomDefinition.AddWaterTrigger(46, 81, 56, 88);
+                    //roomDefinition.AddWaterTrigger(54, 65, 59, 74);
+                    //roomDefinition.AddWaterTrigger(140, 64, 154, 71);
+                    //roomDefinition.AddWaterTrigger(62, 84, 115, 89);
+                    //roomDefinition.AddWaterTrigger(54, 87, 62, 130);
+                    //roomDefinition.AddWaterTrigger(77, 95, 132, 131);
+                    //roomDefinition.AddWaterTrigger(65, 132, 123, 157);
+                    //roomDefinition.AddWaterTrigger(29, 153, 65, 167);
+                    //roomDefinition.AddWaterTrigger(12, 145, 29, 167);
+                    //roomDefinition.AddWaterTrigger(29, 141, 49, 147);
+                    //roomDefinition.AddWaterTrigger(49, 130, 63, 146);
+                    //roomDefinition.AddWaterTrigger(32, 65, 120, 74);
+                    roomDefinition.rewriteRule = (int previousRoom, int x, int y, int footprintWidth) =>
+                    {
+                        if (previousRoom == 34)
+                        {
+                            return (17, 51);
+                        }
+                        throw new Exception($"unknown room {previousRoom}");
+                    };
                     break;
 
                 case 34:
                     roomDefinition.useBlockControl = BLOCKS_OBSERVED;
                     roomDefinition.useActionControl = ACTION_TILE_DEATH_TRIGGER;
+                    roomDefinition.SetSouthRoom(33);
+                    roomDefinition.rewriteRule = (int previousRoom, int x, int y, int footprintWidth) =>
+                    {
+                        if (previousRoom == 7)
+                        {
+                            return (39, 131);
+                        }
+                        if (previousRoom == 33)
+                        {
+                            return (57,167);
+                        }
+                        throw new Exception($"unknown room {previousRoom}");
+                    };
                     break;
 
                 case 36:
