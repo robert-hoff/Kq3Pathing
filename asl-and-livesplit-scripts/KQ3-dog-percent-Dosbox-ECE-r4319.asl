@@ -13,7 +13,6 @@ state("dosbox", "ECE r4319")
   byte spellFlags2: 0x1B58E20, 0xC89C;
   byte loadgameDialogShowing: 0x1B58E20, 0xD99D;
   byte restartDialogShowing: 0x1B58E20, 0xD99F;
-
 }
 
 init
