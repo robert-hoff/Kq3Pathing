@@ -1,6 +1,7 @@
 using System.Diagnostics;
 using kq3_hacking.DataFilesIO;
 using kq3_hacking.GlobalPathing;
+using kq3_hacking.MemoryRW;
 using kq3_hacking.RoomPathing;
 
 namespace kq3_hacking
@@ -12,7 +13,8 @@ namespace kq3_hacking
         {
             // RunInterface();
             // RunFileOperations();
-            Pathing();
+            // Pathing();
+            MemoryRW();
         }
 
 
@@ -29,13 +31,20 @@ namespace kq3_hacking
             // FileFormatting.RunTrials();
             FileFormattingWriteInMessages.Go();
         }
+
         public static void Pathing()
         {
             // PrintRoomControlData.RunTrials();
             // TestMapTraversals.RunTrials();
-            // TestPathFinder.RunTrials();
-            TestPathSequences.RunTrials();
+           TestPathFinder.RunTrials();
+            // TestPathSequences.RunTrials();
         }
+
+        public static void MemoryRW()
+        {
+            TestMemoryOperations.RunTrials();
+        }
+
     }
 }
 
