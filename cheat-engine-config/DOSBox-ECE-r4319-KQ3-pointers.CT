@@ -5725,6 +5725,16 @@
         <Offset>0xD99F</Offset>
       </Offsets>
     </CheatEntry>
+    <CheatEntry>
+      <ID>526</ID>
+      <Description>"random seed"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>2 Bytes</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0xDE91</Offset>
+      </Offsets>
+    </CheatEntry>
   </CheatEntries>
   <UserdefinedSymbols/>
 </CheatTable>
