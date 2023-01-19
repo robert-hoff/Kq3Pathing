@@ -42,8 +42,17 @@ namespace kq3_hacking
 
         public static void MemoryRW()
         {
-            TestMemoryOperations.RunTrials();
+            // TestMemoryOperations.RunTrials();
+            RunMonitorVariable();
         }
+
+        public static void RunMonitorVariable()
+        {
+            ApplicationConfiguration.Initialize();
+            Application.Run(new MonitorVariable());
+        }
+
+
 
     }
 }
