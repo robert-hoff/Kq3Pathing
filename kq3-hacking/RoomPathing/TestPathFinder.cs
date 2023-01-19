@@ -11,10 +11,44 @@ namespace kq3_hacking.RoomPathing
 
         public static void RunTrials()
         {
+            UpstairsToWizBedroom();
+            // StartToUpstairs();
             // StartToCupPickup();
             // StartToSpoonPickup();
             // StartToBowlPickup();
-            CupToSpoon();
+            // CupToSpoon();
+        }
+
+
+        public static void BedroomEntryToMapPickup()
+        {
+            PathFinder pathFinder = new();
+            pathFinder.SetGoalRegion(2, GameState.WIZBEDROOM_NEAR_CLOSET);
+            pathFinder.FindPathsFrom(roomNr: 2, 88, 120, MAXDEPTH: 4, stopPathOnSolution: true);
+            pathFinder.ShowSolutions(omitPositionsSeen: false);
+        }
+
+
+        public static void UpstairsToWizBedroom()
+        {
+            PathFinder pathFinder = new();
+            pathFinder.SetGoalRegion(2, GameState.WHOLE_ROOM);
+            // 5 length solutions to (88,120)(2) and 6-length solutions to (41,133)(2)
+            pathFinder.FindPathsFrom(roomNr: 3, 124, 133, MAXDEPTH: 6, stopPathOnSolution: true);
+            // 6 length solutions to (88,120)(2) and (41,133)(2)
+            // pathFinder.FindPathsFrom(roomNr: 3, 90, 163, MAXDEPTH: 6, stopPathOnSolution: true);
+            // 5 length solution to (88,120)(2) and 6-length solutions to (41,133)(2)
+            // pathFinder.FindPathsFrom(roomNr: 3, 88, 165, MAXDEPTH: 6, stopPathOnSolution: true);
+            pathFinder.ShowSolutions(omitPositionsSeen: false);
+        }
+
+
+        public static void StartToUpstairs()
+        {
+            PathFinder pathFinder = new();
+            pathFinder.SetGoalRegion(3, GameState.WHOLE_ROOM);
+            pathFinder.FindPathsFrom(roomNr: 7, 96, 137, MAXDEPTH: 11, stopPathOnSolution: true);
+            pathFinder.ShowSolutions(omitPositionsSeen: false);
         }
 
         public static void StartToCupPickup()

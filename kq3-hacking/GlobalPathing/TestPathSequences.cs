@@ -10,8 +10,8 @@ namespace kq3_hacking.GlobalPathing
             // PathsDetailsForSpoonBowlCup();
             // PathsDetailsForBowlSpoonCup();
             // PathsEssencePickup();
-            // Enumeration1();
-            DogPercent();
+            Enumeration1();
+            // DogPercent();
 
         }
 
@@ -139,12 +139,12 @@ namespace kq3_hacking.GlobalPathing
         public static void Enumeration1()
         {
             GlobalPathFinder pathFinder = new GlobalPathFinder();
-            pathFinder.NextGoal(GlobalPathFinder.GOAL_KEY_AND_MAP);
-            pathFinder.NextGoal(GlobalPathFinder.GOAL_ESSENCE);
-            pathFinder.NextGoal(GlobalPathFinder.GOAL_TOWER);
-            pathFinder.NextGoal(GlobalPathFinder.GOAL_CUP);
             pathFinder.NextGoal(GlobalPathFinder.GOAL_SPOON);
             pathFinder.NextGoal(GlobalPathFinder.GOAL_BOWL);
+            pathFinder.NextGoal(GlobalPathFinder.GOAL_CUP);
+            pathFinder.NextGoal(GlobalPathFinder.GOAL_TOWER);
+            pathFinder.NextGoal(GlobalPathFinder.GOAL_ESSENCE);
+            pathFinder.NextGoal(GlobalPathFinder.GOAL_KEY_AND_MAP);
             pathFinder.NextGoal(GlobalPathFinder.GOAL_WAND);
             pathFinder.NextGoal(GlobalPathFinder.GOAL_TRAPDOOR);
             pathFinder.NextGoal(GlobalPathFinder.GOAL_BASEMENT);
