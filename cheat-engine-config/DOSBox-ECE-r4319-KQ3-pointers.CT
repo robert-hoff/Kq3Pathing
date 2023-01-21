@@ -5735,6 +5735,26 @@
         <Offset>0xDE91</Offset>
       </Offsets>
     </CheatEntry>
+    <CheatEntry>
+      <ID>530</ID>
+      <Description>"move player-x"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>0x11048</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>531</ID>
+      <Description>"move player-y"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Byte</VariableType>
+      <Address>Dosbox.exe + 0x1B58E20</Address>
+      <Offsets>
+        <Offset>1104A</Offset>
+      </Offsets>
+    </CheatEntry>
   </CheatEntries>
   <UserdefinedSymbols/>
 </CheatTable>
